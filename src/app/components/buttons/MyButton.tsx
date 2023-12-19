@@ -3,7 +3,7 @@ import styles from "./button.module.css";
 import Image from "next/image";
 
 
-export default function MyButton({ label, icon, style }) {
+export default function MyButton({ label, icon, style }: { label: string; icon: string; style: string }) {
     let buttonStyles ;
   
     switch (style) {

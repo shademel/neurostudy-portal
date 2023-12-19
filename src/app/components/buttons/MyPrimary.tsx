@@ -5,6 +5,6 @@ import MyButton from "./MyButton";
 
 export default function myPrimary() {
   return (
-    <MyButton label="Search" icon={Search} style={undefined}  />
+    <MyButton label="Search" icon={Search} style={''}  />
   );
 }
