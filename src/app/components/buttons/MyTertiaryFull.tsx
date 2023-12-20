@@ -10,6 +10,7 @@ export default function myTertiaryFull() {
       label="Learn more" 
       icon={CircleRight} 
       style= {ButtonStyle.TertiaryFull} disabled={false}
+      iconPosition="right"
       onClick={()=>console.log('clicked TertiaryFull button')}/>
   );
 }
