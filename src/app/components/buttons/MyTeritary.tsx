@@ -1,10 +1,10 @@
 import React from "react";
 import CircleRight from "../../images/CircleRightOrg.svg";
 
-import MyButton from "./MyButton";
+import ActionButton from "./ActionButton";
 
 export default function myTeritary() {
   return (
-    <MyButton label="Learn more" icon={CircleRight} style="teritary" />
+    <ActionButton label="Learn more" icon={CircleRight} style="teritary" />
   );
 }

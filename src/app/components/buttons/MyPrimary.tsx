@@ -1,10 +1,10 @@
 import React from "react";
 import Search from "../../images/Search.svg";
 
-import MyButton from "./MyButton";
+import ActionButton from "./ActionButton";
 
 export default function myPrimary() {
   return (
-    <MyButton label="Search" icon={Search} style={''}  />
+    <ActionButton label="Search" icon={Search} style={''}  />
   );
 }
