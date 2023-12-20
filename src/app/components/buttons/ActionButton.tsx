@@ -1,6 +1,9 @@
+'use client';
+
 import React from "react";
 import styles from "./button.module.css";
 import Image from "next/image";
+
 export enum ButtonStyle {
   PrimaryFull = "primary-full",
   Secondary = "secondary",
@@ -8,15 +11,21 @@ export enum ButtonStyle {
   Tertiary = "tertiary",
   TertiaryFull = "tertiary-full",
 }
+
 interface ActionButtonProps {
   label: string;
   icon: string;
   style?: ButtonStyle;
+  disabled?: boolean;
+  onClick?: () => void;
 }
+
 export default function ActionButton({
   label,
   icon,
   style,
+  disabled,
+  onClick,
 }: ActionButtonProps) {
   let buttonStyles;
 
@@ -39,8 +48,13 @@ export default function ActionButton({
     default:
       buttonStyles = styles.btn1;
   }
+
+  if(disabled){
+    buttonStyles = `${buttonStyles} ${styles.disabled}`
+  }
+
   return (
-    <button className={buttonStyles}>
+    <button className={buttonStyles} disabled={disabled} onClick={onClick}>
       {icon && <Image src={icon} alt="icon" />}
       <span>{label}</span>
     </button>

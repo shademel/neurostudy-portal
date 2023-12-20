@@ -17,8 +17,13 @@
   font-weight: 600;
   font-size: large;
 }
+
+.disabled {
+  opacity: 60%;
+  cursor: not-allowed;
+}
+
 .icon {  
- 
   width: 24px;
   height: 24px;
   padding: 2.23px, 2.25px, 2.25px, 2.23px;  

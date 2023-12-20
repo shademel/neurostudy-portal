@@ -4,13 +4,13 @@ import React from "react";
 import Search from "../../images/Search.svg";
 import ActionButton, { ButtonStyle } from "./ActionButton";
 
-export default function myPrimaryFull() {
+export default function myPrimaryFullDisabled() {
   return (
     <ActionButton 
-    label="Search" 
+    label="Search Disabled" 
     icon={Search}  
-    disabled={false}
+    disabled={true}
     style={ButtonStyle.PrimaryFull}
-    onClick={()=>console.log('clicked PrimaryFull button')}/>
+    />
   );
 }

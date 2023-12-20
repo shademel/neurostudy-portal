@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./button.module.css";
 import MyPrimaryFull from "./MyPrimaryFull";
+import MyPrimaryFullDisabled from "./MyPrimaryFullDisabled";
 import MyPrimary from "./MyPrimary";
 import MySecondary from "./MySecondary";
 import MySecondaryFull from "./MySecondaryFull";
@@ -12,6 +13,9 @@ export default function ButtonDisplay() {
     <div>
       <div className={styles.display}>
         <MyPrimaryFull />
+      </div>
+      <div className={styles.display}>
+        <MyPrimaryFullDisabled />
       </div>
       <div className={styles.display}>
         <MyPrimary />
