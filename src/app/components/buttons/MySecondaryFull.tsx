@@ -1,10 +1,9 @@
 import React from "react";
 import Search from "../../images/SearchOrg.svg";
-
-import ActionButton from "./ActionButton";
+import ActionButton, { ButtonStyle } from "./ActionButton";
 
 export default function mySecondaryFull() {
   return (
-    <ActionButton label="Search" icon={Search} style="secondary-full" />
+    <ActionButton label="Search" icon={Search} style={ButtonStyle.SecondaryFull} />
   );
 }
