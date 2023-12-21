@@ -1,7 +1,7 @@
 import styles from './page.module.css'
 import ButtonDisplay from './components/buttons/ButtonDisplay'
-
 import Example from './components/typography/Example'
+
 export default function Home() {
   return (
     <main className={styles.main}>
