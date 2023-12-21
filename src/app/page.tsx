@@ -1,10 +1,7 @@
-import Image from 'next/image'
 import styles from './page.module.css'
 import ButtonDisplay from './components/buttons/ButtonDisplay'
 
 import Example from './components/typography/Example'
-import BadgeDisplay from './components/badges/BadgeDisplay'
-
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -13,12 +10,7 @@ export default function Home() {
       </div>
       <div>    
         <ButtonDisplay></ButtonDisplay>
-        <Example></Example>
-     
-      </div>
-
-      <div>
-      <BadgeDisplay></BadgeDisplay>
+        <Example></Example>     
       </div>
     </main>
   )
