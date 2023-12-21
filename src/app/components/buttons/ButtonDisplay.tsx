@@ -1,12 +1,12 @@
-import React from "react";
-import styles from "./button.module.css";
-import MyPrimaryFull from "./MyPrimaryFull";
-import MyPrimaryFullDisabled from "./MyPrimaryFullDisabled";
-import MyPrimary from "./MyPrimary";
-import MySecondary from "./MySecondary";
-import MySecondaryFull from "./MySecondaryFull";
-import MyTertiary from "./MyTertiary";
-import MyTertiaryFull from "./MyTertiaryFull";
+import React from 'react';
+import styles from './button.module.css';
+import MyPrimaryFull from './MyPrimaryFull';
+import MyPrimaryFullDisabled from './MyPrimaryFullDisabled';
+import MyPrimary from './MyPrimary';
+import MySecondary from './MySecondary';
+import MySecondaryFull from './MySecondaryFull';
+import MyTertiary from './MyTertiary';
+import MyTertiaryFull from './MyTertiaryFull';
 
 export default function ButtonDisplay() {
   return (
