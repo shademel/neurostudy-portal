@@ -1,15 +1,15 @@
 'use client';
 
-import React from "react";
-import styles from "./button.module.css";
-import Image from "next/image";
+import React from 'react';
+import styles from './button.module.css';
+import Image from 'next/image';
 
 export enum ButtonStyle {
-  PrimaryFull = "primary-full",
-  Secondary = "secondary",
-  SecondaryFull = "secondary-full",
-  Tertiary = "tertiary",
-  TertiaryFull = "tertiary-full",
+  PrimaryFull = 'primary-full',
+  Secondary = 'secondary',
+  SecondaryFull = 'secondary-full',
+  Tertiary = 'tertiary',
+  TertiaryFull = 'tertiary-full',
 }
 
 interface ActionButtonProps {
@@ -32,34 +32,34 @@ export default function ActionButton({
   let buttonStyles;
 
   switch (style) {
-    case "primary-full":
+    case 'primary-full':
       buttonStyles = styles.btn1Full;
       break;
-    case "secondary":
+    case 'secondary':
       buttonStyles = styles.btn2;
       break;
-    case "secondary-full":
+    case 'secondary-full':
       buttonStyles = styles.btn2Full;
       break;
-    case "tertiary":
+    case 'tertiary':
       buttonStyles = styles.btn3;
       break;
-    case "tertiary-full":
+    case 'tertiary-full':
       buttonStyles = styles.btn3Full;
       break;
     default:
       buttonStyles = styles.btn1;
   }
 
-  if(disabled){
-    buttonStyles = `${buttonStyles} ${styles.disabled}`
+  if (disabled) {
+    buttonStyles = `${buttonStyles} ${styles.disabled}`;
   }
 
   return (
     <button className={buttonStyles} disabled={disabled} onClick={onClick}>
-      {iconPosition === 'left' && icon && <Image src={icon} alt="icon" />}
+      {iconPosition === 'left' && icon && <Image src={icon} alt='icon' />}
       <span>{label}</span>
-      {iconPosition === 'right' && icon && <Image src={icon} alt="icon" />}
+      {iconPosition === 'right' && icon && <Image src={icon} alt='icon' />}
     </button>
   );
 }

@@ -1,5 +1,3 @@
-
-
 .btn1 {
   display: flex;
   align-items: center;
@@ -23,10 +21,10 @@
   cursor: not-allowed;
 }
 
-.icon {  
+.icon {
   width: 24px;
   height: 24px;
-  padding: 2.23px, 2.25px, 2.25px, 2.23px;  
+  padding: 2.23px, 2.25px, 2.25px, 2.23px;
   font-weight: 100;
   font-size: larger;
 }
@@ -62,7 +60,7 @@
   border: 1px solid #6600cc;
   background-color: white;
   color: #6600cc;
-  font-family:var(--poppins-font);
+  font-family: var(--poppins-font);
   font-weight: 600;
   font-size: large;
   padding: 12px, 24px, 12px, 24px;
@@ -98,13 +96,12 @@
   padding: 12px, 24px, 12px, 24px;
   border-radius: 8px;
   gap: 8px;
-  font-family:var(--poppins-font);
+  font-family: var(--poppins-font);
   font-weight: 600;
   font-size: large;
   line-height: 24px;
-  
 }
-.btn3Full{
+.btn3Full {
   width: 312px;
   height: 48px;
   padding: 12px, 24px, 12px, 24px;
@@ -120,12 +117,7 @@
   font-weight: 600;
   font-size: large;
   line-height: 24px;
-
-  
 }
 .display {
   margin: 50px;
 }
-
-
-

@@ -1,6 +1,6 @@
-import styles from './page.module.css'
-import ButtonDisplay from './components/buttons/ButtonDisplay'
-import Example from './components/typography/Example'
+import styles from './page.module.css';
+import ButtonDisplay from './components/buttons/ButtonDisplay';
+import Example from './components/typography/Example';
 
 export default function Home() {
   return (
@@ -8,10 +8,11 @@ export default function Home() {
       <div className={styles.description}>
         <h1>Site under construction</h1>
       </div>
-      <div>    
+
+      <div>
         <ButtonDisplay></ButtonDisplay>
-        <Example></Example>     
+        <Example></Example>
       </div>
     </main>
-  )
+  );
 }
