@@ -10,8 +10,8 @@ export default function Home() {
       </div>
 
       <div>
-        <ButtonDisplay></ButtonDisplay>
-        <Example></Example>
+        <ButtonDisplay />
+        <Example />
       </div>
     </main>
   );

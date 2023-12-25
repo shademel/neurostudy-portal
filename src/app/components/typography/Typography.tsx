@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './typography.module.css';
 
 export enum TypographyVariant {
   H1 = 'h1',
-  H2 = 'h2',
+  H2 = 'h2', //Subheading
   Body1 = 'body1',
   Body2Strong = 'body2-strong',
   Body2 = 'body2',
@@ -14,7 +15,6 @@ interface TypographyProps {
   ariaLabel?: string;
   ariaLabelledBy?: string;
   role?: string;
-  tabIndex?: number;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -23,38 +23,75 @@ const Typography: React.FC<TypographyProps> = ({
   ariaLabel,
   ariaLabelledBy,
   role,
-  tabIndex,
 }) => {
-  const getStyle = () => {
-    switch (variant) {
-      case TypographyVariant.H1:
-        return { fontSize: '48px', fontWeight: 'bold' };
-      case TypographyVariant.H2:
-        return { fontSize: '36px', fontWeight: 'medium' };
-      case TypographyVariant.Body1:
-        return { fontSize: '24px', fontWeight: 'regular' };
-      case TypographyVariant.Body2Strong:
-        return { fontSize: '16px', fontWeight: 'semibold' };
-      case TypographyVariant.Body2:
-        return { fontSize: '16px', fontWeight: 'regular' };
-      default:
-        return {};
-    }
-  };
-
-  const style = getStyle();
-
-  return (
-    <div
-      style={style}
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledBy}
-      role={role}
-      tabIndex={tabIndex}
-    >
-      {children}
-    </div>
-  );
+  switch (variant) {
+    case TypographyVariant.H1:
+      return (
+        <h1
+          area-aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          role={role}
+          className={styles.heading1}
+        >
+          {children}
+        </h1>
+      );
+    case TypographyVariant.H2:
+      return (
+        <h2
+          area-aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          role={role}
+          className={styles.heading2}
+        >
+          {children}
+        </h2>
+      );
+    case TypographyVariant.Body1:
+      return (
+        <span
+          area-aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          role={role}
+          className={styles.body1}
+        >
+          {children}
+        </span>
+      );
+    case TypographyVariant.Body2Strong:
+      return (
+        <span
+          area-aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          role={role}
+          className={styles.body2Strong}
+        >
+          {children}
+        </span>
+      );
+    case TypographyVariant.Body2:
+      return (
+        <span
+          area-aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          role={role}
+          className={styles.body2}
+        >
+          {children}
+        </span>
+      );
+    default:
+      return (
+        <span
+          area-aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          role={role}
+          className={styles.body1}
+        >
+          {children}
+        </span>
+      );
+  }
 };
 
 export default Typography;
