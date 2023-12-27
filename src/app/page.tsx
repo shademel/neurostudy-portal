@@ -1,6 +1,7 @@
 import styles from './page.module.css';
 import ButtonDisplay from './components/buttons/ButtonDisplay';
 import Example from './components/typography/Example';
+import BadgeDisplay from './components/badges/BadgeDisplay';
 import Navbar from './components/navbar/Navbar';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <div>
         <ButtonDisplay />
         <Example />
+        <BadgeDisplay />
       </div>
     </main>
   );

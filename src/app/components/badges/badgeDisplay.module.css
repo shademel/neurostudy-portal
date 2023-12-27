@@ -1,0 +1,12 @@
+
+.badgeContainer {
+    position: relative;
+  }
+  
+  .badgeOverlay {
+    position: absolute;
+    top: 25%; 
+    left: 55%; 
+
+  }
+  
