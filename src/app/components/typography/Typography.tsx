@@ -15,6 +15,8 @@ interface TypographyProps {
   ariaLabel?: string;
   ariaLabelledBy?: string;
   role?: string;
+  color?: string;
+  className?: string;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -23,7 +25,9 @@ const Typography: React.FC<TypographyProps> = ({
   ariaLabel,
   ariaLabelledBy,
   role,
+  color,
 }) => {
+  const style = color ? { color } : {};
   switch (variant) {
     case TypographyVariant.H1:
       return (
@@ -32,6 +36,7 @@ const Typography: React.FC<TypographyProps> = ({
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.heading1}
+          style={style}
         >
           {children}
         </h1>
@@ -43,6 +48,7 @@ const Typography: React.FC<TypographyProps> = ({
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.heading2}
+          style={style}
         >
           {children}
         </h2>
@@ -54,6 +60,7 @@ const Typography: React.FC<TypographyProps> = ({
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body1}
+          style={style}
         >
           {children}
         </span>
@@ -65,6 +72,7 @@ const Typography: React.FC<TypographyProps> = ({
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body2Strong}
+          style={style}
         >
           {children}
         </span>
@@ -76,6 +84,7 @@ const Typography: React.FC<TypographyProps> = ({
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body2}
+          style={style}
         >
           {children}
         </span>
@@ -87,6 +96,7 @@ const Typography: React.FC<TypographyProps> = ({
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body1}
+          style={style}
         >
           {children}
         </span>
