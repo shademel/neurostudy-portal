@@ -3,6 +3,7 @@ import styles from './navbar.module.css';
 import MyLogin from '../buttons/MyLogin';
 import Image from 'next/image';
 import Logo from '../../images/Logo-navbar.svg';
+import Hamburger from '../../images/hamburgerMenu.svg';
 
 export default function Navbar() {
   return (
@@ -26,6 +27,11 @@ export default function Navbar() {
           </ul>
           <MyLogin className={styles.login} />
         </div>
+        <Image
+          className={styles.hamburger}
+          src={Hamburger}
+          alt='hamburger menu'
+        />
       </div>
     </nav>
   );
