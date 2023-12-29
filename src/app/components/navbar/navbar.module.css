@@ -47,7 +47,7 @@
   
 }
 
-@media (280px <= width <=760px) {
+@media (280px <= width <=765px) {
   .logo {
     max-width: 150px; 
   }
@@ -62,9 +62,12 @@
     display:none
   }
 }
-@media (761px <= width <=1000px) {
+@media (766px <= width <=1000px) {
   .logo {
-    max-width: 130px; 
+    max-width: 160px; 
+  }
+  .li {
+    margin-right: 18px;
   }
   
   .wrapper {   

@@ -4,6 +4,7 @@ import MyLogin from '../buttons/MyLogin';
 import Image from 'next/image';
 import Logo from '../../images/Logo-navbar.svg';
 import Hamburger from '../../images/hamburgerMenu.svg';
+import Typography, { TypographyVariant } from '../typography/Typography';
 
 export default function Navbar() {
   return (
@@ -13,16 +14,32 @@ export default function Navbar() {
         <div className={styles.innerWrapper}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link href='#'>Services</Link>
+              <Link href='#'>
+                <Typography variant={TypographyVariant.Body2}>
+                  Services
+                </Typography>
+              </Link>
             </li>
             <li className={styles.li}>
-              <Link href='#'>Neurodiversity Training</Link>
+              <Link href='#'>
+                <Typography variant={TypographyVariant.Body2}>
+                  Neurodiversity Training
+                </Typography>
+              </Link>
             </li>
             <li className={styles.li}>
-              <Link href='/about'>About Us</Link>
+              <Link href='/about'>
+                <Typography variant={TypographyVariant.Body2}>
+                  About Us
+                </Typography>
+              </Link>
             </li>
             <li className={styles.li}>
-              <Link href='/#'>Contact</Link>
+              <Link href='/#'>
+                <Typography variant={TypographyVariant.Body2}>
+                  Contact
+                </Typography>
+              </Link>
             </li>
           </ul>
           <MyLogin className={styles.login} />
