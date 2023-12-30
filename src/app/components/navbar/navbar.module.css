@@ -46,6 +46,23 @@
   display: none;
   
 }
+.dropdownMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--GhostWhite);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdownMenu li {
+  padding: 8px;
+}
 
 @media (280px <= width <=765px) {
   .logo {
