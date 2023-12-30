@@ -10,7 +10,6 @@
   display: flex;
   flex-wrap: wrap;
   margin: 12px 80px;
-
   align-items: center;
 }
 
@@ -65,7 +64,21 @@
  
 }
 
-@media (280px <= width <=765px) {
+@media ( width <=999px) {
+
+  .wrapper {
+    margin: 12px 30px;
+  }
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+  .innerWrapper {
+    display: none;
+  }
+}
+
+/* @media (280px <= width <=765px) {
   .logo {
     max-width: 150px;
   }
@@ -87,7 +100,6 @@
   .li {
     margin-right: 18px;
   }
-
   .wrapper {
     margin: 5px 15px;
   }
@@ -99,4 +111,4 @@
     width: auto;
     font-size: small;
   }
-}
+} */
