@@ -82,7 +82,7 @@ export default function Navbar() {
           alt='hamburger menu'
           onClick={toggleDropdown}
         />
-        <div ref={dropdownRef}>
+        <div className={styles.dropdownContainer} ref={dropdownRef}>
           {isDropdownVisible && (
             <ul className={`${styles.dropdownMenu}`}>
               <li className={styles.li}>
