@@ -1,5 +1,5 @@
 .heading1 {
-  color: #000;
+  color: #070707;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -7,7 +7,7 @@
 }
 
 .heading2 {
-  color: #000;
+  color: #070707;
   font-size: 36px;
   font-style: normal;
   font-weight: 500;
@@ -15,7 +15,7 @@
 }
 
 .body1 {
-  color: #000;
+  color: #070707;
   font-family: var(--poppins-font);
   font-size: 24px;
   font-style: normal;
@@ -24,7 +24,7 @@
 }
 
 .body2Strong {
-  color: #000;
+  color: #070707;
   font-family: var(--poppins-font);
   font-size: 16px;
   font-style: normal;
@@ -33,10 +33,10 @@
 }
 
 .body2 {
-  color: #000;
+  color: #070707;
   font-family: var(--poppins-font);
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
 }

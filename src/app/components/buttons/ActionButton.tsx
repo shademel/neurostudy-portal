@@ -19,6 +19,7 @@ interface ActionButtonProps {
   disabled?: boolean;
   onClick?: () => void;
   iconPosition?: 'left' | 'right';
+  className?: string;
 }
 
 export default function ActionButton({
@@ -28,6 +29,7 @@ export default function ActionButton({
   disabled,
   onClick,
   iconPosition = 'left',
+  className,
 }: ActionButtonProps) {
   let buttonStyles;
 
@@ -53,6 +55,9 @@ export default function ActionButton({
 
   if (disabled) {
     buttonStyles = `${buttonStyles} ${styles.disabled}`;
+  }
+  if (className) {
+    buttonStyles = `${buttonStyles} ${className}`;
   }
 
   return (
