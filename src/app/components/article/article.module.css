@@ -1,0 +1,26 @@
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
+  margin:48px;
+}
+.description {
+  margin: 10px 20px 10px 20px;
+}
+
+.card {
+  border: 1px solid var(--cherryPieSub);
+  border-radius: 8px;
+
+  width: 390px;
+  height: 350px;
+}
+
+.cardImage {
+  width: 100%;
+  height: 180px;
+  object-fit: fill;
+  border-radius: 8px 8px 0px 0px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,24 @@
+{
+    "cards": [
+      {
+        "id": 1,
+        "title": "Card 1",
+        "imageUrl": "https://picsum.photos/200/300",
+        "description": "Listen to our Openhearted Podcast and know more about what neurodiversity is."
+      },
+      {
+        "id": 2,
+        "title": "Card 2",
+        "imageUrl": "https://picsum.photos/200/300",
+        "description":"Listen to our Openhearted Podcast and know more about what neurodiversity is." 
+      },
+      {
+        "id": 3,
+        "title": "Card 3",
+        "imageUrl": "https://picsum.photos/200/300",
+        "description": "Listen to our Openhearted Podcast and know more about what neurodiversity is."
+      }
+   
+    ]
+  }
+  
