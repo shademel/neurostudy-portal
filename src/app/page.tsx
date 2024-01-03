@@ -3,6 +3,7 @@ import ButtonDisplay from './components/buttons/ButtonDisplay';
 import Example from './components/typography/Example';
 import BadgeDisplay from './components/badges/BadgeDisplay';
 import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <ButtonDisplay />
         <Example />
       </div>
+      <Footer />
     </main>
   );
 }
