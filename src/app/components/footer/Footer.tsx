@@ -26,10 +26,42 @@ export default function Footer() {
             </Typography>
           </div>
           <div className={styles.socials}>
-            <Image src={facebookIcon} alt='facebook-icon' />
-            <Image src={linkedinIcon} alt='linkedin-icon' />
-            <Image src={instagramicon} alt='instagram-icon' />
-            <Image src={twitterIcon} alt='twitter-icon' />
+            <a
+              href='https://www.facebook.com/neurodiversityacademy'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Facebook'
+              title='Visit our Facebook page'
+            >
+              <Image src={facebookIcon} alt='facebook-icon' />
+            </a>
+            <a
+              href='https://www.linkedin.com/company/neurodiversity-academy/'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Linkedin'
+              title='Visit our Linkedin page'
+            >
+              <Image src={linkedinIcon} alt='linkedin-icon' />
+            </a>
+            <a
+              href='https://www.instagram.com/neurodiversityacademy/'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Instagram'
+              title='Visit our Instagram page'
+            >
+              <Image src={instagramicon} alt='instagram-icon' />
+            </a>
+            <a
+              href='https://twitter.com/neuro_d_academy'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Twitter'
+              title='Visit our Twitter page'
+            >
+              <Image src={twitterIcon} alt='twitter-icon' />
+            </a>
           </div>
         </div>
         <div className={styles.topFoot}>
@@ -42,9 +74,15 @@ export default function Footer() {
           </Typography>
 
           <ul>
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
+            <li>
+              <a href='https://example.com'>Page one</a>
+            </li>
+            <li>
+              <a href='https://example.com'>Page two</a>
+            </li>
+            <li>
+              <a href='https://example.com'>Page three</a>
+            </li>
           </ul>
         </div>
         <div className={styles.topFoot}>
@@ -56,10 +94,50 @@ export default function Footer() {
             Navigate
           </Typography>
           <ul>
-            <li>Blogs</li>
-            <li>About Us</li>
-            <li>Service</li>
-            <li>Partner with Us</li>
+            <li>
+              <a
+                href='https://example.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Blogs (opens in new tab)'
+                title='visit Blogs page'
+              >
+                Blogs
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://example.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='About Us (opens in new tab)'
+                title='visit About Us page'
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://example.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Services (opens in new tab)'
+                title='visit Service page'
+              >
+                Service
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://example.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Partner with Us (opens in new tab)'
+                title='visit Partner with Us page'
+              >
+                Partner with Us
+              </a>
+            </li>
           </ul>
         </div>
         <div className={styles.topFoot}>
@@ -70,9 +148,25 @@ export default function Footer() {
             Contact Us
           </Typography>
           <ul>
-            <li>+61123456</li>
-            <li>info@neurodiversityacademy.com</li>
-            <li>123,lorem road, Sydney, 2000</li>
+            <li>
+              <a href='tel:+123456789'>+61123456</a>
+            </li>
+            <li>
+              <a href='mailto:m.bluth@example.com'>
+                info@neurodiversityacademy.com
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://www.google.com/maps?q=123+Lorem+Road,+Sydney,+2000'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Visit our office in Sydney'
+                title='View our office location on Google Maps'
+              >
+                123, Lorem Road, Sydney, 2000
+              </a>
+            </li>
           </ul>
         </div>
       </div>
