@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 50px;
-  margin:48px;
+  margin: 48px 0px;
 }
 .description {
   margin: 10px 20px 10px 20px;
