@@ -14,9 +14,7 @@ export default function Article({
 }: ArticleInterface): JSX.Element {
   return (
     <div className={styles.card}>
-      <Image
-        width={390}
-        height={180}
+      <img
         src={imageUrl}
         alt={`Thumbnail for ${title}`}
         className={styles.cardImage}
