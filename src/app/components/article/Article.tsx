@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton, { ButtonStyle } from '../buttons/ActionButton';
 import CircleRight from '../../images/CircleRightOrg.svg';
