@@ -9,7 +9,6 @@ import CardList from './components/article/card';
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Navbar />
       <BadgeDisplay />
       <div className={styles.description}>
         <h1>Site under construction</h1>
@@ -22,7 +21,6 @@ export default function Home() {
       <div>
         <CardList />
       </div>
-      <Footer />
     </main>
   );
 }
