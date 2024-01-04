@@ -19,10 +19,6 @@ export default function TextHeavyArticle({
       <div>
         <Typography variant={TypographyVariant.Body2}>{bodyText}</Typography>
       </div>
-      <div
-        dangerouslySetInnerHTML={{ __html: bodyText }}
-        style={{ textAlign: 'justify' }}
-      />
     </div>
   );
 }

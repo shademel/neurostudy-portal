@@ -28,7 +28,6 @@ export default function Home() {
       <div>
         <button onClick={navigateToArticle}>Go to Example Page</button>
       </div>
-
     </main>
   );
 }
