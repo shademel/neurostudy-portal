@@ -9,7 +9,7 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin: 12px 80px;
+  padding: 12px 80px;
   align-items: center;
 }
 
@@ -64,7 +64,7 @@
 
 @media (width <=999px) {
   .wrapper {
-    margin: 12px 30px;
+    padding: 12px 30px;
   }
   .hamburger {
     display: block;
