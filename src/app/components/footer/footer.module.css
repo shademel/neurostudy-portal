@@ -3,10 +3,9 @@
   width: 100%;
 }
 .container {
-  margin: 80px;
+  padding: 50px;
   display: flex;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .topFoot span {
@@ -56,7 +55,7 @@
 
 .footprint {
   display: flex;
-  margin: 150px 80px 80px 80px;
+  padding: 50px;
 }
 
 .leftFootprint {
@@ -80,19 +79,19 @@
     display: inline;
   }
   .topFoot {
-    margin: 48px 24px 48px 24px;
+    padding: 20px;
   }
   .topLeft {
-    margin: 48px 24px 48px 24px;
+    padding: 20px;
   }
   .footprint {
     display: block;
-    margin: 64px 24px 48px 24px;
+    padding: 20px;
   }
   .leftFootprint {
-    margin-bottom: 24px;
+    padding-bottom: 20px;
   }
   .rightFootprint span {
-    margin-right: 24px;
+    padding-right: 24px;
   }
 }

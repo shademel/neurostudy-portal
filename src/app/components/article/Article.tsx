@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton, { ButtonStyle } from '../buttons/ActionButton';
 import CircleRight from '../../images/CircleRightOrg.svg';
@@ -14,9 +13,7 @@ export default function Article({
 }: ArticleInterface): JSX.Element {
   return (
     <div className={styles.card}>
-      <Image
-        width={390}
-        height={180}
+      <img
         src={imageUrl}
         alt={`Thumbnail for ${title}`}
         className={styles.cardImage}
