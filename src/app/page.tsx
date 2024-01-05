@@ -4,13 +4,8 @@ import ButtonDisplay from './components/buttons/ButtonDisplay';
 import Example from './components/typography/Example';
 import BadgeDisplay from './components/badges/BadgeDisplay';
 import CardList from './components/article/card';
-import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  const router = useRouter();
-  const navigateToArticle = () => {
-    router.push('/article');
-  };
   return (
     <main className={styles.main}>
       <BadgeDisplay />
@@ -24,9 +19,6 @@ export default function Home() {
       </div>
       <div>
         <CardList />
-      </div>
-      <div>
-        <button onClick={navigateToArticle}>Go to Example Page</button>
       </div>
     </main>
   );
