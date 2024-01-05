@@ -1,23 +1,33 @@
+'use client';
 import React from 'react';
-import TextHeavyArticle from '../components/pages/TextHeavyArticle';
+import TextHeavyArticle from '../components/textHeavyArticle/TextHeavyArticle';
 import styles from './article.module.css';
-import articleData from '.././components/pages/articleData.json';
-export default function Page() {
-  const { id, header, imageSrc, bodyText } = articleData.articles[0];
-  const paragraphs = bodyText
-    .split('\n')
-    .map((paragraph, index) => <p key={index}>{paragraph}</p>);
+import articleData from './articleData.json';
+import { useSearchParams } from 'next/navigation';
+import Typography, {
+  TypographyVariant,
+} from '../components/typography/Typography';
 
-  return (
-    <div className={styles.container}>
-      <div>
+export default function Page() {
+  const searchParams = useSearchParams();
+  const { articles } = articleData;
+  const articleId = searchParams.get('articleId');
+  const article = articles.find((article) => article.id === articleId);
+  if (article) {
+    const paragraphs = article.bodyText
+      .split('\n')
+      .map((paragraph, index) => <p key={index}>{paragraph}</p>);
+    return (
+      <div className={styles.container}>
         <TextHeavyArticle
-          id={id}
-          header={header}
-          imageSrc={imageSrc}
+          id={article.id}
+          header={article.header}
+          imageUrl={article.imageUrl}
           bodyText={paragraphs}
-        ></TextHeavyArticle>
+        />{' '}
       </div>
-    </div>
-  );
+    );
+  } else {
+    <Typography variant={TypographyVariant.H1}>Article not found</Typography>;
+  }
 }

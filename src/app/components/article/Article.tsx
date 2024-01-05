@@ -14,8 +14,8 @@ export default function Article({
   description,
 }: ArticleInterface): JSX.Element {
   const router = useRouter();
-  const navigateToArticle = (articleId: number) => {
-    router.push(`/article/${articleId}`);
+  const navigateToArticle = (articleId: string) => {
+    router.push(`/article/?articleId=${articleId}`);
   };
   return (
     <div className={styles.card}>
