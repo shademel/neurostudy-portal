@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { TextHeavyInterface } from '@/app/interfaces/TextHeavyInterface';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import Image from 'next/image';
-
+import Link from 'next/link';
 export default function TextHeavyArticle({
   header,
   imageUrl,
@@ -38,7 +38,8 @@ export default function TextHeavyArticle({
             : TypographyVariant.Body2Strong
         }
       >
-        {`Home > Articles > ${header}`}
+        <Link href='/'>Home</Link> {'>'} <Link href='/articles'>Articles</Link>{' '}
+        {'>'} {header}
       </Typography>
       <Typography variant={TypographyVariant.H2}>{header}</Typography>
       {windowWidth >= 430 ? (
