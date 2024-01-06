@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TextHeavyArticle from '../components/textHeavyArticle/TextHeavyArticle';
 import styles from './article.module.css';
 import articleData from './articleData.json';
@@ -9,16 +9,6 @@ import Typography, {
 } from '../components/typography/Typography';
 
 export default function Page() {
-  const [windowWidth, setWindowWidth] = useState(0);
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
   const searchParams = useSearchParams();
   const { articles } = articleData;
   const articleId = searchParams.get('articleId');
