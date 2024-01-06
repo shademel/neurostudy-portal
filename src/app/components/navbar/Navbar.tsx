@@ -2,7 +2,7 @@
 import styles from './navbar.module.css';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import MyLogin from '../buttons/MyLogin';
+// import MyLogin from '../buttons/MyLogin';
 import Image from 'next/image';
 import Logo from '../../images/Logo-navbar.svg';
 import Hamburger from '../../images/hamburgerMenu.svg';
