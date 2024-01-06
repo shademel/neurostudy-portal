@@ -76,7 +76,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-          <MyLogin className={styles.login} />
+          {/* <MyLogin className={styles.login} /> */}
         </div>
         <Image
           className={styles.hamburger}

@@ -19,10 +19,9 @@ export default function Footer() {
               variant={TypographyVariant.Body2}
               color='var(--GhostWhite)'
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum et
-              sapiente doloribus aspernatur iusto harum facere quis quae,
-              quisquam, quam unde ex eius possimus atque, ipsa nam ad rem!
-              Reiciendis!
+              Neurodiversity Academy acknowledges the Traditional Owners of
+              Country throughout Australia. We pay our respects to Elders past,
+              present and emerging.
             </Typography>
           </div>
           <div className={styles.socials}>

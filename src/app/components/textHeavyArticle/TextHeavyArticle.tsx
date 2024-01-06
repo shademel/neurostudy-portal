@@ -41,8 +41,14 @@ export default function TextHeavyArticle({
         <Link href='/'>Home</Link> {'>'} <Link href='/articles'>Articles</Link>{' '}
         {'>'} {header}
       </Typography>
-      <Typography variant={TypographyVariant.H2}>{header}</Typography>
-      {windowWidth >= 430 ? (
+      <Typography
+        variant={
+          windowWidth <= 430 ? TypographyVariant.H2MOB : TypographyVariant.H2
+        }
+      >
+        {header}
+      </Typography>
+      {windowWidth > 430 ? (
         <Image
           width={1150}
           height={612}
