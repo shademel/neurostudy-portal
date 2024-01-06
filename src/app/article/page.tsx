@@ -9,7 +9,7 @@ import Typography, {
 } from '../components/typography/Typography';
 
 export default function Page() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -24,35 +24,13 @@ export default function Page() {
   const articleId = searchParams.get('articleId');
   const article = articles.find((article) => article.id === articleId);
   if (article) {
-    const paragraphs = article.bodyText.split('\n').map((paragraph, index) => (
-      <Typography
-        key={index}
-        variant={
-          windowWidth <= 800
-            ? TypographyVariant.Body1MOB
-            : TypographyVariant.Body1
-        }
-      >
-        {paragraph}
-      </Typography>
-    ));
     return (
       <div className={styles.container}>
         <TextHeavyArticle
           id={article.id}
-          header={
-            <Typography
-              variant={
-                window.innerWidth <= 800
-                  ? TypographyVariant.H1MOB
-                  : TypographyVariant.H1
-              }
-            >
-              {article.header}
-            </Typography>
-          }
+          header={article.header}
           imageUrl={article.imageUrl}
-          bodyText={paragraphs}
+          bodyText={article.bodyText}
         />{' '}
       </div>
     );

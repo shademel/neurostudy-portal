@@ -1,6 +1,6 @@
 export interface TextHeavyInterface {
   id: string;
-  header: string | React.ReactNode;
+  header: string;
   imageUrl: string;
-  bodyText: React.ReactNode;
+  bodyText: string;
 }
