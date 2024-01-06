@@ -15,7 +15,7 @@ export default function TextHeavyArticle({
         variant={TypographyVariant.Body2}
       >{`Home > Articles > ${header}`}</Typography>
       <Typography variant={TypographyVariant.H2}>{header}</Typography>
-      <Image width={1150} height={612} src={imageUrl} alt={header} />
+      <Image width={1150} height={612} src={imageUrl} alt='' />
       <div>
         <Typography variant={TypographyVariant.Body2}>{bodyText}</Typography>
       </div>
