@@ -33,16 +33,18 @@ export default function TextHeavyArticle({
   ));
   return (
     <div>
-      <Typography
-        variant={
-          windowWidth <= 430
-            ? TypographyVariant.Body2MOBstrong
-            : TypographyVariant.Body2Strong
-        }
-      >
-        <Link href='/'>Home</Link> {'>'} <Link href='/articles'>Articles</Link>{' '}
-        {'>'} {header}
-      </Typography>
+      <div>
+        <Typography
+          variant={
+            windowWidth <= 430
+              ? TypographyVariant.Body3MOBstrong
+              : TypographyVariant.Body2Strong
+          }
+        >
+          <Link href='/'>Home</Link> {'>'}{' '}
+          <Link href='/articles'>Articles</Link> {'>'} {header}
+        </Typography>
+      </div>
       <Typography
         variant={
           windowWidth <= 430 ? TypographyVariant.H2MOB : TypographyVariant.H2
