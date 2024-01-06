@@ -4,6 +4,8 @@ import { TextHeavyInterface } from '@/app/interfaces/TextHeavyInterface';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './textHeavyArticle.module.css';
+
 export default function TextHeavyArticle({
   header,
   imageUrl,
@@ -63,7 +65,7 @@ export default function TextHeavyArticle({
           alt={`image for ${header}`}
         />
       )}
-      <div>{paragraphs}</div>
+      <div className={styles.articleText}>{paragraphs}</div>
     </div>
   );
 }

@@ -14,7 +14,7 @@
 @media (max-width: 800px) {
   .container {
     max-width: 700px;
-    margin: 20px;
+    margin: 0px 20px;
   }
   .container img {
     max-width: 100%;
