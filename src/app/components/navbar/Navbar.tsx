@@ -2,7 +2,7 @@
 import styles from './navbar.module.css';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import MyLogin from '../buttons/MyLogin';
+// import MyLogin from '../buttons/MyLogin';
 import Image from 'next/image';
 import Logo from '../../images/Logo-navbar.svg';
 import Hamburger from '../../images/hamburgerMenu.svg';
@@ -42,7 +42,9 @@ export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <div className={styles.wrapper}>
-        <Image className={styles.logo} src={Logo} alt='logo' />
+        <Link className={styles.logo} href='/'>
+          <Image src={Logo} alt='logo' />
+        </Link>
         <div className={styles.innerWrapper}>
           <ul className={styles.ul}>
             <li className={styles.li}>
@@ -74,7 +76,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-          <MyLogin className={styles.login} />
+          {/* <MyLogin className={styles.login} /> */}
         </div>
         <Image
           className={styles.hamburger}

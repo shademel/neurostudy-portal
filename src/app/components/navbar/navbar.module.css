@@ -9,7 +9,7 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 12px 80px;
+  padding: 12px 20px;
   align-items: center;
 }
 
