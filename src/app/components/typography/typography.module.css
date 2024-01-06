@@ -40,3 +40,56 @@
   font-weight: 400;
   line-height: normal;
 }
+
+.mobH1{
+  /* //this red color only temprary to test */
+  color: #c20c0c; 
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.mobH2{
+  color: #070707;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.mobBody1{
+  color: #070707;
+  font-family: var(--poppins-font);
+  font-size: 20px;  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.mobBody2Strong{
+  color: #070707;
+  font-family: var(--poppins-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.mobBody3Strong{
+  color: #070707;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.mobBody3{
+  color: #070707;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.labelText{
+  color: #070707;
+  font-family: var(--poppins-font);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
