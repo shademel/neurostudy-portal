@@ -2,18 +2,15 @@
   margin: 80px;
   width: 1280px;
   height: 590px;
-  text-align: center;  
+  text-align: center;
 }
-
-
 .podcastHeader {
- margin-bottom: 48px;
- 
+  margin-bottom: 48px;
 }
 @media (max-width: 1000px) {
   .podcastContainer {
-    margin: 40px;
-    width: 80%;
-    height: 100%;
+    margin: 0px;
+    width: 392px;
+    height: auto;  
   }
 }

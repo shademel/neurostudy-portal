@@ -28,7 +28,7 @@ const BuzzsproutEmbed: React.FC<BuzzsproutEmbedProps> = ({
       <div className={styles.podcastHeader}>
         <Typography variant={TypographyVariant.H2}> Podcasts</Typography>
       </div>
-      <div id={containerId}></div>;
+      <div id={containerId}></div>
     </div>
   );
 };
