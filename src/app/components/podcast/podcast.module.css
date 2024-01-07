@@ -1,16 +1,15 @@
 .podcastContainer {
-  margin: 80px;
-  width: 1280px;
+  padding: 3vw;
+  width: 90vw;
   height: 590px;
   text-align: center;
 }
 .podcastHeader {
   margin-bottom: 48px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 430) {
   .podcastContainer {
     margin: 0px;
-    width: 392px;
-    height: auto;  
+    height: auto;
   }
 }
