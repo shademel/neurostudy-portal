@@ -1,18 +1,36 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
+import styles from './podcast.module.css';
+import Typography, { TypographyVariant } from '../typography/Typography';
 
-interface BuzzsproutPlayerProps {
-  podcastId: string;
+interface BuzzsproutEmbedProps {
+  scriptSrc: string;
+  containerId: string;
 }
 
-const BuzzsproutPlayer: React.FC<BuzzsproutPlayerProps> = ({ podcastId }) => {
+const BuzzsproutEmbed: React.FC<BuzzsproutEmbedProps> = ({
+  scriptSrc,
+  containerId,
+}) => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = scriptSrc;
+    script.type = 'text/javascript';
+
+    const container = document.getElementById(containerId);
+    if (container) {
+      container.appendChild(script);
+    }
+  }, [scriptSrc, containerId]);
+
   return (
-    <iframe
-      title='Buzzsprout Player'
-      width='100%'
-      height='200'
-      src={`https://www.buzzsprout.com/${2298033}?client_source=large_player&iframe=true`}
-    ></iframe>
+    <div className={styles.podcastContainer}>
+      <div className={styles.podcastHeader}>
+        <Typography variant={TypographyVariant.H2}> Podcasts</Typography>
+      </div>
+      <div id={containerId}></div>;
+    </div>
   );
 };
 
-export default BuzzsproutPlayer;
+export default BuzzsproutEmbed;

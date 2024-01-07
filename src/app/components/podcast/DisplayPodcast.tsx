@@ -1,13 +1,14 @@
 import React from 'react';
-import BuzzsproutPlayer from './Buzzsprout';
+import BuzzsproutEmbed from './Buzzsprout';
 
-const DisplayPodcast = () => {
-  const buzzsproutPodcastId = '2298033';
+const DisplayPodcast: React.FC = () => {
+  const scriptSrc =
+    'https://www.buzzsprout.com/2298033.js?artist=Majid+&container_id=buzzsprout-large-player-artist-majid&player=large';
+  const containerId = 'buzzsprout-large-player-artist-majid';
 
   return (
     <div>
-      <h1>Display My Episode Series</h1>
-      <BuzzsproutPlayer podcastId={buzzsproutPodcastId} />
+      <BuzzsproutEmbed scriptSrc={scriptSrc} containerId={containerId} />
     </div>
   );
 };
