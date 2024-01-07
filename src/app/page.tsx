@@ -5,6 +5,7 @@ import Example from './components/typography/Example';
 import BadgeDisplay from './components/badges/BadgeDisplay';
 import CardList from './components/article/card';
 import Script from 'next/script';
+import DisplayPodcast from './components/podcast/DisplayPodcast';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
       </div>
       <div>
         <CardList />
+      </div>
+      <div>
+        <DisplayPodcast />
       </div>
     </main>
   );
