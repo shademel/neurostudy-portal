@@ -5,12 +5,18 @@ import ActionButton, { ButtonStyle } from '../buttons/ActionButton';
 import CircleRight from '../../images/CircleRightOrg.svg';
 import styles from './article.module.css';
 import { ArticleInterface } from '@/app/interfaces/ArticleInterface';
+import { useRouter } from 'next/navigation';
 
 export default function Article({
+  id,
   title,
   imageUrl,
   description,
 }: ArticleInterface): JSX.Element {
+  const router = useRouter();
+  const navigateToArticle = (articleId: string) => {
+    router.push(`/article/?articleId=${articleId}`);
+  };
   return (
     <div className={styles.card}>
       <img
@@ -30,7 +36,7 @@ export default function Article({
           style={ButtonStyle.Tertiary}
           disabled={false}
           iconPosition='right'
-          onClick={() => console.log('clicked Tertiary button')}
+          onClick={() => navigateToArticle(id)}
         ></ActionButton>
       </div>
     </div>

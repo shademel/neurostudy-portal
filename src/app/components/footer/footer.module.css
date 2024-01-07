@@ -30,7 +30,7 @@
 .footerDescription {
   max-width: 300px;
   display: flex;
-  text-align: justify;
+  text-align: left;
 }
 
 .footerDescription {

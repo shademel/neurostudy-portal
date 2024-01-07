@@ -1,15 +1,15 @@
 import React from 'react';
 import Article from './Article';
-import cardsData from './cards_data.json';
+import articleData from '../../article/articleData.json';
 import styles from './article.module.css';
 import { ArticleInterface } from '@/app/interfaces/ArticleInterface';
 const CardList: React.FC = () => {
-  const { cards } = cardsData;
+  const articles: ArticleInterface[] = articleData.articles;
 
   return (
     <div className={styles.cardList}>
-      {cards.map((card: ArticleInterface) => (
-        <Article key={card.id} {...card} />
+      {articles.map((article: ArticleInterface) => (
+        <Article key={article.id} {...article} />
       ))}
     </div>
   );
