@@ -185,13 +185,19 @@ export default function Footer() {
           >
             Terms of Service
           </Typography>
-
-          <Typography
-            variant={TypographyVariant.Body2}
-            color='var(--GhostWhite)'
+          <a
+            href='https://neurodiversityacademy927-my.sharepoint.com/:b:/g/personal/pratik_neurodiversityacademy_com/EXNxXkIM999Ot5uVj79jds0Bw4Q7b_rHPqA4bBDS3Q1acg?e=4Tnsi0'
+            target='_blank'
+            aria-label='Privacy policy (opens in new tab)'
+            title='visit Privacy policy page'
           >
-            Privacy Policy
-          </Typography>
+            <Typography
+              variant={TypographyVariant.Body2}
+              color='var(--GhostWhite)'
+            >
+              Privacy Policy
+            </Typography>
+          </a>
         </div>
       </div>
     </footer>
