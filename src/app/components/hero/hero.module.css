@@ -1,0 +1,35 @@
+
+.bannerContainer {
+    position: relative;
+    width: 100%;
+    height: 952px;
+   background-image: url('../../images/bg.svg');
+   background-repeat: no-repeat;
+   background-size: cover
+  }
+  .middleBox{    
+    margin:130px 80px 48px 80px;  
+  
+  }
+  .middleBox h1, .middleBox h2{
+    color: var(--GhostWhite);
+  }   
+ 
+
+.textBox{
+  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.textBoxHeader{
+  position: relative;
+  left: 52vw;
+  top: 15vw;
+}
+.textBoxSubHeader{
+  position: relative;
+  left: 45vw;
+  top: 15vw;
+  max-width: 815px;
+}
