@@ -30,10 +30,6 @@ export default function Home() {
       <BadgeDisplay />
       {getGoogleAnalyticsScript()}
       <div>
-        <ButtonDisplay />
-        <Example />
-      </div>
-      <div>
         <CardList />
       </div>
       <div>
