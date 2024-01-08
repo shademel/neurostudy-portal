@@ -6,7 +6,7 @@ import styles from '../page.module.css';
 import BadgeDisplay from './badges/BadgeDisplay';
 import Typography, { TypographyVariant } from './typography/Typography';
 
-export const Components = () => {
+export default function Components() {
   return (
     <main className={styles.main}>
       <Typography variant={TypographyVariant.H1}>Components</Typography>
@@ -37,6 +37,4 @@ export const Components = () => {
       </div>
     </main>
   );
-};
-
-export default Components;
+}
