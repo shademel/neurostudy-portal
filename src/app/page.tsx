@@ -1,9 +1,12 @@
 'use client';
 import styles from './page.module.css';
-import BadgeDisplay from './components/badges/BadgeDisplay';
+// import ButtonDisplay from './components/buttons/ButtonDisplay';
+// import Example from './components/typography/Example';
+// import BadgeDisplay from './components/hero/Hero';
 import CardList from './components/article/card';
-import Script from 'next/script';
 import DisplayPodcast from './components/podcast/DisplayPodcast';
+import Script from 'next/script';
+import Banner from './components/hero/Banner';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -25,13 +28,11 @@ const getGoogleAnalyticsScript = () => {
 export default function Home() {
   return (
     <main className={styles.main}>
-      <BadgeDisplay />
+      <Banner />
       {getGoogleAnalyticsScript()}
       <div>
-        <CardList />
-      </div>
-      <div>
         <DisplayPodcast />
+        <CardList />
       </div>
     </main>
   );
