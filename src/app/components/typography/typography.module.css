@@ -34,6 +34,7 @@
 @media (max-width: 480px) {
   /* mobile view */
   .heading1 {
+    color: #070707;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -50,6 +51,14 @@
     color: #070707;
     font-family: var(--poppins-font);
     font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .body2 {
+    color: #070707;
+    font-family: var(--poppins-font);
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -82,6 +91,15 @@
   color: #070707;
   font-family: var(--poppins-font);
   font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.body2 {
+  color: #070707;
+  font-family: var(--poppins-font);
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
