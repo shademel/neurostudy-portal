@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
-import Teacher from './Teacher';
-import Fact from './Fact';
+import Teacher from '../teacherSection/Teacher';
+import Fact from '../fact/Fact';
 
 export default function Hero() {
   return (

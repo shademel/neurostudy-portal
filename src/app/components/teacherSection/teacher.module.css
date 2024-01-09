@@ -1,0 +1,38 @@
+@media (min-width: 480px) {
+  .teacherContainer {
+    text-align: center;
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .teacherBodyText {
+    width: 70vw;
+    line-height: 10px;
+    margin-bottom: 30px;
+  }
+  .accessButton {
+    width: 24rem;
+    height: 4rem;
+    margin: 20px 0px;
+  }
+}
+@media (max-width: 480px) {
+  .teacherContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .teacherBodyText {
+    width: 70vw;
+    margin-bottom: 30px;
+  }
+  .accessButton {
+    width: 15rem;
+    height: 3rem;
+    margin: 20px 0px;
+  }
+}

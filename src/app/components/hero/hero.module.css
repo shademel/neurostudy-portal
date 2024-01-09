@@ -30,47 +30,20 @@
     display: flex;
     justify-content: flex-end;
   }
-  .teacherContainer{
+  .teacherContainer {
     text-align: center;
     margin: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center  
+    justify-content: center;
   }
   .teacherContainer div {
     margin-bottom: 30px;
   }
-  .teacherBodyText{
+  .teacherBodyText {
     width: 50vw;
   }
-  .factContainer{
-    text-align: center;
-    margin: 0px;
-    background-color: #2D005B; 
-  }
-  .factTitle{
-    padding-top: 32px;
-  }
-  .factGrid {
-    display: flex;
-    margin: 80px;;
-   gap: 24px;
-   align-items: center;
-   justify-content: center  
-
-  }  
-  
-  .gridItem {
-    text-align: center; 
-    max-width: 480px;
-  }
-  .factReference{
-    text-align: right;
-    margin-right: 80px;
-    padding: 40px;
-  }
- 
 }
 @media (max-width: 480px) {
   .bannerContainer {
@@ -102,45 +75,17 @@
     font-size: 20px;
     margin: 0px;
   }
-  .teacherContainer{
-    text-align: center;    
+  .teacherContainer {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-      
+    justify-content: center;
   }
   .teacherContainer div {
     margin-bottom: 30px;
   }
-  .teacherBodyText{
+  .teacherBodyText {
     width: 70vw;
-  }
-  .factContainer{
-    text-align: center;
-    margin: 0px;
-    background-color: #2D005B; 
-  }
-  .factTitle{
-    padding-top: 32px;
-  }
-  .factGrid {
-    display: flex;
-    flex-direction: column;
-    margin: 80px;
-   gap: 24px;
-   align-items: center;
-   justify-content: center  
-
-  }  
-  
-  .gridItem {
-    text-align: center; 
-    max-width: 480px;
-  }
-  .factReference{
-    text-align: right;
-    margin-right: 80px;
-    padding: 10px;
   }
 }

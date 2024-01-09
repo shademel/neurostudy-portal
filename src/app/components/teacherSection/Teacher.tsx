@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './hero.module.css';
+import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
-import MyAccess from '../buttons/AccessButton';
+import ActionButton from '../buttons/ActionButton';
 
 export default function Teacher() {
   return (
@@ -19,7 +19,12 @@ export default function Teacher() {
         </Typography>
       </div>
       <div>
-        <MyAccess></MyAccess>
+        <ActionButton
+          label='Access courses'
+          disabled={false}
+          className={styles.accessButton}
+          onClick={() => console.log('clicked Access courses button')}
+        />
       </div>
     </div>
   );
