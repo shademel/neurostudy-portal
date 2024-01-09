@@ -4,6 +4,7 @@ import CardList from './components/article/card';
 import DisplayPodcast from './components/podcast/DisplayPodcast';
 import Script from 'next/script';
 import Hero from './components/hero/Hero';
+import Banner from './components/banner/Banner';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -25,6 +26,7 @@ const getGoogleAnalyticsScript = () => {
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Banner></Banner>
       <Hero />
       {getGoogleAnalyticsScript()}
       <div>

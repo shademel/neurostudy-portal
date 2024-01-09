@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './hero.module.css';
+import styles from './banner.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 
 export default function Banner() {
