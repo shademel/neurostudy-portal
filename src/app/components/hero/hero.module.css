@@ -30,6 +30,21 @@
     display: flex;
     justify-content: flex-end;
   }
+  .teacherContainer{
+    text-align: center;
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center  
+  }
+  .teacherContainer div {
+    margin-bottom: 30px;
+  }
+  .teacherBodyText{
+    width: 50vw;
+  }
+ 
 }
 @media (max-width: 480px) {
   .bannerContainer {
@@ -60,5 +75,19 @@
   .textContainer h2 {
     font-size: 20px;
     margin: 0px;
+  }
+  .teacherContainer{
+    text-align: center;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+      
+  }
+  .teacherContainer div {
+    margin-bottom: 30px;
+  }
+  .teacherBodyText{
+    width: 70vw;
   }
 }

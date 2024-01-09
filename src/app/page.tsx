@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import CardList from './components/article/card';
 import DisplayPodcast from './components/podcast/DisplayPodcast';
 import Script from 'next/script';
-import Banner from './components/hero/Banner';
+import Hero from './components/hero/Hero';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -25,7 +25,7 @@ const getGoogleAnalyticsScript = () => {
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Banner />
+      <Hero />
       {getGoogleAnalyticsScript()}
       <div>
         <DisplayPodcast />
