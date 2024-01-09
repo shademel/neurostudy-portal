@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import React from 'react';
 import styles from './hero.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
@@ -11,7 +12,7 @@ export default function Fact() {
         </Typography>
       </div>
       <div className={styles.factGrid}>
-        <div className={styles.gridItem} >
+        <div className={styles.gridItem}>
           <Typography variant={TypographyVariant.H1} color='var(--GhostWhite);'>
             66%
           </Typography>
@@ -19,7 +20,7 @@ export default function Fact() {
             variant={TypographyVariant.Body1}
             color='var(--GhostWhite);'
           >
-            Of undergraduate courses were less likely than those without
+            Of undergraduate courses were less likely than those without
             disability (69%) to give a positive rating to the quality of their
             entire educational experience.
           </Typography>
@@ -30,10 +31,10 @@ export default function Fact() {
           </Typography>
           <Typography
             variant={TypographyVariant.Body1}
-            color='var(--GhostWhite);;'
+            color='var(--GhostWhite);'
           >
-            Of undergraduate courses were more likely than those without
-            disability (19%) to consider early departure from their course.
+            Of undergraduate courses were more likely than those without
+            disability(19%)to consider early departure from their course.
           </Typography>
         </div>
         <div className={styles.gridItem}>
