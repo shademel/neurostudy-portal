@@ -1,35 +1,64 @@
-
-.bannerContainer {
-    position: relative;
-    width: 100%;
-    height: 952px;
-   background-image: url('../../images/bg.svg');
-   background-repeat: no-repeat;
-   background-size: cover
-  }
-  .middleBox{    
-    margin:130px 80px 48px 80px;  
-  
-  }
-  .middleBox h1, .middleBox h2{
+@media (min-width: 480px) {
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    width: 55vw;
+    padding: 20px;
     color: var(--GhostWhite);
-  }   
- 
+    justify-content: center;
+  }
+  .textContainer h1 {
+    margin: 0px;
+  }
+  .textContainer h2 {
+    margin: 0px;
+  }
+  .textBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: var(--GhostWhite);
+  }
+  .bannerContainer {
+    text-align: end;
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    background-image: url('../../images/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 480px) {
+  .bannerContainer {
+    text-align: center;
+    position: relative;
+    width: 100vw;
+    height: 35vh;
+    background-image: url('../../images/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+  }
 
-.textBox{
-  
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-.textBoxHeader{
-  position: relative;
-  left: 52vw;
-  top: 15vw;
-}
-.textBoxSubHeader{
-  position: relative;
-  left: 45vw;
-  top: 15vw;
-  max-width: 815px;
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    padding: 20px;
+    color: var(--GhostWhite);
+    justify-content: center;
+  }
+
+  .textContainer h1 {
+    margin: 0px;
+    font-size: 24px;
+  }
+  .textContainer h2 {
+    font-size: 20px;
+    margin: 0px;
+  }
 }

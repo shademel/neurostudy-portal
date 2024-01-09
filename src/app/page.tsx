@@ -1,9 +1,7 @@
 'use client';
 import styles from './page.module.css';
-// import ButtonDisplay from './components/buttons/ButtonDisplay';
-// import Example from './components/typography/Example';
-// import BadgeDisplay from './components/hero/Hero';
 import CardList from './components/article/card';
+import DisplayPodcast from './components/podcast/DisplayPodcast';
 import Script from 'next/script';
 import Banner from './components/hero/Banner';
 
@@ -29,8 +27,8 @@ export default function Home() {
     <main className={styles.main}>
       <Banner />
       {getGoogleAnalyticsScript()}
-
       <div>
+        <DisplayPodcast />
         <CardList />
       </div>
     </main>
