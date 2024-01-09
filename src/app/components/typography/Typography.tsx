@@ -7,10 +7,6 @@ export enum TypographyVariant {
   Body1 = 'body1',
   Body2Strong = 'body2-strong',
   Body2 = 'body2',
-  H1MOB = 'mob-h1',
-  H2MOB = 'mob-h2',
-  Body1MOB = 'body1-mob',
-  Body2MOBstrong = 'body2-mob-strong',
   Body3MOBstrong = 'body3-mob-strong',
   Body3MOB = 'body3-mob',
   LABELtext = 'labelText',
@@ -91,54 +87,6 @@ const Typography: React.FC<TypographyProps> = ({
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body2}
-          style={style}
-        >
-          {children}
-        </span>
-      );
-    case TypographyVariant.H1MOB:
-      return (
-        <h1
-          area-aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.mobH1}
-          style={style}
-        >
-          {children}
-        </h1>
-      );
-    case TypographyVariant.H2MOB:
-      return (
-        <h2
-          area-aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.mobH2}
-          style={style}
-        >
-          {children}
-        </h2>
-      );
-    case TypographyVariant.Body1MOB:
-      return (
-        <span
-          area-aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.mobBody1}
-          style={style}
-        >
-          {children}
-        </span>
-      );
-    case TypographyVariant.Body2MOBstrong:
-      return (
-        <span
-          area-aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.mobBody2Strong}
           style={style}
         >
           {children}
