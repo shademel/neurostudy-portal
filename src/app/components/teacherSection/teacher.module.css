@@ -27,8 +27,8 @@
     justify-content: center;
   }
   .teacherBodyText {
-    width: 70vw;
     margin-bottom: 30px;
+    padding: 0px 10px;
   }
   .accessButton {
     width: 15rem;
