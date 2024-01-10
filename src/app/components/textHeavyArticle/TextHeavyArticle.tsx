@@ -18,14 +18,7 @@ export default function TextHeavyArticle({
 
   const paragraphs = bodyText.split('\n').map((paragraph, index) => (
     <div key={index}>
-      <Typography
-        key={index}
-        variant={
-          windowWidth <= 430
-            ? TypographyVariant.Body1MOB
-            : TypographyVariant.Body2
-        }
-      >
+      <Typography key={index} variant={TypographyVariant.Body2}>
         {paragraph}
       </Typography>
       <br></br>
@@ -45,13 +38,7 @@ export default function TextHeavyArticle({
           <Link href='/articles'>Articles</Link> {'>'} {header}
         </Typography>
       </div>
-      <Typography
-        variant={
-          windowWidth <= 430 ? TypographyVariant.H2MOB : TypographyVariant.H2
-        }
-      >
-        {header}
-      </Typography>
+      <Typography variant={TypographyVariant.H2}>{header}</Typography>
       {windowWidth > 430 ? (
         <Image
           width={1150}
