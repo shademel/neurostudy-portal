@@ -1,5 +1,5 @@
 @media (min-width: 480px) {
-  .teacherContainer {
+  .blogsContainer {
     text-align: center;
     margin: 80px;
     display: flex;
@@ -7,25 +7,23 @@
     align-items: center;
     justify-content: center;
   }
-  .teacherContainer div {
-    margin-bottom: 30px;
-  }
-  .teacherBodyText {
-    width: 50vw;
+  .accessButton {
+    width: 15rem;
+    height: 4rem;
+    margin: 20px 0px;
   }
 }
 @media (max-width: 480px) {
-  .teacherContainer {
+  .blogsContainer {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  .teacherContainer div {
-    margin-bottom: 30px;
-  }
-  .teacherBodyText {
-    width: 70vw;
+  .accessButton {
+    width: 10rem;
+    height: 3rem;
+    margin: 10px 0px;
   }
 }
