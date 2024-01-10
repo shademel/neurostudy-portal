@@ -1,6 +1,5 @@
 'use client';
 import styles from './page.module.css';
-import CardList from './components/article/card';
 import DisplayPodcast from './components/podcast/DisplayPodcast';
 import Script from 'next/script';
 import Banner from './components/banner/Banner';
