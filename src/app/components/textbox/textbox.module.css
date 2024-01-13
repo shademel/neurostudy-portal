@@ -1,0 +1,29 @@
+.textBox {
+  width: 15rem;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--BondBlack);
+}
+
+.long {
+  width: 20rem;
+}
+
+.longer {
+  width: 25rem;
+}
+/* errorRed */
+.textboxError,
+.textBox:invalid {
+  border: 1px solid var(--errorRed);
+}
+
+.textBoxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.errorMessage {
+  color: var(--errorRed);
+}
