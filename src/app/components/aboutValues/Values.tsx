@@ -15,7 +15,7 @@ export default function Values() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Typography variant={TypographyVariant.H1}>Core Values</Typography>
+        <Typography variant={TypographyVariant.H2}>Core Values</Typography>
       </div>
       <div className={styles.grid}>
         <div className={styles.gridItem}>
