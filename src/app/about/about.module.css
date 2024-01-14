@@ -1,3 +1,6 @@
+.wrapper{
+  background-color: var(--GhostWhite);
+}
 .container {
   height: 700px;
   width: 100vw;
