@@ -5,6 +5,7 @@ import Typography, {
   TypographyVariant,
 } from '../components/typography/Typography';
 import Journey from '../components/aboutJourney/Journey';
+import Values from '../components/aboutValues/Values';
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
         <div className={styles.subContainer}></div>
       </div>
       <Journey></Journey>
+      <Values></Values>
     </div>
   );
 }
