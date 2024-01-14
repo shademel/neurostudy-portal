@@ -8,7 +8,7 @@ export default function Journey() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Typography variant={TypographyVariant.H1}>Our Journey</Typography>
+        <Typography variant={TypographyVariant.H2}>Our Journey</Typography>
       </div>
       <div>
         <div className={styles.paragraph}>
