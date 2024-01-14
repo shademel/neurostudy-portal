@@ -1,21 +1,21 @@
 @media (min-width: 480px) {
   /* desktop view */
   .heading1 {
-    color: #070707;
+    color: var(--BondBlack);
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
   .heading2 {
-    color: #070707;
+    color: var(--BondBlack);
     font-size: 36px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
   .body1 {
-    color: #070707;
+    color: var(--BondBlack);
     font-family: var(--poppins-font);
     font-size: 20px;
     font-style: normal;
@@ -23,7 +23,7 @@
     line-height: normal;
   }
   .body2Strong {
-    color: #070707;
+    color: var(--BondBlack);
     font-family: var(--poppins-font);
     font-size: 16px;
     font-style: normal;
@@ -34,21 +34,21 @@
 @media (max-width: 480px) {
   /* mobile view */
   .heading1 {
-    color: #070707;
+    color: var(--BondBlack);
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
   .heading2 {
-    color: #070707;
+    color: var(--BondBlack);
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
   .body1 {
-    color: #070707;
+    color: var(--BondBlack);
     font-family: var(--poppins-font);
     font-size: 18px;
     font-style: normal;
@@ -56,7 +56,7 @@
     line-height: normal;
   }
   .body2 {
-    color: #070707;
+    color: var(--BondBlack);
     font-family: var(--poppins-font);
     font-size: 16px;
     font-style: normal;
@@ -64,7 +64,7 @@
     line-height: normal;
   }
   .body2Strong {
-    color: #070707;
+    color: var(--BondBlack);
     font-family: var(--poppins-font);
     font-size: 16px;
     font-style: normal;
@@ -72,14 +72,14 @@
     line-height: normal;
   }
   .mobBody3 {
-    color: #070707;
+    color: var(--BondBlack);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
   .mobBody3Strong {
-    color: #070707;
+    color: var(--BondBlack);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -88,7 +88,7 @@
 }
 
 .labelText {
-  color: #070707;
+  color: var(--BondBlack);
   font-family: var(--poppins-font);
   font-size: 12px;
   font-style: normal;
@@ -97,7 +97,7 @@
 }
 
 .body2 {
-  color: #070707;
+  color: var(--BondBlack);
   font-family: var(--poppins-font);
   font-size: 16px;
   font-style: normal;

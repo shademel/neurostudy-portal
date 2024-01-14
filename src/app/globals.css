@@ -8,14 +8,15 @@
   --Heading4: 48px;
   --Subheading1: 40px;
   --Subheading2: 36px;
-  --Subheading3: 32px;  
-  --GhostWhite: #F8F8FF;
-  --skyBlue: #3399FF;
-  --persianRose: #FF0099;
+  --Subheading3: 32px;
+  --GhostWhite: #f8f8ff;
+  --skyBlue: #3399ff;
+  --persianRose: #ff0099;
   --cherryPie: #330066;
   --navyBlue: #000066;
   --BondBlack: #070707;
-  --cherryPieSub: #D2A4FF;
+  --cherryPieSub: #d2a4ff;
+  --errorRed: red;
 }
 body {
   margin: 0px;
