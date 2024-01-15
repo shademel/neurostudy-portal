@@ -1,0 +1,30 @@
+.container {
+  height: 400px;
+  width: 100vw;
+  background-color: var(--cherryPie);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.textBox {
+  width: 1280px;
+}
+.header h2 {
+  margin-top: 0px;
+  margin-bottom: 38px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .textBox {
+    margin: 0px 40px;
+    text-align: center;
+  }
+}

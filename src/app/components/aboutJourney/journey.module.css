@@ -1,24 +1,20 @@
-.container{
-    margin:32px 80px 80px 80px;   
-   text-align: center;
-   
+.container {
+  margin: 32px 80px 80px 80px;
+  text-align: center;
 }
-.container span{
-    margin-bottom: 92px;
+.container span {
+  margin-bottom: 92px;
 }
-.header{
+.header {
   margin-bottom: 48px;
 }
-.paragraph{
-    margin-bottom: 30px;
+.paragraph {
+  margin-bottom: 30px;
 }
 
 @media (max-width: 800px) {
-  .container{
-    margin:32px 40px 60px 40px;   
-   text-align: center;
-   
-}
-   
+  .container {
+    margin: 32px 40px 60px 40px;
+    text-align: center;
   }
-  
+}
