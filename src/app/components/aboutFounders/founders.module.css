@@ -1,0 +1,52 @@
+.container {
+  background-color: var(--BondBlack);
+  text-align: center;
+  padding-top: 40px;
+}
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  padding-bottom: 80px;
+}
+
+.textBox {
+  margin: 24px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    background-color: var(--BondBlack);
+    text-align: center;
+  }
+  .grid {
+    margin: 0px 24px;
+    justify-content: center;
+    gap: 16px;
+    padding-bottom: 40px;
+  }
+
+  .container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .gridItem span {
+    font-size: 16px;
+  }
+  .role {
+    display: block;
+    height: 45px;
+  }
+  .role span {
+    font-size: 14px;
+  }
+
+  .icon img {
+    width: 40px;
+    height: 40px;
+  }
+  .textBox {
+    margin: 0px;
+  }
+}

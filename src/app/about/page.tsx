@@ -8,6 +8,7 @@ import Journey from '../components/aboutJourney/Journey';
 import Values from '../components/aboutValues/Values';
 import Mission from '../components/aboutMission/Mission';
 import Vision from '../components/aboutVision/Vision';
+import Founders from '../components/aboutFounders/Founders';
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
       <Values></Values>
       <Vision></Vision>
       <Mission></Mission>
+      <Founders></Founders>
     </div>
   );
 }
