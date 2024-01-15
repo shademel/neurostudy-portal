@@ -1,48 +1,30 @@
 .container {
-  height: 815px;
-  padding: 0px 0px 0px 0px;
+  height: 400px;
   width: 100vw;
-  background-image: url('../../images/missionImage.svg');
-  background-size: 100vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 0px ;
-  
+  background-color: var(--cherryPie);
   display: flex;
   justify-content: center;
-  text-align: center;  
+  align-items: center;
+  text-align: center;
 }
 
 .textBox {
   width: 1280px;
-  margin-top: 10%;
-
 }
-.header {
-  margin-bottom: 48px;
+.header h2 {
+  margin-top: 0px;
+  margin-bottom: 38px;
 }
-
 
 @media (max-width: 800px) {
   .container {
-    height: 615px;
-    padding: 0px 0px 0px 0px;
-    width: 100vw;
-    background-image: url('../../images/missionMobile.svg');
-    background-size: 100vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 0px ;
-    
+    height: 340px;
     display: flex;
     justify-content: center;
-    text-align: center;  
+    text-align: center;
   }
   .textBox {
-    width: 350px;
-    margin-top: 35%;
-    height: 400px;
-    text-align:center;
-  
+    margin: 0px 40px;
+    text-align: center;
   }
 }
