@@ -1,0 +1,23 @@
+.container{
+text-align: center;
+margin:80px;
+}
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px
+}
+
+
+@media (max-width: 800px) {
+  .container {
+    max-width: 700px;
+    margin: 0px 20px;
+  }  
+  .cardList {
+    display: flex;
+  flex-wrap:nowrap;
+  overflow-x:  auto;    
+    gap:20px
+  }
+}
