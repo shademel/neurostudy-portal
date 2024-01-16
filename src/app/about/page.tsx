@@ -19,11 +19,11 @@ export default function Page() {
         </div>
         <div className={styles.subContainer}></div>
       </div>
-      <Journey></Journey>
-      <Values></Values>
-      <Vision></Vision>
-      <Mission></Mission>
-      <Founders></Founders>
+      <Journey />
+      <Values />
+      <Vision />
+      <Mission />
+      <Founders />
     </div>
   );
 }
