@@ -1,7 +1,10 @@
 .container {
   background-color: var(--BondBlack);
   text-align: center;
-  padding-top: 40px;
+  padding-top: 30px;
+}
+.container h2{
+ margin: 0px 0px 80px 0px;
 }
 .grid {
   display: flex;
