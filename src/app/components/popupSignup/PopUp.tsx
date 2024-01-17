@@ -26,7 +26,7 @@ const PopUp: React.FC<PopUpProps> = () => {
             value={''}
             required={true}
             placeholder={'example: John'}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={() => {
               console.log('modal');
             }}
           ></TextBox>
@@ -39,7 +39,7 @@ const PopUp: React.FC<PopUpProps> = () => {
             value={''}
             required={true}
             placeholder={'example: Smith'}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={() => {
               console.log('modal');
             }}
           ></TextBox>
@@ -53,7 +53,7 @@ const PopUp: React.FC<PopUpProps> = () => {
           value={''}
           required={false}
           placeholder={''}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={() => {
             console.log('modal');
           }}
         ></TextBox>
@@ -67,7 +67,7 @@ const PopUp: React.FC<PopUpProps> = () => {
           value={''}
           required={true}
           placeholder={''}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={() => {
             console.log('modal');
           }}
         ></TextBox>
