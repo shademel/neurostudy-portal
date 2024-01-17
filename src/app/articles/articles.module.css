@@ -20,8 +20,7 @@ margin:80px 10vw;
   }  
   .cardList {
     display: flex;
-  flex-wrap:nowrap;
-  overflow-x:  auto;    
+  flex-wrap:wrap;     
     gap:20px;
     margin:40px 10px
   }
