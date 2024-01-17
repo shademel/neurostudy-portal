@@ -22,6 +22,7 @@ export async function POST(request: Request) {
   });
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 function isTeacherRegistrationData(obj: any): obj is TeacherRegistrationType {
   const requiredKeys: (keyof TeacherRegistrationType)[] = [
     'firstname',
