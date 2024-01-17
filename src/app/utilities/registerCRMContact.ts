@@ -3,7 +3,7 @@ import TeacherCRMContactInterface from '../interfaces/TeacherCRMContactInterface
 import CRMCreateResponseInterface from '../interfaces/CRMCreateResponseInterface';
 import axios from 'axios';
 
-export const registerTeacherContact = async (
+export const registerCRMContact = async (
   contact: TeacherCRMContactInterface
 ): Promise<CRMCreateResponseInterface | boolean> => {
   const data = JSON.stringify({

@@ -1,6 +1,6 @@
 import TeacherCRMContactInterface from '@/app/interfaces/TeacherCRMContactInterface';
 import { TeacherRegistrationType } from '@/app/interfaces/TeacherRegistrationType';
-import { registerTeacherContact } from '@/app/utilities/registerCRMContact';
+import { registerCRMContact } from '@/app/utilities/registerCRMContact';
 
 export async function POST(request: Request) {
   const data = await request.json();
@@ -10,7 +10,7 @@ export async function POST(request: Request) {
       industry: 'teacher',
       company: 'individual',
     };
-    const response = await registerTeacherContact(teacherCRMContact);
+    const response = await registerCRMContact(teacherCRMContact);
     return new Response(JSON.stringify(response));
   }
   return new Response(JSON.stringify({ error: 'Bad Request' }), {
