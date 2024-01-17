@@ -18,8 +18,8 @@ export async function POST(request: Request) {
   return returnBadResponse();
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 function isValidTeacherRegistrationData(
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   obj: any
 ): obj is TeacherRegistrationType {
   const requiredKeys: (keyof TeacherRegistrationType)[] = [
