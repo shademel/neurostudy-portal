@@ -1,14 +1,14 @@
 'use client';
 import React from 'react';
-import TextHeavyArticle from '../components/textHeavyArticle/TextHeavyArticle';
+import TextHeavyArticle from '../../components/textHeavyArticle/TextHeavyArticle';
 import styles from './article.module.css';
-import articleData from './articleData.json';
+import articleData from '../articleData.json';
 import { useSearchParams } from 'next/navigation';
 import Typography, {
   TypographyVariant,
-} from '../components/typography/Typography';
+} from '../../components/typography/Typography';
 
-export default function Page() {
+export default function OneArticle() {
   const searchParams = useSearchParams();
   const { articles } = articleData;
   const articleId = searchParams.get('articleId');

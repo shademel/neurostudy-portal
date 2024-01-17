@@ -1,8 +1,13 @@
+import { useRouter } from 'next/navigation';
 import CardList from '../article/card';
 import ActionButton from '../buttons/ActionButton';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import styles from './blogs.module.css';
 export default function Blogs() {
+  const router = useRouter();
+  const navigateToArticles = () => {
+    router.push(`/articles`);
+  };
   return (
     <div className={styles.blogsContainer}>
       <div>
@@ -16,7 +21,7 @@ export default function Blogs() {
           label='Explore more'
           disabled={false}
           className={styles.accessButton}
-          onClick={() => console.log('clicked explore more button')}
+          onClick={() => navigateToArticles()}
         />
       </div>
     </div>
