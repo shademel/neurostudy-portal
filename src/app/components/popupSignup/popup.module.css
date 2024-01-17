@@ -1,0 +1,31 @@
+.container{
+    width:575px;
+    height: 485px;
+    background-color: var(--GhostWhite);
+  padding: 40px;
+    border-radius: 8px;
+    
+}
+.container button{
+    margin:25px;
+    text-align: center;
+}
+.textArea{
+    margin-bottom: 15px;
+}
+.buttonArea{
+    display: flex;
+    justify-content: center;
+}
+.header{
+   margin: 0px;
+    text-align: center;
+}
+.header h2{
+    margin: 0px 0px 40px 0px;
+}
+.name{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
