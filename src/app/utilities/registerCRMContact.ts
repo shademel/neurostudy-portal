@@ -23,8 +23,8 @@ export const registerTeacherContact = async (
   return await axios
     .request(config)
     .then((response: AxiosResponse) => {
-      const createResponse: CRMCreateResponseInterface = response.data;
-      return createResponse;
+      const { id, updatedAt, createdAt } = response.data;
+      return { id, updatedAt, createdAt } as CRMCreateResponseInterface;
     })
 
     .catch((error: Error) => {
