@@ -1,29 +1,27 @@
 import TeacherCRMContactInterface from '@/app/interfaces/TeacherCRMContactInterface';
 import { TeacherRegistrationType } from '@/app/interfaces/TeacherRegistrationType';
+import { COMPANY, INDUSTRY } from '@/app/utilities/constants';
 import { registerCRMContact } from '@/app/utilities/registerCRMContact';
+import { returnBadResponse } from '@/app/utilities/responses';
 
 export async function POST(request: Request) {
   const data = await request.json();
-  if (isTeacherRegistrationData(data)) {
+  if (isValidTeacherRegistrationData(data)) {
     const teacherCRMContact: TeacherCRMContactInterface = {
       ...data,
-      industry: 'teacher',
-      company: 'individual',
+      industry: INDUSTRY.TEACHER,
+      company: COMPANY.INDIVIDUAL,
     };
     const response = await registerCRMContact(teacherCRMContact);
     return new Response(JSON.stringify(response));
   }
-  return new Response(JSON.stringify({ error: 'Bad Request' }), {
-    status: 400,
-    statusText: 'Bad Request',
-    headers: new Headers({
-      'Content-Type': 'application/json',
-    }),
-  });
+  return returnBadResponse();
 }
 
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-function isTeacherRegistrationData(obj: any): obj is TeacherRegistrationType {
+function isValidTeacherRegistrationData(
+  obj: any
+): obj is TeacherRegistrationType {
   const requiredKeys: (keyof TeacherRegistrationType)[] = [
     'firstname',
     'lastname',
