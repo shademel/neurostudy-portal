@@ -11,7 +11,6 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      // Change the variant based on the screen width
       setEmailTextboxVariant(
         window.innerWidth <= 800
           ? TextboxVariant.REGULAR
@@ -24,14 +23,25 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     window.addEventListener('resize', handleResize);
   }, []);
   const handleSubmit = () => {
-    // Handle form submission logic here
+    //??????
     console.log('Thank you for your request, we will get back to you soon');
-    // Close the modal after submission
+
     onClose();
   };
+  const handleClose = () => {
+    onClose();
+  };
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
 
   return (
     <form className={styles.container}>
+      <button className={styles.closeButton} onClick={() => handleClose()}>
+        {' '}
+        x
+      </button>
       <div className={styles.header}>
         <Typography variant={TypographyVariant.H1}>Unlock Content</Typography>
       </div>
@@ -45,9 +55,7 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               value={''}
               required={true}
               placeholder={'example: John'}
-              onChange={() => {
-                console.log('modal');
-              }}
+              onChange={(e) => setFirstName(e.target.value)}
             ></TextBox>
           </div>
           <div className={styles.textArea}>
@@ -58,9 +66,7 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               value={''}
               required={true}
               placeholder={'example: Smith'}
-              onChange={() => {
-                console.log('modal');
-              }}
+              onChange={(e) => setLastName(e.target.value)}
             ></TextBox>
           </div>
         </div>
@@ -72,9 +78,7 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             value={''}
             required={false}
             placeholder={''}
-            onChange={() => {
-              console.log('modal');
-            }}
+            onChange={(e) => setPhoneNumber(e.target.value)}
           ></TextBox>
         </div>
         <div className={styles.textArea}>
@@ -86,9 +90,7 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             value={''}
             required={true}
             placeholder={''}
-            onChange={() => {
-              console.log('modal');
-            }}
+            onChange={(e) => setEmail(e.target.value)}
           ></TextBox>
         </div>
         <div className={styles.buttonArea}>
