@@ -20,6 +20,7 @@ interface ActionButtonProps {
   onClick?: () => void;
   iconPosition?: 'left' | 'right';
   className?: string;
+  type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
 export default function ActionButton({
@@ -30,6 +31,7 @@ export default function ActionButton({
   onClick,
   iconPosition = 'left',
   className,
+  type,
 }: ActionButtonProps) {
   let buttonStyles;
 
@@ -61,7 +63,12 @@ export default function ActionButton({
   }
 
   return (
-    <button className={buttonStyles} disabled={disabled} onClick={onClick}>
+    <button
+      className={buttonStyles}
+      disabled={disabled}
+      onClick={onClick}
+      type={type}
+    >
       {iconPosition === 'left' && icon && <Image src={icon} alt='icon' />}
       <span>{label}</span>
       {iconPosition === 'right' && icon && <Image src={icon} alt='icon' />}

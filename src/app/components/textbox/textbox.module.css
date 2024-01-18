@@ -3,6 +3,7 @@
   height: 40px;
   border-radius: 8px;
   border: 1px solid var(--BondBlack);
+  padding: 0px 10px;
 }
 
 .long {
@@ -26,4 +27,8 @@
 
 .errorMessage {
   color: var(--errorRed);
+}
+
+.label {
+  padding: 0px 3px;
 }

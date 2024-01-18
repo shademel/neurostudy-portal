@@ -27,7 +27,6 @@ export default function Navbar() {
       ) {
         closeDropdown();
       }
-      console.log('Clickeed');
     };
     if (isDropdownVisible) {
       document.addEventListener('click', handleClickOutside);
