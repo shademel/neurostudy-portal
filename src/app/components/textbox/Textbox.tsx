@@ -34,7 +34,7 @@ export default function TextBox(props: TextBoxProps) {
 
   return (
     <div className={styles.textBoxContainer}>
-      <label htmlFor={props.name}>
+      <label htmlFor={props.name} className={styles.label}>
         <Typography
           variant={TypographyVariant.Body2}
           color={props.errorMessage && 'red'}
