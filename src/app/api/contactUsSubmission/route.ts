@@ -15,8 +15,6 @@ export async function POST(request: Request) {
   return returnBadResponse();
 }
 
-
-
 function isValidContactUsFormData(
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   obj: any
@@ -25,7 +23,7 @@ function isValidContactUsFormData(
     'firstname',
     'lastname',
     'email',
-    'designation'
+    'designation',
   ];
   const keys = Object.keys(obj) as (keyof UserFormSubmissionType)[];
   const emailRegex =
