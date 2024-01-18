@@ -1,47 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import styles from './popup.module.css';
 import TextBox, { TextboxVariant } from '../textbox/Textbox';
 import ActionButton from '../buttons/ActionButton';
 
 const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const [emailTextboxVariant, setEmailTextboxVariant] = useState(
-    TextboxVariant.LONGER
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setEmailTextboxVariant(
-        window.innerWidth <= 800
-          ? TextboxVariant.REGULAR
-          : TextboxVariant.LONGER
-      );
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-  }, []);
   const handleSubmit = () => {
-    //??????
     console.log('Thank you for your request, we will get back to you soon');
+    onClose();
+  };
 
-    onClose();
-  };
-  const handleClose = () => {
-    onClose();
-  };
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
 
+  const popupRef = useRef<HTMLFormElement | null>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose, popupRef]);
+
   return (
-    <form className={styles.container}>
-      <button className={styles.closeButton} onClick={() => handleClose()}>
-        {' '}
-        x
-      </button>
+    <form ref={popupRef} className={styles.container}>
       <div className={styles.header}>
         <Typography variant={TypographyVariant.H1}>Unlock Content</Typography>
       </div>
@@ -52,9 +43,9 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               name={'firstName'}
               label={'First Name (required)'}
               type={'text'}
-              value={''}
+              value={firstName}
               required={true}
-              placeholder={'example: John'}
+              placeholder={'Enter your first name'}
               onChange={(e) => setFirstName(e.target.value)}
             ></TextBox>
           </div>
@@ -63,9 +54,9 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               name={'lastName'}
               label={'Last Name (required)'}
               type={'text'}
-              value={''}
+              value={lastName}
               required={true}
-              placeholder={'example: Smith'}
+              placeholder={'Enter your last name'}
               onChange={(e) => setLastName(e.target.value)}
             ></TextBox>
           </div>
@@ -75,21 +66,21 @@ const PopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             name={'phoneNumber'}
             label={'Phone Number'}
             type={'text'}
-            value={''}
+            value={phoneNumber}
             required={false}
-            placeholder={''}
+            placeholder={'Enter your phone number'}
             onChange={(e) => setPhoneNumber(e.target.value)}
           ></TextBox>
         </div>
         <div className={styles.textArea}>
           <TextBox
-            variant={emailTextboxVariant}
+            variant={TextboxVariant.LONGER}
             name={'email'}
             label={'Email Address (required)'}
             type={'email'}
-            value={''}
+            value={email}
             required={true}
-            placeholder={''}
+            placeholder={'Enter your email address'}
             onChange={(e) => setEmail(e.target.value)}
           ></TextBox>
         </div>

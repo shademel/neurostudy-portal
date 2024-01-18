@@ -4,8 +4,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30vw;
-    height: 45vh;
+    width: 30vw;    
     background-color: var(--GhostWhite);
     padding: 2vh 2vw;
     border-radius: 8px;
@@ -63,7 +62,10 @@
         top: 50vh;
         left: 45vw;            
       }
-    
+    .textArea input {
+       width:50vw;
+       height: 6vh;
+    }
     
       .name {
         display: flex;
