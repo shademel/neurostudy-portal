@@ -1,12 +1,4 @@
-/* .container{
-    width:30vw;
-    height: 45vh;
-    background-color: var(--GhostWhite);
-  padding: 2vh 2vw;
-    border-radius: 8px;
-    margin:20px
-    
-} */
+
 .container {
     position: fixed;
     top: 50%;
@@ -21,6 +13,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .closeButton{
+    position:fixed;
+    top: 1%;
+    right: 1%;
+    margin:0px;
   }
 .textboxBody{
     display: flex;
