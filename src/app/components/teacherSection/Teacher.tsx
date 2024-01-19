@@ -31,7 +31,6 @@ export default function Teacher() {
           onClick={openModal}
         />
       </div>
-     
       {isModalOpen && <DialogPopUp onClose={() => setIsModalOpen(false)} />}
     </div>
   );

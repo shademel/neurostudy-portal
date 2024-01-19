@@ -14,8 +14,7 @@
   width: 25rem;
 }
 /* errorRed */
-.textboxError,
-.textBox:invalid {
+.textboxError {
   border: 1px solid var(--errorRed);
 }
 

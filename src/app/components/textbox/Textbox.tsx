@@ -19,6 +19,7 @@ type TextBoxProps = {
   className?: string;
   variant?: TextboxVariant;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: () => void;
 };
 
 export default function TextBox(props: TextBoxProps) {
@@ -50,6 +51,7 @@ export default function TextBox(props: TextBoxProps) {
         required={props.required}
         placeholder={props.placeholder}
         className={textBoxClass}
+        onBlur={props.onBlur}
       />
       {props.errorMessage && (
         <span className={styles.errorMessage}>{props.errorMessage}</span>

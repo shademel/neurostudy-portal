@@ -5,8 +5,12 @@ import styles from './dialog.module.css';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
 import { TeacherRegistrationType } from '@/app/interfaces/TeacherRegistrationType';
 import { registerTeacherData } from '@/app/utilities/registerTeacherData';
-import { isValidTeacherRegistrationData } from '@/app/utilities/validateTeacherRegistrationData';
 import Typography, { TypographyVariant } from '../typography/Typography';
+import {
+  EMAIL_REGEX,
+  NAME_REGEX,
+  PHONE_REGEX,
+} from '@/app/utilities/constants';
 
 const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const handleSubmit = async (event: React.FormEvent) => {
@@ -17,26 +21,29 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       email: email,
       phone: phoneNumber,
     };
-    if (isValidTeacherRegistrationData(teacherRegistrationData)) {
+    if (firstNameError || lastNameError || phoneNumberError || emailError) {
+      return;
+    } else {
       const outcome: CRMCreateResponseInterface = await registerTeacherData(
         teacherRegistrationData
       );
       if (outcome.id) {
         setSubmissionSuccess(true);
       }
-    } else {
-      // Set invalid data message for form
-      // Better replace isValidTeacherRegistrationData with individual checks
-      // so that we can set error messages for individual items
-      console.log('invalid data');
     }
   };
 
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
-  const [firstName, setFirstName] = useState(' ');
-  const [lastName, setLastName] = useState(' ');
-  const [phoneNumber, setPhoneNumber] = useState(' ');
-  const [email, setEmail] = useState(' ');
+  const [firstName, setFirstName] = useState('');
+  const [firstNameError, setFirstNameError] = useState<string | undefined>();
+  const [lastName, setLastName] = useState('');
+  const [lastNameError, setLastNameError] = useState<string | undefined>();
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumberError, setPhoneNumberError] = useState<string | undefined>(
+    ''
+  );
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState<string | undefined>();
 
   const popupRef = useRef<HTMLDivElement | null>(null);
 
@@ -82,49 +89,73 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 <div className={styles.name}>
                   <div className={styles.textArea}>
                     <TextBox
-                      name={'firstName'}
+                      name={'FirstName'}
                       label={'First Name (required)'}
                       type={'text'}
                       value={firstName}
                       required={true}
                       placeholder={'Enter your first name'}
+                      errorMessage={firstNameError}
                       onChange={(e) => setFirstName(e.target.value.trim())}
-                    ></TextBox>
+                      onBlur={() =>
+                        !NAME_REGEX.test(firstName)
+                          ? setFirstNameError('First Name is invalid')
+                          : setFirstNameError(undefined)
+                      }
+                    />
                   </div>
                   <div className={styles.textArea}>
                     <TextBox
-                      name={'lastName'}
+                      name={'LastName'}
                       label={'Last Name (required)'}
                       type={'text'}
                       value={lastName}
                       required={true}
                       placeholder={'Enter your last name'}
+                      errorMessage={lastNameError}
+                      onBlur={() =>
+                        !NAME_REGEX.test(lastName)
+                          ? setLastNameError('Last Name is invalid')
+                          : setLastNameError(undefined)
+                      }
                       onChange={(e) => setLastName(e.target.value.trim())}
-                    ></TextBox>
+                    />
                   </div>
                 </div>
                 <div className={styles.textArea}>
                   <TextBox
-                    name={'phoneNumber'}
+                    name={'PhoneNumber'}
                     label={'Phone Number'}
                     type={'text'}
                     value={phoneNumber}
+                    errorMessage={phoneNumberError}
                     required={false}
                     placeholder={'Enter your phone number'}
+                    onBlur={() =>
+                      !PHONE_REGEX.test(phoneNumber)
+                        ? setPhoneNumberError('Phone number is invalid')
+                        : setPhoneNumberError(undefined)
+                    }
                     onChange={(e) => setPhoneNumber(e.target.value.trim())}
-                  ></TextBox>
+                  />
                 </div>
                 <div className={styles.textArea}>
                   <TextBox
                     variant={TextboxVariant.LONGER}
-                    name={'email'}
+                    name={'Email'}
                     label={'Email Address (required)'}
                     type={'email'}
                     value={email}
                     required={true}
+                    errorMessage={emailError}
                     placeholder={'Enter your email address'}
+                    onBlur={() =>
+                      !EMAIL_REGEX.test(email)
+                        ? setEmailError('Email Address is invalid')
+                        : setEmailError(undefined)
+                    }
                     onChange={(e) => setEmail(e.target.value.trim())}
-                  ></TextBox>
+                  />
                 </div>
                 <div className={styles.buttonArea}>
                   <ActionButton
