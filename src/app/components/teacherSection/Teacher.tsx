@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
-import PopUp from '../popupSignup/PopUp';
-
+// import PopUp from '../popupSignup/PopUp';
+import DialogPopUp from '../popupSignup/DialogComponent';
 export default function Teacher() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
@@ -31,7 +31,8 @@ export default function Teacher() {
           onClick={openModal}
         />
       </div>
-      {isModalOpen && <PopUp onClose={() => setIsModalOpen(false)} />}
+      {/* {isModalOpen && <PopUp onClose={() => setIsModalOpen(false)} />} */}
+      {isModalOpen && <DialogPopUp onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 }

@@ -7,6 +7,8 @@ import Blogs from './components/blogs/blogs';
 import Teacher from './components/teacherSection/Teacher';
 import Fact from './components/fact/Fact';
 
+import MyDialog from './components/popupSignup/DialogComponent';
+
 const getGoogleAnalyticsScript = () => {
   return (
     <>
