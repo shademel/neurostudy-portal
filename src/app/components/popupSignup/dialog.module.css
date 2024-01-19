@@ -1,20 +1,77 @@
-.dialogBackground{
+.dialogBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    45deg,
+    rgb(126, 120, 126),
+    rebeccapurple,
+    rgb(19, 27, 34),
+    green
+  );
+  opacity: 0.95;
+  z-index: 1;
+}
+.dialogBackground dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45vw;
+  background-color: var(--GhostWhite);
+  backdrop-filter: 100px;
+  padding: 2vh 2vw;
+  border-radius: 8px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.closeButton {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  margin: 0px;
+}
+.textboxBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+.container button {
+  margin: 25px;
+  text-align: center;
+}
+.textArea {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.buttonArea {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  margin: 0px;
+  text-align: center;
+}
+.header h1 {
+  margin: 0px 0px 40px 0px;
+}
+.name {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 50px;
+}
+@media (max-width: 800px) {
+  .dialogBackground dialog {
     position: fixed;
-    top: 0;
-    left: 0; 
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(45deg, rgb(126, 120, 126), rebeccapurple, rgb(19, 27, 34), green);
-    opacity: 0.95;
-    z-index: 1;
-    
-} 
-.dialogBackground dialog{
-    position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 50vh;
+    left: 45vw;
     transform: translate(-50%, -50%);
-    width: 45vw;
+    width: 55vw;
     background-color: var(--GhostWhite);
     backdrop-filter: 100px;
     padding: 2vh 2vw;
@@ -22,64 +79,28 @@
     margin: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-.closeButton {
-    position: fixed;
-    top: 1%;
-    right: 1%;
-    margin: 0px;
   }
-  .textboxBody {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
+  .textArea input {
+    width: 50vw;
+    height: 6vh;
   }
-  .container button {
-    margin: 25px;
-    text-align: center;
-  }
-  .textArea {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  .buttonArea {
-    display: flex;
-    justify-content: center;
-  }
-  .header {
-    margin: 0px;
-    text-align: center;
-  }
-  .header h1 {
-    margin: 0px 0px 40px 0px;
-  }
+
   .name {
     display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
-    gap: 50px;
+    gap: 10px;
   }
-  @media (max-width: 800px) {
-    .container {
-      width: 80vw;
-      height: 80vh;
-      background-color: var(--GhostWhite);
-      border-radius: 12px;
-      position: fixed;
-      top: 50vh;
-      left: 45vw;
-    }
-    .textArea input {
-      width: 50vw;
-      height: 6vh;
-    }
-  
-    .name {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 15px;
-      gap: 10px;
-    }
+
+  .textArea input {
+    width: 50vw;
+    height: 6vh;
   }
-  
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+}
