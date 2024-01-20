@@ -1,7 +1,6 @@
 import { returnBadResponse } from '@/app/utilities/responses';
 import { UserFormSubmissionType } from '@/app/interfaces/UserFormSubmissionType';
-
-import { submitUserForm } from '@/app/utilities/submitUserForm';
+import { registerCRMContact } from '@/app/utilities/registerCRMContact';
 
 export async function POST(request: Request) {
   const data = await request.json();
@@ -9,7 +8,7 @@ export async function POST(request: Request) {
     const userContactForm: UserFormSubmissionType = {
       ...data,
     };
-    const response = await submitUserForm(userContactForm);
+    const response = await registerCRMContact(userContactForm);
     return new Response(JSON.stringify(response));
   }
   return returnBadResponse();
