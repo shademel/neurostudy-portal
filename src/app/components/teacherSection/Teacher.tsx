@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
+import DialogPopUp from '../popupSignup/DialogComponent';
 
 export default function Teacher() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
   return (
     <div className={styles.teacherContainer}>
       <div>
@@ -23,9 +28,10 @@ export default function Teacher() {
           label='Access courses'
           disabled={false}
           className={styles.accessButton}
-          onClick={() => console.log('clicked Access courses button')}
+          onClick={openModal}
         />
       </div>
+      {isModalOpen && <DialogPopUp onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 }
