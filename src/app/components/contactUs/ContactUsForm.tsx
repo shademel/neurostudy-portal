@@ -12,7 +12,7 @@ import {
   PHONE_REGEX,
 } from '@/app/utilities/constants';
 
-const ContactUsForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const ContactUsForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const userRegistrationData: UserFormSubmissionType = {
@@ -33,8 +33,9 @@ const ContactUsForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     ) {
       return;
     } else {
-      const outcome: CRMCreateResponseInterface =
-        await registerCRMContact(userRegistrationData);
+      const outcome = (await registerCRMContact(
+        userRegistrationData
+      )) as CRMCreateResponseInterface;
       if (outcome.id) {
         setSubmissionSuccess(true);
       }
@@ -56,6 +57,7 @@ const ContactUsForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [designationError, setDesignationError] = useState<
     string | undefined
   >();
+  console.log('submissionSuccess', submissionSuccess);
 
   const [message, setMessage] = useState('');
   const [messageError, setMessageError] = useState<string | undefined>();
@@ -187,23 +189,6 @@ const ContactUsForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           </div>
         </div>
       </form>
-      {submissionSuccess ? (
-        <div className={styles.successful}>
-          <div>
-            <Typography variant={TypographyVariant.Body1}>
-              Thank you for your request, we will get back to you soon.
-            </Typography>
-          </div>
-          <div>
-            <ActionButton
-              label='Close'
-              disabled={false}
-              className={styles.accessButton}
-              onClick={() => onClose()}
-            />
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 };
