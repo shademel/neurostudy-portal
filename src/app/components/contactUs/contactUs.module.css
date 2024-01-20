@@ -1,108 +1,107 @@
-  .container{
-   
-  }
-  .container form {
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container form {
+  background-color: var(--GhostWhite);
+  width: 90vw;
+  backdrop-filter: 100px;
+  border-radius: 8px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--CherryPie);
+  border-radius: 10px;
+}
+.title {
+  border-right: 2px solid rgb(105, 103, 103);
+
+  padding: 30px;
+  height: 45vh;
+  /* display: flex; */
+  /* flex-direction: column; */
+  align-items: center;
+}
+.closeButton {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  margin: 0px;
+}
+.textboxBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 30px 50px;
+}
+.container button {
+  margin: 25px;
+  text-align: center;
+}
+.textArea {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.message {
+}
+.message input {
+  height: 5rem;
+}
+.buttonArea {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  margin: 0px;
+  text-align: center;
+}
+.header h1 {
+  margin: 0px 0px 40px 0px;
+}
+.name {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 50px;
+}
+@media (max-width: 800px) {
+  .dialogBackground dialog {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 50vh;
+    left: 45vw;
     transform: translate(-50%, -50%);
-    width: 85vw;
+    width: 55vw;
     background-color: var(--GhostWhite);
     backdrop-filter: 100px;
     padding: 2vh 2vw;
     border-radius: 8px;
     margin: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid var(--CherryPie);
-    border-radius: 10px;
-  }
-  .title{
-    border-right: 2px solid rgb(105, 103, 103);
-    padding:20px;
-    height:30vh;
-    align-items: center;
-  }
-  .closeButton {
-    position: fixed;
-    top: 1%;
-    right: 1%;
-    margin: 0px;
-  }
-  .textboxBody {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
   }
-  .container button {
-    margin: 25px;
-    text-align: center;
+  .textArea input {
+    width: 50vw;
+    height: 6vh;
   }
-  .textArea {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  .message {  
-   
-  }
-  .message input{  
-   height: 5rem;
-  }
-  .buttonArea {
-    display: flex;
-    justify-content: center;
-  }
-  .header {
-    margin: 0px;
-    text-align: center;
-  }
-  .header h1 {
-    margin: 0px 0px 40px 0px;
-  }
+
   .name {
     display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
-    gap: 50px;
+    gap: 10px;
   }
-  @media (max-width: 800px) {
-    .dialogBackground dialog {
-      position: fixed;
-      top: 50vh;
-      left: 45vw;
-      transform: translate(-50%, -50%);
-      width: 55vw;
-      background-color: var(--GhostWhite);
-      backdrop-filter: 100px;
-      padding: 2vh 2vw;
-      border-radius: 8px;
-      margin: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-    .textArea input {
-      width: 50vw;
-      height: 6vh;
-    }
-  
-    .name {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 15px;
-      gap: 10px;
-    }
-  
-    .textArea input {
-      width: 50vw;
-      height: 6vh;
-    }
-  
-    .name {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 15px;
-      gap: 10px;
-    }
+
+  .textArea input {
+    width: 50vw;
+    height: 6vh;
   }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+}
