@@ -4,13 +4,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(
-    45deg,
-    rgb(126, 120, 126),
-    rebeccapurple,
-    rgb(19, 27, 34),
-    green
-  );
+background-image: linear-gradient(
+      95deg,
+      #383434,
+      #3f3e3e      
+    );
+
   opacity: 0.95;
   z-index: 1;
 }
@@ -28,6 +27,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid var(--CherryPie);
 }
 .closeButton {
   position: fixed;
