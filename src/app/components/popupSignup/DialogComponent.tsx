@@ -168,16 +168,20 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </div>
             </>
           ) : (
-            <div className={styles.header}>
-              <Typography variant={TypographyVariant.H1}>
-                Thank you for your request, we will get back to you soon.
-              </Typography>
-              <ActionButton
-                label='Close'
-                disabled={false}
-                className={styles.accessButton}
-                onClick={() => onClose()}
-              />
+            <div className={styles.successful}>
+              <div>
+                <Typography variant={TypographyVariant.Body1}>
+                  Thank you for your request, we will get back to you soon.
+                </Typography>
+              </div>
+              <div>
+                <ActionButton
+                  label='Close'
+                  disabled={false}
+                  className={styles.accessButton}
+                  onClick={() => onClose()}
+                />
+              </div>
             </div>
           )}
         </form>

@@ -4,11 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-background-image: linear-gradient(
-      95deg,
-      #383434,
-      #3f3e3e      
-    );
+  background-image: linear-gradient(95deg, #383434, #3f3e3e);
 
   opacity: 0.95;
   z-index: 1;
@@ -62,9 +58,18 @@ background-image: linear-gradient(
 }
 .name {
   display: flex;
-  margin-bottom: 15px;
   gap: 50px;
 }
+.successful {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.successful button {
+  margin-bottom: 0px;
+}
+
 @media (max-width: 800px) {
   .dialogBackground dialog {
     position: fixed;
