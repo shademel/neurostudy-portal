@@ -60,7 +60,7 @@ const ContactUsForm: React.FC = () => {
   console.log('submissionSuccess', submissionSuccess);
 
   const [message, setMessage] = useState('');
-  const [messageError, setMessageError] = useState<string | undefined>();
+  // const [messageError, setMessageError] = useState<string | undefined>();
 
   return (
     <div className={styles.container}>
