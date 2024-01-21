@@ -108,7 +108,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/#'>
+                <Link href='/contact'>
                   <Typography variant={TypographyVariant.Body2}>
                     Contact
                   </Typography>
