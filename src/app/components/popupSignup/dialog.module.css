@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(45deg, #383434, #3f3e3e); 
+  background-image: linear-gradient(45deg, #383434, #3f3e3e);
   z-index: 1;
 }
 .dialogBackground dialog {
@@ -71,11 +71,10 @@
 @media (max-width: 800px) {
   .dialogBackground dialog {
     position: fixed;
-    top: 50vh;
+    top: 52vh;
     left: 45vw;
     transform: translate(-50%, -50%);
-    width: 55vw;
-    background-color: var(--GhostWhite);
+    width: 70vw;
     backdrop-filter: 100px;
     padding: 2vh 2vw;
     border-radius: 8px;
