@@ -1,5 +1,5 @@
 export const returnBadResponse = () => {
-  new Response(JSON.stringify({ error: 'Bad Request' }), {
+  return new Response(JSON.stringify({ error: 'Bad Request' }), {
     status: 400,
     statusText: 'Bad Request',
     headers: new Headers({

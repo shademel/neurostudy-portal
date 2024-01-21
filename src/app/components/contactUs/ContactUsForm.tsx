@@ -111,18 +111,16 @@ const ContactUsForm: React.FC = () => {
           <div className={styles.textArea}>
             <TextBox
               name={'PhoneNumber'}
-              label={'Phone Number'}
+              label={'Phone Number (required)'}
               type={'text'}
               value={phoneNumber}
               errorMessage={phoneNumberError}
               required={false}
               placeholder={'Enter your phone number'}
               onBlur={() => {
-                if (phoneNumber.trim().length > 0) {
-                  !PHONE_REGEX.test(phoneNumber)
-                    ? setPhoneNumberError('Phone number is invalid')
-                    : setPhoneNumberError(undefined);
-                }
+                !PHONE_REGEX.test(phoneNumber)
+                  ? setPhoneNumberError('Phone number is invalid')
+                  : setPhoneNumberError(undefined);
               }}
               onChange={(e) => setPhoneNumber(e.target.value.trim())}
             />
