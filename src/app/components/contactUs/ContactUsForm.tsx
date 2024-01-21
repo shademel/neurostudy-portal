@@ -117,11 +117,13 @@ const ContactUsForm: React.FC = () => {
               errorMessage={phoneNumberError}
               required={false}
               placeholder={'Enter your phone number'}
-              onBlur={() =>
-                !PHONE_REGEX.test(phoneNumber)
-                  ? setPhoneNumberError('Phone number is invalid')
-                  : setPhoneNumberError(undefined)
-              }
+              onBlur={() => {
+                if (phoneNumber.trim().length > 0) {
+                  !PHONE_REGEX.test(phoneNumber)
+                    ? setPhoneNumberError('Phone number is invalid')
+                    : setPhoneNumberError(undefined);
+                }
+              }}
               onChange={(e) => setPhoneNumber(e.target.value.trim())}
             />
           </div>
