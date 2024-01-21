@@ -22,7 +22,7 @@ function isValidContactUsFormData(
     'firstname',
     'lastname',
     'email',
-    'designation',
+    'jobtitle',
   ];
   const keys = Object.keys(obj) as (keyof UserFormSubmissionType)[];
   const emailRegex =
