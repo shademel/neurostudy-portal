@@ -20,7 +20,7 @@ const ContactUsForm: React.FC = () => {
       lastname: lastName,
       email: email,
       phone: phoneNumber,
-      designation: designation,
+      jobtitle: jobtitle,
       message: message,
     };
     if (
@@ -28,7 +28,7 @@ const ContactUsForm: React.FC = () => {
       lastNameError ||
       phoneNumberError ||
       emailError ||
-      designationError ||
+      jobtitleError ||
       messageError
     ) {
       return;
@@ -53,10 +53,8 @@ const ContactUsForm: React.FC = () => {
   );
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState<string | undefined>();
-  const [designation, setDesignation] = useState('');
-  const [designationError, setDesignationError] = useState<
-    string | undefined
-  >();
+  const [jobtitle, setJobtitle] = useState('');
+  const [jobtitleError, setJobtitleError] = useState<string | undefined>();
   console.log('submissionSuccess', submissionSuccess);
 
   const [message, setMessage] = useState('');
@@ -146,19 +144,19 @@ const ContactUsForm: React.FC = () => {
           <div className={styles.textArea}>
             <TextBox
               variant={TextboxVariant.LONGER}
-              name={'Designation'}
-              label={'Designation (required)'}
+              name={'JobTitle'}
+              label={'Job Title (required)'}
               type={'text'}
-              value={designation}
+              value={jobtitle}
               required={true}
-              placeholder={'Teacher'}
-              errorMessage={designationError}
+              placeholder={'Teacher, Student, Institute, Other'}
+              errorMessage={jobtitleError}
               onBlur={() =>
-                !designation.trim()
-                  ? setDesignationError('The designation is invalid')
-                  : setDesignationError(undefined)
+                !jobtitle.trim()
+                  ? setJobtitleError('The Job title is invalid')
+                  : setJobtitleError(undefined)
               }
-              onChange={(e) => setDesignation(e.target.value.trim())}
+              onChange={(e) => setJobtitle(e.target.value.trim())}
             />
           </div>
           <div className={`${styles.textArea} ${styles.message}`}>
