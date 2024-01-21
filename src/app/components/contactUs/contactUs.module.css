@@ -70,7 +70,7 @@
   }
   .container form {
     background-color: var(--GhostWhite);
-    width: 90vw;
+    width: 100vw;
     backdrop-filter: 100px;
     border-radius: 8px;   
     display: flex;
@@ -102,6 +102,14 @@
   }
   .textboxBody input{
     width:60vw;
+  }
+  .textboxBody button{
+    margin:10px 0px 0px 0px ;
+  }
+  .success{
+    padding:10px;
+    display:flex;
+    text-align: center;
   }
 
 }

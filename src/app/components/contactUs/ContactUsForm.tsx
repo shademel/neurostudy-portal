@@ -55,8 +55,6 @@ const ContactUsForm: React.FC = () => {
   const [emailError, setEmailError] = useState<string | undefined>();
   const [jobtitle, setJobtitle] = useState('');
   const [jobtitleError, setJobtitleError] = useState<string | undefined>();
-  console.log('submissionSuccess', submissionSuccess);
-
   const [message, setMessage] = useState('');
   const [messageError, setMessageError] = useState<string | undefined>();
 
@@ -144,7 +142,7 @@ const ContactUsForm: React.FC = () => {
           <div className={styles.textArea}>
             <TextBox
               variant={TextboxVariant.LONGER}
-              name={'JobTitle'}
+              name={'jobtitle'}
               label={'Job Title (required)'}
               type={'text'}
               value={jobtitle}
@@ -185,6 +183,13 @@ const ContactUsForm: React.FC = () => {
               className={styles.accessButton}
             />
           </div>
+          {submissionSuccess && (
+            <div className={styles.success}>
+              <Typography variant={TypographyVariant.Body1}>
+                Thank you for contacting us. We will get back to you shortly.
+              </Typography>
+            </div>
+          )}
         </div>
       </form>
     </div>
