@@ -19,9 +19,7 @@
   border-right: 2px solid rgb(105, 103, 103);
 
   padding: 30px;
-  height: 45vh;
-  /* display: flex; */
-  /* flex-direction: column; */
+  height: 45vh;  
   align-items: center;
 }
 .closeButton {
@@ -45,8 +43,6 @@
   margin-bottom: 15px;
   text-align: left;
 }
-.message {
-}
 .message input {
   height: 5rem;
 }
@@ -67,41 +63,45 @@
   gap: 50px;
 }
 @media (max-width: 800px) {
-  .dialogBackground dialog {
-    position: fixed;
-    top: 50vh;
-    left: 45vw;
-    transform: translate(-50%, -50%);
-    width: 55vw;
+  .container {
+    display: flex;
+    justify-content: center;
+    height:100vh
+  }
+  .container form {
     background-color: var(--GhostWhite);
+    width: 90vw;
     backdrop-filter: 100px;
-    padding: 2vh 2vw;
-    border-radius: 8px;
-    margin: 20px;
+    border-radius: 8px;   
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
+    border: 1px solid var(--CherryPie);
+    border-radius: 10px;
   }
-  .textArea input {
-    width: 50vw;
-    height: 6vh;
+  .title {
+    border-bottom: 2px solid rgb(105, 103, 103);
+    border-right: 0px;
+    padding: 30px;
+    margin: 10px 25px;
+    height: 15vh;
+    text-align: center;
+    align-items: center;
   }
-
   .name {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
-    gap: 10px;
+    margin-bottom: 1px;
+    gap: 0px;
   }
-
-  .textArea input {
-    width: 50vw;
-    height: 6vh;
-  }
-
-  .name {
+  .textboxBody {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
   }
+  .textboxBody input{
+    width:60vw;
+  }
+
 }

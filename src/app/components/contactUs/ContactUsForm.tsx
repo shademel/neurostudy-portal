@@ -154,7 +154,7 @@ const ContactUsForm: React.FC = () => {
               placeholder={'Enter your job title or position'}
               errorMessage={designationError}
               onBlur={() =>
-                !EMAIL_REGEX.test(email)
+                !designation.trim()
                   ? setDesignationError('The role is invalid')
                   : setDesignationError(undefined)
               }
@@ -171,12 +171,7 @@ const ContactUsForm: React.FC = () => {
               required={false}
               placeholder={'Enter your message'}
               errorMessage={emailError}
-              onBlur={() =>
-                !EMAIL_REGEX.test(email)
-                  ? setMessageError('Message value is invalid')
-                  : setMessageError(undefined)
-              }
-              onChange={(e) => setMessage(e.target.value.trim())}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
           <div className={styles.buttonArea}>
