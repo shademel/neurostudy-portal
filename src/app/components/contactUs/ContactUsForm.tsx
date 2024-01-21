@@ -28,8 +28,7 @@ const ContactUsForm: React.FC = () => {
       lastNameError ||
       phoneNumberError ||
       emailError ||
-      designationError ||
-      messageError
+      designationError
     ) {
       return;
     } else {
@@ -60,7 +59,6 @@ const ContactUsForm: React.FC = () => {
   console.log('submissionSuccess', submissionSuccess);
 
   const [message, setMessage] = useState('');
-  const [messageError, setMessageError] = useState<string | undefined>();
 
   return (
     <div className={styles.container}>
@@ -149,13 +147,13 @@ const ContactUsForm: React.FC = () => {
               name={'Designation'}
               label={'Designation (required)'}
               type={'text'}
-              value={'teacher'}
+              value={designation}
               required={true}
-              placeholder={'Enter your job title or position'}
+              placeholder={'Teacher'}
               errorMessage={designationError}
               onBlur={() =>
                 !designation.trim()
-                  ? setDesignationError('The role is invalid')
+                  ? setDesignationError('The designation is invalid')
                   : setDesignationError(undefined)
               }
               onChange={(e) => setDesignation(e.target.value.trim())}
@@ -170,12 +168,6 @@ const ContactUsForm: React.FC = () => {
               value={message}
               required={false}
               placeholder={'Enter your message'}
-              errorMessage={messageError}
-              onBlur={() =>
-                !message.trim()
-                  ? setMessageError('You can enter your message here')
-                  : setMessageError(undefined)
-              }
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
