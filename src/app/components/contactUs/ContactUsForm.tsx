@@ -4,13 +4,13 @@ import ActionButton from '../buttons/ActionButton';
 import styles from './contactUs.module.css';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
 import { UserFormSubmissionType } from '@/app/interfaces/UserFormSubmissionType';
-import { registerCRMContact } from '@/app/utilities/registerCRMContact';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import {
   EMAIL_REGEX,
   NAME_REGEX,
   PHONE_REGEX,
 } from '@/app/utilities/constants';
+import { registerContactData } from '@/app/utilities/registerContactData';
 
 const ContactUsForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
@@ -28,11 +28,12 @@ const ContactUsForm: React.FC = () => {
       lastNameError ||
       phoneNumberError ||
       emailError ||
-      designationError
+      designationError ||
+      messageError
     ) {
       return;
     } else {
-      const outcome = (await registerCRMContact(
+      const outcome = (await registerContactData(
         userRegistrationData
       )) as CRMCreateResponseInterface;
       if (outcome.id) {
@@ -59,6 +60,7 @@ const ContactUsForm: React.FC = () => {
   console.log('submissionSuccess', submissionSuccess);
 
   const [message, setMessage] = useState('');
+  const [messageError, setMessageError] = useState<string | undefined>();
 
   return (
     <div className={styles.container}>
@@ -168,6 +170,12 @@ const ContactUsForm: React.FC = () => {
               value={message}
               required={false}
               placeholder={'Enter your message'}
+              errorMessage={messageError}
+              onBlur={() =>
+                !message.trim()
+                  ? setMessageError('')
+                  : setMessageError(undefined)
+              }
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
