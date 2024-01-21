@@ -60,7 +60,7 @@ const ContactUsForm: React.FC = () => {
   console.log('submissionSuccess', submissionSuccess);
 
   const [message, setMessage] = useState('');
-  // const [messageError, setMessageError] = useState<string | undefined>();
+  const [messageError, setMessageError] = useState<string | undefined>();
 
   return (
     <div className={styles.container}>
@@ -170,7 +170,12 @@ const ContactUsForm: React.FC = () => {
               value={message}
               required={false}
               placeholder={'Enter your message'}
-              errorMessage={emailError}
+              errorMessage={messageError}
+              onBlur={() =>
+                !message.trim()
+                  ? setMessageError('You can enter your message here')
+                  : setMessageError(undefined)
+              }
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
