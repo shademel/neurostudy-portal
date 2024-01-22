@@ -7,7 +7,7 @@
   gap: 1vh;
   margin: 5vw 1vw;
 }
-.silverAndBronze {
+.badgegroup2 {
   display: flex;
   gap: 4vw;
 }
@@ -20,11 +20,8 @@
     flex-direction: row;
     justify-content: center;
     gap: 0px;
-  }
-  .badgeWrapper img {
-    gap: 120px;
-  }
-  .gold {
+  } 
+  .badgegroup1 {
     display: flex;
     margin-right: 4vw;
   }
@@ -39,12 +36,12 @@
     gap: 0px;
   }
 
-  .gold {
+  .badgegroup1 {
     display: flex;
     margin-right: 4vw;
   }
-  .gold img,
-  .silverAndBronze img {
+  .badgegroup1 img,
+  .badgegroup2 img {
     width: 90px;
     height: 90px;
   }

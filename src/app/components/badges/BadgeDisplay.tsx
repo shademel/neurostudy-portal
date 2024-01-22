@@ -8,12 +8,12 @@ import bronzeBadge from '../../images/bronzeBadge.svg';
 export default function BadgeDisplay() {
   return (
     <div className={styles.badgeWrapper}>
-      <div className={styles.gold}>
+      <div className={styles.badgegroup1}>
         <Image src={goldBadge} alt='Gold Badge' />
       </div>
-      <div className={styles.silverAndBronze}>
-        <Image src={silverBadge} alt='Gold Badge' />
-        <Image src={bronzeBadge} alt='Gold Badge' />
+      <div className={styles.badgegroup2}>
+        <Image src={silverBadge} alt='SilverBadge' />
+        <Image src={bronzeBadge} alt='Bronze Badge' />
       </div>
     </div>
   );
