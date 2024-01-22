@@ -1,63 +1,44 @@
-@media (min-width: 480px) {
+.bannerContainer {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../images/bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+.textContainer {
+  width: 55vw;
+  padding: 20px;
+  color: var(--GhostWhite);
+  text-align: left;
+  margin: 5vw;
+}
+.textBody {
+  width: 55vw;
+}
+
+@media (max-width: 1000px) and (min-width: 481px) {
   .bannerContainer {
-    text-align: end;
-    position: relative;
-    width: 100vw;
-    height: 70vh;
-    background-image: url('../../images/bg.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .textContainer {
-    display: flex;
     flex-direction: column;
-    width: 55vw;
-    padding: 20px;
-    color: var(--GhostWhite);
-    justify-content: center;
+    height: auto;
   }
-  .textContainer h1 {
-    margin: 0px;
+  .textBody {
+    width: 85vw;
   }
-  .textContainer h2 {
-    margin: 0px;
-  }
-  .textBox {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    color: var(--GhostWhite);
+  .textHeader {
+    width: 85vw;
   }
 }
+
 @media (max-width: 480px) {
   .bannerContainer {
-    text-align: center;
-    position: relative;
-    width: 100vw;
-    height: 35vh;
-    background-image: url('../../images/bg.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-  }
-  .textContainer {
-    display: flex;
     flex-direction: column;
-    width: 70vw;
-    padding: 20px;
-    color: var(--GhostWhite);
-    justify-content: center;
+    height: auto;
   }
-
-  .textContainer h1 {
-    margin: 0px;
-    font-size: 24px;
+  .textBody {
+    width: 85vw;
   }
-  .textContainer h2 {
-    font-size: 20px;
-    margin: 0px;
+  .textHeader {
+    width: 85vw;
   }
 }
