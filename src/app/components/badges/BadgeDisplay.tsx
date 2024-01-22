@@ -11,7 +11,7 @@ export default function BadgeDisplay() {
       <div className={styles.gold}>
         <Image src={goldBadge} alt='Gold Badge' />
       </div>
-      <div className={styles.silver}>
+      <div className={styles.silverAndBronze}>
         <Image src={silverBadge} alt='Gold Badge' />
         <Image src={bronzeBadge} alt='Gold Badge' />
       </div>
