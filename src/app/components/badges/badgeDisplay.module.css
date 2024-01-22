@@ -1,16 +1,48 @@
-.badgeContainer {
-  position: relative;
-  width: 100%;
-  height: 952px;
+.badgeWrapper {
+  width: 20vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+  margin: 5vw 1vw;
+}
+.badgegroup2 {
+  display: flex;
+  gap: 4vw;
 }
 
-.badgeOverlay {
-  position: absolute;
-  top: 25%;
-  left: 55%;
+@media (max-width: 1000px) and (min-width: 481px) {
+  .badgeWrapper {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+  } 
+  .badgegroup1 {
+    display: flex;
+    margin-right: 4vw;
+  }
 }
-.badgeContainer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+@media (max-width: 480px) {
+  .badgeWrapper {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+  }
+
+  .badgegroup1 {
+    display: flex;
+    margin-right: 4vw;
+  }
+  .badgegroup1 img,
+  .badgegroup2 img {
+    width: 90px;
+    height: 90px;
+  }
 }
