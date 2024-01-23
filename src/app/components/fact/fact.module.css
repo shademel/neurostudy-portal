@@ -2,17 +2,16 @@
   .factContainer {
     text-align: center;
     width: 100vw;
-    margin: 0px;
-    background-color: #2d005b;
+    margin: 0px;   
   }
   .factTitle {
-    padding-top: 20px;
+    padding-top: 20px;    
   }
   .factGrid {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: var(--GhostWhite);
+    color: var(--bondBlack);
     padding: 0px 30px;
   }
 
@@ -40,8 +39,7 @@
 @media (max-width: 480px) {
   .factContainer {
     text-align: center;
-    margin: 0px;
-    background-color: #2d005b;
+    margin: 0px;   
   }
   .factTitle {
     padding-top: 2rem;
