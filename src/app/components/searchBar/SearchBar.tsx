@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import dropdownOptions from './searchOptionsData.json';
 import styles from './searchBar.module.css';
-import Typography, { TypographyVariant } from '../typography/Typography';
 import Search from '../../images/Search.svg';
 import ActionButton from '../buttons/ActionButton';
+import SearchSelect from './SearchSelect';
 
 interface SearchBarProps {}
 
@@ -21,55 +21,28 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   return (
     <div className={styles.container}>
       <div className={styles.dropdownGroup}>
-        <label htmlFor='neurotype'>
-          <Typography variant={TypographyVariant.Body2}>
-            What is your neurotype?
-          </Typography>
-        </label>
-        <select
+        <SearchSelect
+          label='What is your neurotype?'
           value={neurotype}
-          onChange={(e) => setNeurotype(e.target.value)}
-        >
-          {dropdownOptions.neurotype.map((option, index) => (
-            <option key={index} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
+          onChange={(value) => setNeurotype(value)}
+          options={dropdownOptions.neurotype}
+        />
       </div>
       <div className={styles.dropdownGroup}>
-        <label htmlFor='courseOptions'>
-          <Typography variant={TypographyVariant.Body2}>
-            What do you want to study?
-          </Typography>
-        </label>
-        <select
+        <SearchSelect
+          label='What do you want to study?'
           value={courseOptions}
-          onChange={(e) => setCourseOptions(e.target.value)}
-        >
-          {dropdownOptions.courseOptions.map((option, index) => (
-            <option key={index} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
+          onChange={(value) => setCourseOptions(value)}
+          options={dropdownOptions.courseOptions}
+        />
       </div>
       <div className={styles.dropdownGroup}>
-        <label htmlFor='locations'>
-          <Typography variant={TypographyVariant.Body2}>
-            Where do you want to study?
-          </Typography>
-        </label>
-        <select
+        <SearchSelect
+          label='Where do you want to study?'
           value={locations}
-          onChange={(e) => setLocations(e.target.value)}
-        >
-          {dropdownOptions.locations.map((option, index) => (
-            <option key={index} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
+          onChange={(value) => setLocations(value)}
+          options={dropdownOptions.locations}
+        />
       </div>
       <div className={styles.searchButtonWrapper}>
         <ActionButton
