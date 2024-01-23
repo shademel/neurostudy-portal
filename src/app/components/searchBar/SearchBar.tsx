@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import dropdownOptions from './searchOptionsData.json';
+import dropdownOptions from '../selectOptions/searchOptionsData.json';
 import styles from './searchBar.module.css';
 import Search from '../../images/Search.svg';
 import ActionButton from '../buttons/ActionButton';
