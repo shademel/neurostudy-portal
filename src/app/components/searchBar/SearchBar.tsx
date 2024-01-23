@@ -3,7 +3,7 @@ import dropdownOptions from './searchOptionsData.json';
 import styles from './searchBar.module.css';
 import Search from '../../images/Search.svg';
 import ActionButton from '../buttons/ActionButton';
-import SearchSelect from './SearchSelect';
+import SearchSelect from '../searchSelect/SearchSelect';
 
 interface SearchBarProps {}
 
