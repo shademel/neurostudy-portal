@@ -54,6 +54,13 @@
     flex-direction: column;  
     height: auto;  
   }
+  .textContainer {
+    width: fit-content;
+    padding: 0;
+    color: var(--GhostWhite);
+    text-align: left;
+    margin: 1vw;
+  }
   .textBody {
     width: 85vw;
   }
@@ -62,6 +69,7 @@
   }
   .bannerTextAndBadge{
     flex-direction: column;
+    justify-content: center;
   }
   .descktopSearchBar{
     display: none;

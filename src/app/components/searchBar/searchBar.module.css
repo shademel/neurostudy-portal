@@ -9,13 +9,16 @@
    border-radius: 8px;
    
   }
+  .dropdownGroup span{
+    margin: 0px;  
+  }
   .dropdownGroup{
     display:flex;
     flex-direction: column;
     border: none;
-    width: 20vw;    
-    box-shadow: 9px 2px  2px  -9px rgba(0, 0, 0, 1);
-    margin: 0.5vw 1vw ;  
+    width: 20vw;  
+    border-right: 1px solid var(--BondBlackVariant);   
+    margin: 0.5vw .6vw ;  
   }  
 
  .dropdownGroup select {
@@ -25,18 +28,15 @@
     width: fit-content;
     background-color:  var(--GhostWhite); 
   }
- .container button{  
-  
- }
-  
 
-  .searchButtonWrapper{
+  .searchButtonWrapper {
    display: flex;  
    justify-content: center;
    align-items: center;
-   margin-left: 1vw;   
+   margin-left: 5vw;   
    
   }
+
   @media (max-width: 1000px) and (min-width: 481px) {
 
     .container {
@@ -80,7 +80,8 @@
       display: flex;    
       background-color:white;
       border: none;  
-      width: 80vw;        
+      width: 80vw;  
+      justify-content: center;      
     }
     .container select{
       background-color:white;
@@ -99,10 +100,13 @@
       background-color:white;
     }
     .container button{ 
-      margin: 2vh 0;
-      width:82vw ;
+      margin: 2vh 0px;
+      width:80vw ;
       
   
     }
+    .searchButtonWrapper {    
+      margin: 1vh 0px;     
+     }
 
   }
