@@ -21,81 +21,97 @@ export default function HowItWorks() {
           journey.
         </Typography>
       </div>
-      <div className={styles.factGrid}>
+      <div className={styles.stepsGrid}>
         <div className={styles.gridItem}>
           <Image src={explore} alt='explore'></Image>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            Explore
-          </Typography>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            You search for learning organisations
-          </Typography>
+          <div className={styles.stepsText}>
+            <Typography
+              variant={TypographyVariant.Body1}
+              color='var(--GhostWhite)'
+            >
+              Explore
+            </Typography>
+            <Typography
+              variant={TypographyVariant.Body2}
+              color='var(--GhostWhite)'
+            >
+              You search for learning organisations
+            </Typography>
+          </div>
         </div>
+
         <div className={styles.gridItem}>
           <Image src={enquire} alt='enquire'></Image>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            Enquire
-          </Typography>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            You send an inquiry, we promptly respond
-          </Typography>
+          <div className={styles.stepsText}>
+            {' '}
+            <Typography
+              variant={TypographyVariant.Body1}
+              color='var(--GhostWhite)'
+            >
+              Enquire
+            </Typography>
+            <Typography
+              variant={TypographyVariant.Body2}
+              color='var(--GhostWhite)'
+            >
+              You send an inquiry, we promptly respond
+            </Typography>
+          </div>
         </div>
+
         <div className={styles.gridItem}>
           <Image src={profile} alt='profile'></Image>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            Profile
-          </Typography>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            You fill out a profile for the learning provider
-          </Typography>
+          <div className={styles.stepsText}>
+            {' '}
+            <Typography
+              variant={TypographyVariant.Body1}
+              color='var(--GhostWhite)'
+            >
+              Profile
+            </Typography>
+            <Typography
+              variant={TypographyVariant.Body2}
+              color='var(--GhostWhite)'
+            >
+              You fill out a profile for the learning provider
+            </Typography>
+          </div>
         </div>
+
         <div className={styles.gridItem}>
           <Image src={quality} alt='quality'></Image>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            Quality
-          </Typography>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            We improve experience with great materials
-          </Typography>
+          <div className={styles.stepsText}>
+            <Typography
+              variant={TypographyVariant.Body1}
+              color='var(--GhostWhite)'
+            >
+              Quality
+            </Typography>
+            <Typography
+              variant={TypographyVariant.Body2}
+              color='var(--GhostWhite)'
+            >
+              We improve experience with great materials
+            </Typography>
+          </div>
         </div>
+
         <div className={styles.gridItem}>
           <Image src={guide} alt='guide'></Image>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            Guide
-          </Typography>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            We regularly monitor & support learning
-          </Typography>
+          <div className={styles.stepsText}>
+            <Typography
+              variant={TypographyVariant.Body1}
+              color='var(--GhostWhite)'
+            >
+              Guide
+            </Typography>
+            <Typography
+              variant={TypographyVariant.Body2}
+              color='var(--GhostWhite)'
+            >
+              We regularly monitor & support learning
+            </Typography>
+          </div>
         </div>
       </div>
     </div>
