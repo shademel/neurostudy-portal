@@ -3,6 +3,7 @@
     text-align: center;
     background-color: var(--cherryPie);
     /* height: 60vh; */
+    z-index: 3;
   }
   .stepsTitle {
     padding-top: 80px;
@@ -10,14 +11,16 @@
   .stepsText{
     display: flex;
     flex-direction: column;
-    margin:4vh 0px
+    margin:4vh 0px;
+    padding:0px 1vw;
+    
 
   }
   .stepsGrid {
-    display: flex;
+    display: flex;   
     justify-content: center;
-    margin: 8vh;
-    gap: 2vw;
+    margin: 8vh;    
+   
   }
 
   .gridItem {
@@ -27,11 +30,45 @@
     justify-content: center;
     align-items: center;
     color: var(--bondBlack);
-    gap: auto;
+    gap: auto; 
+    background-image: url("../../images/stepsLine4.svg");  
+    
+  } 
+  .gridItem1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--bondBlack);
+    gap: auto; 
+    background-image: url("../../images/stepsLine.svg");  
+    
+  }  
+  .gridItem5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--bondBlack);
+    gap: auto; 
+    background-image: url("../../images/stepsLine5.svg");
+    margin:0px  
+    
   }
-  .gridItem span {
+  .gridItem  span {
    padding-bottom: 2vh;
+ 
   }
+  .gridItem1  span {
+    padding-bottom: 2vh;
+    
+   }
+   .gridItem5  span {
+    padding-bottom: 2vh;
+   
+   }
+ 
+
 }
 @media (max-width: 480px) {
   .stepsContainer {
@@ -40,14 +77,14 @@
     height: auto;
     padding: 3vh 0px;
   }
-  .gridItem {
+  .gridItem,.gridItem1,.gridItem5  {
     display: flex;
     text-align: left;
-    align-items: center;
-    
+    align-items: center;    
     gap: 5vw;
     margin:4vh 3vw
   }
+ 
   .stepsTitle {
     padding:0px 3vw 2vh 3vw;
   }
@@ -58,5 +95,9 @@
   }
   .gridItem span {
    padding-bottom: 1vh;
+  }
+  .stepsGrid {
+     
+    background-image: url("../../images/stepsline1Mobile.svg");
   }
 }

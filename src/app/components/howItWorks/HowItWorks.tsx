@@ -6,6 +6,8 @@ import enquire from '../../images/stepsEnquire.svg';
 import profile from '../../images/stepsProfile.svg';
 import quality from '../../images/stepsQuality.svg';
 import guide from '../../images/stepsGuide.svg';
+import svgLine from '../../images/stepsLine.svg';
+import svgLine4 from '../../images/stepsLine.svg';
 import Typography, { TypographyVariant } from '../typography/Typography';
 
 export default function HowItWorks() {
@@ -21,9 +23,11 @@ export default function HowItWorks() {
           journey.
         </Typography>
       </div>
+
       <div className={styles.stepsGrid}>
-        <div className={styles.gridItem}>
+        <div className={styles.gridItem1}>
           <Image src={explore} alt='explore'></Image>
+
           <div className={styles.stepsText}>
             <Typography
               variant={TypographyVariant.Body1}
@@ -96,7 +100,7 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        <div className={styles.gridItem}>
+        <div className={styles.gridItem5}>
           <Image src={guide} alt='guide'></Image>
           <div className={styles.stepsText}>
             <Typography
