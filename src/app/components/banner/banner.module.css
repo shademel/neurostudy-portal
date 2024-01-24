@@ -5,22 +5,41 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bannerTextAndBadge{
+  display: flex;  
 }
 .textContainer {
   width: 55vw;
   padding: 20px;
   color: var(--GhostWhite);
   text-align: left;
-  margin: 5vw;
+  margin: 1vw;
 }
 .textBody {
   width: 55vw;
 }
+.mobileSearchBar{
+  display: none;
+ }
 
-@media (max-width: 1000px) and (min-width: 481px) {
+@media (max-width: 1000px) and (min-width: 480px) {
+  .descktopSearchBar{
+    display: none;
+  }
+  .mobileSearchBar{
+    display: block;
+    height: 30vh;
+   }
   .bannerContainer {
     flex-direction: column;
     height: auto;
+  }
+  .bannerTextAndBadge{
+    flex-direction: column;
   }
   .textBody {
     width: 85vw;
@@ -32,13 +51,31 @@
 
 @media (max-width: 480px) {
   .bannerContainer {
-    flex-direction: column;
-    height: auto;
+    flex-direction: column;  
+    height: auto;  
+  }
+  .textContainer {
+    width: fit-content;
+    padding: 0;
+    color: var(--GhostWhite);
+    text-align: left;
+    margin: 1vw;
   }
   .textBody {
     width: 85vw;
   }
   .textHeader {
     width: 85vw;
+  }
+  .bannerTextAndBadge{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .descktopSearchBar{
+    display: none;
+  }
+  .mobileSearchBar{
+   display: block;
+   height: 40vh;
   }
 }
