@@ -2,6 +2,10 @@ import React from 'react';
 import styles from './howItWorks.module.css';
 import Image from 'next/image';
 import explore from '../../images/stepsExplore.svg';
+import enquire from '../../images/stepsEnquire.svg';
+import profile from '../../images/stepsProfile.svg';
+import quality from '../../images/stepsQuality.svg';
+import guide from '../../images/stepsGuide.svg';
 import Typography, { TypographyVariant } from '../typography/Typography';
 
 export default function HowItWorks() {
@@ -34,63 +38,63 @@ export default function HowItWorks() {
           </Typography>
         </div>
         <div className={styles.gridItem}>
-          <Image src={explore} alt='explore'></Image>
+          <Image src={enquire} alt='enquire'></Image>
           <Typography
             variant={TypographyVariant.Body1}
             color='var(--GhostWhite)'
           >
-            Explore
+            Enquire
           </Typography>
           <Typography
             variant={TypographyVariant.Body1}
             color='var(--GhostWhite)'
           >
-            You search for learning organisations
-          </Typography>
-        </div>
-        <div className={styles.gridItem}>
-          <Image src={explore} alt='explore'></Image>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            Explore
-          </Typography>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--GhostWhite)'
-          >
-            You search for learning organisations
+            You send an inquiry, we promptly respond
           </Typography>
         </div>
         <div className={styles.gridItem}>
-          <Image src={explore} alt='explore'></Image>
+          <Image src={profile} alt='profile'></Image>
           <Typography
             variant={TypographyVariant.Body1}
             color='var(--GhostWhite)'
           >
-            Explore
+            Profile
           </Typography>
           <Typography
             variant={TypographyVariant.Body1}
             color='var(--GhostWhite)'
           >
-            You search for learning organisations
+            You fill out a profile for the learning provider
           </Typography>
         </div>
         <div className={styles.gridItem}>
-          <Image src={explore} alt='explore'></Image>
+          <Image src={quality} alt='quality'></Image>
           <Typography
             variant={TypographyVariant.Body1}
             color='var(--GhostWhite)'
           >
-            Explore
+            Quality
           </Typography>
           <Typography
             variant={TypographyVariant.Body1}
             color='var(--GhostWhite)'
           >
-            You search for learning organisations
+            We improve experience with great materials
+          </Typography>
+        </div>
+        <div className={styles.gridItem}>
+          <Image src={guide} alt='guide'></Image>
+          <Typography
+            variant={TypographyVariant.Body1}
+            color='var(--GhostWhite)'
+          >
+            Guide
+          </Typography>
+          <Typography
+            variant={TypographyVariant.Body1}
+            color='var(--GhostWhite)'
+          >
+            We regularly monitor & support learning
           </Typography>
         </div>
       </div>
