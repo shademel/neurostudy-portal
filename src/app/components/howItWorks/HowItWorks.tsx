@@ -6,8 +6,6 @@ import enquire from '../../images/stepsEnquire.svg';
 import profile from '../../images/stepsProfile.svg';
 import quality from '../../images/stepsQuality.svg';
 import guide from '../../images/stepsGuide.svg';
-import svgLine from '../../images/stepsLine.svg';
-import svgLine4 from '../../images/stepsLine.svg';
 import Typography, { TypographyVariant } from '../typography/Typography';
 
 export default function HowItWorks() {
