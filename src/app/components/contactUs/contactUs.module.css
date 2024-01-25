@@ -43,8 +43,10 @@
   margin-bottom: 15px;
   text-align: left;
 }
-.message input {
-  height: 5rem;
+.message textarea {
+  /* height: 5rem; */
+  border-radius: 8px;
+
 }
 .buttonArea {
   display: flex;
