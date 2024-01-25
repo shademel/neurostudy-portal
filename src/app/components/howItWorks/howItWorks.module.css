@@ -8,67 +8,55 @@
   .stepsTitle {
     padding-top: 80px;
   }
-  .stepsText{
+  .stepsText {
     display: flex;
     flex-direction: column;
-    margin:4vh 0px;
-    padding:0px 1vw;
-    
-
+    margin: 4vh 0px;
+    padding: 0px 1vw;
   }
   .stepsGrid {
-    display: flex;   
+    display: flex;
     justify-content: center;
-    margin: 8vh;    
-   
+    margin: 8vh;
   }
 
   .gridItem {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--bondBlack);
-    gap: auto; 
-    background-image: url("../../images/stepsLine4.svg");  
-    
-  } 
+    gap: auto;
+    background-image: url('../../images/stepsLine4.svg');
+  }
   .gridItem1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--bondBlack);
-    gap: auto; 
-    background-image: url("../../images/stepsLine.svg");  
-    
-  }  
+    gap: auto;
+    background-image: url('../../images/stepsLine.svg');
+  }
   .gridItem5 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--bondBlack);
-    gap: auto; 
-    background-image: url("../../images/stepsLine5.svg");
-    margin:0px  
-    
+    gap: auto;
+    background-image: url('../../images/stepsLine5.svg');
+    margin: 0px;
   }
-  .gridItem  span {
-   padding-bottom: 2vh;
- 
+  .gridItem span {
+    padding-bottom: 2vh;
   }
-  .gridItem1  span {
+  .gridItem1 span {
     padding-bottom: 2vh;
-    
-   }
-   .gridItem5  span {
+  }
+  .gridItem5 span {
     padding-bottom: 2vh;
-   
-   }
- 
-
+  }
 }
 @media (max-width: 480px) {
   .stepsContainer {
@@ -77,27 +65,33 @@
     height: auto;
     padding: 3vh 0px;
   }
-  .gridItem,.gridItem1,.gridItem5  {
+  .gridItem,
+  .gridItem1,
+  .gridItem5 {
     display: flex;
     text-align: left;
-    align-items: center;    
+    align-items: center;
     gap: 5vw;
-    margin:4vh 3vw
+    margin: 4vh 3vw;
   }
- 
+
   .stepsTitle {
-    padding:0px 3vw 2vh 3vw;
+    padding: 0px 3vw 2vh 3vw;
   }
-  .stepsText{
+  .stepsText {
     display: flex;
     flex-direction: column;
-
   }
   .gridItem span {
-   padding-bottom: 1vh;
+    padding-bottom: 1vh;
+  }
+  .gridItem1 span {
+    padding-bottom: 1vh;
+  }
+  .gridItem5 span {
+    padding-bottom: 1vh;
   }
   .stepsGrid {
-     
-    background-image: url("../../images/stepsline1Mobile.svg");
+    background-image: url('../../images/stepsline1Mobile.svg');
   }
 }
