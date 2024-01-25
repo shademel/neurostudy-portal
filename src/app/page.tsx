@@ -6,6 +6,7 @@ import Banner from './components/banner/Banner';
 import Blogs from './components/blogs/blogs';
 import Teacher from './components/teacherSection/Teacher';
 import Fact from './components/fact/Fact';
+import HowItWorks from './components/howItWorks/HowItWorks';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       {getGoogleAnalyticsScript()}
       <Teacher />
       <Fact />
+      <HowItWorks></HowItWorks>
       <div>
         <DisplayPodcast />
       </div>

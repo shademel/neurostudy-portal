@@ -13,10 +13,11 @@
   border: 1px solid var(--cherryPieSub);
   border-radius: 8px;
   display: flex;
-  flex: 1;
+  /* flex: 0; */
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  width:25vw;
 }
 
 .cardImage {
@@ -40,5 +41,10 @@
     align-items: flex-start;
     text-align: left;
     margin: 10px 10px;
+    
+  }
+  .description {
+ 
+   padding:10px;
   }
 }
