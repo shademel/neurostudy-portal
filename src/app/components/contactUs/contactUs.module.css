@@ -44,9 +44,7 @@
   text-align: left;
 }
 .message textarea {
-  /* height: 5rem; */
   border-radius: 8px;
-
 }
 .buttonArea {
   display: flex;
