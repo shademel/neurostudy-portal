@@ -4,16 +4,6 @@
  
   padding: 0px 10px;
 }
-/* 
-.long {
-  width: 15rem;
-  height: 40px;
-  border-radius: 8px;
-  border: 1px solid var(--BondBlack);
-  padding: 0px 10px;
-} */
-
-
 .textAreaError {
   border: 1px solid var(--errorRed);
 }
