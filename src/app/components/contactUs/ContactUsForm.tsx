@@ -11,8 +11,6 @@ import {
   PHONE_REGEX,
 } from '@/app/utilities/constants';
 import { registerContactData } from '@/app/utilities/registerContactData';
-import TextArea, { TextAreaVariant } from '../textArea/TextArea';
-
 const ContactUsForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -160,7 +158,6 @@ const ContactUsForm: React.FC = () => {
           </div>
           <div className={`${styles.textArea} ${styles.message}`}>
             <TextArea
-
               name={'Message'}
               label={'Message'}
               value={message}
