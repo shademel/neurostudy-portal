@@ -1,7 +1,7 @@
-.message {
+.message textarea {
   border: 1px solid var(--BondBlack);
   border-radius: 8px;
-
+ 
   padding: 0px 10px;
 }
 .textAreaError {
