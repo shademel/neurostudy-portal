@@ -11,6 +11,8 @@ import {
   PHONE_REGEX,
 } from '@/app/utilities/constants';
 import { registerContactData } from '@/app/utilities/registerContactData';
+import TextArea from '../textArea/TextArea';
+
 const ContactUsForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
