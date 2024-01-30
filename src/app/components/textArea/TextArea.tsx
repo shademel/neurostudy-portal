@@ -15,7 +15,7 @@ type TextAreaProps = {
   placeholder: string;
   errorMessage?: string;
   className?: string;
-  row?: number;
+  rows?: number;
   cols?: number;
   maxlength?: number;
   spellCheck?: boolean;
@@ -25,17 +25,8 @@ type TextAreaProps = {
 };
 
 export default function TextArea(props: TextAreaProps) {
-  let textAreaClass = props.className ? props.className : styles.textArea;
-  if (props.errorMessage) {
-    textAreaClass = `${textAreaClass} ${styles.textAreaError}`;
-  }
-
-  const rows = 5;
-  const cols = 10;
-
-  if (props.variant === TextAreaVariant.LONG) {
-    textAreaClass = `${textAreaClass} ${styles.long}`;
-  }
+  const defaultRows = 5;
+  const defaultCols = 10;
 
   return (
     <div className={styles.textAreaContainer}>
@@ -53,10 +44,10 @@ export default function TextArea(props: TextAreaProps) {
         onChange={props.onChange}
         required={props.required}
         placeholder={props.placeholder}
-        className={textAreaClass}
+        className={styles.message}
         onBlur={props.onBlur}
-        rows={props.variant === TextAreaVariant.LONG ? rows : undefined}
-        cols={props.variant === TextAreaVariant.LONG ? cols : undefined}
+        rows={props.rows || defaultRows}
+        cols={props.cols || defaultCols}
         maxLength={props.maxlength}
         spellCheck={props.spellCheck}
       />

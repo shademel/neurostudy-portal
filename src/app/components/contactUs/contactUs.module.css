@@ -43,9 +43,7 @@
   margin-bottom: 15px;
   text-align: left;
 }
-.message textarea {
-  border-radius: 8px;
-}
+
 .buttonArea {
   display: flex;
   justify-content: center;
@@ -100,6 +98,9 @@
     padding: 0px 0px;
   }
   .textboxBody input {
+    width: 60vw;
+  }
+    .textboxBody textarea {
     width: 60vw;
   }
   .textboxBody button {

@@ -160,7 +160,7 @@ const ContactUsForm: React.FC = () => {
           </div>
           <div className={`${styles.textArea} ${styles.message}`}>
             <TextArea
-              variant={TextAreaVariant.LONG}
+
               name={'Message'}
               label={'Message'}
               value={message}
