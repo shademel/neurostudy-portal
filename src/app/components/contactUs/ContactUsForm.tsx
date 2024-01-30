@@ -11,6 +11,7 @@ import {
   PHONE_REGEX,
 } from '@/app/utilities/constants';
 import { registerContactData } from '@/app/utilities/registerContactData';
+import TextArea from '../textArea/TextArea';
 
 const ContactUsForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
@@ -158,22 +159,20 @@ const ContactUsForm: React.FC = () => {
             />
           </div>
           <div className={`${styles.textArea} ${styles.message}`}>
-            <TextBox
-              variant={TextboxVariant.LONGER}
+            <TextArea
               name={'Message'}
               label={'Message'}
-              type={'text'}
               value={message}
               required={false}
               placeholder={'Enter your message'}
-              errorMessage={messageError}
+              maxlength={300}
               onBlur={() =>
                 !message.trim()
                   ? setMessageError('')
                   : setMessageError(undefined)
               }
               onChange={(e) => setMessage(e.target.value)}
-            />
+            ></TextArea>
           </div>
           <div className={styles.buttonArea}>
             <ActionButton
