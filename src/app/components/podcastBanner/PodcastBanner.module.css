@@ -1,0 +1,25 @@
+.bannerContainer {
+  width: 100vw;
+  height: 65vh;
+  background-image: url('../../images/podcast-banner.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1000px) and (min-width: 480px) {
+  .bannerContainer {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerContainer {
+    flex-direction: column;  
+    height: auto;  
+  }
+}

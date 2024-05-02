@@ -47,9 +47,9 @@ export default function Navbar() {
         <div className={styles.innerWrapper}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link href='#'>
+              <Link href='/neurodivergentmates'>
                 <Typography variant={TypographyVariant.Body2}>
-                  Services
+                  Neurodivergent Mates
                 </Typography>
               </Link>
             </li>
