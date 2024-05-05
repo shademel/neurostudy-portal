@@ -7,14 +7,15 @@ export default function PodcastText() {
     <div className={styles.teacherContainer}>
       <div>
         <Typography variant={TypographyVariant.H2} color='var(--BondBlack)'>
-          Are you a teacher interested in Neurodiversity training?
+          A LIVE podcast that speaks about topics related to neurodiversity and
+          mental health
         </Typography>
       </div>
       <div className={styles.teacherBodyText}>
         <Typography variant={TypographyVariant.Body1} color='var(--BondBlack)'>
-          Use our best in class courses to equip yourself with the tools you
-          need to become better and you can improve your employability with our
-          certificate.
+          Neurodivergent Mates is two neurodivergent mates from Australia who
+          get together with different members of the community to talk and have
+          in-depth conversations.
         </Typography>
       </div>
     </div>

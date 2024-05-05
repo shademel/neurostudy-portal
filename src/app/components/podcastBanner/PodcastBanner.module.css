@@ -1,25 +1,20 @@
 .bannerContainer {
   width: 100vw;
   height: 65vh;
-  background-image: url('../../images/podcast-banner.jpeg');
+  background-image: url('../../images/podcast-banner.svg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100vw 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-@media (max-width: 1000px) and (min-width: 480px) {
-  .bannerContainer {
-    flex-direction: column;
-    height: auto;
-  }
-}
-
 @media (max-width: 480px) {
   .bannerContainer {
-    flex-direction: column;  
-    height: auto;  
+    width: 100vw;
+    height: 250px;
+    background-size: 100vw 250px;
+    background-repeat: no-repeat;
   }
 }

@@ -26,7 +26,9 @@ const BuzzsproutEmbed: React.FC<BuzzsproutEmbedProps> = ({
   return (
     <div className={styles.podcastContainer}>
       <div className={styles.podcastHeader}>
-        <Typography variant={TypographyVariant.H2}> Podcasts</Typography>
+        <Typography variant={TypographyVariant.H2}>
+          Explore more of our Podcast
+        </Typography>
       </div>
       <div id={containerId}></div>
     </div>
