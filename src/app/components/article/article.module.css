@@ -4,7 +4,9 @@
   justify-content: space-around;
   gap: 50px;
   margin: 48px 0px;
+  width: 100vw;
 }
+
 .description {
   padding-left: 20px;
 }
