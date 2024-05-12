@@ -147,15 +147,15 @@ export default function Footer() {
             Contact Us
           </Typography>
           <ul>
-            <li>
+            {/* <li>
               <a href='tel:+123456789'>+61123456</a>
-            </li>
+            </li> */}
             <li>
               <a href='mailto:m.bluth@example.com'>
                 info@neurodiversityacademy.com
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href='https://www.google.com/maps?q=123+Lorem+Road,+Sydney,+2000'
                 target='_blank'
@@ -165,7 +165,7 @@ export default function Footer() {
               >
                 123, Lorem Road, Sydney, 2000
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
@@ -175,7 +175,7 @@ export default function Footer() {
             variant={TypographyVariant.Body2}
             color='var(--GhostWhite)'
           >
-            &copy; 2023 All Rights Reserved
+            &copy; 2024 All Rights Reserved
           </Typography>
         </div>
         <div className={styles.rightFootprint}>
