@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import Typography, {
   TypographyVariant,
 } from '../../components/typography/Typography';
-import TextHeavyBlog from '@/app/components/textHeavyBlog/TextHeavyBlog';
+import TextHeavyBlog from '../../components/textHeavyBlog/textHeavyBlog';
 
 export default function OneBlog() {
   const searchParams = useSearchParams();

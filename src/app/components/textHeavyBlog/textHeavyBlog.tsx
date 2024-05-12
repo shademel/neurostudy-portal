@@ -4,7 +4,7 @@ import { TextHeavyInterface } from '@/app/interfaces/TextHeavyInterface';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './TextHeavyBlog.module.css';
+import styles from './textHeavyBlog.module.css';
 
 export default function TextHeavyBlog({
   header,
