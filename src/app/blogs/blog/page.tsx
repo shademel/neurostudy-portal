@@ -1,0 +1,32 @@
+'use client';
+import React from 'react';
+import TextHeavyArticle from '../../components/textHeavyArticle/TextHeavyArticle';
+import styles from './blog.module.css';
+import blogData from '../blogData.json';
+import { useSearchParams } from 'next/navigation';
+import Typography, {
+  TypographyVariant,
+} from '../../components/typography/Typography';
+
+export default function OneBlog() {
+  const searchParams = useSearchParams();
+  const { blogs } = blogData;
+  const blogId = searchParams.get('blogId');
+  const blog = blogs.find((blog) => blog.id === blogId);
+  if (blog) {
+    return (
+      <div className={styles.container}>
+        <TextHeavyArticle
+          id={blog.id}
+          header={blog.header}
+          imageUrl={blog.imageUrl}
+          bodyText={blog.bodyText}
+        />{' '}
+      </div>
+    );
+  } else {
+    return (
+      <Typography variant={TypographyVariant.H1}>Blog not found</Typography>
+    );
+  }
+}

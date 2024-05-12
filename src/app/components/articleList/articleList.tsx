@@ -2,9 +2,9 @@ import { useRouter } from 'next/navigation';
 import CardList from '../article/card';
 import ActionButton from '../buttons/ActionButton';
 import Typography, { TypographyVariant } from '../typography/Typography';
-import styles from './podcastBlogs.module.css';
+import styles from './articleList.module.css';
 
-export default function PodcastBlogs() {
+export default function ArticleList() {
   const router = useRouter();
   const navigateToArticles = () => {
     router.push(`/articles`);
@@ -13,7 +13,7 @@ export default function PodcastBlogs() {
     <div className={styles.blogsContainer}>
       <div>
         <Typography variant={TypographyVariant.H2} color='var(--BondBlack)'>
-          Explore Neurodivergent Mates
+          Explore Neurodiversity Academy
         </Typography>
       </div>
       <CardList />

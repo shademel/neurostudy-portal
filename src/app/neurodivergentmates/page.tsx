@@ -4,7 +4,7 @@ import DisplayPodcast from '../components/podcast/DisplayPodcast';
 import PodcastBanner from '../components/podcastBanner/PodcastBanner';
 
 import PodcastText from '../components/podcastTextSection/podcastText';
-import PodcastBlogs from '../components/podcastBlogs/podcastBlogs';
+import BlogList from '../components/blogList/blogList';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <DisplayPodcast />
       </div>
       <div>
-        <PodcastBlogs />
+        <BlogList />
       </div>
     </main>
   );
