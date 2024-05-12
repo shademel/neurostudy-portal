@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import DisplayPodcast from './components/podcast/DisplayPodcast';
 import Script from 'next/script';
 import Banner from './components/banner/Banner';
-import Blogs from './components/blogs/blogs';
+import ArticleList from './components/articleList/articleList';
 import Teacher from './components/teacherSection/Teacher';
 import Fact from './components/fact/Fact';
 import HowItWorks from './components/howItWorks/HowItWorks';
@@ -37,7 +37,7 @@ export default function Home() {
         <DisplayPodcast />
       </div>
       <div>
-        <Blogs />
+        <ArticleList />
       </div>
     </main>
   );
