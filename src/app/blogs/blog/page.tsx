@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
-import TextHeavyArticle from '../../components/textHeavyArticle/TextHeavyArticle';
 import styles from './blog.module.css';
 import blogData from '../blogData.json';
 import { useSearchParams } from 'next/navigation';
 import Typography, {
   TypographyVariant,
 } from '../../components/typography/Typography';
+import TextHeavyBlog from '@/app/components/textHeavyBlog/TextHeavyBlog';
 
 export default function OneBlog() {
   const searchParams = useSearchParams();
@@ -16,7 +16,7 @@ export default function OneBlog() {
   if (blog) {
     return (
       <div className={styles.container}>
-        <TextHeavyArticle
+        <TextHeavyBlog
           id={blog.id}
           header={blog.header}
           imageUrl={blog.imageUrl}
