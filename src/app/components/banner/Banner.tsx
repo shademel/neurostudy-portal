@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './banner.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import BadgeDisplay from '../badges/BadgeDisplay';
-import SearchBar from '../searchBar/SearchBar';
+// import SearchBar from '../searchBar/SearchBar';
 
 export default function Banner() {
   return (
@@ -33,11 +33,11 @@ export default function Banner() {
           </div>
         </div>
         <div className={styles.descktopSearchBar}>
-          <SearchBar></SearchBar>
+          {/* <SearchBar></SearchBar> */}
         </div>
       </div>
       <div className={styles.mobileSearchBar}>
-        <SearchBar></SearchBar>
+        {/* <SearchBar></SearchBar> */}
       </div>
     </>
   );
