@@ -13,7 +13,6 @@ export default function Blog({
   imageUrl,
   description,
 }: BlogInterface): JSX.Element {
-  
   const router = useRouter();
   const navigateToblog = (blogId: string) => {
     router.push(`/blogs/blog/?blogId=${blogId}`);

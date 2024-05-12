@@ -4,7 +4,6 @@ import blogData from '../../blogs/blogData.json';
 import styles from './blog.module.css';
 import { BlogInterface } from '@/app/interfaces/BlogInterface';
 
-
 const BlogCardList: React.FC = () => {
   const blogs: BlogInterface[] = blogData.blogs;
 
