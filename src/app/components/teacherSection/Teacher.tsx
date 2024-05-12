@@ -13,7 +13,7 @@ export default function Teacher() {
     <div className={styles.teacherContainer}>
       <div>
         <Typography variant={TypographyVariant.H2} color='var(--BondBlack)'>
-          Are you a teacher interested in Neurodiversity training?
+          Are you interested in Neurodiversity training?
         </Typography>
       </div>
       <div className={styles.teacherBodyText}>
