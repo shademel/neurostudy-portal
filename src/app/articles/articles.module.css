@@ -1,11 +1,8 @@
 .container{
-text-align: center;
-margin:80px ;
-
-
-
-
+  text-align: center;
+  margin:80px ;
 }
+
 .cardList {
   display: flex;
   flex-wrap: wrap;
