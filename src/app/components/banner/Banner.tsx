@@ -15,7 +15,7 @@ export default function Banner() {
                 variant={TypographyVariant.H1}
                 color='var(--GhostWhite)'
               >
-                We endorse the future
+                We endorse Neuro-inclusion in higher education
               </Typography>
             </div>
             <div className={styles.textBody}>
@@ -23,8 +23,7 @@ export default function Banner() {
                 variant={TypographyVariant.H2}
                 color='var(--GhostWhite)'
               >
-                Elevating Neurodiversity by guiding individuals to teach and
-                learn effectively
+                Reach out to learn more about our endorsements and the impact we are creating for Neurodivergent students.
               </Typography>
             </div>
           </div>
