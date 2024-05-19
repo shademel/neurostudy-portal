@@ -23,7 +23,8 @@ export default function Banner() {
                 variant={TypographyVariant.H2}
                 color='var(--GhostWhite)'
               >
-                Reach out to learn more about our endorsements and the impact we are creating for Neurodivergent students.
+                Reach out to learn more about our endorsements and the impact we
+                are creating for Neurodivergent students.
               </Typography>
             </div>
           </div>
