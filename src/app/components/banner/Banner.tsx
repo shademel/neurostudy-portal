@@ -32,13 +32,13 @@ export default function Banner() {
             <BadgeDisplay></BadgeDisplay>
           </div>
         </div>
-        <div className={styles.descktopSearchBar}>
-          {/* <SearchBar></SearchBar> */}
-        </div>
+        {/*<div className={styles.descktopSearchBar}>
+           <SearchBar></SearchBar>
+        </div> */}
       </div>
-      <div className={styles.mobileSearchBar}>
-        {/* <SearchBar></SearchBar> */}
-      </div>
+      {/* <div className={styles.mobileSearchBar}>
+        <SearchBar></SearchBar> 
+      </div> */}
     </>
   );
 }
