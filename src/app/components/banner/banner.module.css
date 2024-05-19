@@ -41,12 +41,12 @@
   .bannerTextAndBadge{
     flex-direction: column;
   }
-  .textBody {
+  /* .textBody {
     width: 85vw;
   }
   .textHeader {
     width: 85vw;
-  }
+  } */
 }
 
 @media (max-width: 480px) {
@@ -61,12 +61,12 @@
     text-align: left;
     margin: 1vw;
   }
-  .textBody {
+  /* .textBody {
     width: 85vw;
   }
   .textHeader {
     width: 85vw;
-  }
+  } */
   .bannerTextAndBadge{
     flex-direction: column;
     justify-content: center;
