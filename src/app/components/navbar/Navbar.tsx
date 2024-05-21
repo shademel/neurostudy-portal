@@ -124,14 +124,20 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/services/neurodiversitytraining' onClick={toggleDropdown}>
+                <Link
+                  href='/services/neurodiversitytraining'
+                  onClick={toggleDropdown}
+                >
                   <Typography variant={TypographyVariant.Body2}>
                     Neurodiversity Training
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/services/advisoryconsulting' onClick={toggleDropdown}>
+                <Link
+                  href='/services/advisoryconsulting'
+                  onClick={toggleDropdown}
+                >
                   <Typography variant={TypographyVariant.Body2}>
                     Advisory Consulting
                   </Typography>
