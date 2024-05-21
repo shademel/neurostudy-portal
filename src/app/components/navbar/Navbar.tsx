@@ -117,49 +117,49 @@ export default function Navbar() {
           {isDropdownVisible && (
             <ul className={`${styles.dropdownMenu}`}>
               <li className={styles.li}>
-                <Link href='/neurodivergentmates'>
+                <Link href='/neurodivergentmates' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Neurodivergent Mates
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/services/neurodiversitytraining'>
+                <Link href='/services/neurodiversitytraining' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Neurodiversity Training
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/services/advisoryconsulting'>
+                <Link href='/services/advisoryconsulting' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Advisory Consulting
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/services/workshops'>
+                <Link href='/services/workshops' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Workshops
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/services/networking'>
+                <Link href='/services/networking' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Networking
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/about'>
+                <Link href='/about' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     About Us
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/contact'>
+                <Link href='/contact' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Contact
                   </Typography>
