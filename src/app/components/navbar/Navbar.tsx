@@ -124,9 +124,30 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='#'>
+                <Link href='/services/neurodiversitytraining'>
                   <Typography variant={TypographyVariant.Body2}>
                     Neurodiversity Training
+                  </Typography>
+                </Link>
+              </li>
+              <li className={styles.li}>
+                <Link href='/services/advisoryconsulting'>
+                  <Typography variant={TypographyVariant.Body2}>
+                    Advisory Consulting
+                  </Typography>
+                </Link>
+              </li>
+              <li className={styles.li}>
+                <Link href='/services/workshops'>
+                  <Typography variant={TypographyVariant.Body2}>
+                    Workshops
+                  </Typography>
+                </Link>
+              </li>
+              <li className={styles.li}>
+                <Link href='/services/networking'>
+                  <Typography variant={TypographyVariant.Body2}>
+                    Networking
                   </Typography>
                 </Link>
               </li>
