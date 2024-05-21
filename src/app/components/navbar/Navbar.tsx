@@ -54,11 +54,41 @@ export default function Navbar() {
               </Link>
             </li>
             <li className={styles.li}>
-              <Link href='#'>
+              <div className={styles.dropdown}>
                 <Typography variant={TypographyVariant.Body2}>
-                  Neurodiversity Training
+                  Services
                 </Typography>
-              </Link>
+                <ul className={styles.dropdownContent}>
+                  <li>
+                    <Link href='/services/neurodiversitytraining'>
+                      <Typography variant={TypographyVariant.Body2}>
+                        Neurodiversity Training
+                      </Typography>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/services/advisoryconsulting'>
+                      <Typography variant={TypographyVariant.Body2}>
+                        Advisory Consulting
+                      </Typography>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/services/workshops'>
+                      <Typography variant={TypographyVariant.Body2}>
+                        Workshops
+                      </Typography>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/services/networking'>
+                      <Typography variant={TypographyVariant.Body2}>
+                        Networking
+                      </Typography>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className={styles.li}>
               <Link href='/about'>
@@ -87,28 +117,55 @@ export default function Navbar() {
           {isDropdownVisible && (
             <ul className={`${styles.dropdownMenu}`}>
               <li className={styles.li}>
-                <Link href='/neurodivergentmates'>
+                <Link href='/neurodivergentmates' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Neurodivergent Mates
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='#'>
+                <Link
+                  href='/services/neurodiversitytraining'
+                  onClick={toggleDropdown}
+                >
                   <Typography variant={TypographyVariant.Body2}>
                     Neurodiversity Training
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/about'>
+                <Link
+                  href='/services/advisoryconsulting'
+                  onClick={toggleDropdown}
+                >
+                  <Typography variant={TypographyVariant.Body2}>
+                    Advisory Consulting
+                  </Typography>
+                </Link>
+              </li>
+              <li className={styles.li}>
+                <Link href='/services/workshops' onClick={toggleDropdown}>
+                  <Typography variant={TypographyVariant.Body2}>
+                    Workshops
+                  </Typography>
+                </Link>
+              </li>
+              <li className={styles.li}>
+                <Link href='/services/networking' onClick={toggleDropdown}>
+                  <Typography variant={TypographyVariant.Body2}>
+                    Networking
+                  </Typography>
+                </Link>
+              </li>
+              <li className={styles.li}>
+                <Link href='/about' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     About Us
                   </Typography>
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/contact'>
+                <Link href='/contact' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
                     Contact
                   </Typography>

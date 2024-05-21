@@ -71,16 +71,20 @@ export default function Footer() {
           >
             Services
           </Typography>
-
           <ul>
             <li>
-              <a href='https://example.com'>Page one</a>
+              <a href='/services/neurodiversitytraining'>
+                Neurodiversity Training
+              </a>
             </li>
             <li>
-              <a href='https://example.com'>Page two</a>
+              <a href='/services/advisoryconsulting'>Advisory Consulting</a>
             </li>
             <li>
-              <a href='https://example.com'>Page three</a>
+              <a href='/services/workshops'>Workshops</a>
+            </li>
+            <li>
+              <a href='/services/networking'>Networking</a>
             </li>
           </ul>
         </div>
@@ -113,17 +117,6 @@ export default function Footer() {
                 title='visit About Us page'
               >
                 About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://example.com'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='Services (opens in new tab)'
-                title='visit Service page'
-              >
-                Service
               </a>
             </li>
             <li>
