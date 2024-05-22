@@ -9,9 +9,9 @@ import { useRouter } from 'next/navigation';
 
 export default function Page() {
   const router = useRouter();
-    const navigateToContactUs = () => {
-        router.push(`/contact`);
-      };
+  const navigateToContactUs = () => {
+    router.push(`/contact`);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -67,11 +67,11 @@ export default function Page() {
         </ul>
       </div>
       <ActionButton
-          label='Contact us'
-          disabled={false}
-          className={styles.accessButton}
-          onClick={() => navigateToContactUs()}
-        />
+        label='Contact us'
+        disabled={false}
+        className={styles.accessButton}
+        onClick={() => navigateToContactUs()}
+      />
     </div>
   );
 }
