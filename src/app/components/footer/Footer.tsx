@@ -144,7 +144,7 @@ export default function Footer() {
               <a href='tel:+123456789'>+61123456</a>
             </li> */}
             <li>
-              <a href='mailto:m.bluth@example.com'>
+              <a href='mailto:info@neurodiversityacademy.com'>
                 info@neurodiversityacademy.com
               </a>
             </li>
