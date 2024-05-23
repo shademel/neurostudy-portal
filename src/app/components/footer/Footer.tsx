@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './footer.module.css';
 import footerLogo from '../../images/footerLogo.svg';
 import Typography, { TypographyVariant } from '../typography/Typography';
@@ -73,18 +74,18 @@ export default function Footer() {
           </Typography>
           <ul>
             <li>
-              <a href='/services/neurodiversitytraining'>
+              <Link href='/services/neurodiversitytraining'>
                 Neurodiversity Training
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/services/advisoryconsulting'>Advisory Consulting</a>
+              <Link href='/services/advisoryconsulting'>Advisory Consulting</Link>
             </li>
             <li>
-              <a href='/services/workshops'>Workshops</a>
+              <Link href='/services/workshops'>Workshops</Link>
             </li>
             <li>
-              <a href='/services/networking'>Networking</a>
+              <Link href='/services/networking'>Networking</Link>
             </li>
           </ul>
         </div>
