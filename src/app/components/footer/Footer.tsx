@@ -89,6 +89,9 @@ export default function Footer() {
             <li>
               <Link href='/services/networking'>Networking</Link>
             </li>
+            <li>
+              <Link href='/services/coaching'>Coaching & Placements</Link>
+            </li>
           </ul>
         </div>
         <div className={styles.topFoot}>

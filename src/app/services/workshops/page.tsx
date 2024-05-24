@@ -3,8 +3,15 @@ import styles from './page.module.css';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
+import ActionButton from '@/app/components/buttons/ActionButton';
+import { useRouter } from 'next/navigation';
 
 export default function Page() {
+  const router = useRouter();
+  const navigateToContactUs = () => {
+    router.push(`/contact`);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -32,6 +39,12 @@ export default function Page() {
           </Typography>
         </p>
       </div>
+      <ActionButton
+        label='Contact us'
+        disabled={false}
+        className={styles.accessButton}
+        onClick={() => navigateToContactUs()}
+      />
     </div>
   );
 }

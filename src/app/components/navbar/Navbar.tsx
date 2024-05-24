@@ -87,6 +87,13 @@ export default function Navbar() {
                       </Typography>
                     </Link>
                   </li>
+                  <li>
+                    <Link href='/services/coaching'>
+                      <Typography variant={TypographyVariant.Body2}>
+                        Coaching & Placements
+                      </Typography>
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </li>

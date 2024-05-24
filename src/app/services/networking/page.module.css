@@ -11,14 +11,16 @@
         margin: 30px;
     }
 
-    .bodyTitle {
-        text-align: center;
-    }
-
     .bodyText {
         margin-bottom: 30px;
         max-width: 65vw;
         text-align: justify;
+    }
+
+    .accessButton {
+        width: 16rem;
+        height: 3rem;
+        margin-bottom: 40px;
     }
 
 }
@@ -31,14 +33,20 @@
         align-items: center;
     }
 
-    .bodyTitle {
-        text-align: center;
+    .title {
+        margin: 0px 30px;
     }
 
     .bodyText {
         text-align: justify;
         margin: 0 30px 30px 30px;
         padding: 0px 10px;
+    }
+
+    .accessButton {
+        width: 15rem;
+        height: 3rem;
+        margin: 20px 0px 50px 0px;
     }
 
 }

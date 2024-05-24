@@ -21,6 +21,12 @@
         text-align: justify;
     }
 
+    .accessButton {
+        width: 16rem;
+        height: 3rem;
+        margin-bottom: 40px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -39,6 +45,12 @@
         text-align: justify;
         margin: 0 30px 30px 30px;
         padding: 0px 10px;
+    }
+
+    .accessButton {
+        width: 15rem;
+        height: 3rem;
+        margin: 20px 0px 50px 0px;
     }
 
 }
