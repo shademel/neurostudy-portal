@@ -16,18 +16,10 @@ export default function Page() {
     <div className={styles.container}>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
-          Introduction about Host Neurodiversity Workshops & Networking service
+          Host Neurodiversity Workshops & Networking service
         </Typography>
       </div>
       <div className={styles.bodyText}>
-        <h2 className={styles.bodyTitle}>
-          <Typography
-            variant={TypographyVariant.Body1}
-            color='var(--BondBlack)'
-          >
-            Host NeurodiversityWorkshops & Networking (Awareness/Education)
-          </Typography>
-        </h2>
         <p>
           <Typography
             variant={TypographyVariant.Body2}
