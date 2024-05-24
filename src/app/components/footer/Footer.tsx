@@ -79,7 +79,9 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href='/services/advisoryconsulting'>Advisory Consulting</Link>
+              <Link href='/services/advisoryconsulting'>
+                Advisory Consulting
+              </Link>
             </li>
             <li>
               <Link href='/services/workshops'>Workshops</Link>
