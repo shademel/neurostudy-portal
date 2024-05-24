@@ -6,8 +6,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Contact page allows customers to contact Neurodiversity Academy.',
-  keywords: ['contact', 'neurodiversity']
+  description:
+    'Contact page allows customers to contact Neurodiversity Academy.',
+  keywords: ['contact', 'neurodiversity'],
 };
 
 export default function Page() {
