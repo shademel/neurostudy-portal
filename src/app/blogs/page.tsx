@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   keywords: [
     'blogs',
     'neurodiversity',
-    'neurodiversityacademy', 
+    'neurodiversityacademy',
     'neurodiversity academy',
     'Neurodivergent Mates',
   ],
