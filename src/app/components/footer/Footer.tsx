@@ -90,7 +90,7 @@ export default function Footer() {
               <Link href='/services/coaching'>Career coaching</Link>
             </li>
             <li>
-              <Link href='/services/coaching'>Placements</Link>
+              <Link href='/services/placements'>Placements</Link>
             </li>
           </ul>
         </div>
