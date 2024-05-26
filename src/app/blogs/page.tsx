@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import blogData from './blogData.json';
 import styles from './blogs.module.css';
@@ -6,26 +7,21 @@ import Typography, {
 } from '../components/typography/Typography';
 import { BlogInterface } from '../interfaces/BlogInterface';
 import Blog from '../components/blog/Blog';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Blogs',
-  description:
-    'Blogs from Neurodivergent Mates sponsored by Neurodiversity Academy.',
-  keywords: [
-    'blogs',
-    'neurodiversity',
-    'neurodiversityacademy',
-    'neurodiversity academy',
-    'Neurodivergent Mates',
-  ],
-};
 
 const CardList: React.FC = () => {
   const blogs: BlogInterface[] = blogData.blogs;
 
   return (
     <div className={styles.container}>
+      <title>Article</title>
+      <meta
+        name='keywords'
+        content='Blogs, neurodiversity, neurodiversityacademy, neurodiversity academy'
+      ></meta>
+      <meta
+        name='description'
+        content='Blogs from Neurodiversity Academy.'
+      ></meta>
       <Typography variant={TypographyVariant.H2} color='var(--BondBlack)'>
         Explore Neurodivergent Mates
       </Typography>

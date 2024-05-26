@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import TextHeavyArticle from '../../components/textHeavyArticle/TextHeavyArticle';
 import styles from './article.module.css';

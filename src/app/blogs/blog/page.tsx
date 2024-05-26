@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './blog.module.css';
 import blogData from '../blogData.json';
