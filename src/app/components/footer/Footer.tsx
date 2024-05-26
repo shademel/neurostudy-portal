@@ -87,7 +87,7 @@ export default function Footer() {
               <Link href='/services/networking'>Networking & Workshops</Link>
             </li>
             <li>
-              <Link href='/services/coaching'>Coaching</Link>
+              <Link href='/services/coaching'>Career coaching</Link>
             </li>
             <li>
               <Link href='/services/coaching'>Placements</Link>

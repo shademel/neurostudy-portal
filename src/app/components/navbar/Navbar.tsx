@@ -83,7 +83,7 @@ export default function Navbar() {
                   <li>
                     <Link href='/services/coaching'>
                       <Typography variant={TypographyVariant.Body2}>
-                        Coaching
+                        Career coaching
                       </Typography>
                     </Link>
                   </li>

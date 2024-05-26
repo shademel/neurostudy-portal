@@ -13,9 +13,10 @@ export const metadata: Metadata = {
   description:
     'Blogs from Neurodivergent Mates sponsored by Neurodiversity Academy.',
   keywords: [
-    'Articles',
+    'blogs',
     'neurodiversity',
-    'neurodiversityacademy, neurodiversity academy',
+    'neurodiversityacademy', 
+    'neurodiversity academy',
     'Neurodivergent Mates',
   ],
 };
