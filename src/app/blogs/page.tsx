@@ -13,7 +13,7 @@ const CardList: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <title>Article</title>
+      <title>Blogs</title>
       <meta
         name='keywords'
         content='Blogs, neurodiversity, neurodiversityacademy, neurodiversity academy'

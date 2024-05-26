@@ -13,10 +13,10 @@ const CardList: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <title>Article</title>
+      <title>Articles</title>
       <meta
         name='keywords'
-        content='Article, neurodiversity, neurodiversityacademy, neurodiversity academy'
+        content='Articles, neurodiversity, neurodiversityacademy, neurodiversity academy'
       ></meta>
       <meta
         name='description'
