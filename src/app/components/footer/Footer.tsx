@@ -84,13 +84,13 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href='/services/workshops'>Workshops</Link>
+              <Link href='/services/networking'>Networking & Workshops</Link>
             </li>
             <li>
-              <Link href='/services/networking'>Networking</Link>
+              <Link href='/services/coaching'>Career coaching</Link>
             </li>
             <li>
-              <Link href='/services/coaching'>Coaching & Placements</Link>
+              <Link href='/services/placements'>Placements</Link>
             </li>
           </ul>
         </div>

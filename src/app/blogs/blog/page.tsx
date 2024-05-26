@@ -16,6 +16,12 @@ export default function OneBlog() {
   if (blog) {
     return (
       <div className={styles.container}>
+        <title>{blog.header}</title>
+        <meta
+          name='keywords'
+          content='blog, neurodiversity, neurodiversity academy, neurodivergent mates, neurodivergentmates'
+        ></meta>
+        <meta name='description' content={blog?.description}></meta>
         <TextHeavyBlog
           id={blog.id}
           header={blog.header}

@@ -14,9 +14,20 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
+      <title>Learning/Training Partnerships</title>
+      <meta
+        name='keywords'
+        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, Neurodiversity Learning/Training Partnerships, Neurodiversity Learning, Learning/Training Partnerships, Neurodiversity Training'
+      ></meta>
+      <meta
+        name='description'
+        content={
+          'Learning/Training Partnerships services from Neurodiversity Academy'
+        }
+      ></meta>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
-          Learning/Training Partnerships
+          Neurodiversity Learning/Training Partnerships
         </Typography>
       </div>
       <div className={styles.bodyText}>

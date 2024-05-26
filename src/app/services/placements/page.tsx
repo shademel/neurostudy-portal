@@ -14,20 +14,32 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
+      <title>Placements (Internships/Employment)</title>
+      <meta
+        name='keywords'
+        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, Neurodiversity Learning/Training Partnerships, placements'
+      ></meta>
+      <meta
+        name='description'
+        content={
+          'Placements (Internships/Employment) services from Neurodiversity Academy'
+        }
+      ></meta>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
-          Host Neurodiversity Workshops & Networking service
+          Placements (Internships/Employment)
         </Typography>
       </div>
       <div className={styles.bodyText}>
         <p>
           <Typography
-            variant={TypographyVariant.Body2}
+            variant={TypographyVariant.Body1}
             color='var(--BondBlack)'
           >
-            Hold regular networking and workshop events in person and online,
-            designed to promote awareness and educate people around
-            Neurodiversity
+            Work with organisations to help more neurodivergent people get job
+            placements in workplaces that support and understand Neurodiversity
+            while creating individual professional growth and economic
+            prosperity.
           </Typography>
         </p>
       </div>

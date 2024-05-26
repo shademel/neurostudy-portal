@@ -14,9 +14,18 @@ export default function Page() {
   };
   return (
     <div className={styles.container}>
+      <title>Career Coaching</title>
+      <meta
+        name='keywords'
+        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, neurodivergentmates, Neurodiversity Coaching & Placements, Neurodiversity Coaching, Career coaching'
+      ></meta>
+      <meta
+        name='description'
+        content={'Neurodiversity Career Coaching from Neurodiversity Academy'}
+      ></meta>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
-          Coaching & Placements
+          Career Coaching
         </Typography>
       </div>
       <div className={styles.bodyText}>
@@ -29,17 +38,6 @@ export default function Page() {
               Give supportive advice on different pathways to take as a
               neurodivergent person to achieve career success or growth
               opportunities in the competitive world
-            </Typography>
-          </li>
-          <li>
-            <Typography
-              variant={TypographyVariant.Body1}
-              color='var(--BondBlack)'
-            >
-              Work with organisations to help more neurodivergent people get job
-              placements in workplaces that support and understand
-              Neurodiversity while creating individual professional growth and
-              economic prosperity
             </Typography>
           </li>
         </ul>

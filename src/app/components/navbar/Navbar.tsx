@@ -74,23 +74,23 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link href='/services/workshops'>
-                      <Typography variant={TypographyVariant.Body2}>
-                        Workshops
-                      </Typography>
-                    </Link>
-                  </li>
-                  <li>
                     <Link href='/services/networking'>
                       <Typography variant={TypographyVariant.Body2}>
-                        Networking
+                        Networking & Workshops
                       </Typography>
                     </Link>
                   </li>
                   <li>
                     <Link href='/services/coaching'>
                       <Typography variant={TypographyVariant.Body2}>
-                        Coaching & Placements
+                        Career coaching
+                      </Typography>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/services/placements'>
+                      <Typography variant={TypographyVariant.Body2}>
+                        Placements
                       </Typography>
                     </Link>
                   </li>
@@ -151,16 +151,9 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className={styles.li}>
-                <Link href='/services/workshops' onClick={toggleDropdown}>
-                  <Typography variant={TypographyVariant.Body2}>
-                    Workshops
-                  </Typography>
-                </Link>
-              </li>
-              <li className={styles.li}>
                 <Link href='/services/networking' onClick={toggleDropdown}>
                   <Typography variant={TypographyVariant.Body2}>
-                    Networking
+                    Networking & Workshops
                   </Typography>
                 </Link>
               </li>

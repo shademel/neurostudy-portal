@@ -16,6 +16,12 @@ export default function OneArticle() {
   if (article) {
     return (
       <div className={styles.container}>
+        <title>{article.header}</title>
+        <meta
+          name='keywords'
+          content='article, neurodiversity, neurodiversityacademy, neurodiversity academy'
+        ></meta>
+        <meta name='description' content={article?.description}></meta>
         <TextHeavyArticle
           id={article.id}
           header={article.header}

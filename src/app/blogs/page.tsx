@@ -1,7 +1,5 @@
 'use client';
-
 import React from 'react';
-
 import blogData from './blogData.json';
 import styles from './blogs.module.css';
 import Typography, {
@@ -15,6 +13,15 @@ const CardList: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <title>Blogs</title>
+      <meta
+        name='keywords'
+        content='Blogs, neurodiversity, neurodiversityacademy, neurodiversity academy'
+      ></meta>
+      <meta
+        name='description'
+        content='Blogs from Neurodiversity Academy.'
+      ></meta>
       <Typography variant={TypographyVariant.H2} color='var(--BondBlack)'>
         Explore Neurodivergent Mates
       </Typography>
