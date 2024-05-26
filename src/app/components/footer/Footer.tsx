@@ -75,7 +75,7 @@ export default function Footer() {
           <ul>
             <li>
               <Link href='/services/neurodiversitytraining'>
-                Neurodiversity Training & Workshops
+                Neurodiversity Training
               </Link>
             </li>
             <li>
