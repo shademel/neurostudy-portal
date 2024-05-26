@@ -28,6 +28,15 @@ const getGoogleAnalyticsScript = () => {
 export default function Home() {
   return (
     <main className={styles.main}>
+      <title>Homepage - Neurodiversity Academy</title>
+      <meta
+        name='keywords'
+        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy'
+      ></meta>
+      <meta
+        name='description'
+        content={'homepage for Neurodiversity Academy'}
+      ></meta>
       <Banner />
       {getGoogleAnalyticsScript()}
       <Teacher />

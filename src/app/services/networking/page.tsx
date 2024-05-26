@@ -14,6 +14,19 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
+      <title>
+        Host Neurodiversity Workshops & Networking (Awareness/Education)
+      </title>
+      <meta
+        name='keywords'
+        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, neurodivergentmates, Host Neurodiversity Workshops & Networking, Neurodiversity Workshops, Neurodiversity Networking'
+      ></meta>
+      <meta
+        name='description'
+        content={
+          'Hosting Neurodiversity Workshops & Networking services from Neurodiversity Academy'
+        }
+      ></meta>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
           Host Neurodiversity Workshops & Networking (Awareness/Education)

@@ -14,6 +14,17 @@ export default function Page() {
   };
   return (
     <div className={styles.container}>
+      <title>Advisory Neurodiversity Consulting</title>
+      <meta
+        name='keywords'
+        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, neurodivergentmates, Advisory Neurodiversity Consulting, advisoryneurodiversityconsulting'
+      ></meta>
+      <meta
+        name='description'
+        content={
+          'Advisory Neurodiversity Consulting services from Neurodiversity Academy'
+        }
+      ></meta>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
           Advisory Neurodiversity Consulting

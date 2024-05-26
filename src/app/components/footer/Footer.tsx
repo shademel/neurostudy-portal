@@ -75,7 +75,7 @@ export default function Footer() {
           <ul>
             <li>
               <Link href='/services/neurodiversitytraining'>
-                Neurodiversity Training
+                Neurodiversity Training & Workshops
               </Link>
             </li>
             <li>
@@ -84,13 +84,13 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href='/services/workshops'>Workshops</Link>
+              <Link href='/services/networking'>Networking & Workshops</Link>
             </li>
             <li>
-              <Link href='/services/networking'>Networking</Link>
+              <Link href='/services/coaching'>Coaching</Link>
             </li>
             <li>
-              <Link href='/services/coaching'>Coaching & Placements</Link>
+              <Link href='/services/coaching'>Placements</Link>
             </li>
           </ul>
         </div>

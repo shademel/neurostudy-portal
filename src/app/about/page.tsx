@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import styles from './about.module.css';
 import Typography, {
@@ -9,6 +8,18 @@ import Values from '../components/aboutValues/Values';
 import Mission from '../components/aboutMission/Mission';
 import Vision from '../components/aboutVision/Vision';
 import Founders from '../components/aboutFounders/Founders';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'About Neurodiversity Academy.',
+  keywords: [
+    'About',
+    'about us',
+    'neurodiversity',
+    'neurodiversityacademy, neurodiversity academy',
+  ],
+};
 
 export default function Page() {
   return (

@@ -17,6 +17,7 @@
     .serviceDescriptionList {
         margin-bottom: 50px;
         max-width: 65vw;
+        list-style: none;
     }
 
     .serviceDescriptionList li {
