@@ -7,6 +7,7 @@ import ArticleList from './components/articleList/articleList';
 import Teacher from './components/teacherSection/Teacher';
 import Fact from './components/fact/Fact';
 import HowItWorks from './components/howItWorks/HowItWorks';
+import Partner from './components/partnerSection/Partner';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
       <Banner />
       {getGoogleAnalyticsScript()}
       <Teacher />
+      <Partner />
       <Fact />
       <HowItWorks></HowItWorks>
       <div>
