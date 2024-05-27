@@ -1,5 +1,5 @@
-.articleText {
-  text-align: justify;
-  text-indent: 30px;
+.article {
+  text-align: left;
+  text-indent: 10px;
   margin-top: 20px;
 }

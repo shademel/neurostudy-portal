@@ -5,6 +5,7 @@ import Typography, { TypographyVariant } from '../typography/Typography';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './textHeavyArticle.module.css';
+import DOMPurify from 'dompurify';
 
 export default function TextHeavyArticle({
   header,
@@ -12,21 +13,26 @@ export default function TextHeavyArticle({
   bodyText,
 }: TextHeavyInterface): JSX.Element {
   const [windowWidth, setWindowWidth] = useState(1150);
+
   useEffect(() => {
     setWindowWidth(window.innerWidth);
   });
 
-  const paragraphs = bodyText.split('\n').map((paragraph, index) => (
-    <div key={index}>
-      <Typography key={index} variant={TypographyVariant.Body2}>
-        {paragraph}
-      </Typography>
-      <br></br>
-    </div>
-  ));
+  const paragraphs = bodyText.split('\n').map((paragraph, index) => {
+    const sanitizedHTML = DOMPurify.sanitize(paragraph);
+    return (
+      <div key={index}>
+        <Typography key={index} variant={TypographyVariant.Body2}>
+          <div dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />
+        </Typography>
+        <br></br>
+      </div>
+    );
+  });
+
   return (
     <div>
-      <div>
+      <div className={styles.article}>
         <Typography
           variant={
             windowWidth <= 430
@@ -41,7 +47,7 @@ export default function TextHeavyArticle({
       <Typography variant={TypographyVariant.H2}>{header}</Typography>
       {windowWidth > 430 ? (
         <Image
-          width={1150}
+          width={1300}
           height={612}
           src={imageUrl}
           alt={`image for ${header}`}
