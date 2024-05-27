@@ -5,6 +5,7 @@ import Typography, { TypographyVariant } from '../typography/Typography';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './textHeavyArticle.module.css';
+import DOMPurify from 'dompurify';
 
 export default function TextHeavyArticle({
   header,
@@ -12,18 +13,23 @@ export default function TextHeavyArticle({
   bodyText,
 }: TextHeavyInterface): JSX.Element {
   const [windowWidth, setWindowWidth] = useState(1150);
+
   useEffect(() => {
     setWindowWidth(window.innerWidth);
   });
 
-  const paragraphs = bodyText.split('\n').map((paragraph, index) => (
-    <div key={index}>
-      <Typography key={index} variant={TypographyVariant.Body2}>
-        {paragraph}
-      </Typography>
-      <br></br>
-    </div>
-  ));
+  const paragraphs = bodyText.split('\n').map((paragraph, index) => {
+    const sanitizedHTML = DOMPurify.sanitize(paragraph);
+    return (
+      <div key={index}>
+        <Typography key={index} variant={TypographyVariant.Body2}>
+          <div dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />
+        </Typography>
+        <br></br>
+      </div>
+    );
+  });
+
   return (
     <div>
       <div>
