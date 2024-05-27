@@ -32,7 +32,7 @@ export default function TextHeavyArticle({
 
   return (
     <div>
-      <div>
+      <div className={styles.article}>
         <Typography
           variant={
             windowWidth <= 430
@@ -47,7 +47,7 @@ export default function TextHeavyArticle({
       <Typography variant={TypographyVariant.H2}>{header}</Typography>
       {windowWidth > 430 ? (
         <Image
-          width={1150}
+          width={1300}
           height={612}
           src={imageUrl}
           alt={`image for ${header}`}
