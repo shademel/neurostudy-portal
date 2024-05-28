@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -31,6 +32,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
