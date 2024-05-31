@@ -20,6 +20,7 @@
 }
 
 .button_container button {
+    display:none; 
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -33,7 +34,7 @@
 
 .embla__viewport {
     overflow: hidden;
-    margin: 40px 8% 0px 8%;
+    margin: 40px 0% 0px 0%;
 }
 
 .embla__container {
@@ -42,10 +43,10 @@
 }
 
 .embla__slide {
-    flex: 0 0 17%;
+    flex: 0 0 25%;
     min-width: 0;
     text-align: center;
-    margin:0px 15px;
+    margin:0px 0px;
 }
 
 .embla__slide img {
@@ -55,6 +56,13 @@
 }
 
 @media (max-width: 480px) {
+
+    .button_container button {
+        display:block; 
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
 
     .title{
         margin: 0px 50px;
@@ -74,10 +82,9 @@
     }
 
     .embla__slide {
-        flex: 0 0 30%;
+        flex: 0 0 33%;
         min-width: 0;
         text-align: center;
-        margin:0px 8px;
     }
     
     .embla__slide img {

@@ -15,6 +15,10 @@ import CanberraUniversity from '../../images/logo_university_of_canberra.png';
 import LeftArrow from '../../images/arrow_left.png';
 import RightArrow from '../../images/arrow_right.png';
 import useEmblaCarouse from 'embla-carousel-react';
+import InclusiveChange from '../../images/logo_inclusive_change.svg';
+import GritNFlow from '../../images/logo_grit_and_flow.svg';
+import TechDiversity from '../../images/logo_tech_diversity.svg';
+import Unify360 from '../../images/logo_unify360.svg';
 
 export default function Partner() {
   const [emblaRef, emblaApi] = useEmblaCarouse({ loop: true, skipSnaps: true });
@@ -46,65 +50,38 @@ export default function Partner() {
         <div className={styles.embla__viewport} ref={emblaRef}>
           <div className={styles.embla__container}>
             <div className={styles.embla__slide}>
-              <a href='https://www.unimelb.edu.au/' target='_blank'>
+              <a href='https://inc-change.com/' target='_blank'>
                 <Image
-                  src={MelbourneUniversity}
-                  alt='University of Melbourne'
-                  title='University of Melbourne'
+                  src={InclusiveChange}
+                  alt='Inclusive Change'
+                  title='Inclusive Change'
                 />
               </a>
             </div>
             <div className={styles.embla__slide}>
-              <a href='https://www.monash.edu/' target='_blank'>
+              <a href='https://www.gritandflow.com/' target='_blank'>
                 <Image
-                  src={MonashUniversity}
-                  alt='Monash University'
-                  title='Monash University'
+                  src={GritNFlow}
+                  alt='Grit and Flow'
+                  title='Grit and Flow'
                 />
               </a>
             </div>
             <div className={styles.embla__slide}>
-              <a href='https://www.anu.edu.au/' target='_blank'>
+              <a href='https://tech-diversity.com.au/' target='_blank'>
                 <Image
-                  src={ANU}
-                  alt='Australian National University'
-                  title='Australian National University'
+                  src={TechDiversity}
+                  alt='Tech Diversity'
+                  title='Tech Diversity'
                 />
               </a>
             </div>
             <div className={styles.embla__slide}>
-              <a href='https://www.rmit.edu.au/' target='_blank'>
+              <a href='https://unify360.com.au/' target='_blank'>
                 <Image
-                  src={RMIT}
-                  alt='Royal Melbourne Institute of Technology'
-                  title='Royal Melbourne Institute of Technology'
-                />
-              </a>
-            </div>
-            <div className={styles.embla__slide}>
-              <a href='https://www.sydney.edu.au/' target='_blank'>
-                <Image
-                  src={SydneyUniversity}
-                  alt='University of Sydney'
-                  title='University of Sydney'
-                />
-              </a>
-            </div>
-            <div className={styles.embla__slide}>
-              <a href='https://www.unsw.edu.au/' target='_blank'>
-                <Image
-                  src={UNSW}
-                  alt='University of New South Wales'
-                  title='University of New South Wales'
-                />
-              </a>
-            </div>
-            <div className={styles.embla__slide}>
-              <a href='https://www.canberra.edu.au/' target='_blank'>
-                <Image
-                  src={CanberraUniversity}
-                  alt='University of Canberra'
-                  title='University of Canberra'
+                  src={Unify360}
+                  alt='Unify 360'
+                  title='Unify 360'
                 />
               </a>
             </div>
