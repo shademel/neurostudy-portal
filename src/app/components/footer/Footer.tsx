@@ -104,37 +104,34 @@ export default function Footer() {
           </Typography>
           <ul>
             <li>
-              <a
-                href='https://example.com'
-                target='_blank'
+              <Link
+                href='/blogs'
                 rel='noopener noreferrer'
-                aria-label='Blogs (opens in new tab)'
+                aria-label='Blogs'
                 title='visit Blogs page'
               >
                 Blogs
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='https://example.com'
-                target='_blank'
+              <Link
+                href='/about'
                 rel='noopener noreferrer'
-                aria-label='About Us (opens in new tab)'
+                aria-label='About Us'
                 title='visit About Us page'
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href='https://example.com'
-                target='_blank'
+              <Link
+                href='/contact'
                 rel='noopener noreferrer'
-                aria-label='Partner with Us (opens in new tab)'
+                aria-label='Partner with Us'
                 title='visit Partner with Us page'
               >
                 Partner with Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

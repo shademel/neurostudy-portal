@@ -5,6 +5,7 @@ import ActionButton, { ButtonStyle } from '../buttons/ActionButton';
 import CircleRight from '../../images/CircleRightOrg.svg';
 import styles from './blog.module.css';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { BlogInterface } from '@/app/interfaces/BlogInterface';
 
 export default function Blog({
@@ -19,11 +20,9 @@ export default function Blog({
   };
   return (
     <div className={styles.card}>
-      <img
-        src={imageUrl}
-        alt={`Thumbnail for ${title}`}
-        className={styles.cardImage}
-      />
+      <div className={styles.cardImage}>
+        <Image src={imageUrl} alt={`Thumbnail for ${title}`} fill={true} />
+      </div>
       <div>
         <div className={styles.description}>
           <Typography variant={TypographyVariant.Body2}>
