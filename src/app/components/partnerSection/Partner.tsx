@@ -5,13 +5,6 @@ import styles from './partner.module.css';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
-import MelbourneUniversity from '../../images/logo_university_of_melbourne.png';
-import MonashUniversity from '../../images/logo_monash_university.png';
-import ANU from '../../images/logo_ANU.png';
-import RMIT from '../../images/logo_RMIT.png';
-import SydneyUniversity from '../../images/logo_sydney_university.png';
-import UNSW from '../../images/logo_UNSW.png';
-import CanberraUniversity from '../../images/logo_university_of_canberra.png';
 import LeftArrow from '../../images/arrow_left.png';
 import RightArrow from '../../images/arrow_right.png';
 import useEmblaCarouse from 'embla-carousel-react';
@@ -78,11 +71,7 @@ export default function Partner() {
             </div>
             <div className={styles.embla__slide}>
               <a href='https://unify360.com.au/' target='_blank'>
-                <Image
-                  src={Unify360}
-                  alt='Unify 360'
-                  title='Unify 360'
-                />
+                <Image src={Unify360} alt='Unify 360' title='Unify 360' />
               </a>
             </div>
           </div>
