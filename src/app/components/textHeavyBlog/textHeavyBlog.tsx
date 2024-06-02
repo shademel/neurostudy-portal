@@ -5,6 +5,7 @@ import Typography, { TypographyVariant } from '../typography/Typography';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './textHeavyBlog.module.css';
+import BlogList from '../blogList/blogList';
 
 export default function TextHeavyBlog({
   header,
@@ -55,6 +56,9 @@ export default function TextHeavyBlog({
         />
       )}
       <div className={styles.blogText}>{paragraphs}</div>
+      <div>
+        <BlogList />
+      </div>
     </div>
   );
 }

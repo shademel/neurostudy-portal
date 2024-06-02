@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './textHeavyArticle.module.css';
 import DOMPurify from 'dompurify';
+import ArticleList from '../articleList/articleList';
 
 export default function TextHeavyArticle({
   header,
@@ -61,6 +62,9 @@ export default function TextHeavyArticle({
         />
       )}
       <div className={styles.articleText}>{paragraphs}</div>
+      <div>
+        <ArticleList />
+      </div>
     </div>
   );
 }
