@@ -53,6 +53,9 @@ export default function TextHeavyBlog({
         </div>
       </div>
       <div className={styles.blogText}>{paragraphs}</div>
+      <div>
+        <BlogList />
+      </div>
     </div>
   );
 }
