@@ -44,9 +44,11 @@ export default function Home() {
       <Partner />
       <Fact />
       <HowItWorks></HowItWorks>
-      <div>
-        <DisplayPodcast />
-      </div>
+      <DisplayPodcast
+        scriptSrc='https://www.buzzsprout.com/2132579.js?container_id=buzzsprout-large-player&player=large'
+        containerId='buzzsprout-large-player'
+        singleBlog={false}
+      />
       <div>
         <ArticleList />
       </div>
