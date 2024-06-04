@@ -1,14 +1,13 @@
 .cardList {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 50px;
+  justify-content: space-evenly;
+  gap: 20px;
   margin: 48px 0px;
-  width: 100%;
+  width: 85%;
 }
 
 .description {
-  padding-left: 20px;
+  padding: 10px 20px;
 }
 
 .card {
@@ -18,7 +17,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  width:35vw;
+  width: 35vw;
 }
 
 .cardImage {
@@ -38,6 +37,15 @@
 }
 
 @media (max-width: 500px) {
+  .cardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 48px 0px;
+    width: 100%;
+  }
+
   .cardImage {
     height: 180px;
   }
@@ -47,6 +55,7 @@
     border-radius: 8px;
     display: flex;
     flex: content;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
