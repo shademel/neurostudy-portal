@@ -38,7 +38,11 @@ export default function Components() {
       </div>
       <div className={styles.border}>
         <Typography variant={TypographyVariant.H2}>Podcast embed</Typography>
-        <DisplayPodcast />
+        <DisplayPodcast
+          scriptSrc='https://www.buzzsprout.com/2132579.js?container_id=buzzsprout-large-player&player=large'
+          containerId='buzzsprout-large-player'
+          singleBlog={false}
+        />
       </div>
       <div className={styles.border}>
         <Typography variant={TypographyVariant.H2}>Textboxes</Typography>

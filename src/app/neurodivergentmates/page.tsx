@@ -21,7 +21,11 @@ export default function Home() {
       <PodcastBanner />
       <PodcastText />
       <div>
-        <DisplayPodcast />
+        <DisplayPodcast
+          scriptSrc='https://www.buzzsprout.com/2132579.js?container_id=buzzsprout-large-player&player=large'
+          containerId='buzzsprout-large-player'
+          singleBlog={false}
+        />
       </div>
       <div>
         <BlogList />
