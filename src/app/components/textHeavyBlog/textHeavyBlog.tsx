@@ -5,7 +5,7 @@ import Typography, { TypographyVariant } from '../typography/Typography';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './textHeavyBlog.module.css';
-import BlogList from '../blogList/blogList';
+import DOMPurify from 'dompurify';
 
 export default function TextHeavyBlog({
   header,
@@ -17,16 +17,23 @@ export default function TextHeavyBlog({
     setWindowWidth(window.innerWidth);
   });
 
-  const paragraphs = bodyText.split('\n').map((paragraph, index) => (
-    <div key={index}>
-      <Typography key={index} variant={TypographyVariant.Body2}>
-        {paragraph}
-      </Typography>
-      <br></br>
-    </div>
-  ));
+  const paragraphs = bodyText.split('\n').map((paragraph, index) => {
+    const sanitizedHTML = DOMPurify.sanitize(paragraph);
+    return (
+      <div key={index}>
+        <Typography key={index} variant={TypographyVariant.Body2}>
+          <div
+            className={styles.paragraph}
+            dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
+          />
+        </Typography>
+        <br></br>
+      </div>
+    );
+  });
+
   return (
-    <div>
+    <div className={styles.container}>
       <div>
         <Typography
           variant={
@@ -40,25 +47,12 @@ export default function TextHeavyBlog({
         </Typography>
       </div>
       <Typography variant={TypographyVariant.H2}>{header}</Typography>
-      {windowWidth > 430 ? (
-        <Image
-          width={1150}
-          height={612}
-          src={imageUrl}
-          alt={`image for ${header}`}
-        />
-      ) : (
-        <Image
-          width={430}
-          height={250}
-          src={imageUrl}
-          alt={`image for ${header}`}
-        />
-      )}
-      <div className={styles.blogText}>{paragraphs}</div>
       <div>
-        <BlogList />
+        <div className={styles.imageWrapper}>
+          <Image src={imageUrl} alt={`image for ${header}`} fill={true} />
+        </div>
       </div>
+      <div className={styles.blogText}>{paragraphs}</div>
     </div>
   );
 }

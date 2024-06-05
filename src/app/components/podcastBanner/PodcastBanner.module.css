@@ -1,20 +1,15 @@
-.bannerContainer {
-  width: 100vw;
+.imageWrapper {
+  position: relative;
+  width: 100%;
   height: 65vh;
-  background-image: url('../../images/podcast-banner.svg');
-  background-repeat: no-repeat;
-  background-size: 100vw 65vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  object-fit: contain;
 }
 
 @media (max-width: 480px) {
-  .bannerContainer {
-    width: 100vw;
+
+  .imageWrapper {
     height: 250px;
-    background-size: 100vw 250px;
-    background-repeat: no-repeat;
   }
+
 }
+

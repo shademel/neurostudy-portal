@@ -6,6 +6,7 @@ import CircleRight from '../../images/CircleRightOrg.svg';
 import styles from './article.module.css';
 import { ArticleInterface } from '@/app/interfaces/ArticleInterface';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Article({
   id,
@@ -19,11 +20,9 @@ export default function Article({
   };
   return (
     <div className={styles.card}>
-      <img
-        src={imageUrl}
-        alt={`Thumbnail for ${title}`}
-        className={styles.cardImage}
-      />
+      <div className={styles.cardImage}>
+        <Image src={imageUrl} alt={`Thumbnail for ${title}`} fill={true} />
+      </div>
       <div>
         <div className={styles.description}>
           <Typography variant={TypographyVariant.Body2}>

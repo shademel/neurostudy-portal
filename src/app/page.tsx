@@ -44,12 +44,12 @@ export default function Home() {
       <Partner />
       <Fact />
       <HowItWorks></HowItWorks>
-      <div>
-        <DisplayPodcast />
-      </div>
-      <div>
-        <ArticleList />
-      </div>
+      <DisplayPodcast
+        scriptSrc='https://www.buzzsprout.com/2132579.js?container_id=buzzsprout-large-player&player=large'
+        containerId='buzzsprout-large-player'
+        singleBlog={false}
+      />
+      <ArticleList />
     </main>
   );
 }

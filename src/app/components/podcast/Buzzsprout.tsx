@@ -3,14 +3,16 @@ import React, { useEffect } from 'react';
 import styles from './podcast.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 
-interface BuzzsproutEmbedProps {
+export interface BuzzsproutEmbedProps {
   scriptSrc: string;
   containerId: string;
+  singleBlog: boolean;
 }
 
 const BuzzsproutEmbed: React.FC<BuzzsproutEmbedProps> = ({
   scriptSrc,
   containerId,
+  singleBlog,
 }) => {
   useEffect(() => {
     const script = document.createElement('script');
@@ -26,9 +28,15 @@ const BuzzsproutEmbed: React.FC<BuzzsproutEmbedProps> = ({
   return (
     <div className={styles.podcastContainer}>
       <div className={styles.podcastHeader}>
-        <Typography variant={TypographyVariant.H2}>
-          Explore more of our Podcast
-        </Typography>
+        {!singleBlog ? (
+          <Typography variant={TypographyVariant.H2}>
+            Explore more of our Podcast
+          </Typography>
+        ) : (
+          <Typography variant={TypographyVariant.H2}>
+            Listen our podcast
+          </Typography>
+        )}
       </div>
       <div id={containerId}></div>
     </div>
