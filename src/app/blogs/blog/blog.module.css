@@ -1,17 +1,5 @@
 .container {
-  /* max-width: 1150px; */
   width: 95%;
   margin: auto;
-  padding: 50px 0px;
+  padding: 10px 0px 50px 0px;
 }
-
-
-/* @media (max-width: 800px) {
-  .container {
-    max-width: 700px;
-    margin: 0px 20px;
-  }
-  .container img {
-    max-width: 100%;
-  }
-} */

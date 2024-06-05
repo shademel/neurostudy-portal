@@ -35,9 +35,7 @@ export default function OneBlog() {
           containerId={blog.containerId}
           singleBlog={true}
         />
-        <div>
-          <BlogList />
-        </div>
+        <BlogList />
       </div>
     );
   } else {

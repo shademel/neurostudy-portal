@@ -3,6 +3,7 @@ import React from 'react';
 import TextHeavyArticle from '../../components/textHeavyArticle/TextHeavyArticle';
 import styles from './article.module.css';
 import articleData from '../articleData.json';
+import ArticleList from '@/app/components/articleList/articleList';
 import { useSearchParams } from 'next/navigation';
 import Typography, {
   TypographyVariant,
@@ -28,6 +29,7 @@ export default function OneArticle() {
           imageUrl={article.imageUrl}
           bodyText={article.bodyText}
         />{' '}
+        <ArticleList />
       </div>
     );
   } else {

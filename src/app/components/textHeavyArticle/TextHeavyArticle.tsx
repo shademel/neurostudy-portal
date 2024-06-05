@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './textHeavyArticle.module.css';
 import DOMPurify from 'dompurify';
-import ArticleList from '../articleList/articleList';
 
 export default function TextHeavyArticle({
   header,
@@ -24,7 +23,10 @@ export default function TextHeavyArticle({
     return (
       <div key={index}>
         <Typography key={index} variant={TypographyVariant.Body2}>
-          <div dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />
+          <div
+            className={styles.paragraph}
+            dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
+          />
         </Typography>
         <br></br>
       </div>
@@ -32,8 +34,8 @@ export default function TextHeavyArticle({
   });
 
   return (
-    <div>
-      <div className={styles.article}>
+    <div className={styles.container}>
+      <div>
         <Typography
           variant={
             windowWidth <= 430
@@ -46,25 +48,10 @@ export default function TextHeavyArticle({
         </Typography>
       </div>
       <Typography variant={TypographyVariant.H2}>{header}</Typography>
-      {windowWidth > 430 ? (
-        <Image
-          width={1300}
-          height={612}
-          src={imageUrl}
-          alt={`image for ${header}`}
-        />
-      ) : (
-        <Image
-          width={430}
-          height={250}
-          src={imageUrl}
-          alt={`image for ${header}`}
-        />
-      )}
-      <div className={styles.articleText}>{paragraphs}</div>
-      <div>
-        <ArticleList />
+      <div className={styles.imageWrapper}>
+        <Image src={imageUrl} alt={`image for ${header}`} fill={true} />
       </div>
+      <div className={styles.articleText}>{paragraphs}</div>
     </div>
   );
 }
