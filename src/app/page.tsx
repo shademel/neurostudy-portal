@@ -49,9 +49,7 @@ export default function Home() {
         containerId='buzzsprout-large-player'
         singleBlog={false}
       />
-      <div>
-        <ArticleList />
-      </div>
+      <ArticleList />
     </main>
   );
 }

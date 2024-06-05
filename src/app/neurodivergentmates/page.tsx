@@ -20,16 +20,12 @@ export default function Home() {
       ></meta>
       <PodcastBanner />
       <PodcastText />
-      <div>
-        <DisplayPodcast
-          scriptSrc='https://www.buzzsprout.com/2132579.js?container_id=buzzsprout-large-player&player=large'
-          containerId='buzzsprout-large-player'
-          singleBlog={false}
-        />
-      </div>
-      <div>
-        <BlogList />
-      </div>
+      <DisplayPodcast
+        scriptSrc='https://www.buzzsprout.com/2132579.js?container_id=buzzsprout-large-player&player=large'
+        containerId='buzzsprout-large-player'
+        singleBlog={false}
+      />
+      <BlogList />
     </main>
   );
 }
