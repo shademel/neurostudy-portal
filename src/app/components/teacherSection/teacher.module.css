@@ -13,10 +13,27 @@
     margin-bottom: 30px;
   }
   .accessButton {
-    width: 24rem;
+    width: 15rem;
     height: 4rem;
     margin: 20px 0px;
   }
+
+  .customModal {
+    border-radius: 18px;
+    width: 50%;
+    height: 60%;
+  }
+
+  .customModal container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .customModal container imageWrapper {
+    position: relative;
+    width: 300px;
+  }
+
 }
 @media (max-width: 480px) {
   .teacherContainer {

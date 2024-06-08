@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 170px;
-  height: 48px;
+  /* width: 170px; */
+  /* height: 48px; */
   border-radius: 8px;
   border: 1px;
   gap: 8px;
@@ -52,8 +52,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 170px;
-  height: 48px;
+  /* width: 170px; */
+  /* height: 48px; */
   border-radius: 8px;
   border: 1px;
   gap: 8px;

@@ -8,6 +8,7 @@ import { useSearchParams } from 'next/navigation';
 import Typography, {
   TypographyVariant,
 } from '../../components/typography/Typography';
+import Subscribe from '@/app/components/subscribe/subscribe';
 
 export default function OneArticle() {
   const searchParams = useSearchParams();
@@ -30,6 +31,9 @@ export default function OneArticle() {
           bodyText={article.bodyText}
         />{' '}
         <ArticleList />
+        <div className={styles.subscribeContainer}>
+          <Subscribe />
+        </div>
       </div>
     );
   } else {

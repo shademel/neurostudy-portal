@@ -9,6 +9,7 @@ import Typography, {
 import TextHeavyBlog from '../../components/textHeavyBlog/textHeavyBlog';
 import BlogList from '@/app/components/blogList/blogList';
 import DisplayPodcast from '@/app/components/podcast/DisplayPodcast';
+import Subscribe from '@/app/components/subscribe/subscribe';
 
 export default function OneBlog() {
   const searchParams = useSearchParams();
@@ -36,6 +37,9 @@ export default function OneBlog() {
           singleBlog={true}
         />
         <BlogList />
+        <div className={styles.subscribeContainer}>
+          <Subscribe />
+        </div>
       </div>
     );
   } else {
