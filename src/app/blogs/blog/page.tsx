@@ -23,6 +23,11 @@ export default function OneBlog() {
           name='keywords'
           content='blog, neurodiversity, neurodiversity academy, neurodivergent mates, neurodivergentmates'
         ></meta>
+        <meta property="og:title" content={blog.header} />
+        <meta property="og:image" content={blog.imageUrl} />
+        <meta property="og:type" content="blog" />
+        <meta property="og:description" content={blog?.description} />
+        <meta property="og:url" content={`https://neurodiversityacademy.com/blogs/blog?blogId=${blogId}`} />
         <meta name='description' content={blog?.description}></meta>
         <TextHeavyBlog
           id={blog.id}

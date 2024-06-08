@@ -23,7 +23,7 @@
 
 .paragraph p {
   margin-bottom: 20px;
-  text-align: justify;
+  text-align: left;
   font-size: var(--Body1);
 }
 
