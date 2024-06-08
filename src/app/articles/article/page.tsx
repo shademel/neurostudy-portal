@@ -43,8 +43,8 @@ export default function OneArticle() {
           />{' '}
           <ArticleList />
           <div className={styles.subscribeContainer}>
-          <Subscribe />
-        </div>
+            <Subscribe />
+          </div>
         </div>
       </>
     );
