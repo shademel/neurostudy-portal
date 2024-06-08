@@ -10,6 +10,15 @@
   padding: 5px 20px 0px 20px;
 }
 
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 140px;
+}
+
+
 .card {
   border: 1px solid var(--cherryPieSub);
   border-radius: 8px;

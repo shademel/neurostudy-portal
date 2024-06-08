@@ -17,34 +17,38 @@ export default function OneBlog() {
   const blog = blogs.find((blog) => blog.id === blogId);
   if (blog) {
     return (
-      <div className={styles.container}>
-        <title>{blog.header}</title>
-        <meta
-          name='keywords'
-          content='blog, neurodiversity, neurodiversity academy, neurodivergent mates, neurodivergentmates'
-        ></meta>
-        <meta property='og:title' content={blog.header} />
-        <meta property='og:image' content={blog.imageUrl} />
-        <meta property='og:type' content='blog' />
-        <meta property='og:description' content={blog?.description} />
-        <meta
-          property='og:url'
-          content={`https://neurodiversityacademy.com/blogs/blog?blogId=${blogId}`}
-        />
-        <meta name='description' content={blog?.description}></meta>
-        <TextHeavyBlog
-          id={blog.id}
-          header={blog.header}
-          imageUrl={blog.imageUrl}
-          bodyText={blog.bodyText}
-        />{' '}
-        <DisplayPodcast
-          scriptSrc={blog.scriptSrc}
-          containerId={blog.containerId}
-          singleBlog={true}
-        />
-        <BlogList />
-      </div>
+      <>
+        <head>
+          <title>{blog.header}</title>
+          <meta
+            name='keywords'
+            content='blog, neurodiversity, neurodiversity academy, neurodivergent mates, neurodivergentmates'
+          ></meta>
+          <meta property='og:title' content={blog.header} />
+          <meta property='og:image' content={blog.imageUrl} />
+          <meta property='og:type' content='blog' />
+          <meta property='og:description' content={blog?.description} />
+          <meta
+            property='og:url'
+            content={`https://neurodiversityacademy.com/blogs/blog?blogId=${blogId}`}
+          />
+          <meta name='description' content={blog?.description}></meta>
+        </head>
+        <div className={styles.container}>
+          <TextHeavyBlog
+            id={blog.id}
+            header={blog.header}
+            imageUrl={blog.imageUrl}
+            bodyText={blog.bodyText}
+          />{' '}
+          <DisplayPodcast
+            scriptSrc={blog.scriptSrc}
+            containerId={blog.containerId}
+            singleBlog={true}
+          />
+          <BlogList />
+        </div>
+      </>
     );
   } else {
     return (

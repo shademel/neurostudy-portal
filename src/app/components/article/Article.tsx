@@ -23,7 +23,7 @@ export default function Article({
       <div className={styles.cardImage}>
         <Image src={imageUrl} alt={`Thumbnail for ${title}`} fill={true} />
       </div>
-      <div>
+      <div className={styles.descriptionContainer}>
         <div className={styles.description}>
           <Typography variant={TypographyVariant.Body2}>
             {description}
