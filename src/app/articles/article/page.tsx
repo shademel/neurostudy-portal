@@ -22,11 +22,14 @@ export default function OneArticle() {
           name='keywords'
           content='article, neurodiversity, neurodiversityacademy, neurodiversity academy'
         ></meta>
-        <meta property="og:title" content={article.header} />
-        <meta property="og:image" content={article.imageUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:description" content={article?.description} />
-        <meta property="og:url" content={`https://neurodiversityacademy.com/articles/article?articleId=${articleId}`} />
+        <meta property='og:title' content={article.header} />
+        <meta property='og:image' content={article.imageUrl} />
+        <meta property='og:type' content='article' />
+        <meta property='og:description' content={article?.description} />
+        <meta
+          property='og:url'
+          content={`https://neurodiversityacademy.com/articles/article?articleId=${articleId}`}
+        />
         <meta name='description' content={article?.description}></meta>
         <TextHeavyArticle
           id={article.id}
