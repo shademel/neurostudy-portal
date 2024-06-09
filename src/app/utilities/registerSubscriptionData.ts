@@ -9,8 +9,9 @@ export const registerSubscriptionData = async (
 
   const config = {
     method: 'post',
-    url: '/api/contact',
+    url: 'https://api.hubapi.com/crm/v3/objects/contacts',
     headers: {
+      'Authorization': `Bearer `,
       'Content-Type': 'application/json',
     },
     data: data,

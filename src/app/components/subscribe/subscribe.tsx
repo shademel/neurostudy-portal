@@ -23,6 +23,7 @@ export default function Subscribe() {
     } else {
       const outcome: CRMCreateResponseInterface =
         await registerSubscriptionData(userSubscriptionData);
+      console.log(outcome);
       if (outcome.id) {
         setSubmissionSuccess(true);
       }
