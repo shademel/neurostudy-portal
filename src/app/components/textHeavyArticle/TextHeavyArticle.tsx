@@ -19,7 +19,7 @@ export default function TextHeavyArticle({
   });
 
   const paragraphs = bodyText.split('\n').map((paragraph, index) => {
-    const sanitizedHTML = DOMPurify.sanitize(paragraph);
+    const sanitizedHTML = DOMPurify.sanitize?.(paragraph);
     return (
       <div key={index}>
         <Typography key={index} variant={TypographyVariant.Body2}>
