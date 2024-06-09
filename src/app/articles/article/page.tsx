@@ -7,17 +7,14 @@ import ArticleList from '@/app/components/articleList/articleList';
 import Typography, {
   TypographyVariant,
 } from '../../components/typography/Typography';
-
-type MetadataProps = {
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+import { MetadataProps } from '@/app/interfaces/MetadataProps';
 
 export async function generateMetadata({
   searchParams,
 }: MetadataProps): Promise<Metadata> {
   const articleId = searchParams?.articleId;
   const { articles } = articleData;
-  const article = articles.find((article) => article.id === articleId);
+  const article = articles.find(({ id }) => id === articleId);
 
   if (!article) {
     return {};
