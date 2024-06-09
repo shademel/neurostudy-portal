@@ -13,6 +13,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  ...(process.env.HOST_URL && {
+    metadataBase: new URL(process.env.HOST_URL),
+  }),
   title: 'Neurodiversity Academy',
   description: 'Neurostudy Neurodiversity Academy',
 };
