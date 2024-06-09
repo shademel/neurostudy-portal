@@ -8,17 +8,17 @@ const useWindowWidth = (defaultWidth: number = 1150): number => {
     setWindowWidth(window.innerWidth);
 
     const updateWidth = throttle(() => {
-      setWindowWidth(window.innerWidth)
-    })
+      setWindowWidth(window.innerWidth);
+    });
 
-    window.addEventListener('resize', updateWidth)
+    window.addEventListener('resize', updateWidth);
 
     return () => {
-      window.removeEventListener('resize', updateWidth)
-    }
+      window.removeEventListener('resize', updateWidth);
+    };
   }, []);
 
-  return windowWidth
-}
+  return windowWidth;
+};
 
-export default useWindowWidth
+export default useWindowWidth;
