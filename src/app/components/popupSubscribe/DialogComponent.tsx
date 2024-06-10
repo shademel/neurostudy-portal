@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import TextBox, { TextboxVariant } from '../textbox/Textbox';
 import ActionButton from '../buttons/ActionButton';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
-import UserSubscrtiptionInterface from '@/app/interfaces/UserSubscriptionInterface';
-import { registerSubscriptionData } from '@/app/utilities/registerSubscriptionData';
+import { UserSubscriptionType } from '@/app/interfaces/UserSubscriptionType';
+import { registerSubscriptionData } from '@/app/utilities/register/registerSubscriptionData';
 import { EMAIL_REGEX } from '@/app/utilities/constants';
 import styles from './dialog.module.css';
 import Image from 'next/image';
@@ -37,7 +37,7 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const userSubscriptionData: UserSubscrtiptionInterface = {
+    const userSubscriptionData: UserSubscriptionType = {
       email: email,
     };
     if (emailError) {
@@ -45,7 +45,8 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     } else {
       const outcome: CRMCreateResponseInterface =
         await registerSubscriptionData(userSubscriptionData);
-      if (outcome.id) {
+
+      if (outcome.id || !outcome) {
         setSubmissionSuccess(true);
       }
     }
@@ -56,7 +57,7 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [emailError, setEmailError] = useState<string | undefined>();
 
   return (
-    <div ref={popupRef} className={`${styles.dialogBackground}`}>
+    <div ref={popupRef} className={styles.dialogBackground}>
       <dialog open={true}>
         <div className={styles.closeButtonWrapper}>
           <button onClick={onClose}>

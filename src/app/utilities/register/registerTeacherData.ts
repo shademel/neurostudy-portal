@@ -1,15 +1,15 @@
 import axios from 'axios';
-import { UserFormSubmissionType } from '../interfaces/UserFormSubmissionType';
-import CRMCreateResponseInterface from '../interfaces/CRMCreateResponseInterface';
+import { TeacherRegistrationType } from '../../interfaces/TeacherRegistrationType';
+import CRMCreateResponseInterface from '../../interfaces/CRMCreateResponseInterface';
 
-export const registerContactData = async (
-  contactRegistrationData: UserFormSubmissionType
+export const registerTeacherData = async (
+  teacherRegistrationData: TeacherRegistrationType
 ): Promise<CRMCreateResponseInterface> => {
-  const data = JSON.stringify(contactRegistrationData);
+  const data = JSON.stringify(teacherRegistrationData);
 
   const config = {
     method: 'post',
-    url: '/api/contactUsSubmission',
+    url: '/api/teacherRegistration',
     headers: {
       'Content-Type': 'application/json',
     },

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import TextBox, { TextboxVariant } from '../textbox/Textbox';
 import ActionButton from '../buttons/ActionButton';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
-import UserSubscrtiptionInterface from '@/app/interfaces/UserSubscriptionInterface';
-import { registerSubscriptionData } from '@/app/utilities/registerSubscriptionData';
+import { UserSubscriptionType } from '@/app/interfaces/UserSubscriptionType';
+import { registerSubscriptionData } from '@/app/utilities/register/registerSubscriptionData';
 import { EMAIL_REGEX } from '@/app/utilities/constants';
 import Image from 'next/image';
 import styles from './subscribe.module.css';
@@ -15,7 +15,7 @@ import Typography, {
 export default function Subscribe() {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const userSubscriptionData: UserSubscrtiptionInterface = {
+    const userSubscriptionData: UserSubscriptionType = {
       email: email,
     };
     if (emailError) {
@@ -23,8 +23,8 @@ export default function Subscribe() {
     } else {
       const outcome: CRMCreateResponseInterface =
         await registerSubscriptionData(userSubscriptionData);
-      console.log(outcome);
-      if (outcome.id) {
+
+      if (outcome.id || !outcome) {
         setSubmissionSuccess(true);
       }
     }

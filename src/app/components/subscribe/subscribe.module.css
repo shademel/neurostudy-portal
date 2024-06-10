@@ -28,7 +28,7 @@
 }
 
 .description {
-    color: #b8b8b8;
+    color: var(--grey);
     font-weight: 400;
     font-size: 1rem;
     width: 90%;
