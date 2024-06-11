@@ -1,15 +1,14 @@
-'use client';
-
 import React from 'react';
 import Search from '../../images/SearchOrg.svg';
-import ActionButton, { ButtonStyle } from './ActionButton';
+import ActionButton from './ActionButton';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function mySecondary() {
   return (
     <ActionButton
       label='Search'
       icon={Search}
-      style={ButtonStyle.Secondary}
+      style={BUTTON_STYLE.Secondary}
       disabled={false}
       onClick={() => console.log('clicked Secondary button')}
     />
