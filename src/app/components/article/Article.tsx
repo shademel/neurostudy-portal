@@ -1,12 +1,11 @@
-'use client';
 import React from 'react';
 import Typography, { TypographyVariant } from '../typography/Typography';
-import ActionButton, { ButtonStyle } from '../buttons/ActionButton';
+import ActionButton from '../buttons/ActionButton';
 import CircleRight from '../../images/CircleRightOrg.svg';
 import styles from './article.module.css';
 import { ArticleInterface } from '@/app/interfaces/ArticleInterface';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function Article({
   id,
@@ -14,10 +13,6 @@ export default function Article({
   imageUrl,
   description,
 }: ArticleInterface): JSX.Element {
-  const router = useRouter();
-  const navigateToArticle = (articleId: string) => {
-    router.push(`/articles/article/?articleId=${articleId}`);
-  };
   return (
     <div className={styles.card}>
       <div className={styles.cardImage}>
@@ -32,11 +27,11 @@ export default function Article({
         <ActionButton
           label='Learn more'
           icon={CircleRight}
-          style={ButtonStyle.Tertiary}
+          style={BUTTON_STYLE.Tertiary}
           disabled={false}
           iconPosition='right'
-          onClick={() => navigateToArticle(id)}
-        ></ActionButton>
+          to={`/articles/article/?articleId=${id}`}
+        />
       </div>
     </div>
   );
