@@ -1,5 +1,6 @@
 .main {
     width: 100%;
+    margin-top: 3rem;
 }
 
 .title {
@@ -56,6 +57,10 @@
 }
 
 @media (max-width: 480px) {
+
+    .main {
+        margin-top: 2rem;
+    }
 
     .button_container button {
         display:block; 

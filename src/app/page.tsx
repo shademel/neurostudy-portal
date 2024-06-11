@@ -38,7 +38,6 @@ export default function Home() {
     <main className={styles.main}>
       <Banner />
       {getGoogleAnalyticsScript()}
-      <Teacher />
       <Partner />
       <Fact />
       <HowItWorks></HowItWorks>
@@ -48,6 +47,7 @@ export default function Home() {
         singleBlog={false}
       />
       <ArticleList />
+      <Teacher />
     </main>
   );
 }
