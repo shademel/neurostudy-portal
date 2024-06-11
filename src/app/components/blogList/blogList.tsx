@@ -1,3 +1,4 @@
+'use client';
 import { useRouter } from 'next/navigation';
 import BlogCardList from '../blog/BlogCardList';
 import ActionButton from '../buttons/ActionButton';

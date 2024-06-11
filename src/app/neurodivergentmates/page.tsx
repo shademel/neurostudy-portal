@@ -1,23 +1,21 @@
-'use client';
 import styles from './page.module.css';
 import DisplayPodcast from '../components/podcast/DisplayPodcast';
 import PodcastBanner from '../components/podcastBanner/PodcastBanner';
 
 import PodcastText from '../components/podcastTextSection/podcastText';
 import BlogList from '../components/blogList/blogList';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Homepage - Neurodivergent Mates',
+  description: 'Homepage for Neurodivergent Mates',
+  keywords:
+    'homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, neurodivergentmates',
+};
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <title>Homepage - Neurodivergent Mates</title>
-      <meta
-        name='keywords'
-        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, neurodivergentmates'
-      ></meta>
-      <meta
-        name='description'
-        content={'homepage for Neurodivergent Mates'}
-      ></meta>
       <PodcastBanner />
       <PodcastText />
       <DisplayPodcast

@@ -1,32 +1,22 @@
-'use client';
 import styles from './page.module.css';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
 import ActionButton from '@/app/components/buttons/ActionButton';
-import { useRouter } from 'next/navigation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Host Neurodiversity Workshops & Networking (Awareness/Education)',
+  description:
+    'Hosting Neurodiversity Workshops & Networking services from Neurodiversity Academy',
+  keywords:
+    'homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, ' +
+    'neurodivergent mates, neurodivergentmates, Host Neurodiversity Workshops & Networking, Neurodiversity Workshops, Neurodiversity Networking',
+};
 
 export default function Page() {
-  const router = useRouter();
-  const navigateToContactUs = () => {
-    router.push(`/contact`);
-  };
-
   return (
     <div className={styles.container}>
-      <title>
-        Host Neurodiversity Workshops & Networking (Awareness/Education)
-      </title>
-      <meta
-        name='keywords'
-        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, neurodivergentmates, Host Neurodiversity Workshops & Networking, Neurodiversity Workshops, Neurodiversity Networking'
-      ></meta>
-      <meta
-        name='description'
-        content={
-          'Hosting Neurodiversity Workshops & Networking services from Neurodiversity Academy'
-        }
-      ></meta>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
           Host Neurodiversity Workshops & Networking (Awareness/Education)
@@ -48,7 +38,7 @@ export default function Page() {
         label='Contact us'
         disabled={false}
         className={styles.accessButton}
-        onClick={() => navigateToContactUs()}
+        to='/contact'
       />
     </div>
   );

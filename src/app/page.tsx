@@ -1,4 +1,3 @@
-'use client';
 import styles from './page.module.css';
 import DisplayPodcast from './components/podcast/DisplayPodcast';
 import Script from 'next/script';
@@ -8,6 +7,7 @@ import Teacher from './components/teacherSection/Teacher';
 import Fact from './components/fact/Fact';
 import HowItWorks from './components/howItWorks/HowItWorks';
 import Partner from './components/partnerSection/Partner';
+import { Metadata } from 'next';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -26,18 +26,16 @@ const getGoogleAnalyticsScript = () => {
   );
 };
 
+export const metadata: Metadata = {
+  title: 'Homepage - Neurodiversity Academy',
+  keywords:
+    'homepage, neurodiversity, neurodiversityacademy, neurodiversity academy',
+  description: 'Homepage for Neurodiversity Academy',
+};
+
 export default function Home() {
   return (
     <main className={styles.main}>
-      <title>Homepage - Neurodiversity Academy</title>
-      <meta
-        name='keywords'
-        content='homepage, neurodiversity, neurodiversityacademy, neurodiversity academy'
-      ></meta>
-      <meta
-        name='description'
-        content={'homepage for Neurodiversity Academy'}
-      ></meta>
       <Banner />
       {getGoogleAnalyticsScript()}
       <Teacher />

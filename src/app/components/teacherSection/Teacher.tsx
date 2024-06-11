@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+import React, { useCallback，useEffect, useState } from 'react';
 import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
@@ -7,9 +8,9 @@ import DialogPopUp from '../popupSubscribe/DialogComponent';
 export default function Teacher() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = useCallback(() => {
     setIsModalOpen(!isModalOpen);
-  };
+  }, [isModalOpen]);
 
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
@@ -34,10 +35,10 @@ export default function Teacher() {
           label='Subscribe Us'
           disabled={false}
           className={styles.accessButton}
-          onClick={() => toggleModal()}
+          onClick={toggleModal}
         />
       </div>
-      {isModalOpen && <DialogPopUp onClose={() => toggleModal()} />}
+      {isModalOpen && <DialogPopUp onClose={toggleModal} />}
     </div>
   );
 }

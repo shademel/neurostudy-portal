@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import TextBox, { TextboxVariant } from '../textbox/Textbox';
 import ActionButton from '../buttons/ActionButton';
 import styles from './dialog.module.css';
@@ -47,12 +47,15 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   const popupRef = useRef<HTMLDivElement | null>(null);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    const dialog = document.querySelector('dialog');
-    if (dialog && !dialog.contains(event.target as Node)) {
-      onClose();
-    }
-  };
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      const dialog = document.querySelector('dialog');
+      if (dialog && !dialog.contains(event.target as Node)) {
+        onClose();
+      }
+    },
+    [onClose]
+  );
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -64,7 +67,7 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     return () => {
       document.removeEventListener('mousedown', handleClick);
     };
-  }, [onClose]);
+  }, [handleClickOutside]);
 
   return (
     <div

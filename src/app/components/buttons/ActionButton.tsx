@@ -1,26 +1,20 @@
 'use client';
-
-import React from 'react';
+import React, { useCallback } from 'react';
 import styles from './button.module.css';
 import Image from 'next/image';
-
-export enum ButtonStyle {
-  PrimaryFull = 'primary-full',
-  Secondary = 'secondary',
-  SecondaryFull = 'secondary-full',
-  Tertiary = 'tertiary',
-  TertiaryFull = 'tertiary-full',
-}
+import { useRouter } from 'next/navigation';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 interface ActionButtonProps {
   label: string;
   icon?: string;
-  style?: ButtonStyle;
+  style?: BUTTON_STYLE;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void | undefined;
   iconPosition?: 'left' | 'right';
   className?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
+  to?: string;
 }
 
 export default function ActionButton({
@@ -28,11 +22,22 @@ export default function ActionButton({
   icon,
   style,
   disabled,
-  onClick,
+  onClick: onRootClick,
   iconPosition = 'left',
   className,
   type,
+  to,
 }: ActionButtonProps) {
+  const router = useRouter();
+
+  const onClick = useCallback(
+    function (this: HTMLButtonElement, e: React.MouseEvent<HTMLButtonElement>) {
+      onRootClick?.call(this, e);
+      to && router.push(to);
+    },
+    [router, onRootClick, to]
+  );
+
   let buttonStyles;
 
   switch (style) {

@@ -1,8 +1,7 @@
-'use client';
-
 import React from 'react';
 import Search from '../../images/Search.svg';
-import ActionButton, { ButtonStyle } from './ActionButton';
+import ActionButton from './ActionButton';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function myPrimaryFullDisabled() {
   return (
@@ -10,7 +9,7 @@ export default function myPrimaryFullDisabled() {
       label='Search Disabled'
       icon={Search}
       disabled={true}
-      style={ButtonStyle.PrimaryFull}
+      style={BUTTON_STYLE.PrimaryFull}
     />
   );
 }
