@@ -1,3 +1,4 @@
+'use client';
 import React, { useCallback, useState } from 'react';
 import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
