@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import TextBox, { TextboxVariant } from '../textbox/Textbox';
 import ActionButton from '../buttons/ActionButton';

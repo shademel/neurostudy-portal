@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import TextBox, { TextboxVariant } from '../textbox/Textbox';
 import ActionButton from '../buttons/ActionButton';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
@@ -12,28 +12,12 @@ import MailboxLady from '../../images/mailboxLady.png';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
+import useClickOutside from '@/app/hooks/useClickOutside';
 
 const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const popupRef = useRef<HTMLDivElement | null>(null);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    const dialog = document.querySelector('dialog');
-    if (dialog && !dialog.contains(event.target as Node)) {
-      onClose();
-    }
-  };
-
-  useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
-      handleClickOutside(event);
-    };
-
-    document.addEventListener('mousedown', handleClick);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
-    };
-  }, [onClose]);
+  useClickOutside(onClose);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();

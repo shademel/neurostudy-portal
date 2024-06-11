@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback，useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
