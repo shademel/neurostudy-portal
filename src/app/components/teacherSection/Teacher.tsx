@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+'use client';
+import React, { useCallback, useState } from 'react';
 import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
@@ -9,6 +10,9 @@ export default function Teacher() {
   const openModal = () => {
     setIsModalOpen(true);
   };
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
   return (
     <div className={styles.teacherContainer}>
       <div>
@@ -31,7 +35,7 @@ export default function Teacher() {
           onClick={openModal}
         />
       </div>
-      {isModalOpen && <DialogPopUp onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <DialogPopUp onClose={closeModal} />}
     </div>
   );
 }

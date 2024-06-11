@@ -1,12 +1,11 @@
-'use client';
 import React from 'react';
 import Typography, { TypographyVariant } from '../typography/Typography';
-import ActionButton, { ButtonStyle } from '../buttons/ActionButton';
+import ActionButton from '../buttons/ActionButton';
 import CircleRight from '../../images/CircleRightOrg.svg';
 import styles from './blog.module.css';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { BlogInterface } from '@/app/interfaces/BlogInterface';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function Blog({
   id,
@@ -14,10 +13,6 @@ export default function Blog({
   imageUrl,
   description,
 }: BlogInterface): JSX.Element {
-  const router = useRouter();
-  const navigateToblog = (blogId: string) => {
-    router.push(`/blogs/blog/?blogId=${blogId}`);
-  };
   return (
     <div className={styles.card}>
       <div className={styles.cardImage}>
@@ -32,10 +27,10 @@ export default function Blog({
         <ActionButton
           label='Learn more'
           icon={CircleRight}
-          style={ButtonStyle.Tertiary}
+          style={BUTTON_STYLE.Tertiary}
           disabled={false}
           iconPosition='right'
-          onClick={() => navigateToblog(id)}
+          to={`/blogs/blog/?blogId=${id}`}
         ></ActionButton>
       </div>
     </div>
