@@ -14,7 +14,6 @@
   height: 36px;
   border-radius: 8px;
   border: 1px solid var(--BondBlack);
-  /* padding: 0px 10px; */
 }
 
 /* .long {
@@ -38,4 +37,18 @@
 .errorMessage {
   color: var(--errorRed);
   margin-bottom: -1rem;
+}
+
+@media (width <= 320px) {
+
+  .textBox {
+    height: 18px;
+    border-radius: 5px;
+  }
+
+  .textBoxContainer input[type='email']::placeholder {
+    font-size: 0.5rem;
+    padding-left: 0px;
+  }
+
 }
