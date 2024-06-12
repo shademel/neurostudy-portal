@@ -14,15 +14,6 @@
   align-items: center;
 }
 
-.logo {
-  margin-right: auto;
-}
-
-.innerWrapper {
-  display: flex;
-  align-items: center;
-}
-
 .ul {
   list-style: none;
   padding: 0;
@@ -31,18 +22,20 @@
 }
 
 .li {
-  padding: 0.7rem 1rem;
-  margin-right: 0.2rem;
+  margin-right: 32px;
 }
 
 .li:hover {
-  background-color: var(--cherryPieSub);
-  border-radius: 30px;
-  cursor: pointer;
+  background-color: lightgray;
 }
 
-.li:hover span {
-  color: var(--GhostWhite);
+.logo {
+  margin-right: auto;
+}
+
+.innerWrapper {
+  display: flex;
+  align-items: center;
 }
 
 .li :global(a) {

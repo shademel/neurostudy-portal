@@ -6,9 +6,9 @@
   border-radius: 8px;
   border: 1px;
   gap: 8px;
-  border: 1px solid var(--cherryPieVariant);
-  background: var(--cherryPie);
-  color: var(--GhostWhite);
+  border: 1px solid #6600cc;
+  background: #330066;
+  color: #f8f8ff;
   font-family: var(--poppins-font);
   font-weight: 600;
   font-size: large;
@@ -27,15 +27,6 @@
   font-size: larger;
 }
 
-.login {
-  font-weight: 400;
-  font-size: large;
-  height: 48px;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0px 10px;
-}
-
 .btn1Full {
   display: flex;
   align-items: center;
@@ -46,9 +37,9 @@
   border-radius: 8px;
   border: 1px;
   gap: 8px;
-  border: 1px solid var(--cherryPieVariant);
-  background: var(--cherryPieVariant);
-  color: var(--GhostWhite);
+  border: 1px solid #6600cc;
+  background: #6600cc;
+  color: #f8f8ff;
   font-family: var(--poppins-font);
   font-weight: 600;
   font-size: large;
@@ -62,9 +53,9 @@
   border-radius: 8px;
   border: 1px;
   gap: 8px;
-  border: 1px solid var(--cherryPieVariant);
-  background-color: var(--GhostWhite);
-  color: var(--cherryPieVariant);
+  border: 1px solid #6600cc;
+  background-color: white;
+  color: #6600cc;
   font-family: var(--poppins-font);
   font-weight: 600;
   font-size: large;
@@ -80,9 +71,9 @@
   border-radius: 8px;
   border: 1px;
   gap: 8px;
-  border: 1px solid var(--cherryPieVariant);
-  background-color: var(--GhostWhite);
-  color: var(--cherryPieVariant);
+  border: 1px solid #6600cc;
+  background-color: white;
+  color: #6600cc;
   font-family: var(--poppins-font);
   font-weight: 600;
   font-size: large;
@@ -93,9 +84,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cherryPieVariant);
-  background-color: var(--GhostWhite);
-  border: var(--GhostWhite);
+  color: #6600cc;
+  background-color: white;
+  border: white;
   width: 173px;
   height: 48px;
   padding: 12px, 24px, 12px, 24px;
@@ -115,9 +106,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cherryPieVariant);
-  background-color: var(--GhostWhite);
-  border: var(--GhostWhite);
+  color: #6600cc;
+  background-color: white;
+  border: white;
   font-family: var(--poppins-font);
   font-weight: 600;
   font-size: large;
