@@ -36,72 +36,74 @@ export default function Subscribe() {
   const [emailError, setEmailError] = useState<string | undefined>();
 
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
-      <div className={styles.container}>
-        <div className={styles.imageWrapper}>
-          <Image
-            src={MailboxLady}
-            alt='Subscribe to our Newsletter'
-            title='Subscribe to out Newsletter'
-            fill={true}
-            quality={100}
-          />
+    <div className={styles.main}>
+      <form onSubmit={(event) => handleSubmit(event)}>
+        <div className={styles.container}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src={MailboxLady}
+              alt='Subscribe to our Newsletter'
+              title='Subscribe to out Newsletter'
+              fill={true}
+              quality={100}
+            />
+          </div>
+          <div className={styles.contentWrapper}>
+            {!submissionSuccess ? (
+              <>
+                <div>
+                  <p className={styles.title}>Subscribe to our Newsletter!</p>
+                </div>
+                <p className={styles.description}>
+                  Be the first to get exclusive offers and latest news
+                </p>
+                <div className={styles.textArea}>
+                  <TextBox
+                    variant={TextboxVariant.LONG}
+                    name={'Email'}
+                    label={''}
+                    type={'email'}
+                    value={email}
+                    required={true}
+                    errorMessage={emailError}
+                    placeholder={'Enter your email address'}
+                    onBlur={() =>
+                      !EMAIL_REGEX.test(email)
+                        ? setEmailError('Email Address is invalid')
+                        : setEmailError(undefined)
+                    }
+                    onChange={(e) => setEmail(e.target.value.trim())}
+                  />
+                </div>
+                <div className={styles.buttonArea}>
+                  <ActionButton
+                    type='submit'
+                    label='Subscribe Now'
+                    disabled={false}
+                    className={styles.accessButton}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <p className={styles.successTitle}>
+                  <Typography variant={TypographyVariant.H2}>
+                    <span className={styles.successSpan}>
+                      Thank you for subscribing to
+                    </span>
+                    <span className={styles.successH2}>
+                      Neurodiversity Academy!
+                    </span>
+                  </Typography>
+                </p>
+                <p className={styles.description}>
+                  Check your email for our exclusive offers and latest news
+                </p>
+              </>
+            )}
+          </div>
         </div>
-        <div className={styles.contentWrapper}>
-          {!submissionSuccess ? (
-            <>
-              <div>
-                <p className={styles.title}>Subscribe to our Newsletter!</p>
-              </div>
-              <p className={styles.description}>
-                Be the first to get exclusive offers and latest news
-              </p>
-              <div className={styles.textArea}>
-                <TextBox
-                  variant={TextboxVariant.LONG}
-                  name={'Email'}
-                  label={''}
-                  type={'email'}
-                  value={email}
-                  required={true}
-                  errorMessage={emailError}
-                  placeholder={'Enter your email address'}
-                  onBlur={() =>
-                    !EMAIL_REGEX.test(email)
-                      ? setEmailError('Email Address is invalid')
-                      : setEmailError(undefined)
-                  }
-                  onChange={(e) => setEmail(e.target.value.trim())}
-                />
-              </div>
-              <div className={styles.buttonArea}>
-                <ActionButton
-                  type='submit'
-                  label='Subscribe Now'
-                  disabled={false}
-                  className={styles.accessButton}
-                />
-              </div>
-            </>
-          ) : (
-            <>
-              <p className={styles.successTitle}>
-                <Typography variant={TypographyVariant.H2}>
-                  <span className={styles.successSpan}>
-                    Thank you for subscribing to
-                  </span>
-                  <span className={styles.successH2}>
-                    Neurodiversity Academy!
-                  </span>
-                </Typography>
-              </p>
-              <p className={styles.description}>
-                Check your email for our exclusive offers and latest news
-              </p>
-            </>
-          )}
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }

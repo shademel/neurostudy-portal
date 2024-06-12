@@ -8,6 +8,7 @@ import Fact from './components/fact/Fact';
 import HowItWorks from './components/howItWorks/HowItWorks';
 import Partner from './components/partnerSection/Partner';
 import { Metadata } from 'next';
+import Subscribe from './components/subscribe/subscribe';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
     <main className={styles.main}>
       <Banner />
       {getGoogleAnalyticsScript()}
+      <Teacher />
       <Partner />
       <Fact />
       <HowItWorks></HowItWorks>
@@ -47,7 +49,7 @@ export default function Home() {
         singleBlog={false}
       />
       <ArticleList />
-      <Teacher />
+      <Subscribe />
     </main>
   );
 }
