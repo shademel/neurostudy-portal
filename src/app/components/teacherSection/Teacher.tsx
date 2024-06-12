@@ -1,18 +1,21 @@
 'use client';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
-import DialogPopUp from '../popupSignup/DialogComponent';
+import DialogPopUp from '../popupSubscribe/DialogComponent';
 
 export default function Teacher() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-  const closeModal = useCallback(() => {
-    setIsModalOpen(false);
-  }, []);
+
+  const toggleModal = useCallback(() => {
+    setIsModalOpen(!isModalOpen);
+  }, [isModalOpen]);
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+  }, [isModalOpen]);
+
   return (
     <div className={styles.teacherContainer}>
       <div>
@@ -29,13 +32,13 @@ export default function Teacher() {
       </div>
       <div>
         <ActionButton
-          label='Access courses'
+          label='Subscribe Us'
           disabled={false}
           className={styles.accessButton}
-          onClick={openModal}
+          onClick={toggleModal}
         />
       </div>
-      {isModalOpen && <DialogPopUp onClose={closeModal} />}
+      {isModalOpen && <DialogPopUp onClose={toggleModal} />}
     </div>
   );
 }

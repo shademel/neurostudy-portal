@@ -1,13 +1,42 @@
+@media (max-width: 480px) {
+
+    .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .title {
+        width: 90%;
+    }
+
+    .bodyText {
+        text-align: justify;
+        margin: 0 30px 30px 30px;
+        padding: 0px 10px;
+    }
+
+    .accessButton {
+        width: 15rem;
+        height: 3rem;
+        margin: 20px 0px 3.6rem 0px;
+    }
+
+}
+
 @media (min-width: 480px) {
    
     .container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 50px;
     }
    
     .title {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid var(--BondBlack);
         margin: 30px;
     }
 
@@ -20,29 +49,7 @@
     .accessButton {
         width: 16rem;
         height: 3rem;
-        margin-bottom: 40px;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .container {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .bodyText {
-        text-align: justify;
-        margin: 0 30px 30px 30px;
-        padding: 0px 10px;
-    }
-
-    .accessButton {
-        width: 15rem;
-        height: 3rem;
-        margin: 20px 0px 50px 0px;
+        margin-bottom: 6rem;
     }
 
 }

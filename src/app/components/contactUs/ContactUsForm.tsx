@@ -11,7 +11,7 @@ import {
   NAME_REGEX,
   PHONE_REGEX,
 } from '@/app/utilities/constants';
-import { registerContactData } from '@/app/utilities/registerContactData';
+import { registerContactData } from '@/app/utilities/register/registerContactData';
 import TextArea from '../textArea/TextArea';
 
 const ContactUsForm: React.FC = () => {

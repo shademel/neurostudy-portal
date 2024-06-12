@@ -4,7 +4,7 @@ import ActionButton from '../buttons/ActionButton';
 import styles from './dialog.module.css';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
 import { TeacherRegistrationType } from '@/app/interfaces/TeacherRegistrationType';
-import { registerTeacherData } from '@/app/utilities/registerTeacherData';
+import { registerTeacherData } from '@/app/utilities/register/registerTeacherData';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import {
   EMAIL_REGEX,

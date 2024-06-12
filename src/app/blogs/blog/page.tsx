@@ -7,6 +7,7 @@ import Typography, {
 import TextHeavyBlog from '../../components/textHeavyBlog/textHeavyBlog';
 import BlogList from '@/app/components/blogList/blogList';
 import DisplayPodcast from '@/app/components/podcast/DisplayPodcast';
+import Subscribe from '@/app/components/subscribe/subscribe';
 import { MetadataProps } from '@/app/interfaces/MetadataProps';
 import { Metadata } from 'next';
 
@@ -65,6 +66,7 @@ export default function OneBlog({ searchParams }: MetadataProps) {
         singleBlog={true}
       />
       <BlogList />
+      <Subscribe />
     </div>
   );
 }

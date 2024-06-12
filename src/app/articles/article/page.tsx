@@ -7,6 +7,7 @@ import ArticleList from '@/app/components/articleList/articleList';
 import Typography, {
   TypographyVariant,
 } from '../../components/typography/Typography';
+import Subscribe from '@/app/components/subscribe/subscribe';
 import { MetadataProps } from '@/app/interfaces/MetadataProps';
 
 export async function generateMetadata({
@@ -57,6 +58,7 @@ export default function OneArticle({ searchParams }: MetadataProps) {
         bodyText={article.bodyText}
       />{' '}
       <ArticleList />
+      <Subscribe />
     </div>
   );
 }

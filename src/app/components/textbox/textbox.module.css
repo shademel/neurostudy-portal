@@ -1,13 +1,30 @@
-.textBox {
-  width: 15rem;
-  height: 40px;
-  border-radius: 8px;
-  border: 1px solid var(--BondBlack);
-  padding: 0px 10px;
+.textBoxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
 }
 
-.long {
-  width: 20rem;
+.label {
+  padding: 0px 3px;
+}
+
+.textBox {
+  max-width: 100%;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--BondBlack);
+  /* padding: 0px 10px; */
+}
+
+/* .long {
+  width: 100%;
+} */
+
+.textBoxContainer input[type='email'] {
+  max-width: 100%;
+  padding: 0px;
+  padding-left: 15px;
 }
 
 .longer {
@@ -18,16 +35,7 @@
   border: 1px solid var(--errorRed);
 }
 
-.textBoxContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
 .errorMessage {
   color: var(--errorRed);
-}
-
-.label {
-  padding: 0px 3px;
+  margin-bottom: -1rem;
 }

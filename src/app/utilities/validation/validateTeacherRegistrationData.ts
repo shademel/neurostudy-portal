@@ -1,5 +1,5 @@
-import { TeacherRegistrationType } from '../interfaces/TeacherRegistrationType';
-import { NAME_REGEX, PHONE_REGEX, EMAIL_REGEX } from './constants';
+import { TeacherRegistrationType } from '../../interfaces/TeacherRegistrationType';
+import { NAME_REGEX, PHONE_REGEX, EMAIL_REGEX } from '../constants';
 
 export function isValidTeacherRegistrationData(
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
