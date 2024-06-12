@@ -66,9 +66,7 @@ export default function OneBlog({ searchParams }: MetadataProps) {
         singleBlog={true}
       />
       <BlogList />
-      <div className={styles.subscribeContainer}>
-        <Subscribe />
-      </div>
+      <Subscribe />
     </div>
   );
 }

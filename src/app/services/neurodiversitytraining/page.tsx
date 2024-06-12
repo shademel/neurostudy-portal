@@ -4,6 +4,7 @@ import Typography, {
 } from '@/app/components/typography/Typography';
 import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
+import Subscribe from '@/app/components/subscribe/subscribe';
 
 export const metadata: Metadata = {
   title: 'Learning/Training Partnerships',
@@ -42,6 +43,7 @@ export default function Page() {
         className={styles.accessButton}
         to='/contact'
       />
+      <Subscribe />
     </div>
   );
 }

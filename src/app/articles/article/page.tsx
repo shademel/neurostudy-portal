@@ -58,9 +58,7 @@ export default function OneArticle({ searchParams }: MetadataProps) {
         bodyText={article.bodyText}
       />{' '}
       <ArticleList />
-      <div className={styles.subscribeContainer}>
-        <Subscribe />
-      </div>
+      <Subscribe />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import PodcastBanner from '../components/podcastBanner/PodcastBanner';
 import PodcastText from '../components/podcastTextSection/podcastText';
 import BlogList from '../components/blogList/blogList';
 import { Metadata } from 'next';
+import Subscribe from '../components/subscribe/subscribe';
 
 export const metadata: Metadata = {
   title: 'Homepage - Neurodivergent Mates',
@@ -24,6 +25,7 @@ export default function Home() {
         singleBlog={false}
       />
       <BlogList />
+      <Subscribe />
     </main>
   );
 }
