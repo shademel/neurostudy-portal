@@ -77,7 +77,7 @@ export default function Page() {
         className={styles.accessButton}
         to='/contact'
       />
-    <Subscribe />
+      <Subscribe />
     </div>
   );
 }
