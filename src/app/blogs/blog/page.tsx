@@ -52,18 +52,20 @@ export default function OneBlog({ searchParams }: MetadataProps) {
     );
   }
 
+  const { id, imageUrl, header, bodyText, scriptSrc, containerId } = blog;
+
   return (
     <div className={styles.container}>
       <TextHeavyBlog
-        id={blog.id}
-        header={blog.header}
-        imageUrl={blog.imageUrl}
-        bodyText={blog.bodyText}
+        id={id}
+        header={header}
+        imageUrl={imageUrl}
+        bodyText={bodyText}
       />{' '}
-      {blog.scriptSrc != '' && blog.containerId != '' && (
+      {scriptSrc != '' && containerId != '' && (
         <DisplayPodcast
-          scriptSrc={blog.scriptSrc}
-          containerId={blog.containerId}
+          scriptSrc={scriptSrc}
+          containerId={containerId}
           singleBlog={true}
         />
       )}
