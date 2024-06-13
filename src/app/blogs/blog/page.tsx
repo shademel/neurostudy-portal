@@ -60,11 +60,13 @@ export default function OneBlog({ searchParams }: MetadataProps) {
         imageUrl={blog.imageUrl}
         bodyText={blog.bodyText}
       />{' '}
-      <DisplayPodcast
-        scriptSrc={blog.scriptSrc}
-        containerId={blog.containerId}
-        singleBlog={true}
-      />
+      {blog.scriptSrc != '' && blog.containerId != '' && (
+        <DisplayPodcast
+          scriptSrc={blog.scriptSrc}
+          containerId={blog.containerId}
+          singleBlog={true}
+        />
+      )}
       <BlogList />
       <Subscribe />
     </div>

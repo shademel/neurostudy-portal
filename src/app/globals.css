@@ -20,6 +20,7 @@
   --cherryPieSub: #d2a4ff;
   --errorRed: red;
   --grey: #b8b8b8;
+  --greyVariant: #d3d3d3;
 }
 body {
   margin: 0px;

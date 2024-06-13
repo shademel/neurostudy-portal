@@ -24,14 +24,16 @@ export default function Blog({
             {description}
           </Typography>
         </div>
-        <ActionButton
-          label='Learn more'
-          icon={CircleRight}
-          style={BUTTON_STYLE.Tertiary}
-          disabled={false}
-          iconPosition='right'
-          to={`/blogs/blog/?blogId=${id}`}
-        ></ActionButton>
+        <div className={styles.buttonArea}>
+          <ActionButton
+            label='Learn more'
+            icon={CircleRight}
+            style={BUTTON_STYLE.Tertiary}
+            disabled={false}
+            iconPosition='right'
+            to={`/blogs/blog/?blogId=${id}`}
+          ></ActionButton>
+        </div>
       </div>
     </div>
   );
