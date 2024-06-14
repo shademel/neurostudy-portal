@@ -6,19 +6,6 @@
   width: 90%;
 }
 
-.description {
-  padding: 5px 20px 0px 20px;
-}
-
-.descriptionContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  height: 140px;
-}
-
-
 .card {
   border: 1px solid var(--cherryPieSub);
   border-radius: 8px;
@@ -26,7 +13,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  box-shadow: 0.3rem 0.3rem 8px lightgray;
+  box-shadow: 0.3rem 0.3rem 8px var(--greyVariant);
   width: 380px;
   max-width: 380px;
 }
@@ -43,7 +30,19 @@
   border-radius: 8px 8px 0px 0px;
 }
 
-.card button {
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: auto;
+}
+
+.description {
+  padding: 5px 20px 0px 20px;
+}
+
+.buttonArea button {
   cursor: pointer;
 }
 

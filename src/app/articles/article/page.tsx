@@ -49,13 +49,15 @@ export default function OneArticle({ searchParams }: MetadataProps) {
     );
   }
 
+  const { id, header, imageUrl, bodyText } = article;
+
   return (
     <div className={styles.container}>
       <TextHeavyArticle
-        id={article.id}
-        header={article.header}
-        imageUrl={article.imageUrl}
-        bodyText={article.bodyText}
+        id={id}
+        header={header}
+        imageUrl={imageUrl}
+        bodyText={bodyText}
       />{' '}
       <ArticleList />
       <Subscribe />

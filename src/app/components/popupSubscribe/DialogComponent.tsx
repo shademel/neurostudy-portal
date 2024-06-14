@@ -56,7 +56,7 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               <Image
                 src={MailboxLady}
                 alt='Subscribe to our Newsletter'
-                title='Subscribe to out Newsletter'
+                title='Subscribe to our Newsletter'
                 fill={true}
                 quality={100}
               />

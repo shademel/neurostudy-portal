@@ -24,14 +24,16 @@ export default function Article({
             {description}
           </Typography>
         </div>
-        <ActionButton
-          label='Learn more'
-          icon={CircleRight}
-          style={BUTTON_STYLE.Tertiary}
-          disabled={false}
-          iconPosition='right'
-          to={`/articles/article/?articleId=${id}`}
-        />
+        <div className={styles.buttonArea}>
+          <ActionButton
+            label='Learn more'
+            icon={CircleRight}
+            style={BUTTON_STYLE.Tertiary}
+            disabled={false}
+            iconPosition='right'
+            to={`/articles/article/?articleId=${id}`}
+          />
+        </div>
       </div>
     </div>
   );
