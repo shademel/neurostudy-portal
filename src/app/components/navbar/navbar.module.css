@@ -105,6 +105,20 @@
   gap: 10px;
 }
 
+@media (width >= 320px) {
+  .dropdownMenu {
+    height: 455px;
+    overflow-y: scroll;
+  }
+}
+
+@media (320px < width <= 360px) {
+  .dropdownMenu {
+    height: 525px;
+    overflow-y: scroll;
+  }
+}
+
 @media (width <=999px) {
   .wrapper {
     padding: 12px 30px;

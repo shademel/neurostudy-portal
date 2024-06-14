@@ -59,7 +59,7 @@
   display: block;
 }
 
-@media (width <= 320px) {
+@media (width <= 384px) {
   
   .dialogBackground dialog {
     width: auto;
@@ -158,7 +158,7 @@
 
 }
 
-@media (320px < width <= 480px) {
+@media (384px < width <= 480px) {
   
   .dialogBackground dialog {
     width: auto;
