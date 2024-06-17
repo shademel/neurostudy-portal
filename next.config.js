@@ -5,7 +5,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
+        hostname: 'neurostudyportal.s3.ap-southeast-2.amazonaws.com',
       },
     ],
   },
