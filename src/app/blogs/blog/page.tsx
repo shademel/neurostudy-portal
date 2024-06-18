@@ -10,6 +10,8 @@ import DisplayPodcast from '@/app/components/podcast/DisplayPodcast';
 import Subscribe from '@/app/components/subscribe/subscribe';
 import { MetadataProps } from '@/app/interfaces/MetadataProps';
 import { Metadata } from 'next';
+import { HOST_URL, TYPE } from '@/app/utilities/constants';
+import { createMetadata } from '@/app/utilities/common';
 
 export async function generateMetadata({
   searchParams,
@@ -22,23 +24,21 @@ export async function generateMetadata({
     return {};
   }
 
-  const { title, imageUrl, description } = blog;
+  const { title, keywords, imageUrl, description } = blog;
   // NOTE
   // Previous `type` was 'blog', which the `openGraph` attribute doesn't accept as `type`
-  const type = 'article';
-  const url = `https://neurodiversityacademy.com/blogs/blog?blogId=${blogId}`;
+  const type = TYPE.ARTICLE;
+  const canonicalUrl = `${HOST_URL}/blogs/blog?blogId=${blogId}`;
+  const images = { url: imageUrl };
 
-  return {
+  return createMetadata({
     title,
+    keywords,
     description,
-    openGraph: {
-      title,
-      images: [imageUrl],
-      type,
-      description,
-      url,
-    },
-  };
+    canonicalUrl,
+    type,
+    images,
+  });
 }
 
 export default function OneBlog({ searchParams }: MetadataProps) {

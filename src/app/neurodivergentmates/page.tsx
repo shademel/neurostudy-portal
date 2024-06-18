@@ -6,13 +6,28 @@ import PodcastText from '../components/podcastTextSection/podcastText';
 import BlogList from '../components/blogList/blogList';
 import { Metadata } from 'next';
 import Subscribe from '../components/subscribe/subscribe';
+import { HOST_URL, TYPE } from '../utilities/constants';
+import {
+  KEYWORDS_HOME,
+  KEYWORDS_NEURODIVERGENT_MATES,
+} from '../utilities/metadata/keywords';
+import metadataJSON from '../../app/utilities/metadata/metadata.json';
+import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = {
-  title: 'Homepage - Neurodivergent Mates',
-  description: 'Homepage for Neurodivergent Mates',
-  keywords:
-    'homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, neurodivergent mates, neurodivergentmates',
-};
+const { title, description } = metadataJSON.metadata.neurodivergentmates;
+const canonicalUrl = `${HOST_URL}/neurodivergentmates`;
+const keywords = KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES;
+const type = TYPE.WEBSITE;
+const images = { url: '' };
+
+export const metadata: Metadata = createMetadata({
+  title,
+  keywords,
+  description,
+  canonicalUrl,
+  type,
+  images,
+});
 
 export default function Home() {
   return (

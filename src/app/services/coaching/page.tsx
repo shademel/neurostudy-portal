@@ -6,14 +6,30 @@ import Typography, {
 import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
 import Subscribe from '@/app/components/subscribe/subscribe';
+import { HOST_URL, TYPE } from '../../../app/utilities/constants';
+import {
+  KEYWORDS_HOME,
+  KEYWORDS_NEURODIVERGENT_MATES,
+  KEYWORDS_COACHING,
+} from '../../utilities/metadata/keywords';
+import metadataJSON from '../../../app/utilities/metadata/metadata.json';
+import { createMetadata } from '@/app/utilities/common';
 
-export const metadata: Metadata = {
-  title: 'Career Coaching',
-  description: 'Neurodiversity Career Coaching from Neurodiversity Academy',
-  keywords:
-    'homepage, neurodiversity, neurodiversityacademy, neurodiversity academy, ' +
-    'neurodivergent mates, neurodivergentmates, Neurodiversity Coaching & Placements, Neurodiversity Coaching, Career coaching',
-};
+const { title, description } = metadataJSON.metadata.coaching;
+const canonicalUrl = `${HOST_URL}/services/coaching`;
+const keywords =
+  KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES + KEYWORDS_COACHING;
+const type = TYPE.WEBSITE;
+const images = { url: '' };
+
+export const metadata: Metadata = createMetadata({
+  title,
+  keywords,
+  description,
+  canonicalUrl,
+  type,
+  images,
+});
 
 export default function Page() {
   return (

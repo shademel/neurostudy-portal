@@ -7,13 +7,25 @@ import Typography, {
 import { BlogInterface } from '../interfaces/BlogInterface';
 import Blog from '../components/blog/Blog';
 import { Metadata } from 'next';
+import { HOST_URL, TYPE } from '../utilities/constants';
+import { KEYWORDS_BLOGS } from '../utilities/metadata/keywords';
+import metadataJSON from '../../app/utilities/metadata/metadata.json';
+import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = {
-  title: 'Blogs',
-  description: 'Blogs from Neurodiversity Academy.',
-  keywords:
-    'Blogs, neurodiversity, neurodiversityacademy, neurodiversity academy',
-};
+const { title, description } = metadataJSON.metadata.blogs;
+const canonicalUrl = `${HOST_URL}/blogs`;
+const keywords = KEYWORDS_BLOGS;
+const type = TYPE.WEBSITE;
+const images = { url: '' };
+
+export const metadata: Metadata = createMetadata({
+  title,
+  keywords,
+  description,
+  canonicalUrl,
+  type,
+  images,
+});
 
 const CardList: React.FC = () => {
   const blogs: BlogInterface[] = blogData.blogs;

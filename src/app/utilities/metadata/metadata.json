@@ -1,0 +1,48 @@
+{
+    "metadata": {
+        "home": {
+            "title": "Homepage - Neurodiversity Academy",
+            "description": "Homepage for Neurodiversity Academy"
+        },
+        "neurodivergentmates": {
+            "title": "Neurodivergent Mates",
+            "description": "Neurodivergent Mates is two neurodivergent mates from Australia who get together with different members of the community to talk and have in-depth conversations"
+        },
+        "neurodiversitytraining": {
+            "title": "Learning/Training Partnerships",
+            "description": "Learning/Training Partnerships services from Neurodiversity Academy"
+        },
+        "advisoryconsulting": {
+            "title": "Advisory Neurodiversity Consulting",
+            "description": "Advisory Neurodiversity Consulting services from Neurodiversity Academy"
+        },
+        "networking": {
+            "title": "Host Neurodiversity Workshops & Networking (Awareness/Education)",
+            "description": "Hosting Neurodiversity Workshops & Networking services from Neurodiversity Academy"
+        },
+        "coaching": {
+            "title": "Career Coaching",
+            "description": "Neurodiversity Career Coaching from Neurodiversity Academy"
+        },
+        "placements": {
+            "title": "Placements (Internships/Employment)",
+            "description": "Placements (Internships/Employment) services from Neurodiversity Academy"
+        },
+        "about": {
+            "title": "About",
+            "description": "About Neurodiversity Academy"
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Contact page allows customers to contact Neurodiversity Academy"
+        },
+        "articles": {
+            "title": "Articles",
+            "description": "Articles from Neurodiversity Academy"
+        },
+        "blogs": {
+            "title": "Blogs",
+            "description": "Blogs from Neurodiversity Academy"
+        }
+    }
+}

@@ -9,6 +9,8 @@ import Typography, {
 } from '../../components/typography/Typography';
 import Subscribe from '@/app/components/subscribe/subscribe';
 import { MetadataProps } from '@/app/interfaces/MetadataProps';
+import { HOST_URL, TYPE } from '@/app/utilities/constants';
+import { createMetadata } from '@/app/utilities/common';
 
 export async function generateMetadata({
   searchParams,
@@ -21,21 +23,19 @@ export async function generateMetadata({
     return {};
   }
 
-  const { title, imageUrl, description } = article;
-  const type = 'article';
-  const url = `https://neurodiversityacademy.com/articles/article?articleId=${articleId}`;
+  const { title, keywords, imageUrl, description } = article;
+  const type = TYPE.ARTICLE;
+  const canonicalUrl = `${HOST_URL}/articles/article?articleId=${articleId}`;
+  const images = { url: imageUrl };
 
-  return {
+  return createMetadata({
     title,
+    keywords,
     description,
-    openGraph: {
-      title,
-      images: [imageUrl],
-      type,
-      description,
-      url,
-    },
-  };
+    canonicalUrl,
+    type,
+    images,
+  });
 }
 
 export default function OneArticle({ searchParams }: MetadataProps) {
