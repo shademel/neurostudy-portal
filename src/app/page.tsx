@@ -9,7 +9,7 @@ import HowItWorks from './components/howItWorks/HowItWorks';
 import Partner from './components/partnerSection/Partner';
 import { Metadata } from 'next';
 import Subscribe from './components/subscribe/subscribe';
-import { HOST_URL, TYPE } from './utilities/constants';
+import { HOST_URL, META_TYPE } from './utilities/constants';
 import { KEYWORDS_HOME } from './utilities/metadata/keywords';
 import metadataJSON from '../app/utilities/metadata/metadata.json';
 import { createMetadata } from './utilities/common';
@@ -31,11 +31,10 @@ const getGoogleAnalyticsScript = () => {
   );
 };
 
-const { title, description } = metadataJSON.metadata.home;
-const canonicalUrl = `${HOST_URL}/`;
+const { title, description, images } = metadataJSON.metadata.home;
+const canonical = `${HOST_URL}/`;
 const keywords = KEYWORDS_HOME;
-const type = TYPE.WEBSITE;
-const images = { url: '' };
+const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = {
   metadataBase: new URL(HOST_URL),
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
     title,
     keywords,
     description,
-    canonicalUrl,
+    canonical,
     type,
     images,
   }),

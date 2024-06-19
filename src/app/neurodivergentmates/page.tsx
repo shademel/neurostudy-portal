@@ -6,7 +6,7 @@ import PodcastText from '../components/podcastTextSection/podcastText';
 import BlogList from '../components/blogList/blogList';
 import { Metadata } from 'next';
 import Subscribe from '../components/subscribe/subscribe';
-import { HOST_URL, TYPE } from '../utilities/constants';
+import { HOST_URL, META_TYPE } from '../utilities/constants';
 import {
   KEYWORDS_HOME,
   KEYWORDS_NEURODIVERGENT_MATES,
@@ -14,17 +14,17 @@ import {
 import metadataJSON from '../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '../utilities/common';
 
-const { title, description } = metadataJSON.metadata.neurodivergentmates;
-const canonicalUrl = `${HOST_URL}/neurodivergentmates`;
+const { title, description, images } =
+  metadataJSON.metadata.neurodivergentmates;
+const canonical = `${HOST_URL}/neurodivergentmates`;
 const keywords = KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES;
-const type = TYPE.WEBSITE;
-const images = { url: '' };
+const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({
   title,
   keywords,
   description,
-  canonicalUrl,
+  canonical,
   type,
   images,
 });

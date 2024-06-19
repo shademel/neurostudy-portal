@@ -6,7 +6,7 @@ import Typography, {
 import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
 import Subscribe from '@/app/components/subscribe/subscribe';
-import { HOST_URL, TYPE } from '../../../app/utilities/constants';
+import { HOST_URL, META_TYPE } from '../../../app/utilities/constants';
 import {
   KEYWORDS_HOME,
   KEYWORDS_NEURODIVERGENT_MATES,
@@ -15,18 +15,17 @@ import {
 import metadataJSON from '../../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '@/app/utilities/common';
 
-const { title, description } = metadataJSON.metadata.coaching;
-const canonicalUrl = `${HOST_URL}/services/coaching`;
+const { title, description, images } = metadataJSON.metadata.coaching;
+const canonical = `${HOST_URL}/services/coaching`;
 const keywords =
   KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES + KEYWORDS_COACHING;
-const type = TYPE.WEBSITE;
-const images = { url: '' };
+const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({
   title,
   keywords,
   description,
-  canonicalUrl,
+  canonical,
   type,
   images,
 });

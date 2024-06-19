@@ -7,22 +7,21 @@ import Typography, {
 import { BlogInterface } from '../interfaces/BlogInterface';
 import Blog from '../components/blog/Blog';
 import { Metadata } from 'next';
-import { HOST_URL, TYPE } from '../utilities/constants';
+import { HOST_URL, META_TYPE } from '../utilities/constants';
 import { KEYWORDS_BLOGS } from '../utilities/metadata/keywords';
 import metadataJSON from '../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '../utilities/common';
 
-const { title, description } = metadataJSON.metadata.blogs;
-const canonicalUrl = `${HOST_URL}/blogs`;
+const { title, description, images } = metadataJSON.metadata.blogs;
+const canonical = `${HOST_URL}/blogs`;
 const keywords = KEYWORDS_BLOGS;
-const type = TYPE.WEBSITE;
-const images = { url: '' };
+const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({
   title,
   keywords,
   description,
-  canonicalUrl,
+  canonical,
   type,
   images,
 });

@@ -26,7 +26,7 @@ export const HOST_URL =
 export const SITE_NAME = 'Neurodiversity Academy';
 export const LANGUAGES = { 'en-US': '/en-US' };
 export const LOCALE = 'en_US';
-export enum TYPE {
+export enum META_TYPE {
   WEBSITE = 'website',
   ARTICLE = 'article',
 }
