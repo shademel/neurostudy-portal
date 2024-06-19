@@ -10,7 +10,6 @@ import Partner from './components/partnerSection/Partner';
 import { Metadata } from 'next';
 import Subscribe from './components/subscribe/subscribe';
 import { HOST_URL, META_TYPE } from './utilities/constants';
-import { KEYWORDS_HOME } from './utilities/metadata/keywords';
 import metadataJSON from '../app/utilities/metadata/metadata.json';
 import { createMetadata } from './utilities/common';
 
@@ -31,9 +30,8 @@ const getGoogleAnalyticsScript = () => {
   );
 };
 
-const { title, description, images } = metadataJSON.metadata.home;
+const { title, description, images, keywords } = metadataJSON.metadata.home;
 const canonical = `${HOST_URL}/`;
-const keywords = KEYWORDS_HOME;
 const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = {

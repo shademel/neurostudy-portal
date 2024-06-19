@@ -6,18 +6,14 @@ import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
 import Subscribe from '@/app/components/subscribe/subscribe';
 import { HOST_URL, META_TYPE } from '../../../app/utilities/constants';
-import {
-  KEYWORDS_HOME,
-  KEYWORDS_NEURODIVERGENT_MATES,
-  KEYWORDS_PLACEMENTS,
-} from '../../utilities/metadata/keywords';
 import metadataJSON from '../../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '@/app/utilities/common';
 
-const { title, description, images } = metadataJSON.metadata.placements;
-const canonical = `${HOST_URL}/services/placements`;
+const { home, neurodivergentmates, placements } = metadataJSON.metadata;
+const { title, description, images } = placements;
 const keywords =
-  KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES + KEYWORDS_PLACEMENTS;
+  home.keywords + neurodivergentmates.keywords + placements.keywords;
+const canonical = `${HOST_URL}/services/placements`;
 const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({

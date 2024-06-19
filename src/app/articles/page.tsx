@@ -8,13 +8,11 @@ import Typography, {
 } from '../components/typography/Typography';
 import { Metadata } from 'next';
 import { HOST_URL, META_TYPE } from '../utilities/constants';
-import { KEYWORDS_ARTICLES } from '../utilities/metadata/keywords';
 import metadataJSON from '../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '../utilities/common';
 
-const { title, description, images } = metadataJSON.metadata.articles;
+const { title, description, images, keywords } = metadataJSON.metadata.articles;
 const canonical = `${HOST_URL}/articles`;
-const keywords = KEYWORDS_ARTICLES;
 const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({

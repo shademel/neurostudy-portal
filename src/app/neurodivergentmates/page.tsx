@@ -7,17 +7,13 @@ import BlogList from '../components/blogList/blogList';
 import { Metadata } from 'next';
 import Subscribe from '../components/subscribe/subscribe';
 import { HOST_URL, META_TYPE } from '../utilities/constants';
-import {
-  KEYWORDS_HOME,
-  KEYWORDS_NEURODIVERGENT_MATES,
-} from '../utilities/metadata/keywords';
 import metadataJSON from '../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '../utilities/common';
 
-const { title, description, images } =
-  metadataJSON.metadata.neurodivergentmates;
+const { home, neurodivergentmates } = metadataJSON.metadata;
+const { title, description, images } = neurodivergentmates;
+const keywords = home.keywords + neurodivergentmates.keywords;
 const canonical = `${HOST_URL}/neurodivergentmates`;
-const keywords = KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES;
 const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({

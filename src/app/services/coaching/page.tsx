@@ -7,18 +7,14 @@ import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
 import Subscribe from '@/app/components/subscribe/subscribe';
 import { HOST_URL, META_TYPE } from '../../../app/utilities/constants';
-import {
-  KEYWORDS_HOME,
-  KEYWORDS_NEURODIVERGENT_MATES,
-  KEYWORDS_COACHING,
-} from '../../utilities/metadata/keywords';
 import metadataJSON from '../../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '@/app/utilities/common';
 
-const { title, description, images } = metadataJSON.metadata.coaching;
-const canonical = `${HOST_URL}/services/coaching`;
+const { home, neurodivergentmates, coaching } = metadataJSON.metadata;
+const { title, description, images } = coaching;
 const keywords =
-  KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES + KEYWORDS_COACHING;
+  home.keywords + neurodivergentmates.keywords + coaching.keywords;
+const canonical = `${HOST_URL}/services/coaching`;
 const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({

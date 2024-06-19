@@ -8,13 +8,11 @@ import { BlogInterface } from '../interfaces/BlogInterface';
 import Blog from '../components/blog/Blog';
 import { Metadata } from 'next';
 import { HOST_URL, META_TYPE } from '../utilities/constants';
-import { KEYWORDS_BLOGS } from '../utilities/metadata/keywords';
 import metadataJSON from '../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '../utilities/common';
 
-const { title, description, images } = metadataJSON.metadata.blogs;
+const { title, description, images, keywords } = metadataJSON.metadata.blogs;
 const canonical = `${HOST_URL}/blogs`;
-const keywords = KEYWORDS_BLOGS;
 const type = META_TYPE.WEBSITE;
 
 export const metadata: Metadata = createMetadata({
