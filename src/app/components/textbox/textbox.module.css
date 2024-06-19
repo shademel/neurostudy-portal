@@ -20,7 +20,7 @@
   width: 100%;
 } */
 
-.textBoxContainer input[type='email'] {
+.textBoxContainer input {
   max-width: 100%;
   padding: 0px;
   padding-left: 15px;
