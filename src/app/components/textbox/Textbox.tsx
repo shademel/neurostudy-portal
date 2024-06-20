@@ -1,13 +1,17 @@
+// NOTE
+// This is the old `TextBox` component. We will be slowly moving towards the new `TextBox`
+// component placed in the `formInputs` folder - which utilizes `react-hook-form`
+
 import { ChangeEvent } from 'react';
-import styles from './textbox.module.css';
+import styles from '../../styles/textbox.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import classNames from 'classnames';
+import { TEXTBOX_VARIANT as TextboxVariant } from '@/app/utilities/constants';
 
-export enum TextboxVariant {
-  LONG = 'long',
-  LONGER = 'longer',
-  REGULAR = 'regular',
-}
+// NOTE
+// This is for synchronization purpose and to avoid multiple changes throughout
+// the application for the time being
+export { TextboxVariant };
 
 type TextBoxProps = {
   name: string;

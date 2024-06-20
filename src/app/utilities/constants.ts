@@ -20,3 +20,9 @@ export enum BUTTON_STYLE {
   Tertiary = 'tertiary',
   TertiaryFull = 'tertiary-full',
 }
+
+export enum TEXTBOX_VARIANT {
+  LONG = 'long',
+  LONGER = 'longer',
+  REGULAR = 'regular',
+}
