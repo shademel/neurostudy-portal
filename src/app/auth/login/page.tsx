@@ -4,29 +4,13 @@ import styles from '../page.module.css';
 import TextBox, { TextboxVariant } from '../../components/textbox/Textbox';
 import ActionButton from '../../components/buttons/ActionButton';
 import Link from 'next/link';
+import LeftBanner from '../component/LeftBanner';
 
 const Page = () => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <div className={styles.colorColumn}>
-          <div className={styles.colorTitle}>
-            <p>
-              Signup/Login to{' '}
-              <span className={styles.colorTitleSpan}>
-                Neurodiversity Academy
-              </span>
-            </p>
-          </div>
-          <div className={styles.colorDescription}>
-            <p className={styles.colorDescriptionTitle}>Lorem ipsum</p>
-            <p className={styles.colorDescriptionText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-              laboriosam delectus tenetur perspiciatis qui labore eius sint
-              cumque sunt.
-            </p>
-          </div>
-        </div>
+        <LeftBanner />
         <div className={styles.textColumn}>
           <div className={styles.textColumnWrapper}>
             <div className={styles.textTitleWrapper}>
