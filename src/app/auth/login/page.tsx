@@ -4,13 +4,14 @@ import styles from '../page.module.css';
 import TextBox, { TextboxVariant } from '../../components/textbox/Textbox';
 import ActionButton from '../../components/buttons/ActionButton';
 import Link from 'next/link';
-import LeftBanner from '../component/LeftBanner';
+import AuthLeftBanner from '../component/AuthLeftBanner';
+import AuthFormFooter from '../component/AuthFormFooter';
 
 const Page = () => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <LeftBanner />
+        <AuthLeftBanner />
         <div className={styles.textColumn}>
           <div className={styles.textColumnWrapper}>
             <div className={styles.textTitleWrapper}>
@@ -56,22 +57,11 @@ const Page = () => {
                 />
               </div>
             </form>
-            <div className={styles.breakLineWrapper}>
-              <hr className={styles.breakLine} />
-              <span className={styles.or}>or</span>
-              <hr className={styles.breakLine} />
-            </div>
-            <div>
-              <button className={styles.continueWithGoogleButton}>
-                Continue with Google
-              </button>
-            </div>
-            <p className={styles.newSignUp}>
-              New to Neurodiversity Academy ?{' '}
-              <span className={styles.signUpLink}>
-                <Link href='/login'>Sign up</Link>
-              </span>
-            </p>
+            <AuthFormFooter
+              text='New to Neurodiversity Academy? '
+              to='/auth/signup'
+              toText='Sign Up'
+            />
           </div>
         </div>
       </div>
