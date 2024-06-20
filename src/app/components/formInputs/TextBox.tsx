@@ -8,16 +8,19 @@ import {
   Control,
   Controller,
   FieldValues,
+  Path,
+  PathValue,
   ValidationRule,
 } from 'react-hook-form';
 import { TEXTBOX_VARIANT } from '@/app/utilities/constants';
+import { capitalizeStr } from '@/app/utilities/common';
 
-type TextBoxProps = {
-  control: Control<FieldValues>;
-  name: string;
-  label: string;
+interface TextBoxProps<TFieldValues extends FieldValues> {
+  control: Control<TFieldValues>;
+  name: Path<TFieldValues>;
+  label?: string;
   type?: string;
-  defaultValue?: string;
+  defaultValue?: PathValue<TFieldValues, Path<TFieldValues>> | undefined;
   required?: boolean;
   placeholder?: string;
   className?: string;
@@ -25,22 +28,24 @@ type TextBoxProps = {
   pattern?: ValidationRule<RegExp>;
   onChange?: ((event: ChangeEvent<HTMLInputElement>) => void) | undefined;
   onBlur?: () => void;
-};
+  autoComplete?: string;
+}
 
-export default function TextBox({
+const TextBox = <TFieldValues extends FieldValues>({
   control,
   className,
   variant,
   name,
   label,
   type = 'text',
-  defaultValue = '',
+  defaultValue = '' as PathValue<TFieldValues, Path<TFieldValues>>,
   placeholder,
   required = false,
   pattern,
   onChange,
   onBlur,
-}: TextBoxProps) {
+  autoComplete,
+}: TextBoxProps<TFieldValues>) => {
   const rules = {
     required,
     pattern,
@@ -94,6 +99,7 @@ export default function TextBox({
               type={type}
               placeholder={placeholder}
               className={inputClassName}
+              autoComplete={autoComplete}
               {...field}
               onChange={function (this: HTMLInputElement, ...args) {
                 field.onChange.apply(this, args);
@@ -105,13 +111,18 @@ export default function TextBox({
               }}
             />
             {error && (
-              <span className={styles.errorMessage}>
-                {(error.message || `${label} is invalid.`) as ReactNode}
-              </span>
+              <small className={styles.errorMessage}>
+                {
+                  (error.message ||
+                    `${label || capitalizeStr(name)} is invalid.`) as ReactNode
+                }
+              </small>
             )}
           </div>
         );
       }}
     />
   );
-}
+};
+
+export default TextBox;
