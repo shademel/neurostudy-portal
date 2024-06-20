@@ -1,8 +1,8 @@
 'use client';
 
-import styles from './page.module.css';
-import TextBox, { TextboxVariant } from '../components/textbox/Textbox';
-import ActionButton from '../components/buttons/ActionButton';
+import styles from '../page.module.css';
+import TextBox, { TextboxVariant } from '../../components/textbox/Textbox';
+import ActionButton from '../../components/buttons/ActionButton';
 import Link from 'next/link';
 
 const Page = () => {
@@ -44,8 +44,8 @@ const Page = () => {
                   required={true}
                   errorMessage={''}
                   placeholder={'Email address'}
-                  onBlur={() => {}}
-                  onChange={() => {}}
+                  onBlur={() => { }}
+                  onChange={() => { }}
                 />
                 <TextBox
                   variant={TextboxVariant.LONG}
@@ -56,8 +56,8 @@ const Page = () => {
                   required={true}
                   errorMessage={''}
                   placeholder={'New Password'}
-                  onBlur={() => {}}
-                  onChange={() => {}}
+                  onBlur={() => { }}
+                  onChange={() => { }}
                 />
               </div>
               <div className={styles.forgotPassword}>
