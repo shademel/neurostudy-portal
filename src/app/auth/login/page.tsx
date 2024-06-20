@@ -1,18 +1,29 @@
 'use client';
 
 import styles from '../page.module.css';
-import TextBox, { TextboxVariant } from '../../components/textbox/Textbox';
 import ActionButton from '../../components/buttons/ActionButton';
 import Link from 'next/link';
 import AuthLeftBanner from '../component/AuthLeftBanner';
 import AuthFormFooter from '../component/AuthFormFooter';
+import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
+import TextBox from '@/app/components/formInputs/TextBox';
+import { TEXTBOX_VARIANT } from '@/app/utilities/constants';
+import classNames from 'classnames';
+
+interface LoginFieldValues extends FieldValues {
+  email: string;
+  password: string;
+}
 
 const Page = () => {
+  const { control }: UseFormReturn<LoginFieldValues> =
+    useForm<LoginFieldValues>({ mode: 'onBlur' });
+
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
+    <main className='container'>
+      <div className='row'>
         <AuthLeftBanner />
-        <div className={styles.textColumn}>
+        <div className={classNames(styles.textColumn, 'col-md-8')}>
           <div className={styles.textColumnWrapper}>
             <div className={styles.textTitleWrapper}>
               <p className={styles.textTitle}>Login</p>
@@ -21,28 +32,20 @@ const Page = () => {
             <form className={styles.form}>
               <div className={styles.textArea}>
                 <TextBox
-                  variant={TextboxVariant.LONG}
-                  name={'Email'}
-                  label={''}
-                  type={'email'}
-                  value={''}
-                  required={true}
-                  errorMessage={''}
-                  placeholder={'Email address'}
-                  onBlur={() => { }}
-                  onChange={() => { }}
+                  control={control}
+                  variant={TEXTBOX_VARIANT.LONG}
+                  name='email'
+                  type='email'
+                  required
+                  placeholder='Email address'
                 />
                 <TextBox
-                  variant={TextboxVariant.LONG}
-                  name={'Password'}
-                  label={''}
-                  type={'password'}
-                  value={''}
-                  required={true}
-                  errorMessage={''}
-                  placeholder={'New Password'}
-                  onBlur={() => { }}
-                  onChange={() => { }}
+                  control={control}
+                  variant={TEXTBOX_VARIANT.LONG}
+                  name='password'
+                  type='password'
+                  required
+                  placeholder='Password'
                 />
               </div>
               <div className={styles.forgotPassword}>
