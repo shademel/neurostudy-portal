@@ -71,23 +71,25 @@ export default function TextBox({
 
         return (
           <div className={styles.textBoxContainer}>
-            <label htmlFor={name} className={styles.label}>
-              <Typography
-                variant={TypographyVariant.Body2}
-                color={error && 'red'}
-              >
-                {label}
-                {required && '* '}
-                {required && (
-                  <Typography
-                    variant={TypographyVariant.LABELtext}
-                    color='var(--grey)'
-                  >
-                    (required)
-                  </Typography>
-                )}
-              </Typography>
-            </label>
+            {label && (
+              <label htmlFor={name} className={styles.label}>
+                <Typography
+                  variant={TypographyVariant.Body2}
+                  color={error && 'red'}
+                >
+                  {label}
+                  {required && '* '}
+                  {required && (
+                    <Typography
+                      variant={TypographyVariant.LABELtext}
+                      color='var(--grey)'
+                    >
+                      (required)
+                    </Typography>
+                  )}
+                </Typography>
+              </label>
+            )}
             <input
               type={type}
               placeholder={placeholder}
