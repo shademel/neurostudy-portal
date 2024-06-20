@@ -2,15 +2,15 @@ import Link from 'next/link';
 import styles from '../page.module.css';
 
 type AuthFormFooterProps = {
-  text?: string,
-  toText?: string,
-  to?: string
-}
+  text?: string;
+  toText?: string;
+  to?: string;
+};
 
 const AuthFormFooter: React.FC<AuthFormFooterProps> = ({
   text = 'Already have an account? ',
   toText = 'Login',
-  to = '/auth/login'
+  to = '/auth/login',
 }: AuthFormFooterProps) => {
   return (
     <>
