@@ -1,6 +1,6 @@
 import styles from '../page.module.css';
 
-const LeftBanner: React.FC = () => {
+const AuthLeftBanner: React.FC = () => {
   return (
     <div className={styles.colorColumn}>
       <div className={styles.colorTitle}>
@@ -20,7 +20,7 @@ const LeftBanner: React.FC = () => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LeftBanner;
+export default AuthLeftBanner;
