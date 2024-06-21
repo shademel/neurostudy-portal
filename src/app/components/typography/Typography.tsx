@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import styles from './typography.module.css';
+import classNames from 'classnames';
 
 export enum TypographyVariant {
   H1 = 'h1',
@@ -29,119 +30,52 @@ const Typography: React.FC<TypographyProps> = ({
   ariaLabelledBy,
   role,
   color,
+  className: rootClassName,
 }) => {
   const style = color ? { color } : {};
+  const props = {
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    role,
+    style,
+    className: '',
+  };
+
+  let tag = 'span';
+  let variantClassName = styles.body1;
+
   switch (variant) {
     case TypographyVariant.H1:
-      return (
-        <h1
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.heading1}
-          style={style}
-        >
-          {children}
-        </h1>
-      );
+      tag = 'h1';
+      variantClassName = styles.heading1;
+      break;
     case TypographyVariant.H2:
-      return (
-        <h2
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.heading2}
-          style={style}
-        >
-          {children}
-        </h2>
-      );
+      tag = 'h2';
+      variantClassName = styles.heading2;
+      break;
     case TypographyVariant.Body1:
-      return (
-        <span
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.body1}
-          style={style}
-        >
-          {children}
-        </span>
-      );
+      variantClassName = styles.body1;
+      break;
     case TypographyVariant.Body2Strong:
-      return (
-        <span
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.body2Strong}
-          style={style}
-        >
-          {children}
-        </span>
-      );
+      variantClassName = styles.body2Strong;
+      break;
     case TypographyVariant.Body2:
-      return (
-        <span
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.body2}
-          style={style}
-        >
-          {children}
-        </span>
-      );
+      variantClassName = styles.body2;
+      break;
     case TypographyVariant.Body3MOBstrong:
-      return (
-        <span
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.mobBody3Strong}
-          style={style}
-        >
-          {children}
-        </span>
-      );
+      variantClassName = styles.mobBody3Strong;
+      break;
     case TypographyVariant.Body3MOB:
-      return (
-        <span
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.mobBody3}
-          style={style}
-        >
-          {children}
-        </span>
-      );
+      variantClassName = styles.mobBody3;
+      break;
     case TypographyVariant.LABELtext:
-      return (
-        <span
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.labelText}
-          style={style}
-        >
-          {children}
-        </span>
-      );
-
-    default:
-      return (
-        <span
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          role={role}
-          className={styles.body1}
-          style={style}
-        >
-          {children}
-        </span>
-      );
+      variantClassName = styles.labelText;
+      break;
   }
+
+  props.className = classNames(rootClassName, variantClassName);
+
+  return createElement(tag, props, children);
 };
 
 export default Typography;
