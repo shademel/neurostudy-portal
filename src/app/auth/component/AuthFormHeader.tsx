@@ -9,7 +9,7 @@ type AuthFormHeaderProps = {
 };
 
 const AuthFormHeader: React.FC<AuthFormHeaderProps> = ({
-  title = 'Sign Up? ',
+  title = 'Sign Up',
   subText = 'Its quick and easy',
 }: AuthFormHeaderProps) => {
   return (
