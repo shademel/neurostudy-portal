@@ -10,6 +10,7 @@ import TextBox from '@/app/components/formElements/TextBox';
 import { EMAIL_REGEX } from '@/app/utilities/constants';
 import classNames from 'classnames';
 import Form from '@/app/components/formElements/Form';
+import AuthFormHeader from '../component/AuthFormHeader';
 
 interface LoginFieldValues extends FieldValues {
   email: string;
@@ -24,12 +25,9 @@ const Page = () => {
     <main className='main-container'>
       <div className='row'>
         <AuthLeftBanner />
-        <div className={classNames(styles.textColumn, 'col-md-8')}>
-          <div className={styles.textColumnWrapper}>
-            <div className={styles.textTitleWrapper}>
-              <p className={styles.textTitle}>Login</p>
-              <span className={styles.smallTextTitle}>to your account</span>
-            </div>
+        <div className={classNames(styles.formColumn, 'col-md-8')}>
+          <div className={styles.formColumnWrapper}>
+            <AuthFormHeader title='Login' subText='to your account' />
             <Form control={control}>
               <TextBox
                 name='email'
@@ -46,15 +44,15 @@ const Page = () => {
                 required
                 placeholder='Password'
               />
-              <div className={styles.forgotPassword}>
+              <div className={classNames(styles.forgotPassword, 'pt-1 pb-4')}>
                 <Link href='/login'>Forgot Password?</Link>
               </div>
-              <div className={styles.buttonArea}>
+              <div>
                 <ActionButton
                   type='submit'
                   label='Login'
                   disabled={true}
-                  className={styles.accessButton}
+                  className={styles.submitBtn}
                 />
               </div>
             </Form>

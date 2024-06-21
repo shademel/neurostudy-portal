@@ -35,11 +35,16 @@ const SignUpPage = () => {
     <main className='main-container'>
       <div className='row'>
         <AuthLeftBanner />
-        <div className={classNames(styles.textColumn, 'col-md-8')}>
-          <div className={styles.textColumnWrapper}>
-            <div className={styles.textTitleWrapper}>
-              <p className={styles.textTitle}>Sign Up</p>
-              <span className={styles.smallTextTitle}>Its quick and easy</span>
+        <div className={classNames(styles.formColumn, 'col-md-8')}>
+          <div className={styles.formColumnWrapper}>
+            <div className={styles.formTitleWrapper}>
+              <div className={styles.formTitle}>Sign Up</div>
+              <Typography
+                variant={TypographyVariant.Body2}
+                color='var(--grey-500)'
+              >
+                Its quick and easy
+              </Typography>
             </div>
             <Form control={control}>
               <TextBox
@@ -115,7 +120,7 @@ const SignUpPage = () => {
                   type='submit'
                   label='Sign Up'
                   disabled={true}
-                  className={styles.accessButton}
+                  className={styles.submitBtn}
                 />
               </div>
             </Form>
