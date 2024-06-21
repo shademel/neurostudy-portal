@@ -9,7 +9,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['900', '800', '700', '600', '500', '100'],
+  weight: ['900', '800', '700', '600', '500', '400', '100'],
   style: ['normal'],
 });
 
