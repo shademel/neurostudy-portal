@@ -5,23 +5,15 @@ import styles from './textBox.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import classNames from 'classnames';
 import {
-  Control,
   Controller,
   FieldValues,
   Path,
   PathValue,
   ValidationRule,
 } from 'react-hook-form';
-// TEMP
-// TODO
-// Introduce his own variant to accommodate container classes
-// Some might not have any col-* class, some might have col-{x} where
-// 'x' can be any value
-import { TEXTBOX_VARIANT } from '@/app/utilities/constants';
 import { useFormContext } from './formContext';
 
 interface TextBoxProps<TFieldValues extends FieldValues> {
-  control: Control<TFieldValues>;
   name: Path<TFieldValues>;
   label: string;
   showLabel?: boolean;
@@ -30,7 +22,6 @@ interface TextBoxProps<TFieldValues extends FieldValues> {
   required?: boolean;
   placeholder?: string;
   className?: string;
-  variant?: TEXTBOX_VARIANT;
   pattern?: ValidationRule<RegExp>;
   onChange?: ((event: ChangeEvent<HTMLInputElement>) => void) | undefined;
   onBlur?: () => void;
@@ -38,8 +29,6 @@ interface TextBoxProps<TFieldValues extends FieldValues> {
 }
 
 const TextBox = <TFieldValues extends FieldValues>({
-  // TEMP
-  // control,
   className,
   name,
   label,
