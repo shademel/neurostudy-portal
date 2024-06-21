@@ -5,7 +5,9 @@ import AuthLeftBanner from '../component/AuthLeftBanner';
 import AuthFormFooter from '../component/AuthFormFooter';
 import classNames from 'classnames';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
-import TextBox from '@/app/components/formElements/TextBox';
+import TextBox, {
+  TEXTBOX_COL_WIDTH,
+} from '@/app/components/formElements/TextBox';
 import Form from '@/app/components/formElements/Form';
 import { EMAIL_REGEX } from '@/app/utilities/constants';
 
@@ -33,18 +35,20 @@ const SignUpPage = () => {
               <p className={styles.textTitle}>Sign Up</p>
               <span className={styles.smallTextTitle}>Its quick and easy</span>
             </div>
-            <Form control={control} className={styles.form}>
+            <Form control={control}>
               <TextBox
                 name='firstName'
                 label='First Name'
                 required
                 placeholder='First Name'
+                colWidth={TEXTBOX_COL_WIDTH.HALF}
               />
               <TextBox
                 name='lastName'
                 label='Surname'
                 required
                 placeholder='Surname'
+                colWidth={TEXTBOX_COL_WIDTH.HALF}
               />
               <TextBox
                 name='email'

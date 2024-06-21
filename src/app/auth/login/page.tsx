@@ -30,7 +30,7 @@ const Page = () => {
               <p className={styles.textTitle}>Login</p>
               <span className={styles.smallTextTitle}>to your account</span>
             </div>
-            <Form control={control} className={styles.form}>
+            <Form control={control}>
               <TextBox
                 name='email'
                 type='email'

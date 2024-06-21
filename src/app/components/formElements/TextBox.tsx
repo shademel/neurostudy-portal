@@ -13,6 +13,13 @@ import {
 } from 'react-hook-form';
 import { useFormContext } from './formContext';
 
+export enum TEXTBOX_COL_WIDTH {
+  SMALLER = 3,
+  SMALL = 4,
+  HALF = 6,
+  FULL = 12,
+}
+
 interface TextBoxProps<TFieldValues extends FieldValues> {
   name: Path<TFieldValues>;
   label: string;
@@ -26,6 +33,7 @@ interface TextBoxProps<TFieldValues extends FieldValues> {
   onChange?: ((event: ChangeEvent<HTMLInputElement>) => void) | undefined;
   onBlur?: () => void;
   autoComplete?: string;
+  colWidth?: TEXTBOX_COL_WIDTH;
 }
 
 const TextBox = <TFieldValues extends FieldValues>({
@@ -41,6 +49,7 @@ const TextBox = <TFieldValues extends FieldValues>({
   onChange,
   onBlur,
   autoComplete,
+  colWidth = TEXTBOX_COL_WIDTH.FULL,
 }: TextBoxProps<TFieldValues>) => {
   const { control } = useFormContext();
 
@@ -70,7 +79,12 @@ const TextBox = <TFieldValues extends FieldValues>({
         );
 
         return (
-          <div className='col col-md-12'>
+          <div
+            className={classNames(
+              'border-box-parent col-md-' + colWidth,
+              styles.container
+            )}
+          >
             {showLabel && (
               <label htmlFor={name} className={styles.label}>
                 <Typography

@@ -13,14 +13,12 @@
 .col::after,
 .main-container::before,
 .row::before,
-.col::before {
-  box-sizing: border-box;
-}
-
+.col::before,
 .main-container>*,
 .row>*,
-.col>* {
-  box-sizing: inherit;
+.border-box-parent,
+.border-box-parent>* {
+  box-sizing: border-box;
 }
 
 .main-container {
@@ -50,8 +48,12 @@
   margin-top: var(--bs-gutter-y);
 }
 
-.col {
-  flex: 1 0 0%;
+*[class*="col-"] {
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 @media (min-width: 768px) {
@@ -119,13 +121,6 @@
     flex: 0 0 auto;
     width: 100%;
   }
-}
-
-*[class*="col-"] {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 .m-0 {
