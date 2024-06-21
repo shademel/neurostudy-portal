@@ -52,7 +52,7 @@ const Page = () => {
                   type='submit'
                   label='Login'
                   disabled
-                  className={classNames(styles.btn, 'mb-3')}
+                  className={classNames(styles.btn, styles.submitBtn, 'mb-3')}
                   style={BUTTON_STYLE.PrimaryFull}
                 />
               </div>

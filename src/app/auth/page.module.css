@@ -45,6 +45,10 @@
   font-weight: 600;
 }
 
+.submitBtn {
+  background: var(--cherryPie);
+}
+
 .callToAction {
   color: var(--cherryPieVariant);
 }
