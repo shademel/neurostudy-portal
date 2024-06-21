@@ -3,7 +3,7 @@
 // component placed in the `formInputs` folder - which utilizes `react-hook-form`
 
 import { ChangeEvent } from 'react';
-import styles from '../../styles/textbox.module.css';
+import styles from './textbox.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import classNames from 'classnames';
 import { TEXTBOX_VARIANT as TextboxVariant } from '@/app/utilities/constants';
