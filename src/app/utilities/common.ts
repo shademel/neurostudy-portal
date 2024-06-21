@@ -37,7 +37,3 @@ export const throttle = (
     }
   };
 };
-
-export const capitalizeStr = (str: string): string => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
