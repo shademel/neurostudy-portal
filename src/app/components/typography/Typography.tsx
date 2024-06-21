@@ -35,7 +35,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.H1:
       return (
         <h1
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.heading1}
@@ -47,7 +47,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.H2:
       return (
         <h2
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.heading2}
@@ -59,7 +59,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.Body1:
       return (
         <span
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body1}
@@ -71,7 +71,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.Body2Strong:
       return (
         <span
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body2Strong}
@@ -83,7 +83,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.Body2:
       return (
         <span
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body2}
@@ -95,7 +95,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.Body3MOBstrong:
       return (
         <span
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.mobBody3Strong}
@@ -107,7 +107,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.Body3MOB:
       return (
         <span
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.mobBody3}
@@ -119,7 +119,7 @@ const Typography: React.FC<TypographyProps> = ({
     case TypographyVariant.LABELtext:
       return (
         <span
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.labelText}
@@ -132,7 +132,7 @@ const Typography: React.FC<TypographyProps> = ({
     default:
       return (
         <span
-          area-aria-label={ariaLabel}
+          aria-label={ariaLabel}
           aria-labelledby={ariaLabelledBy}
           role={role}
           className={styles.body1}
