@@ -1,14 +1,29 @@
-.container,
-.row,
-[class*="col"],
-.row::after,
-[class*="col"]::after,
-.row::before,
-[class*="col"]::before {
+.border-box {
   box-sizing: border-box;
 }
 
-.container {
+.main-container,
+.row,
+.col {
+  box-sizing: border-box;
+}
+
+.main-container::after,
+.row::after,
+.col::after,
+.main-container::before,
+.row::before,
+.col::before {
+  box-sizing: border-box;
+}
+
+.main-container>*,
+.row>*,
+.col>* {
+  box-sizing: inherit;
+}
+
+.main-container {
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
