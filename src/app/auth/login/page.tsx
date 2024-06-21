@@ -7,7 +7,7 @@ import AuthLeftBanner from '../component/AuthLeftBanner';
 import AuthFormFooter from '../component/AuthFormFooter';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import TextBox from '@/app/components/formElements/TextBox';
-import { EMAIL_REGEX } from '@/app/utilities/constants';
+import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import classNames from 'classnames';
 import Form from '@/app/components/formElements/Form';
 import AuthFormHeader from '../component/AuthFormHeader';
@@ -45,14 +45,15 @@ const Page = () => {
                 placeholder='Password'
               />
               <div className={classNames(styles.forgotPassword, 'pt-1 pb-4')}>
-                <Link href='/login'>Forgot Password?</Link>
+                <Link href='#'>Forgot Password?</Link>
               </div>
               <div>
                 <ActionButton
                   type='submit'
                   label='Login'
-                  disabled={true}
-                  className={styles.submitBtn}
+                  disabled
+                  className={classNames(styles.btn, 'mb-3')}
+                  style={BUTTON_STYLE.PrimaryFull}
                 />
               </div>
             </Form>

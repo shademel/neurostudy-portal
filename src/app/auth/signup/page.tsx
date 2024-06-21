@@ -11,11 +11,12 @@ import TextBox, {
   TEXTBOX_COL_WIDTH,
 } from '@/app/components/formElements/TextBox';
 import Form from '@/app/components/formElements/Form';
-import { EMAIL_REGEX } from '@/app/utilities/constants';
+import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
 import Link from 'next/link';
+import AuthFormHeader from '../component/AuthFormHeader';
 
 interface SignUpFieldValues extends FieldValues {
   firstName: string;
@@ -37,15 +38,7 @@ const SignUpPage = () => {
         <AuthLeftBanner />
         <div className={classNames(styles.formColumn, 'col-md-8')}>
           <div className={styles.formColumnWrapper}>
-            <div className={styles.formTitleWrapper}>
-              <div className={styles.formTitle}>Sign Up</div>
-              <Typography
-                variant={TypographyVariant.Body2}
-                color='var(--grey-500)'
-              >
-                Its quick and easy
-              </Typography>
-            </div>
+            <AuthFormHeader />
             <Form control={control}>
               <TextBox
                 name='firstName'
@@ -119,8 +112,9 @@ const SignUpPage = () => {
                 <ActionButton
                   type='submit'
                   label='Sign Up'
-                  disabled={true}
-                  className={styles.submitBtn}
+                  disabled
+                  className={classNames(styles.btn, 'mb-3')}
+                  style={BUTTON_STYLE.PrimaryFull}
                 />
               </div>
             </Form>
