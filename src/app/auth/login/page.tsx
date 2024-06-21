@@ -6,9 +6,10 @@ import Link from 'next/link';
 import AuthLeftBanner from '../component/AuthLeftBanner';
 import AuthFormFooter from '../component/AuthFormFooter';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
-import TextBox from '@/app/components/formInputs/TextBox';
-import { TEXTBOX_VARIANT } from '@/app/utilities/constants';
+import TextBox from '@/app/components/formElements/TextBox';
+import { EMAIL_REGEX } from '@/app/utilities/constants';
 import classNames from 'classnames';
+import Form from '@/app/components/formElements/Form';
 
 interface LoginFieldValues extends FieldValues {
   email: string;
@@ -20,7 +21,7 @@ const Page = () => {
     useForm<LoginFieldValues>({ mode: 'onBlur' });
 
   return (
-    <main className='container'>
+    <main className='main-container'>
       <div className='row'>
         <AuthLeftBanner />
         <div className={classNames(styles.textColumn, 'col-md-8')}>
@@ -29,25 +30,22 @@ const Page = () => {
               <p className={styles.textTitle}>Login</p>
               <span className={styles.smallTextTitle}>to your account</span>
             </div>
-            <form className={styles.form}>
-              <div className={styles.textArea}>
-                <TextBox
-                  control={control}
-                  variant={TEXTBOX_VARIANT.LONG}
-                  name='email'
-                  type='email'
-                  required
-                  placeholder='Email address'
-                />
-                <TextBox
-                  control={control}
-                  variant={TEXTBOX_VARIANT.LONG}
-                  name='password'
-                  type='password'
-                  required
-                  placeholder='Password'
-                />
-              </div>
+            <Form control={control} className={styles.form}>
+              <TextBox
+                name='email'
+                type='email'
+                label='Email Address'
+                required
+                placeholder='Email address'
+                pattern={EMAIL_REGEX}
+              />
+              <TextBox
+                name='password'
+                type='password'
+                label='Password'
+                required
+                placeholder='Password'
+              />
               <div className={styles.forgotPassword}>
                 <Link href='/login'>Forgot Password?</Link>
               </div>
@@ -59,7 +57,7 @@ const Page = () => {
                   className={styles.accessButton}
                 />
               </div>
-            </form>
+            </Form>
             <AuthFormFooter
               text='New to Neurodiversity Academy? '
               to='/auth/signup'
