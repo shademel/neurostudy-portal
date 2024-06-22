@@ -10,7 +10,7 @@ const AuthLeftBanner: React.FC = () => {
       <Typography
         variant={TypographyVariant.H2}
         color='var(--GhostWhite)'
-        className='mt-0'
+        className='my-0'
       >
         Signup/Login to Neurodiversity Academy
       </Typography>
@@ -18,7 +18,7 @@ const AuthLeftBanner: React.FC = () => {
         <Typography
           variant={TypographyVariant.H2}
           color='var(--GhostWhite)'
-          className='mb-3'
+          className='mt-0 mb-3'
         >
           Lorem ipsum
         </Typography>

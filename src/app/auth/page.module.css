@@ -3,11 +3,12 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(194.75deg, rgba(102, 0, 204, 0) -78.84%, rgba(102, 0, 204, 0.4) 36.62%, #4A4AFF 102.62%);
   color: var(--GhostWhite);
-  padding: 6rem 2rem;
+  padding: 80px 32px;
   align-content: space-between;
   flex-wrap: wrap;
-  min-height: 692px;
   border-radius: 0px 8px 8px 0px;
+  word-break: break-word;
+  gap: 260px;
 }
 
 .forgotPassword {
@@ -59,17 +60,14 @@
 
 .formColumn {
   display: flex;
-  align-items: center;
   justify-content: center;
   background-color: var(--GhostWhiteSub);
+  padding: 88px 24px;
 }
 
 .formColumnWrapper {
   width: 543px;
-  max-width: 90%;
-  padding-top: 48px;
-  padding-bottom: 48px;
-  margin: auto;
+  max-width: 100%;
 }
 
 .formTitleWrapper {
@@ -91,4 +89,19 @@
 
 .dobInputContainer>* {
   flex: 1 0 0;
+}
+
+@media (max-width: 768px) {
+  .bannerColumn {
+    padding: 48px 24px 48px 24px;
+    gap: 64px;
+  }
+
+  .formColumn {
+    padding: 24px;
+  }
+
+  .formColumnWrapper {
+    width: 100%;
+  }
 }
