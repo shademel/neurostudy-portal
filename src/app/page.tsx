@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Banner />
-      {getGoogleAnalyticsScript()}
+      {process.env.NODE_ENV === 'production' && getGoogleAnalyticsScript()}
       <Teacher />
       <Partner />
       <Fact />
