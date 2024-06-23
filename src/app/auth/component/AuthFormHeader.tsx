@@ -14,7 +14,9 @@ const AuthFormHeader: React.FC<AuthFormHeaderProps> = ({
 }: AuthFormHeaderProps) => {
   return (
     <div className={styles.formTitleWrapper}>
-      <div className={styles.formTitle}>{title}</div>
+      <Typography variant={TypographyVariant.H3} className='my-0'>
+        {title}
+      </Typography>
       <Typography variant={TypographyVariant.Body2} color='var(--grey-500)'>
         {subText}
       </Typography>

@@ -11,7 +11,7 @@ const SignUpPage = () => {
   const user = null;
 
   return (
-    <main className='main-container'>
+    <main className={styles.container}>
       <div className='row'>
         <AuthLeftBanner />
         <div className={classNames(styles.formColumn, 'col-md-8')}>

@@ -8,7 +8,7 @@ const AuthLeftBanner: React.FC = () => {
   return (
     <div className={classNames(styles.bannerColumn, 'col-md-4')}>
       <Typography
-        variant={TypographyVariant.H2}
+        variant={TypographyVariant.H3}
         color='var(--GhostWhite)'
         className='my-0'
       >
@@ -16,7 +16,7 @@ const AuthLeftBanner: React.FC = () => {
       </Typography>
       <div className={styles.bannerDesc}>
         <Typography
-          variant={TypographyVariant.H2}
+          variant={TypographyVariant.H3}
           color='var(--GhostWhite)'
           className='mt-0 mb-3'
         >
