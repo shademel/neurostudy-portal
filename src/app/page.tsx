@@ -9,6 +9,9 @@ import HowItWorks from './components/howItWorks/HowItWorks';
 import Partner from './components/partnerSection/Partner';
 import { Metadata } from 'next';
 import Subscribe from './components/subscribe/subscribe';
+import { HOST_URL, META_TYPE } from './utilities/constants';
+import metadataJSON from '../app/utilities/metadata/metadata.json';
+import { createMetadata } from './utilities/common';
 
 const getGoogleAnalyticsScript = () => {
   return (
@@ -27,11 +30,21 @@ const getGoogleAnalyticsScript = () => {
   );
 };
 
+const { title, description, images, keywords } = metadataJSON.metadata.home;
+const canonical = `${HOST_URL}/`;
+const type = META_TYPE.WEBSITE;
+
 export const metadata: Metadata = {
-  title: 'Homepage - Neurodiversity Academy',
-  keywords:
-    'homepage, neurodiversity, neurodiversityacademy, neurodiversity academy',
-  description: 'Homepage for Neurodiversity Academy',
+  metadataBase: new URL(HOST_URL),
+
+  ...createMetadata({
+    title,
+    keywords,
+    description,
+    canonical,
+    type,
+    images,
+  }),
 };
 
 export default function Home() {

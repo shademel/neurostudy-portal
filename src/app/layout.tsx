@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import './globals.css';
 import { Poppins } from 'next/font/google';
 import Footer from './components/footer/Footer';
@@ -11,14 +10,6 @@ const poppins = Poppins({
   weight: ['900', '800', '700', '600', '500', '100'],
   style: ['normal'],
 });
-
-export const metadata: Metadata = {
-  ...(process.env.HOST_URL && {
-    metadataBase: new URL(process.env.HOST_URL),
-  }),
-  title: 'Neurodiversity Academy',
-  description: 'Neurostudy Neurodiversity Academy',
-};
 
 export default function RootLayout({
   children,

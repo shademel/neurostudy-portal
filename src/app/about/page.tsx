@@ -9,17 +9,22 @@ import Mission from '../components/aboutMission/Mission';
 import Vision from '../components/aboutVision/Vision';
 import Founders from '../components/aboutFounders/Founders';
 import { Metadata } from 'next';
+import { HOST_URL, META_TYPE } from '../utilities/constants';
+import metadataJSON from '../../app/utilities/metadata/metadata.json';
+import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = {
-  title: 'About',
-  description: 'About Neurodiversity Academy.',
-  keywords: [
-    'About',
-    'about us',
-    'neurodiversity',
-    'neurodiversityacademy, neurodiversity academy',
-  ],
-};
+const { title, description, images, keywords } = metadataJSON.metadata.about;
+const canonical = `${HOST_URL}/about`;
+const type = META_TYPE.WEBSITE;
+
+export const metadata: Metadata = createMetadata({
+  title,
+  keywords,
+  description,
+  canonical,
+  type,
+  images,
+});
 
 export default function Page() {
   return (

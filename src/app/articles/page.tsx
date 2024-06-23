@@ -7,13 +7,22 @@ import Typography, {
   TypographyVariant,
 } from '../components/typography/Typography';
 import { Metadata } from 'next';
+import { HOST_URL, META_TYPE } from '../utilities/constants';
+import metadataJSON from '../../app/utilities/metadata/metadata.json';
+import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = {
-  title: 'Articles',
-  description: 'Articles from Neurodiversity Academy.',
-  keywords:
-    'Articles, neurodiversity, neurodiversityacademy, neurodiversity academy',
-};
+const { title, description, images, keywords } = metadataJSON.metadata.articles;
+const canonical = `${HOST_URL}/articles`;
+const type = META_TYPE.WEBSITE;
+
+export const metadata: Metadata = createMetadata({
+  title,
+  keywords,
+  description,
+  canonical,
+  type,
+  images,
+});
 
 const CardList: React.FC = () => {
   const articles: ArticleInterface[] = articleData.articles;
