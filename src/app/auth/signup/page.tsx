@@ -1,36 +1,14 @@
-'use client';
-
 import styles from '../page.module.css';
-import commonStyles from '@/app/styles/common.module.css';
-import ActionButton from '@/app/components/buttons/ActionButton';
 import AuthLeftBanner from '../component/AuthLeftBanner';
-import AuthFormFooter from '../component/AuthFormFooter';
 import classNames from 'classnames';
-import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
-import TextBox, {
-  TEXTBOX_COL_WIDTH,
-} from '@/app/components/formElements/TextBox';
-import Form from '@/app/components/formElements/Form';
-import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
-import Typography, {
-  TypographyVariant,
-} from '@/app/components/typography/Typography';
-import Link from 'next/link';
-import AuthFormHeader from '../component/AuthFormHeader';
-
-interface SignUpFieldValues extends FieldValues {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  date: number;
-  month: number;
-  year: number;
-}
+import AuthInitSignUp from '../component/AuthInitSignUp';
+import AuthFinishSignUp from '../component/AuthFinishSignUp';
 
 const SignUpPage = () => {
-  const { control }: UseFormReturn<SignUpFieldValues> =
-    useForm<SignUpFieldValues>({ mode: 'onBlur' });
+  // TODO
+  // https://trello.com/c/mkNpbNGg/108-sign-up-implement-persistent-user-sessions
+  // We'll configure `user` or relevant variable to determine the user, if in session
+  const user = null;
 
   return (
     <main className='main-container'>
@@ -38,87 +16,7 @@ const SignUpPage = () => {
         <AuthLeftBanner />
         <div className={classNames(styles.formColumn, 'col-md-8')}>
           <div className={styles.formColumnWrapper}>
-            <AuthFormHeader />
-            <Form control={control}>
-              <TextBox
-                name='firstName'
-                label='First Name'
-                required
-                placeholder='First Name'
-                colWidth={TEXTBOX_COL_WIDTH.HALF}
-              />
-              <TextBox
-                name='lastName'
-                label='Surname'
-                required
-                placeholder='Surname'
-                colWidth={TEXTBOX_COL_WIDTH.HALF}
-              />
-              <TextBox
-                name='email'
-                type='email'
-                label='Email Address'
-                required
-                placeholder='Email address'
-                pattern={EMAIL_REGEX}
-              />
-              <TextBox
-                name='password'
-                type='password'
-                label='New Password'
-                required
-                placeholder='New Password'
-                autoComplete='new-password'
-              />
-              <Typography
-                variant={TypographyVariant.Body3MOB}
-                className={classNames(styles.dobLabel, 'col-md-12', 'pt-2')}
-              >
-                Date of Birth
-              </Typography>
-              <div className='col-md-12'>
-                <div className={classNames(styles.dobInputContainer, 'row')}>
-                  <TextBox
-                    name='date'
-                    type='number'
-                    label='Date'
-                    required
-                    placeholder='Date'
-                  />
-                  <TextBox
-                    name='month'
-                    type='number'
-                    label='Month'
-                    required
-                    placeholder='Month'
-                  />
-                  <TextBox
-                    name='year'
-                    type='number'
-                    label='Year'
-                    required
-                    placeholder='Year'
-                  />
-                </div>
-              </div>
-              <Typography
-                variant={TypographyVariant.Body2}
-                className={classNames('pt-3 pb-2', commonStyles.textCenter)}
-              >
-                By signing up, you agree to our{' '}
-                <Link href='#'>Terms and Conditions</Link>
-              </Typography>
-              <div>
-                <ActionButton
-                  type='submit'
-                  label='Sign Up'
-                  disabled
-                  className={classNames(styles.btn, styles.submitBtn, 'mb-3')}
-                  style={BUTTON_STYLE.PrimaryFull}
-                />
-              </div>
-            </Form>
-            <AuthFormFooter />
+            {user ? <AuthFinishSignUp /> : <AuthInitSignUp />}
           </div>
         </div>
       </div>

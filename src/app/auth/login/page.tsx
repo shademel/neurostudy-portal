@@ -44,7 +44,7 @@ const Page = () => {
                 required
                 placeholder='Password'
               />
-              <div className={classNames(styles.forgotPassword, 'pt-1 pb-4')}>
+              <div className={classNames(styles.forgotPassword, 'pt-1')}>
                 <Link href='#'>Forgot Password?</Link>
               </div>
               <div>
