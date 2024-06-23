@@ -4,7 +4,8 @@ import classNames from 'classnames';
 
 export enum TypographyVariant {
   H1 = 'h1',
-  H2 = 'h2', //Subheading
+  H2 = 'h2', // Subheading
+  H3 = 'h3', // Minor Subheading
   Body1 = 'body1',
   Body2Strong = 'body2-strong',
   Body2 = 'body2',
@@ -53,6 +54,10 @@ const Typography: React.FC<TypographyProps> = ({
       tag = 'h2';
       variantClassName = styles.heading2;
       break;
+    case TypographyVariant.H3:
+      tag = 'h3';
+      variantClassName = styles.heading3;
+      break;
     case TypographyVariant.Body1:
       variantClassName = styles.body1;
       break;
@@ -73,7 +78,7 @@ const Typography: React.FC<TypographyProps> = ({
       break;
   }
 
-  props.className = classNames(rootClassName, variantClassName);
+  props.className = classNames(styles.common, rootClassName, variantClassName);
 
   return createElement(tag, props, children);
 };
