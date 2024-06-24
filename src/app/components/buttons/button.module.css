@@ -32,13 +32,13 @@
   align-items: center;
   justify-content: center;
 
-  width: 312px;
+  /* width: 312px; */
   height: 48px;
   border-radius: 8px;
   border: 1px;
   gap: 8px;
   border: 1px solid var(--cherryPieVariant);
-  background: var(--cherryPieVariant);
+  /* background: var(--cherryPieVariant); */
   color: #f8f8ff;
   font-family: var(--poppins-font);
   font-weight: 600;
@@ -68,7 +68,7 @@
   align-items: center;
   justify-content: center;
 
-  width: 312px;
+  /* width: 312px; */
   height: 48px;
   border-radius: 8px;
   border: 1px;

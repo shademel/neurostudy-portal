@@ -9,21 +9,11 @@ import Mission from '../components/aboutMission/Mission';
 import Vision from '../components/aboutVision/Vision';
 import Founders from '../components/aboutFounders/Founders';
 import { Metadata } from 'next';
-import { HOST_URL, META_TYPE } from '../utilities/constants';
-import metadataJSON from '../../app/utilities/metadata/metadata.json';
+import { META_KEY } from '../utilities/constants';
 import { createMetadata } from '../utilities/common';
 
-const { title, description, images, keywords } = metadataJSON.metadata.about;
-const canonical = `${HOST_URL}/about`;
-const type = META_TYPE.WEBSITE;
-
 export const metadata: Metadata = createMetadata({
-  title,
-  keywords,
-  description,
-  canonical,
-  type,
-  images,
+  key: META_KEY.ABOUT,
 });
 
 export default function Page() {

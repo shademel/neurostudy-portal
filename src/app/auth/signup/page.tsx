@@ -1,27 +1,15 @@
-import styles from '../page.module.css';
-import AuthLeftBanner from '../component/AuthLeftBanner';
-import classNames from 'classnames';
-import AuthInitSignUp from '../component/AuthInitSignUp';
-import AuthFinishSignUp from '../component/AuthFinishSignUp';
+import SignUp from '@/app/components/auth/SignUp';
+import { Metadata } from 'next';
 
-const SignUpPage = () => {
-  // TODO
-  // https://trello.com/c/mkNpbNGg/108-sign-up-implement-persistent-user-sessions
-  // We'll configure `user` or relevant variable to determine the user, if in session
-  const user = null;
+import { META_KEY } from '@/app/utilities/constants';
+import { createMetadata } from '@/app/utilities/common';
 
-  return (
-    <main className={styles.container}>
-      <div className='row'>
-        <AuthLeftBanner />
-        <div className={classNames(styles.formColumn, 'col-md-8')}>
-          <div className={styles.formColumnWrapper}>
-            {user ? <AuthFinishSignUp /> : <AuthInitSignUp />}
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+export const metadata: Metadata = createMetadata({
+  key: META_KEY.SIGNUP,
+});
+
+const Page = () => {
+  return <SignUp />;
 };
 
-export default SignUpPage;
+export default Page;

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../page.module.css';
+import styles from './auth.module.css';
 import ActionButton from '@/app/components/buttons/ActionButton';
 import { BUTTON_STYLE } from '@/app/utilities/constants';
 import Typography, {

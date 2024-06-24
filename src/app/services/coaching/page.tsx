@@ -5,25 +5,12 @@ import Typography, {
 } from '@/app/components/typography/Typography';
 import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
-import Subscribe from '@/app/components/subscribe/subscribe';
-import { HOST_URL, META_TYPE } from '../../../app/utilities/constants';
-import metadataJSON from '../../../app/utilities/metadata/metadata.json';
+import { META_KEY } from '../../../app/utilities/constants';
 import { createMetadata } from '@/app/utilities/common';
-
-const { home, neurodivergentmates, coaching } = metadataJSON.metadata;
-const { title, description, images } = coaching;
-const keywords =
-  home.keywords + neurodivergentmates.keywords + coaching.keywords;
-const canonical = `${HOST_URL}/services/coaching`;
-const type = META_TYPE.WEBSITE;
+import Subscribe from '@/app/components/subscribe/subscribe';
 
 export const metadata: Metadata = createMetadata({
-  title,
-  keywords,
-  description,
-  canonical,
-  type,
-  images,
+  key: META_KEY.COACHING,
 });
 
 export default function Page() {

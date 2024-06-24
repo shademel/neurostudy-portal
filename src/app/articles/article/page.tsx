@@ -9,7 +9,7 @@ import Typography, {
 } from '../../components/typography/Typography';
 import Subscribe from '@/app/components/subscribe/subscribe';
 import { MetadataProps } from '@/app/interfaces/MetadataProps';
-import { HOST_URL, META_TYPE } from '@/app/utilities/constants';
+import { HOST_URL, META_KEY } from '@/app/utilities/constants';
 import { createMetadata } from '@/app/utilities/common';
 
 export async function generateMetadata({
@@ -24,17 +24,18 @@ export async function generateMetadata({
   }
 
   const { title, keywords, imageUrl, description } = article;
-  const type = META_TYPE.ARTICLE;
   const canonical = `${HOST_URL}/articles/article?articleId=${articleId}`;
   const images = [{ url: imageUrl }];
 
   return createMetadata({
-    title,
-    keywords,
-    description,
-    canonical,
-    type,
-    images,
+    key: META_KEY.ARTICLE,
+    params: {
+      title,
+      keywords,
+      description,
+      canonical,
+      images,
+    },
   });
 }
 

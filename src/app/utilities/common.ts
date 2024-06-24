@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
-import { MetadataParams } from '../interfaces/MetadataProps';
-import { LANGUAGES, LOCALE, SITE_NAME } from './constants';
+import { MetadataKeyValuePair } from '../interfaces/MetadataProps';
+import { metadata } from './metadata/metadata';
+import { LANGUAGES, LOCALE, META_TYPE, SITE_NAME } from './constants';
 
 type RegulatorPropFn = (...args: unknown[]) => unknown;
 
@@ -42,14 +43,28 @@ export const throttle = (
   };
 };
 
-export const createMetadata = ({
-  title,
-  keywords,
-  description,
-  canonical,
-  type,
-  images,
-}: MetadataParams) => {
+export const createMetadata = ({ key, params }: MetadataKeyValuePair) => {
+  let { title, description, keywords, canonical, type, images } = metadata[key];
+
+  //extend with metadataParams
+  title += title ? ` | ${params?.title || ''}` : params?.title || '';
+
+  description += description
+    ? ` | ${params?.description || ''}`
+    : params?.description || '';
+
+  keywords += keywords
+    ? ` | ${params?.keywords || ''}`
+    : params?.keywords || '';
+
+  canonical += canonical
+    ? ` | ${params?.canonical || ''}`
+    : params?.canonical || '';
+
+  type = params?.type || META_TYPE.WEBSITE;
+
+  images = images.concat(...(params?.images || []));
+
   const metadataObj: Metadata = {
     title,
     keywords,

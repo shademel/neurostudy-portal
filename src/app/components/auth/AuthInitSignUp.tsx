@@ -3,7 +3,7 @@
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
-import styles from '../page.module.css';
+import styles from './auth.module.css';
 import commonStyles from '@/app/styles/common.module.css';
 import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';

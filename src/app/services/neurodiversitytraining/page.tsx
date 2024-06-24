@@ -4,28 +4,12 @@ import Typography, {
 } from '@/app/components/typography/Typography';
 import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
-import Subscribe from '@/app/components/subscribe/subscribe';
-import { HOST_URL, META_TYPE } from '../../../app/utilities/constants';
-import metadataJSON from '../../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '@/app/utilities/common';
-
-const { home, neurodivergentmates, neurodiversitytraining } =
-  metadataJSON.metadata;
-const { title, description, images } = neurodiversitytraining;
-const keywords =
-  home.keywords +
-  neurodivergentmates.keywords +
-  neurodiversitytraining.keywords;
-const canonical = `${HOST_URL}/services/neurodiversitytraining`;
-const type = META_TYPE.WEBSITE;
+import { META_KEY } from '@/app/utilities/constants';
+import Subscribe from '@/app/components/subscribe/subscribe';
 
 export const metadata: Metadata = createMetadata({
-  title,
-  keywords,
-  description,
-  canonical,
-  type,
-  images,
+  key: META_KEY.NEURODIVERSITY_TRAINING,
 });
 
 export default function Page() {
