@@ -9,9 +9,7 @@ import { META_KEY } from '../../../app/utilities/constants';
 import { createMetadata } from '@/app/utilities/common';
 import Subscribe from '@/app/components/subscribe/subscribe';
 
-export const metadata: Metadata = createMetadata({
-  key: META_KEY.ADVISORY_CONSULTING,
-});
+export const metadata: Metadata = createMetadata(META_KEY.ADVISORY_CONSULTING);
 
 export default function Page() {
   return (

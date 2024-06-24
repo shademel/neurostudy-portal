@@ -9,9 +9,7 @@ import { META_KEY } from '../utilities/constants';
 import { createMetadata } from '../utilities/common';
 import Subscribe from '../components/subscribe/subscribe';
 
-export const metadata: Metadata = createMetadata({
-  key: META_KEY.NEURODIVERGENT_MATES,
-});
+export const metadata: Metadata = createMetadata(META_KEY.NEURODIVERGENT_MATES);
 
 export default function Home() {
   return (

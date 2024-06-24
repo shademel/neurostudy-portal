@@ -30,15 +30,12 @@ export async function generateMetadata({
   const canonical = `${HOST_URL}/blogs/blog?blogId=${blogId}`;
   const images = [{ url: imageUrl }];
 
-  return createMetadata({
-    key: META_KEY.BLOG,
-    params: {
-      title,
-      keywords,
-      description,
-      canonical,
-      images,
-    },
+  return createMetadata(META_KEY.BLOG, {
+    title,
+    keywords,
+    description,
+    canonical,
+    images,
   });
 }
 

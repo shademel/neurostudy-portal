@@ -1,4 +1,4 @@
-import { META_KEY, META_TYPE } from '../utilities/constants';
+import { META_TYPE } from '../utilities/constants';
 
 export interface MetadataProps {
   params: { id: string };
@@ -11,12 +11,9 @@ export interface MetadataParams {
   description?: string;
   canonical?: string;
   type?: META_TYPE;
-  images?: {
-    url: string;
-  }[];
-}
-
-export interface MetadataKeyValuePair {
-  key: META_KEY;
-  params?: MetadataParams;
+  images?:
+    | {
+        url: string;
+      }[]
+    | [];
 }

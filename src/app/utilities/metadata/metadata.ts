@@ -1,4 +1,4 @@
-import { HOST_URL, META_TYPE } from '../constants';
+import { HOST_URL, META_KEY, META_TYPE } from '../constants';
 import {
   KEYWORDS_ABOUT,
   KEYWORDS_ADVISORY_CONSULTING,
@@ -16,40 +16,25 @@ import {
 } from './keywords';
 
 export const metadata = {
-  home: {
+  [META_KEY.HOME]: {
     title: 'Homepage - Neurodiversity Academy',
     description: 'Homepage for Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_HOME,
     canonical: `${HOST_URL}/`,
     type: META_TYPE.WEBSITE,
   },
-  neurodivergentmates: {
+  [META_KEY.NEURODIVERGENT_MATES]: {
     title: 'Neurodivergent Mates',
     description:
       'Neurodivergent Mates is two neurodivergent mates from Australia who get together with different members of the community to talk and have in-depth conversations',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES,
     canonical: `${HOST_URL}/neurodivergentmates`,
     type: META_TYPE.WEBSITE,
   },
-  neurodiversitytraining: {
+  [META_KEY.NEURODIVERSITY_TRAINING]: {
     title: 'Learning/Training Partnerships',
     description:
       'Learning/Training Partnerships services from Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords:
       KEYWORDS_HOME +
       KEYWORDS_NEURODIVERGENT_MATES +
@@ -57,15 +42,10 @@ export const metadata = {
     canonical: `${HOST_URL}/services/neurodiversitytraining`,
     type: META_TYPE.WEBSITE,
   },
-  advisoryconsulting: {
+  [META_KEY.ADVISORY_CONSULTING]: {
     title: 'Advisory Neurodiversity Consulting',
     description:
       'Advisory Neurodiversity Consulting services from Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords:
       KEYWORDS_HOME +
       KEYWORDS_NEURODIVERGENT_MATES +
@@ -73,139 +53,84 @@ export const metadata = {
     canonical: `${HOST_URL}/services/advisoryconsulting`,
     type: META_TYPE.WEBSITE,
   },
-  networking: {
+  [META_KEY.NETWORKING]: {
     title: 'Host Neurodiversity Workshops & Networking (Awareness/Education)',
     description:
       'Hosting Neurodiversity Workshops & Networking services from Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords:
       KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES + KEYWORDS_NETWORKING,
     canonical: `${HOST_URL}/services/networking`,
     type: META_TYPE.WEBSITE,
   },
-  coaching: {
+  [META_KEY.COACHING]: {
     title: 'Career Coaching',
     description: 'Neurodiversity Career Coaching from Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES + KEYWORDS_COACHING,
     canonical: `${HOST_URL}/services/coaching`,
     type: META_TYPE.WEBSITE,
   },
-  placements: {
+  [META_KEY.PLACEMENTS]: {
     title: 'Placements (Internships/Employment)',
     description:
       'Placements (Internships/Employment) services from Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords:
       KEYWORDS_HOME + KEYWORDS_NEURODIVERGENT_MATES + KEYWORDS_PLACEMENTS,
     canonical: `${HOST_URL}/services/placements`,
     type: META_TYPE.WEBSITE,
   },
-  about: {
+  [META_KEY.ABOUT]: {
     title: 'About',
     description: 'About Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_ABOUT,
     canonical: `${HOST_URL}/about`,
     type: META_TYPE.WEBSITE,
   },
-  contact: {
+  [META_KEY.CONTACT]: {
     title: 'Contact',
     description:
       'Contact page allows customers to contact Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_CONTACT,
     canonical: `${HOST_URL}/contact`,
     type: META_TYPE.WEBSITE,
   },
-  articles: {
+  [META_KEY.ARTICLES]: {
     title: 'Articles',
     description: 'Articles from Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_ARTICLES,
     canonical: `${HOST_URL}/articles`,
     type: META_TYPE.WEBSITE,
   },
-  article: {
+  [META_KEY.ARTICLE]: {
     title: '',
     description: '',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: '',
     canonical: '',
     type: META_TYPE.ARTICLE,
   },
-  blogs: {
+  [META_KEY.BLOGS]: {
     title: 'Blogs',
     description: 'Blogs from Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_BLOGS,
     canonical: `${HOST_URL}/blogs`,
     type: META_TYPE.WEBSITE,
   },
-  blog: {
+  [META_KEY.BLOG]: {
     title: '',
     description: '',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: '',
     canonical: '',
     type: META_TYPE.ARTICLE,
   },
-  signup: {
+  [META_KEY.SIGNUP]: {
     title: 'Sign up - Neurodiversity Academy',
     description: 'Sign up page for Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_SIGNUP,
     canonical: `${HOST_URL}/auth/signup`,
     type: META_TYPE.WEBSITE,
   },
-  login: {
+  [META_KEY.LOGIN]: {
     title: 'Log in - Neurodiversity Academy',
     description: 'Log in page for Neurodiversity Academy',
-    images: [
-      {
-        url: '',
-      },
-    ],
     keywords: KEYWORDS_LOGIN,
     canonical: `${HOST_URL}/auth/login`,
     type: META_TYPE.WEBSITE,

@@ -10,9 +10,7 @@ import { Metadata } from 'next';
 import { META_KEY } from '../utilities/constants';
 import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = createMetadata({
-  key: META_KEY.BLOGS,
-});
+export const metadata: Metadata = createMetadata(META_KEY.BLOGS);
 
 const CardList: React.FC = () => {
   const blogs: BlogInterface[] = blogData.blogs;

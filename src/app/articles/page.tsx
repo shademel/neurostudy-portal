@@ -10,9 +10,7 @@ import { Metadata } from 'next';
 import { META_KEY } from '../utilities/constants';
 import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = createMetadata({
-  key: META_KEY.ARTICLES,
-});
+export const metadata: Metadata = createMetadata(META_KEY.ARTICLES);
 
 const CardList: React.FC = () => {
   const articles: ArticleInterface[] = articleData.articles;

@@ -8,9 +8,9 @@ import { createMetadata } from '@/app/utilities/common';
 import { META_KEY } from '@/app/utilities/constants';
 import Subscribe from '@/app/components/subscribe/subscribe';
 
-export const metadata: Metadata = createMetadata({
-  key: META_KEY.NEURODIVERSITY_TRAINING,
-});
+export const metadata: Metadata = createMetadata(
+  META_KEY.NEURODIVERSITY_TRAINING
+);
 
 export default function Page() {
   return (

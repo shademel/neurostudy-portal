@@ -12,9 +12,7 @@ import { Metadata } from 'next';
 import { META_KEY } from '../utilities/constants';
 import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = createMetadata({
-  key: META_KEY.ABOUT,
-});
+export const metadata: Metadata = createMetadata(META_KEY.ABOUT);
 
 export default function Page() {
   return (
