@@ -1,3 +1,7 @@
+import { Metadata } from 'next';
+import { MetadataParams } from '../interfaces/MetadataProps';
+import { LANGUAGES, LOCALE, SITE_NAME } from './constants';
+
 type RegulatorPropFn = (...args: unknown[]) => unknown;
 
 export const debounce = (
@@ -36,4 +40,34 @@ export const throttle = (
       fn.apply(context, args);
     }
   };
+};
+
+export const createMetadata = ({
+  title,
+  keywords,
+  description,
+  canonical,
+  type,
+  images,
+}: MetadataParams) => {
+  const metadataObj: Metadata = {
+    title,
+    keywords,
+    description,
+    alternates: {
+      canonical,
+      languages: LANGUAGES,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      images,
+      type,
+      siteName: SITE_NAME,
+      locale: LOCALE,
+    },
+  };
+
+  return metadataObj;
 };

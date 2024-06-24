@@ -20,3 +20,13 @@ export enum BUTTON_STYLE {
   Tertiary = 'tertiary',
   TertiaryFull = 'tertiary-full',
 }
+
+export const HOST_URL =
+  process.env.HOST_URL || 'https://neurodiversityacademy.com';
+export const SITE_NAME = 'Neurodiversity Academy';
+export const LANGUAGES = { 'en-US': '/en-US' };
+export const LOCALE = 'en_US';
+export enum META_TYPE {
+  WEBSITE = 'website',
+  ARTICLE = 'article',
+}
