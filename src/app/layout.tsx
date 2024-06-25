@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Footer />
         <SpeedInsights />
         <Analytics />
+        <Toaster />
       </body>
     </html>
   );
