@@ -27,7 +27,7 @@ const AuthFinishSignUp: React.FC = () => {
     useForm<SignUpFieldValues>({ mode: 'onBlur' });
 
   return (
-    <>
+    <div className={styles.formColumnWrapper}>
       <AuthFormHeader title='Almost Done' subText='one last step' />
       <Form control={control}>
         <TextBox
@@ -85,7 +85,7 @@ const AuthFinishSignUp: React.FC = () => {
           />
         </div>
       </Form>
-    </>
+    </div>
   );
 };
 

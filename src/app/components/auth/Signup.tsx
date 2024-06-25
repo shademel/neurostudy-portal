@@ -15,9 +15,7 @@ const SignUp = () => {
       <div className='row'>
         <AuthLeftBanner />
         <div className={classNames(styles.formColumn, 'col-md-8')}>
-          <div className={styles.formColumnWrapper}>
-            {user ? <AuthFinishSignUp /> : <AuthInitSignUp />}
-          </div>
+          {user ? <AuthFinishSignUp /> : <AuthInitSignUp />}
         </div>
       </div>
     </main>
