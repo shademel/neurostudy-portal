@@ -6,83 +6,83 @@
 
 /* Desktop view */
 .heading1 {
-  font-size: var(--Heading1-font-size);
-  font-weight: var(--Heading1-font-weight);
+  font-size: var(--heading1-font-size);
+  font-weight: var(--heading1-font-weight);
 }
 
 .heading2 {
-  font-size: var(--Heading2-font-size);
-  font-weight: var(--Heading2-font-weight);
+  font-size: var(--heading2-font-size);
+  font-weight: var(--heading2-font-weight);
 }
 
 .heading3 {
-  font-size: var(--Heading3-font-size);
-  font-weight: var(--Heading3-font-weight);
+  font-size: var(--heading3-font-size);
+  font-weight: var(--heading3-font-weight);
 }
 
 .body1 {
-  font-size: var(--Body1-font-size);
-  font-weight: var(--Body1-font-weight);
+  font-size: var(--body1-font-size);
+  font-weight: var(--body1-font-weight);
 }
 
 .body2Strong {
-  font-size: var(--Body2Strong-font-size);
-  font-weight: var(--Body2Strong-font-weight);
+  font-size: var(--body2-strong-font-size);
+  font-weight: var(--body2-strong-font-weight);
 }
 
 .body2 {
-  font-size: var(--Body2-font-size);
-  font-weight: var(--Body2-font-weight);
+  font-size: var(--body2-font-size);
+  font-weight: var(--body2-font-weight);
 }
 
 .body3Strong {
-  font-size: var(--Body3Strong-font-size);
-  font-weight: var(--Body3Strong-font-weight);
+  font-size: var(--body3-strong-font-size);
+  font-weight: var(--body3-strong-font-weight);
 }
 
 .body3 {
-  font-size: var(--Body3-font-size);
-  font-weight: var(--Body3-font-weight);
+  font-size: var(--body3-font-size);
+  font-weight: var(--body3-font-weight);
 }
 
 .labelText {
-  font-size: var(--LabelText-font-size);
-  font-weight: var(--LabelText-font-weight);
+  font-size: var(--labeltext-font-size);
+  font-weight: var(--labeltext-font-weight);
 }
 
 @media (max-width: 480px) {
 
   /* mobile view */
   .heading1 {
-    font-size: var(--Mobile-Heading1-font-size);
+    font-size: var(--mobile-heading1-font-size);
   }
 
   .heading2 {
-    font-size: var(--Mobile-Heading2-font-size);
+    font-size: var(--mobile-heading2-font-size);
   }
 
   .heading3 {
-    font-size: var(--Mobile-Heading3-font-size);
+    font-size: var(--mobile-heading3-font-size);
   }
 
   .body1 {
-    font-size: var(--Mobile-Body1-font-size);
+    font-size: var(--mobile-body1-font-size);
   }
 
   .body2Strong {
-    font-size: var(--Mobile-Body2Strong-font-size);
+    font-size: var(--mobile-body2-strong-font-size);
   }
 
   .body2 {
-    font-size: var(--Mobile-Body2-font-size);
+    font-size: var(--mobile-body2-font-size);
   }
 
   .mobBody3Strong {
-    font-size: var(--Mobile-Body3Strong-font-size);
+    font-size: var(--mobile-body3-strong-font-size);
   }
 
   .mobBody3 {
-    font-size: var(--Mobile-Body3-font-size);
+    font-size: var(--mobile-body3-font-size);
   }
 
 }

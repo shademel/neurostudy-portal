@@ -3,42 +3,42 @@
   
 
   /* Desktop */
-  --Heading1-font-weight: 700;
-  --Heading1-font-size: 48px;
+  --heading1-font-weight: 700;
+  --heading1-font-size: 48px;
 
-  --Heading2-font-weight: 500;
-  --Heading2-font-size: 36px;
+  --heading2-font-weight: 500;
+  --heading2-font-size: 36px;
 
-  --Heading3-font-weight: 500;
-  --Heading3-font-size: 28px;
+  --heading3-font-weight: 500;
+  --heading3-font-size: 28px;
 
-  --Body1-font-weight: 400;
-  --Body1-font-size: 24px;
+  --body1-font-weight: 400;
+  --body1-font-size: 24px;
 
-  --Body2Strong-font-weight: 600;
-  --Body2Strong-font-size: 16px;
+  --body2-strong-font-weight: 600;
+  --body2-strong-font-size: 16px;
 
-  --Body2-font-weight: 400;
-  --Body2-font-size: 16px;
+  --body2-font-weight: 400;
+  --body2-font-size: 16px;
 
-  --Body3Strong-font-weight: 500;
-  --Body3Strong-font-size: 14px;
+  --body3-strong-font-weight: 500;
+  --body3-strong-font-size: 14px;
 
-  --Body3-font-weight: 400;
-  --Body3-font-size: 14px;
+  --body3-font-weight: 400;
+  --body3-font-size: 14px;
 
-  --LabelText-font-weight: 400;
-  --LabelText-font-size: 12px;
+  --labeltext-font-weight: 400;
+  --labeltext-font-size: 12px;
 
   /* Mobile */
-  --Mobile-Heading1-font-size: 24px;
-  --Mobile-Heading2-font-size: 20px;
-  --Mobile-Heading3-font-size: 18px;
-  --Mobile-Body1-font-size: 18px;
-  --Mobile-Body2Strong-font-size: 16px;
-  --Mobile-Body2-font-size: 16px;
-  --Mobile-Body3Strong-font-size: 12px;
-  --Mobile-Body3-font-size: 12px;
+  --mobile-heading1-font-size: 24px;
+  --mobile-heading2-font-size: 20px;
+  --mobile-heading3-font-size: 18px;
+  --mobile-body1-font-size: 18px;
+  --mobile-body2-strong-font-size: 16px;
+  --mobile-body2-font-size: 16px;
+  --mobile-body3-strong-font-size: 12px;
+  --mobile-body3-font-size: 12px;
 
   
   --GhostWhite: #f8f8ff;
