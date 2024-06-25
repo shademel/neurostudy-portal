@@ -4,92 +4,88 @@
   line-height: normal;
 }
 
-.mobBody3 {
-  font-size: 14px;
-  font-weight: 400;
+/* Desktop view */
+.heading1 {
+  font-size: var(--Heading1-font-size);
+  font-weight: var(--Heading1-font-weight);
 }
 
-.mobBody3Strong {
-  font-size: 14px;
-  font-weight: 500;
+.heading2 {
+  font-size: var(--Heading2-font-size);
+  font-weight: var(--Heading2-font-weight);
 }
 
 .heading3 {
-  font-size: 28px;
-  font-weight: 500;
+  font-size: var(--Heading3-font-size);
+  font-weight: var(--Heading3-font-weight);
 }
 
-@media (min-width: 480px) {
+.body1 {
+  font-size: var(--Body1-font-size);
+  font-weight: var(--Body1-font-weight);
+}
 
-  /* desktop view */
-  .heading1 {
-    font-size: 48px;
-    font-weight: 700;
-  }
+.body2Strong {
+  font-size: var(--Body2Strong-font-size);
+  font-weight: var(--Body2Strong-font-weight);
+}
 
-  .heading2 {
-    font-size: 36px;
-    font-weight: 500;
-  }
+.body2 {
+  font-size: var(--Body2-font-size);
+  font-weight: var(--Body2-font-weight);
+}
 
-  .body1 {
-    font-size: 20px;
-    font-weight: 400;
-  }
+.body3Strong {
+  font-size: var(--Body3Strong-font-size);
+  font-weight: var(--Body3Strong-font-weight);
+}
 
-  .body2Strong {
-    font-size: 16px;
-    font-weight: 600;
-  }
+.body3 {
+  font-size: var(--Body3-font-size);
+  font-weight: var(--Body3-font-weight);
+}
+
+.labelText {
+  font-size: var(--LabelText-font-size);
+  font-weight: var(--LabelText-font-weight);
 }
 
 @media (max-width: 480px) {
 
   /* mobile view */
   .heading1 {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: var(--Mobile-Heading1-font-size);
   }
 
   .heading2 {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: var(--Mobile-Heading2-font-size);
   }
 
   .heading3 {
-    font-size: 18px;
+    font-size: var(--Mobile-Heading3-font-size);
   }
 
   .body1 {
-    font-size: 18px;
-    font-weight: 400;
-  }
-
-  .body2 {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: var(--Mobile-Body1-font-size);
   }
 
   .body2Strong {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: var(--Mobile-Body2Strong-font-size);
   }
 
-  .mobBody3 {
-    font-size: 12px;
+  .body2 {
+    font-size: var(--Mobile-Body2-font-size);
   }
 
   .mobBody3Strong {
-    font-size: 12px;
+    font-size: var(--Mobile-Body3Strong-font-size);
   }
+
+  .mobBody3 {
+    font-size: var(--Mobile-Body3-font-size);
+  }
+
 }
 
-.labelText {
-  font-size: 12px;
-  font-weight: 400;
-}
 
-.body2 {
-  font-size: 16px;
-  font-weight: 400;
-}
+
