@@ -153,12 +153,12 @@ const AuthInitSignUp: React.FC = () => {
         />
         <Typography
           variant={TypographyVariant.Body2}
-          className={classNames('pt-3 pb-2', commonStyles.textCenter)}
+          className={classNames('pt-3', commonStyles.textCenter)}
         >
           By signing up, you agree to our{' '}
           <Link href='#'>Terms and Conditions</Link>
         </Typography>
-        <div className={styles.buttonArea}>
+        <div className='my-3'>
           <ActionButton
             type='submit'
             label='Sign Up'

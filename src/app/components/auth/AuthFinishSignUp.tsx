@@ -75,7 +75,7 @@ const AuthFinishSignUp: React.FC = () => {
             />
           </div>
         </div>
-        <div className={styles.buttonArea}>
+        <div className='my-3'>
           <ActionButton
             type='submit'
             label='Submit'
