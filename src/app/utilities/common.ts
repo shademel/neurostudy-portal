@@ -43,7 +43,10 @@ export const throttle = (
   };
 };
 
-export const createMetadata = (key: META_KEY, customMetadata?: MetadataParams) => {
+export const createMetadata = (
+  key: META_KEY,
+  customMetadata?: MetadataParams
+) => {
   const config = { ...metadata[key], ...customMetadata };
   const { title, description, keywords, canonical, type, images } = config;
 
