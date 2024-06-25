@@ -34,13 +34,10 @@
     width: 90%;
 }
 
-.accessButton {
+.buttonArea {
     width: 100%;
-    height: 36px;
     margin-top: 20px;
     margin-bottom: 40px;
-    font-size: 0.9rem;
-    font-weight: 400;
 }
 
 .successTitle {
@@ -263,12 +260,12 @@
     }
 
     .textArea {
-        width: 98%;
+        width: 100%;
         margin-bottom: 1.35rem;
     }
 
     .buttonArea {
-        width: 98%
+        width: 100%
     }
 
     .successTitle {

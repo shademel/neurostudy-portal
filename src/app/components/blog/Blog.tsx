@@ -29,7 +29,6 @@ export default function Blog({
             label='Learn more'
             icon={CircleRight}
             style={BUTTON_STYLE.Tertiary}
-            disabled={false}
             iconPosition='right'
             to={`/blogs/blog/?blogId=${id}`}
           ></ActionButton>

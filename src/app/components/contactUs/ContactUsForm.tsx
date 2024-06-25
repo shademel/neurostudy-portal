@@ -7,6 +7,7 @@ import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterf
 import { UserFormSubmissionType } from '@/app/interfaces/UserFormSubmissionType';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import {
+  BUTTON_STYLE,
   EMAIL_REGEX,
   NAME_REGEX,
   PHONE_REGEX,
@@ -180,7 +181,8 @@ const ContactUsForm: React.FC = () => {
               type='submit'
               label='Submit'
               disabled={false}
-              className={styles.accessButton}
+              style={BUTTON_STYLE.Primary}
+              fullWidth
             />
           </div>
           {submissionSuccess && (

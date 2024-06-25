@@ -117,9 +117,6 @@ const AuthInitSignUp: React.FC = () => {
               type='submit'
               label='Verify'
               className={classNames(styles.btn, styles.submitBtn, 'mt-0')}
-              // TODO
-              // https://trello.com/c/Ork170yg/122-infrastructure-extend-common-button-components
-              // Once the issue is taken care of, we will supply the accurate BUTTON_STYLE below
               style={BUTTON_STYLE.Secondary}
             />
           </div>
@@ -161,12 +158,12 @@ const AuthInitSignUp: React.FC = () => {
           By signing up, you agree to our{' '}
           <Link href='#'>Terms and Conditions</Link>
         </Typography>
-        <div>
+        <div className={styles.buttonArea}>
           <ActionButton
             type='submit'
             label='Sign Up'
-            className={classNames(styles.btn, styles.submitBtn, 'mt-0')}
-            style={BUTTON_STYLE.PrimaryFull}
+            style={BUTTON_STYLE.Primary}
+            fullWidth
           />
         </div>
       </Form>

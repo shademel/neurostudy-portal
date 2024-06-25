@@ -5,7 +5,7 @@ import ActionButton from '../buttons/ActionButton';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
 import { UserSubscriptionType } from '@/app/interfaces/UserSubscriptionType';
 import { registerSubscriptionData } from '@/app/utilities/register/registerSubscriptionData';
-import { EMAIL_REGEX } from '@/app/utilities/constants';
+import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import Image from 'next/image';
 import styles from './subscribe.module.css';
 import MailboxLady from '../../images/mailboxLady.png';
@@ -80,7 +80,8 @@ export default function Subscribe() {
                     type='submit'
                     label='Subscribe Now'
                     disabled={false}
-                    className={styles.accessButton}
+                    style={BUTTON_STYLE.Primary}
+                    fullWidth
                   />
                 </div>
               </>

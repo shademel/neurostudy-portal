@@ -75,13 +75,13 @@ const AuthFinishSignUp: React.FC = () => {
             />
           </div>
         </div>
-        <div>
+        <div className={styles.buttonArea}>
           <ActionButton
             type='submit'
             label='Submit'
             disabled
-            className={classNames(styles.btn, styles.submitBtn)}
-            style={BUTTON_STYLE.PrimaryFull}
+            style={BUTTON_STYLE.Primary}
+            fullWidth
           />
         </div>
       </Form>

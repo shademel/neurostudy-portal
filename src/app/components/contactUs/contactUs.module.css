@@ -47,7 +47,13 @@
 .buttonArea {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
+
+.buttonArea button {
+  max-width: var(--primary-button-width);
+}
+
 .header {
   margin: 0px;
   text-align: center;
@@ -103,12 +109,14 @@
     .textboxBody textarea {
     width: 60vw;
   }
-  .textboxBody button {
-    margin: 10px 0px 0px 0px;
+
+  .buttonArea button {
+    margin: 1.2rem 0px;
   }
   .success {
     padding: 10px;
     display: flex;
     text-align: center;
   }
+  
 }

@@ -2,11 +2,11 @@ import styles from './page.module.css';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
-import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
 import { META_KEY } from '../../../app/utilities/constants';
 import { createMetadata } from '@/app/utilities/common';
 import Subscribe from '@/app/components/subscribe/subscribe';
+import Contact from '@/app/components/contact/Contact';
 
 export const metadata: Metadata = createMetadata(META_KEY.NETWORKING);
 
@@ -30,12 +30,7 @@ export default function Page() {
           </Typography>
         </p>
       </div>
-      <ActionButton
-        label='Contact us'
-        disabled={false}
-        className={styles.accessButton}
-        to='/contact'
-      />
+      <Contact />
       <Subscribe />
     </div>
   );

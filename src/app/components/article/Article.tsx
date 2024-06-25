@@ -29,7 +29,6 @@ export default function Article({
             label='Learn more'
             icon={CircleRight}
             style={BUTTON_STYLE.Tertiary}
-            disabled={false}
             iconPosition='right'
             to={`/articles/article/?articleId=${id}`}
           />

@@ -4,6 +4,7 @@ import styles from './teacher.module.css';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
 import DialogPopUp from '../popupSubscribe/DialogComponent';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function Teacher() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,12 +31,13 @@ export default function Teacher() {
           certificate.
         </Typography>
       </div>
-      <div>
+      <div className={styles.buttonArea}>
         <ActionButton
           label='Subscribe Us'
+          style={BUTTON_STYLE.Primary}
           disabled={false}
-          className={styles.accessButton}
           onClick={toggleModal}
+          fullWidth
         />
       </div>
       {isModalOpen && <DialogPopUp onClose={toggleModal} />}
