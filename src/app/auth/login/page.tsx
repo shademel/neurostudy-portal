@@ -47,13 +47,13 @@ const Page = () => {
               <div className={classNames(styles.forgotPassword, 'pt-1')}>
                 <Link href='#'>Forgot Password?</Link>
               </div>
-              <div>
+              <div className={styles.buttonArea}>
                 <ActionButton
                   type='submit'
                   label='Login'
                   disabled
-                  className={classNames(styles.btn, styles.submitBtn, 'mb-3')}
-                  style={BUTTON_STYLE.PrimaryFull}
+                  style={BUTTON_STYLE.Primary}
+                  fullWidth
                 />
               </div>
             </Form>

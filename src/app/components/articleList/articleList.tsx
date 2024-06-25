@@ -4,6 +4,7 @@ import CardList from '../article/card';
 import ActionButton from '../buttons/ActionButton';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import styles from './articleList.module.css';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function ArticleList() {
   const router = useRouter();
@@ -18,11 +19,12 @@ export default function ArticleList() {
         </Typography>
       </div>
       <CardList />
-      <div>
+      <div className={styles.buttonArea}>
         <ActionButton
           label='Explore more'
           disabled={false}
-          className={styles.accessButton}
+          style={BUTTON_STYLE.Primary}
+          fullWidth
           onClick={() => navigateToArticles()}
         />
       </div>

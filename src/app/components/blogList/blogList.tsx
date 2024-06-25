@@ -4,6 +4,7 @@ import BlogCardList from '../blog/BlogCardList';
 import ActionButton from '../buttons/ActionButton';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import styles from './blogList.module.css';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function BlogList() {
   const router = useRouter();
@@ -18,11 +19,12 @@ export default function BlogList() {
         </Typography>
       </div>
       <BlogCardList />
-      <div>
+      <div className={styles.buttonArea}>
         <ActionButton
           label='Explore more'
           disabled={false}
-          className={styles.accessButton}
+          style={BUTTON_STYLE.Primary}
+          fullWidth
           onClick={() => navigateToBlogs()}
         />
       </div>

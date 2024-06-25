@@ -14,11 +14,9 @@ export const PHONE_REGEX = /^(?:\+61|0)?[2-9]\d{8}$/;
 export const NAME_REGEX = /^[a-zA-Z0-9. -]+$/;
 
 export enum BUTTON_STYLE {
-  PrimaryFull = 'primary-full',
+  Primary = 'primary',
   Secondary = 'secondary',
-  SecondaryFull = 'secondary-full',
   Tertiary = 'tertiary',
-  TertiaryFull = 'tertiary-full',
 }
 
 export enum TEXTBOX_VARIANT {

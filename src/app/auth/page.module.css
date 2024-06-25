@@ -50,16 +50,13 @@
   font-size: 0.9rem;
 }
 
-.btn {
-  width: 100%;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.submitBtn {
-  background: var(--cherryPie);
+.buttonArea {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.secondaryBtn {
+  margin-top: -0.5rem;
 }
 
 .callToAction {

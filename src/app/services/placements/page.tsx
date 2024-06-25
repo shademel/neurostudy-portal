@@ -2,12 +2,12 @@ import styles from './page.module.css';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
-import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
 import Subscribe from '@/app/components/subscribe/subscribe';
 import { HOST_URL, META_TYPE } from '../../../app/utilities/constants';
 import metadataJSON from '../../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '@/app/utilities/common';
+import Contact from '@/app/components/contact/Contact';
 
 const { home, neurodivergentmates, placements } = metadataJSON.metadata;
 const { title, description, images } = placements;
@@ -30,7 +30,7 @@ export default function Page() {
     <div className={styles.container}>
       <div className={styles.title}>
         <Typography variant={TypographyVariant.H1} color='var(--BondBlack)'>
-          Placements (Internships/Employment)
+          Placements (Internships / Employment)
         </Typography>
       </div>
       <div className={styles.bodyText}>
@@ -46,12 +46,7 @@ export default function Page() {
           </Typography>
         </p>
       </div>
-      <ActionButton
-        label='Contact us'
-        disabled={false}
-        className={styles.accessButton}
-        to='/contact'
-      />
+      <Contact />
       <Subscribe />
     </div>
   );

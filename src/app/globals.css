@@ -40,7 +40,16 @@
   --mobile-body3-strong-font-size: 12px;
   --mobile-body3-font-size: 12px;
 
-  
+  /* Button */
+  --primary-button-width: 312px;
+  --primary-button-height: 44px;
+
+  --secondary-button-width: 165px;
+  --secondary-button-height: 48px;
+
+  --tertiary-button-width: 173px;
+  --tertiary-button-height: 48px;
+
   --GhostWhite: #f8f8ff;
   --GhostWhiteSub: #f8f8ff;
   --GhostWhiteVariant: #EFEFFF;
@@ -60,6 +69,7 @@
   --grey: #b8b8b8;
   --greyVariant: #d3d3d3;
   --grey-500: #4D4B52;
+  --pure-white: #ffffff;
 }
 
 body {

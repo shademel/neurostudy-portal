@@ -25,13 +25,16 @@ const AuthFormFooter: React.FC<AuthFormFooterProps> = ({
         <span className={styles.or}>or</span>
         <hr className={styles.breakLine} />
       </div>
-      <ActionButton
-        type='button'
-        label='Continue with Google'
-        disabled
-        style={BUTTON_STYLE.SecondaryFull}
-        className={classNames(styles.btn, 'mt-3 mb-4')}
-      />
+      <div className={styles.buttonArea}>
+        <ActionButton
+          type='button'
+          label='Continue with Google'
+          disabled
+          style={BUTTON_STYLE.Secondary}
+          fullWidth
+          className={classNames(styles.secondaryBtn, 'mb-4')}
+        />
+      </div>
       <Typography
         variant={TypographyVariant.Body2}
         className={styles.callToAction}

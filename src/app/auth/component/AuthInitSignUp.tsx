@@ -60,13 +60,13 @@ const AuthInitSignUp: React.FC = () => {
           By signing up, you agree to our{' '}
           <Link href='#'>Terms and Conditions</Link>
         </Typography>
-        <div>
+        <div className={styles.buttonArea}>
           <ActionButton
             type='submit'
             label='Sign Up'
             disabled
-            className={classNames(styles.btn, styles.submitBtn, 'mt-0')}
-            style={BUTTON_STYLE.PrimaryFull}
+            style={BUTTON_STYLE.Primary}
+            fullWidth
           />
         </div>
       </Form>

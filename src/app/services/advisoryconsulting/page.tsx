@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
-import ActionButton from '@/app/components/buttons/ActionButton';
 import { Metadata } from 'next';
 import Subscribe from '@/app/components/subscribe/subscribe';
 import { HOST_URL, META_TYPE } from '../../../app/utilities/constants';
 import metadataJSON from '../../../app/utilities/metadata/metadata.json';
 import { createMetadata } from '@/app/utilities/common';
+import Contact from '@/app/components/contact/Contact';
 
 const { home, neurodivergentmates, advisoryconsulting } = metadataJSON.metadata;
 const { title, description, images } = advisoryconsulting;
@@ -81,12 +81,7 @@ export default function Page() {
           </li>
         </ul>
       </div>
-      <ActionButton
-        label='Contact us'
-        disabled={false}
-        className={styles.accessButton}
-        to='/contact'
-      />
+      <Contact />
       <Subscribe />
     </div>
   );

@@ -4,7 +4,7 @@ import ActionButton from '../buttons/ActionButton';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
 import { UserSubscriptionType } from '@/app/interfaces/UserSubscriptionType';
 import { registerSubscriptionData } from '@/app/utilities/register/registerSubscriptionData';
-import { EMAIL_REGEX } from '@/app/utilities/constants';
+import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import styles from './dialog.module.css';
 import Image from 'next/image';
 import CloseButton from '../../images/close.png';
@@ -46,7 +46,7 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         <div className={styles.closeButtonWrapper}>
           <button onClick={onClose}>
             <div className={styles.closeButton}>
-              <Image src={CloseButton} alt='Close' title='Close' fill={true} />
+              <Image src={CloseButton} alt='Close' title='Close' fill />
             </div>
           </button>
         </div>
@@ -92,8 +92,8 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     <ActionButton
                       type='submit'
                       label='Subscribe Now'
-                      disabled={false}
-                      className={styles.accessButton}
+                      style={BUTTON_STYLE.Primary}
+                      fullWidth
                     />
                   </div>
                 </>

@@ -42,15 +42,6 @@
   object-fit: contain;
 }
 
-.accessButton {
-  width: 100%;
-  height: 36px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  font-size: 0.9rem;
-  font-weight: 400;
-}
-
 .successTitle h2 {
   line-height: 2.4rem;
 }
@@ -126,19 +117,7 @@
 
   .buttonArea {
     width: 80%;
-  }
-
-  .buttonArea button {
-    font-size: 0.72rem;
-    font-weight: 500;
-    border-radius: 5px;
-  }
-
-  .accessButton {
-    width: 100%;
-    height: 32px;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
 
   .successTitle {
@@ -225,11 +204,7 @@
 
   .buttonArea {
     width: 80%;
-  }
-
-  .buttonArea button {
-    font-size: 0.86rem;
-    font-weight: 500;
+    margin-bottom: 1.2rem;
   }
 
   .successTitle {
@@ -308,16 +283,11 @@
 
   .textArea {
     width: 96%;
-    margin-bottom: 0rem;
+    margin-bottom: 0.5rem;
   }
 
   .buttonArea {
     width: 96%;
-  }
-
-  .buttonArea button {
-    font-size: 0.86rem;
-    font-weight: 500;
   }
 
   .successTitle {
