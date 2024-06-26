@@ -53,3 +53,9 @@ export enum META_KEY {
   SIGNUP = 'signup',
   LOGIN = 'login',
 }
+
+export const TOAST_UNKNOWN_ERROR_MESSAGE =
+  'Unknown error occurred, please try back again later.';
+
+export const TOAST_DEV_IN_PROGRESS_MESSAGE =
+  'This (or part of this) feature is currently under development. Please check back later.';

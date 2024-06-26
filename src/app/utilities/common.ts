@@ -1,7 +1,14 @@
 import { Metadata } from 'next';
 import { MetadataParams } from '../interfaces/MetadataProps';
 import { metadata } from './metadata/metadata';
-import { LANGUAGES, LOCALE, META_KEY, SITE_NAME } from './constants';
+import {
+  LANGUAGES,
+  LOCALE,
+  META_KEY,
+  SITE_NAME,
+  TOAST_UNKNOWN_ERROR_MESSAGE,
+} from './constants';
+import toast from 'react-hot-toast';
 
 type RegulatorPropFn = (...args: unknown[]) => unknown;
 
@@ -70,4 +77,11 @@ export const createMetadata = (
   };
 
   return metadataObj;
+};
+
+export const notifyError = (ex: object) => {
+  const message =
+    (ex instanceof Error && ex.message) || TOAST_UNKNOWN_ERROR_MESSAGE;
+
+  toast.error(message);
 };
