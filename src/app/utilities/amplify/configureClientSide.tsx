@@ -7,10 +7,17 @@
 
 import { Amplify } from 'aws-amplify';
 import awsconfig from '@/app/aws-exports';
+import { useEffect } from 'react';
+import { startListening } from './authListener';
 
 Amplify.configure(awsconfig, { ssr: true });
 
 const ConfigureAmplifyClientSide: React.FC = () => {
+  useEffect(() => {
+    const unlistener = startListening();
+    return () => unlistener();
+  }, []);
+
   return null;
 };
 
