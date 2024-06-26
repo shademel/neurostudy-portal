@@ -7,19 +7,47 @@ import AuthLeftBanner from './AuthLeftBanner';
 import AuthFormFooter from './AuthFormFooter';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import TextBox from '@/app/components/formElements/TextBox';
-import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
+import {
+  BUTTON_STYLE,
+  EMAIL_REGEX,
+  TOAST_DEV_IN_PROGRESS_MESSAGE,
+} from '@/app/utilities/constants';
 import classNames from 'classnames';
 import Form from '@/app/components/formElements/Form';
 import AuthFormHeader from './AuthFormHeader';
+import { signIn } from 'aws-amplify/auth';
+import toast from 'react-hot-toast';
+import { FORM_STATE } from '@/app/utilities/auth/constants';
+import { useRouter } from 'next/navigation';
+import { notifyError } from '@/app/utilities/common';
 
 interface LoginFieldValues extends FieldValues {
-  email: string;
+  username: string;
   password: string;
 }
 
 const Login = () => {
-  const { control }: UseFormReturn<LoginFieldValues> =
+  const router = useRouter();
+  const { control, handleSubmit }: UseFormReturn<LoginFieldValues> =
     useForm<LoginFieldValues>({ mode: 'onBlur' });
+
+  const onSubmit = async (data: LoginFieldValues) => {
+    const { username, password } = data;
+
+    try {
+      const {
+        nextStep: { signInStep },
+      } = await signIn({ username, password });
+
+      if (signInStep === FORM_STATE.DONE) {
+        router.replace('/');
+      } else {
+        toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+      }
+    } catch (ex) {
+      notifyError(ex as object);
+    }
+  };
 
   return (
     <main className={styles.container}>
@@ -28,9 +56,9 @@ const Login = () => {
         <div className={classNames(styles.formColumn, 'col-md-8')}>
           <div className={styles.formColumnWrapper}>
             <AuthFormHeader title='Login' subText='to your account' />
-            <Form control={control}>
+            <Form control={control} onSubmit={handleSubmit(onSubmit)}>
               <TextBox
-                name='email'
+                name='username'
                 type='email'
                 label='Email Address'
                 required
@@ -51,7 +79,6 @@ const Login = () => {
                 <ActionButton
                   type='submit'
                   label='Login'
-                  disabled
                   style={BUTTON_STYLE.Primary}
                   fullWidth
                 />

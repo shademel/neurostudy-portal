@@ -8,17 +8,27 @@ import commonStyles from '@/app/styles/common.module.css';
 import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import TextBox from '@/app/components/formElements/TextBox';
-import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
+import {
+  BUTTON_STYLE,
+  EMAIL_REGEX,
+  TOAST_DEV_IN_PROGRESS_MESSAGE,
+} from '@/app/utilities/constants';
 import classNames from 'classnames';
 import Link from 'next/link';
 import ActionButton from '@/app/components/buttons/ActionButton';
 import AuthFormHeader from './AuthFormHeader';
 import AuthFormFooter from './AuthFormFooter';
-import { SignUpOutput, confirmSignUp, signUp } from 'aws-amplify/auth';
+import {
+  SignUpOutput,
+  autoSignIn,
+  confirmSignUp,
+  signUp,
+} from 'aws-amplify/auth';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useState } from 'react';
 import LoaderWrapper from '../loaderWrapper/LoaderWrapper';
-import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import { notifyError } from '@/app/utilities/common';
 
 interface SignUpFieldValues extends FieldValues {
   email: string;
@@ -31,7 +41,6 @@ interface VerificationFieldValues extends FieldValues {
 }
 
 const AuthInitSignUp: React.FC = () => {
-  const router = useRouter();
   const { control, handleSubmit }: UseFormReturn<SignUpFieldValues> =
     useForm<SignUpFieldValues>({ mode: 'onBlur' });
   const {
@@ -41,6 +50,7 @@ const AuthInitSignUp: React.FC = () => {
     mode: 'onBlur',
   });
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formState, setFormState] = useState<FORM_STATE>(
     FORM_STATE.INITIALIZED
   );
@@ -50,45 +60,62 @@ const AuthInitSignUp: React.FC = () => {
     const { email, password } = data;
 
     setUsername('');
-    setFormState(FORM_STATE.LOADING);
+    setIsLoading(true);
 
-    const { nextStep }: SignUpOutput = await signUp({
-      username: email,
-      password,
-      options: {
-        userAttributes: {
-          email,
+    try {
+      const { nextStep }: SignUpOutput = await signUp({
+        username: email,
+        password,
+        options: {
+          userAttributes: {
+            email,
+          },
+          autoSignIn: true,
         },
-      },
-    });
+      });
 
-    const { signUpStep } = nextStep;
+      const { signUpStep } = nextStep;
 
-    if (signUpStep === FORM_STATE.CONFIRM_SIGN_UP) {
-      setUsername(email);
-      setFormState(signUpStep as FORM_STATE);
-    } else {
-      // TEMP
-      // TODO
-      // Handle errors
+      if (signUpStep === FORM_STATE.CONFIRM_SIGN_UP) {
+        setUsername(email);
+        setFormState(signUpStep as FORM_STATE);
+      } else {
+        toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+      }
+    } catch (ex) {
+      notifyError(ex as object);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const onVerificationSubmit = async (data: VerificationFieldValues) => {
     const { confirmationCode } = data;
 
+    setIsLoading(true);
+
     try {
-      await confirmSignUp({
+      const { nextStep }: SignUpOutput = await confirmSignUp({
         username,
         confirmationCode,
       });
-      router.replace('/auth/login');
-    } catch (error) {
-      console.log('Error confirming sign up:', error);
+
+      const { signUpStep } = nextStep;
+      if (signUpStep === FORM_STATE.COMPLETE_AUTO_SIGN_IN) {
+        try {
+          await autoSignIn();
+        } catch (ex) {
+          notifyError(ex as object);
+        }
+      }
+    } catch (ex) {
+      notifyError(ex as object);
+    } finally {
+      autoSignIn;
+      setIsLoading(false);
     }
   };
 
-  const isLoading = formState === FORM_STATE.LOADING;
   const isConfirming = formState === FORM_STATE.CONFIRM_SIGN_UP;
 
   return (
