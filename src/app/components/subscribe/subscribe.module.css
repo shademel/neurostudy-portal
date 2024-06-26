@@ -34,8 +34,7 @@
     width: 90%;
 }
 
-.buttonArea {
-    width: 100%;
+.primaryBtn {
     margin-top: 20px;
     margin-bottom: 40px;
 }
@@ -92,6 +91,10 @@
         font-size: 0.8rem;
     }
 
+    .primaryBtn {
+        width: 100%;
+    }
+
     .successTitle {
         margin-top: 0;
         text-align: center;
@@ -104,7 +107,7 @@
 
 }
 
-@media (max-width: 1024px) and (min-width: 480px) {
+@media (min-width: 480px) and (max-width: 1024px) {
 
     .main {
         width: 100%;
@@ -140,13 +143,12 @@
         margin-bottom: -1px;
     }
 
-    .textArea {
+    .inputArea {
         width: 85%;
-        margin-bottom: -0.5rem;
     }
 
-    .buttonArea {
-        width: 85%;
+    .textArea {
+        margin-bottom: -0.5rem;
     }
 
     .successTitle {
@@ -199,13 +201,12 @@
         width: 65%;
     }
 
-    .textArea {
+    .inputArea {
         width: 80%;
-        margin-bottom: -0.5rem;
     }
 
-    .buttonArea {
-        width: 80%;
+    .textArea {
+        margin-bottom: -0.5rem;
     }
 
     .successTitle {
@@ -259,13 +260,12 @@
         margin-bottom: 2rem;
     }
 
-    .textArea {
+    .inputArea {
         width: 100%;
-        margin-bottom: 1.35rem;
     }
 
-    .buttonArea {
-        width: 100%
+    .textArea {
+        margin-bottom: 1.35rem;
     }
 
     .successTitle {

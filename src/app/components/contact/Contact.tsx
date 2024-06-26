@@ -5,15 +5,12 @@ import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 const Contact = () => {
   return (
-    <div className={styles.buttonArea}>
-      <ActionButton
-        label='Contact us'
-        disabled={false}
-        style={BUTTON_STYLE.Primary}
-        fullWidth
-        to='/contact'
-      />
-    </div>
+    <ActionButton
+      label='Contact us'
+      style={BUTTON_STYLE.Primary}
+      className={styles.primaryBtn}
+      to='/contact'
+    />
   );
 };
 

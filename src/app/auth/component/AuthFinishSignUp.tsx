@@ -45,7 +45,7 @@ const AuthFinishSignUp: React.FC = () => {
           colWidth={TEXTBOX_COL_WIDTH.HALF}
         />
         <Typography
-          variant={TypographyVariant.Body3MOB}
+          variant={TypographyVariant.Body3}
           className={classNames(styles.dobLabel, 'col-md-12', 'pt-2')}
         >
           Date of Birth
@@ -75,13 +75,14 @@ const AuthFinishSignUp: React.FC = () => {
             />
           </div>
         </div>
-        <div className={styles.buttonArea}>
+        <div>
           <ActionButton
             type='submit'
             label='Submit'
             disabled
             style={BUTTON_STYLE.Primary}
             fullWidth
+            className={styles.primaryBtn}
           />
         </div>
       </Form>

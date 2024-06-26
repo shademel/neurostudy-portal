@@ -29,11 +29,6 @@
     width: 300px;
   }
 
-  .buttonArea {
-    width: 100%;
-    max-width: var(--primary-button-width);
-  }
-
 }
 @media (max-width: 480px) {
   .teacherContainer {
@@ -47,7 +42,5 @@
     margin-bottom: 30px;
     padding: 0px 10px;
   }
-  .buttonArea {
-    width: 80%;
-  }
+  
 }

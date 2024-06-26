@@ -67,10 +67,17 @@
   font-size: larger;
 }
 
-.fullWidth {
-  width: 100%;
-}
-
 .display {
   margin: 50px;
+}
+
+@media (max-width: 480px) {
+  .primary {
+    width: 80%;
+  }
+}
+
+/* Notes: keep this at the last because it needs to override all width property above and achieve 100% width */
+.fullWidth {
+  width: 100%;
 }

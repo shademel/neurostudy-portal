@@ -88,14 +88,13 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                       onChange={(e) => setEmail(e.target.value.trim())}
                     />
                   </div>
-                  <div className={styles.buttonArea}>
-                    <ActionButton
-                      type='submit'
-                      label='Subscribe Now'
-                      style={BUTTON_STYLE.Primary}
-                      fullWidth
-                    />
-                  </div>
+                  <ActionButton
+                    type='submit'
+                    label='Subscribe Now'
+                    style={BUTTON_STYLE.Primary}
+                    fullWidth
+                    className={'mb-3'}
+                  />
                 </>
               ) : (
                 <>

@@ -176,15 +176,12 @@ const ContactUsForm: React.FC = () => {
               onChange={(e) => setMessage(e.target.value)}
             ></TextArea>
           </div>
-          <div className={styles.buttonArea}>
-            <ActionButton
-              type='submit'
-              label='Submit'
-              disabled={false}
-              style={BUTTON_STYLE.Primary}
-              fullWidth
-            />
-          </div>
+          <ActionButton
+            type='submit'
+            label='Submit'
+            style={BUTTON_STYLE.Primary}
+            className={styles.primaryBtn}
+          />
           {submissionSuccess && (
             <div className={styles.success}>
               <Typography variant={TypographyVariant.Body1}>

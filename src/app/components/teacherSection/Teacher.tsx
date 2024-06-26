@@ -31,15 +31,12 @@ export default function Teacher() {
           certificate.
         </Typography>
       </div>
-      <div className={styles.buttonArea}>
-        <ActionButton
-          label='Subscribe Us'
-          style={BUTTON_STYLE.Primary}
-          disabled={false}
-          onClick={toggleModal}
-          fullWidth
-        />
-      </div>
+      <ActionButton
+        label='Subscribe Us'
+        style={BUTTON_STYLE.Primary}
+        onClick={toggleModal}
+        className={'mt-4'}
+      />
       {isModalOpen && <DialogPopUp onClose={toggleModal} />}
     </div>
   );

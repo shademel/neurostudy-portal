@@ -35,23 +35,12 @@
   align-items: left;
   padding: 30px 50px;
 }
-.container button {
-  margin: 25px;
-  text-align: center;
+.primaryBtn {
+  margin: 25px auto;
 }
 .textArea {
   margin-bottom: 15px;
   text-align: left;
-}
-
-.buttonArea {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.buttonArea button {
-  max-width: var(--primary-button-width);
 }
 
 .header {
@@ -106,11 +95,10 @@
   .textboxBody input {
     width: 60vw;
   }
-    .textboxBody textarea {
+  .textboxBody textarea {
     width: 60vw;
   }
-
-  .buttonArea button {
+  .primaryBtn {
     margin: 1.2rem 0px;
   }
   .success {

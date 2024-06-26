@@ -23,13 +23,13 @@ export default function ActionButton({
   label,
   icon,
   style,
-  disabled,
+  disabled = false,
   onClick: onRootClick,
   iconPosition = 'left',
   className,
   type,
   to,
-  fullWidth,
+  fullWidth = false,
 }: ActionButtonProps) {
   const router = useRouter();
 

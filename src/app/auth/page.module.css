@@ -32,6 +32,11 @@
   color: var(--cherryPieVariant);
 }
 
+.primaryBtn {
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
 .breakLineWrapper {
   display: flex;
   align-items: center;
@@ -48,15 +53,6 @@
   margin: 0px 3px;
   color: var(--BondBlackVariant);
   font-size: 0.9rem;
-}
-
-.buttonArea {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.secondaryBtn {
-  margin-top: -0.5rem;
 }
 
 .callToAction {
@@ -101,4 +97,5 @@
   .formColumnWrapper {
     width: 100%;
   }
+  
 }
