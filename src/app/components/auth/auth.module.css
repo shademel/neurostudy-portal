@@ -1,10 +1,12 @@
 .container {
-  background: var(--GhostWhiteSub);
+  margin: 2rem 0px;
 }
 
 .container>div:first-child {
+  background: var(--GhostWhiteSub);
   max-width: 960px;
   margin: auto;
+  box-shadow: -2px 2px 8px 0px #0000001F;
 }
 
 .bannerColumn {
