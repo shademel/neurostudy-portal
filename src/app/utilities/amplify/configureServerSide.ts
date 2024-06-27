@@ -17,6 +17,8 @@ export async function getCurrentUserServer() {
     });
     return currentUser;
   } catch (error) {
-    console.error(error);
+    !(
+      error instanceof Error && error.name === 'UserUnAuthenticatedException'
+    ) && console.error(error);
   }
 }

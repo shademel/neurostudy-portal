@@ -10,12 +10,18 @@ import ConfigureAmplifyClientSide from './utilities/amplify/configureClientSide'
 import { getCurrentUserServer } from './utilities/amplify/configureServerSide';
 import RootProvider from './root-provider';
 import { AuthUser } from 'aws-amplify/auth';
+import { HOST_URL } from './utilities/constants';
+import { Metadata } from 'next';
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['900', '800', '700', '600', '500', '400', '100'],
   style: ['normal'],
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(HOST_URL),
+};
 
 export default async function RootLayout({
   children,

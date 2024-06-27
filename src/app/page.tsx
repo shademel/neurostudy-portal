@@ -9,7 +9,7 @@ import HowItWorks from './components/howItWorks/HowItWorks';
 import Partner from './components/partnerSection/Partner';
 import { Metadata } from 'next';
 import { createMetadata } from './utilities/common';
-import { HOST_URL, META_KEY } from './utilities/constants';
+import { META_KEY } from './utilities/constants';
 import Subscribe from './components/subscribe/subscribe';
 
 const getGoogleAnalyticsScript = () => {
@@ -29,10 +29,7 @@ const getGoogleAnalyticsScript = () => {
   );
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL(HOST_URL),
-  ...createMetadata(META_KEY.HOME),
-};
+export const metadata: Metadata = createMetadata(META_KEY.HOME);
 
 export default function Home() {
   return (
