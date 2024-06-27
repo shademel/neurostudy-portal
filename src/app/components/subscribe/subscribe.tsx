@@ -57,30 +57,30 @@ export default function Subscribe() {
                 <p className={styles.description}>
                   Be the first to get exclusive offers and latest news
                 </p>
-                <div className={styles.textArea}>
-                  <TextBox
-                    variant={TextboxVariant.LONG}
-                    name={'Email'}
-                    label={''}
-                    type={'email'}
-                    value={email}
-                    required={true}
-                    errorMessage={emailError}
-                    placeholder={'Enter your email address'}
-                    onBlur={() =>
-                      !EMAIL_REGEX.test(email)
-                        ? setEmailError('Email Address is invalid')
-                        : setEmailError(undefined)
-                    }
-                    onChange={(e) => setEmail(e.target.value.trim())}
-                  />
-                </div>
-                <div className={styles.buttonArea}>
+                <div className={styles.inputArea}>
+                  <div className={styles.textArea}>
+                    <TextBox
+                      variant={TextboxVariant.LONG}
+                      name={'Email'}
+                      label={''}
+                      type={'email'}
+                      value={email}
+                      required={true}
+                      errorMessage={emailError}
+                      placeholder={'Enter your email address'}
+                      onBlur={() =>
+                        !EMAIL_REGEX.test(email)
+                          ? setEmailError('Email Address is invalid')
+                          : setEmailError(undefined)
+                      }
+                      onChange={(e) => setEmail(e.target.value.trim())}
+                    />
+                  </div>
                   <ActionButton
                     type='submit'
                     label='Subscribe Now'
-                    disabled={false}
                     style={BUTTON_STYLE.Primary}
+                    className={styles.primaryBtn}
                     fullWidth
                   />
                 </div>

@@ -8,11 +8,6 @@
   width: 100%;
 }
 
-.buttonArea {
-  width: 100%;
-  max-width: var(--primary-button-width);
-}
-
 @media (max-width: 480px) {
   .blogsContainer {
     text-align: center;
@@ -21,9 +16,4 @@
     align-items: center;
     justify-content: center;
   }
-  
-   .buttonArea {
-    width: 80%;
-   }
-
 }

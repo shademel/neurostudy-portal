@@ -1,12 +1,9 @@
-.buttonArea {
-    width: 100%;
-    max-width: var(--primary-button-width);
-    margin-bottom: 6rem;
+.primaryBtn {
+  margin-bottom: 6rem;
 }
 
 @media (max-width: 480px) {
-    .buttonArea {
-        width: 80%;
-        margin: 20px 0px 3.6rem 0px;
-    }
+  .primaryBtn {
+    margin: 20px 0px 3.6rem 0px;
+  }
 }

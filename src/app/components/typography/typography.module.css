@@ -77,11 +77,11 @@
     font-size: var(--mobile-body2-font-size);
   }
 
-  .mobBody3Strong {
+  .body3Strong {
     font-size: var(--mobile-body3-strong-font-size);
   }
 
-  .mobBody3 {
+  .body3 {
     font-size: var(--mobile-body3-font-size);
   }
 

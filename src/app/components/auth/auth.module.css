@@ -52,18 +52,6 @@
   font-size: 0.9rem;
 }
 
-.btn {
-  width: 100%;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.submitBtn {
-  background: var(--cherryPie);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
 .callToAction {
   color: var(--cherryPieVariant);
 }
@@ -106,4 +94,5 @@
   .formColumnWrapper {
     width: 100%;
   }
+
 }

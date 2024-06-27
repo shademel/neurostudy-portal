@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .teacherBodyText {
     width: 70vw;
     line-height: 10px;
@@ -35,6 +36,7 @@
   }
 
 }
+
 @media (max-width: 480px) {
   .teacherContainer {
     text-align: center;
@@ -43,11 +45,10 @@
     align-items: center;
     justify-content: center;
   }
+
   .teacherBodyText {
     margin-bottom: 30px;
     padding: 0px 10px;
   }
-  .buttonArea {
-    width: 80%;
-  }
+
 }
