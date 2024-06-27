@@ -1,10 +1,10 @@
 'use client';
-import React, { useCallback } from 'react';
+import React from 'react';
 import styles from './button.module.css';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { BUTTON_STYLE } from '@/app/utilities/constants';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 interface ActionButtonProps {
   label: string;
@@ -24,24 +24,14 @@ export default function ActionButton({
   icon,
   style,
   disabled,
-  onClick: onRootClick,
+  onClick,
   iconPosition = 'left',
   className,
   type,
   to,
   fullWidth,
 }: ActionButtonProps) {
-  const router = useRouter();
-
-  const onClick = useCallback(
-    function (this: HTMLButtonElement, e: React.MouseEvent<HTMLButtonElement>) {
-      onRootClick?.call(this, e);
-      to && router.push(to);
-    },
-    [router, onRootClick, to]
-  );
-
-  const buttonStyles = classNames(className, {
+  const buttonStyles = classNames(styles.common, className, {
     [styles.primary]: style === BUTTON_STYLE.Primary,
     [styles.secondary]: style === BUTTON_STYLE.Secondary,
     [styles.tertiary]: style === BUTTON_STYLE.Tertiary,
@@ -57,7 +47,7 @@ export default function ActionButton({
       type={type}
     >
       {iconPosition === 'left' && icon && <Image src={icon} alt='icon' />}
-      <span>{label}</span>
+      {to ? <Link href={to}>{label}</Link> : <span>{label}</span>}
       {iconPosition === 'right' && icon && <Image src={icon} alt='icon' />}
     </button>
   );

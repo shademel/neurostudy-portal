@@ -1,3 +1,14 @@
+.common {
+  padding-inline: 0px;
+  padding-block: 0px;
+}
+
+.common>a {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
 .primary {
   display: flex;
   align-items: center;
@@ -10,10 +21,16 @@
   background: var(--cherryPie);
   color: var(--GhostWhite);
   font-family: var(--poppins-font);
-  font-weight: var(--Body2Strong-font-weight);
-  font-size: var(--Body2Strong-font-size);
+  font-weight: var(--body2-strong-font-weight);
+  font-size: var(--body2-strong-font-size);
   width: var(--primary-button-width);
   height: var(--primary-button-height);
+}
+
+.primary>a {
+  width: 100%;
+  height: var(--primary-button-height);
+  line-height: var(--primary-button-height);
 }
 
 .secondary {
@@ -27,8 +44,8 @@
   background-color: var(--pure-white);
   color: var(--cherryPieVariant);
   font-family: var(--poppins-font);
-  font-weight: var(--Body2Strong-font-weight);
-  font-size: var(--Body2Strong-font-size);
+  font-weight: var(--body2-strong-font-weight);
+  font-size: var(--body2-strong-font-size);
   width: var(--secondary-button-width);
   height: var(--secondary-button-height);
   padding: 12px, 24px, 12px, 24px;
@@ -47,8 +64,8 @@
   border-radius: 8px;
   gap: 8px;
   font-family: var(--poppins-font);
-  font-weight: var(--Body2Strong-font-weight);
-  font-size: var(--Body2Strong-font-size);
+  font-weight: var(--body2-strong-font-weight);
+  font-size: var(--body2-strong-font-size);
   width: var(--tertiary-button-width);
   height: var(--tertiary-button-height);
   line-height: 24px;
