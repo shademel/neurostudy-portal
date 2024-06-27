@@ -1,5 +1,6 @@
 'use client';
 
+import styles from './auth.module.css';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import Form from '../formElements/Form';
 import Typography, { TypographyVariant } from '../typography/Typography';
@@ -75,7 +76,7 @@ const AuthVerifyForm: React.FC<PropType> = ({
         required
         placeholder='Verification Code'
       />
-      <div className='mb-3 mt-2'>
+      <div className={styles.verifyBtnContainer}>
         <ActionButton
           type='submit'
           label='Verify'
