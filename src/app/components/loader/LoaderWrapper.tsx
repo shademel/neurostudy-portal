@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from './loaderWrapper.module.css';
+import styles from './loader.module.css';
 import Loader from './Loader';
 import classNames from 'classnames';
 

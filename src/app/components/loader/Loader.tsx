@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import styles from './loaderWrapper.module.css';
+import styles from './loader.module.css';
 import classNames from 'classnames';
 
 interface LoaderProps {

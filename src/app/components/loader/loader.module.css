@@ -23,7 +23,7 @@
 
 .circle {
   display: inline-block;
-  background-color: var(--cherryPieVariant);
+  background-color: var(--navyBlue);
   width: 15px;
   height: 15px;
   margin: 2px;
