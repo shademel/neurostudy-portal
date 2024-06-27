@@ -115,6 +115,14 @@ const AuthInitSignUp: React.FC = () => {
           required
           placeholder='Repeat Password'
           autoComplete='new-password'
+          rules={{
+            validate: (value) => {
+              return (
+                value == control._formValues.password ||
+                'Should match the password field'
+              );
+            },
+          }}
         />
         <Typography
           variant={TypographyVariant.Body2}
