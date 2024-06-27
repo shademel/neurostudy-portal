@@ -21,7 +21,7 @@ import AuthFormFooter from './AuthFormFooter';
 import { SignUpOutput, signUp } from 'aws-amplify/auth';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useState } from 'react';
-import LoaderWrapper from '../loaderWrapper/LoaderWrapper';
+import LoaderWrapper from '../loader/LoaderWrapper';
 import toast from 'react-hot-toast';
 import { notifyError } from '@/app/utilities/common';
 import AuthVerifyForm from './AuthVerifyForm';

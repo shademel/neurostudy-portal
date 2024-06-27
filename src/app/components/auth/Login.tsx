@@ -21,7 +21,7 @@ import toast from 'react-hot-toast';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useRouter } from 'next/navigation';
 import { notifyError } from '@/app/utilities/common';
-import LoaderWrapper from '../loaderWrapper/LoaderWrapper';
+import LoaderWrapper from '../loader/LoaderWrapper';
 import { useState } from 'react';
 import AuthVerifyForm from './AuthVerifyForm';
 
