@@ -66,7 +66,7 @@ const AuthVerifyForm: React.FC<PropType> = ({
 
   return (
     <Form control={control} onSubmit={handleSubmit(onSubmit)}>
-      <Typography variant={TypographyVariant.Body3MOB} className='pt-3'>
+      <Typography variant={TypographyVariant.Body3} className='pt-3'>
         Please enter the verification code sent to <b>{username}</b>.
       </Typography>
       <TextBox
