@@ -1,20 +1,23 @@
 'use client';
 
-import styles from './auth.module.css';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import Form from '../formElements/Form';
 import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
-import { BUTTON_STYLE } from '@/app/utilities/constants';
-import classNames from 'classnames';
+import {
+  BUTTON_STYLE,
+  TOAST_DEV_IN_PROGRESS_MESSAGE,
+} from '@/app/utilities/constants';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { SignUpOutput, autoSignIn, confirmSignUp } from 'aws-amplify/auth';
 import { notifyError } from '@/app/utilities/common';
 import TextBox from '../formElements/TextBox';
+import toast from 'react-hot-toast';
 
 interface PropType {
   username: string;
   setIsLoading: (isLoading: boolean) => void;
+  onSuccess?: () => void;
 }
 
 interface VerificationFieldValues extends FieldValues {
@@ -24,6 +27,7 @@ interface VerificationFieldValues extends FieldValues {
 const AuthVerifyForm: React.FC<PropType> = ({
   username,
   setIsLoading,
+  onSuccess,
 }: PropType) => {
   const { control, handleSubmit }: UseFormReturn<VerificationFieldValues> =
     useForm<VerificationFieldValues>({ mode: 'onBlur' });
@@ -39,13 +43,19 @@ const AuthVerifyForm: React.FC<PropType> = ({
         confirmationCode,
       });
 
-      const { signUpStep } = nextStep;
+      const signUpStep = nextStep.signUpStep as FORM_STATE;
+
       if (signUpStep === FORM_STATE.COMPLETE_AUTO_SIGN_IN) {
-        try {
-          await autoSignIn();
-        } catch (ex) {
-          notifyError(ex as object);
-        }
+        await autoSignIn();
+      } else if (signUpStep !== FORM_STATE.DONE) {
+        toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+      }
+
+      if (
+        onSuccess &&
+        [FORM_STATE.COMPLETE_AUTO_SIGN_IN, FORM_STATE.DONE].includes(signUpStep)
+      ) {
+        onSuccess();
       }
     } catch (ex) {
       notifyError(ex as object);
@@ -65,12 +75,11 @@ const AuthVerifyForm: React.FC<PropType> = ({
         required
         placeholder='Verification Code'
       />
-      <div>
+      <div className='mb-3 mt-2'>
         <ActionButton
           type='submit'
           label='Verify'
-          className={classNames(styles.btn, styles.submitBtn, 'mt-0')}
-          style={BUTTON_STYLE.Secondary}
+          style={BUTTON_STYLE.Primary}
         />
       </div>
     </Form>

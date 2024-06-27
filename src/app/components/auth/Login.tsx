@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './auth.module.css';
+import commonStyles from '@/app/styles/common.module.css';
 import ActionButton from '../buttons/ActionButton';
 import Link from 'next/link';
 import AuthLeftBanner from './AuthLeftBanner';
@@ -20,6 +21,9 @@ import toast from 'react-hot-toast';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useRouter } from 'next/navigation';
 import { notifyError } from '@/app/utilities/common';
+import LoaderWrapper from '../loaderWrapper/LoaderWrapper';
+import { useState } from 'react';
+import AuthVerifyForm from './AuthVerifyForm';
 
 interface LoginFieldValues extends FieldValues {
   username: string;
@@ -31,8 +35,18 @@ const Login = () => {
   const { control, handleSubmit }: UseFormReturn<LoginFieldValues> =
     useForm<LoginFieldValues>({ mode: 'onBlur' });
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>('');
+  const [formState, setFormState] = useState<FORM_STATE>(
+    FORM_STATE.INITIALIZED
+  );
+
+  const isConfirming = formState === FORM_STATE.CONFIRM_SIGN_UP;
+
   const onSubmit = async (data: LoginFieldValues) => {
     const { username, password } = data;
+
+    setIsLoading(true);
 
     try {
       const {
@@ -40,12 +54,19 @@ const Login = () => {
       } = await signIn({ username, password });
 
       if (signInStep === FORM_STATE.DONE) {
-        router.replace('/');
+        // TODO
+        // https://trello.com/c/suoF46yg/131-infrastructure-key-constant-based-url-setup
+        router.replace(isConfirming ? '/auth/signup' : '/');
+      } else if (signInStep === FORM_STATE.CONFIRM_SIGN_UP) {
+        setUsername(username);
+        setFormState(signInStep as FORM_STATE);
       } else {
         toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
       }
     } catch (ex) {
       notifyError(ex as object);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -54,9 +75,24 @@ const Login = () => {
       <div className='row'>
         <AuthLeftBanner />
         <div className={classNames(styles.formColumn, 'col-md-8')}>
-          <div className={styles.formColumnWrapper}>
+          <LoaderWrapper
+            isLoading={isLoading}
+            className={styles.formColumnWrapper}
+            expandLoaderWidth
+          >
             <AuthFormHeader title='Login' subText='to your account' />
-            <Form control={control} onSubmit={handleSubmit(onSubmit)}>
+            {isConfirming && (
+              <AuthVerifyForm
+                username={username}
+                setIsLoading={setIsLoading}
+                onSuccess={handleSubmit(onSubmit)}
+              />
+            )}
+            <Form
+              control={control}
+              onSubmit={handleSubmit(onSubmit)}
+              className={classNames(isConfirming && commonStyles.hide)}
+            >
               <TextBox
                 name='username'
                 type='email'
@@ -89,7 +125,7 @@ const Login = () => {
               to='/auth/signup'
               toText='Sign Up'
             />
-          </div>
+          </LoaderWrapper>
         </div>
       </div>
     </main>

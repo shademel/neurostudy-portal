@@ -14,6 +14,9 @@ import {
   AUTH_EVENT_TYPE,
   PayloadType,
 } from '@/app/utilities/amplify/constants';
+import { getCurrentUser } from 'aws-amplify/auth';
+import { notifyError } from '@/app/utilities/common';
+import LoaderWrapper from '../loaderWrapper/LoaderWrapper';
 
 const SignUp = () => {
   // TODO
@@ -21,8 +24,24 @@ const SignUp = () => {
   // We'll configure `user` or relevant variable to determine the user, if in session
   // Also, update the following `unknown` type along with handling the aforementioned issue
   const [user, setUser] = useState<unknown>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setIsLoading(true);
+
+    getCurrentUser()
+      .then((user) => {
+        setUser(user);
+      })
+      .catch((ex) => {
+        if (ex.name !== 'UserUnAuthenticatedException') {
+          notifyError(ex as object);
+        }
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+
     const onSignedIn = ({ payload }: { payload: PayloadType }) => {
       const { data } = payload;
       setUser(data);
@@ -43,12 +62,14 @@ const SignUp = () => {
 
   return (
     <main className={styles.container}>
-      <div className='row'>
-        <AuthLeftBanner />
-        <div className={classNames(styles.formColumn, 'col-md-8')}>
-          {user ? <AuthFinishSignUp /> : <AuthInitSignUp />}
+      <LoaderWrapper isLoading={isLoading}>
+        <div className='row'>
+          <AuthLeftBanner />
+          <div className={classNames(styles.formColumn, 'col-md-8')}>
+            {user ? <AuthFinishSignUp /> : <AuthInitSignUp />}
+          </div>
         </div>
-      </div>
+      </LoaderWrapper>
     </main>
   );
 };
