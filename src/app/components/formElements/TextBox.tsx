@@ -36,7 +36,7 @@ interface TextBoxProps<TFieldValues extends FieldValues> {
   autoComplete?: string;
   colWidth?: TEXTBOX_COL_WIDTH;
   rules?: Pick<
-    RegisterOptions<TFieldValues>,
+    RegisterOptions<FieldValues>,
     'maxLength' | 'minLength' | 'validate' | 'required'
   >;
 }
