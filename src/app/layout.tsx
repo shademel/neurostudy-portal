@@ -7,6 +7,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from 'react-hot-toast';
 import ConfigureAmplifyClientSide from './utilities/amplify/configureClientSide';
+import { getCurrentUserServer } from './utilities/amplify/configureServerSide';
+import RootProvider from './root-provider';
+import { AuthUser } from 'aws-amplify/auth';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -14,11 +17,18 @@ const poppins = Poppins({
   style: ['normal'],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  let user: AuthUser | undefined;
+  try {
+    user = await getCurrentUserServer();
+  } catch (ex) {
+    user = undefined;
+  }
+
   return (
     <html lang='en'>
       <head>
@@ -26,12 +36,14 @@ export default function RootLayout({
       </head>
       <body className={poppins.className}>
         <ConfigureAmplifyClientSide />
-        <Navbar />
-        {children}
-        <Footer />
-        <SpeedInsights />
-        <Analytics />
-        <Toaster />
+        <RootProvider user={user}>
+          <Navbar />
+          {children}
+          <Footer />
+          <SpeedInsights />
+          <Analytics />
+          <Toaster />
+        </RootProvider>
       </body>
     </html>
   );
