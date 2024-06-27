@@ -7,6 +7,38 @@ import Image from 'next/image';
 import Logo from '../../images/Logo-navbar.svg';
 import Hamburger from '../../images/hamburgerMenu.svg';
 import Typography, { TypographyVariant } from '../typography/Typography';
+import { useRootContext } from '@/app/root-provider';
+import ActionButton from '../buttons/ActionButton';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
+import { signOut } from 'aws-amplify/auth';
+
+const UserOutlet: React.FC = () => {
+  const { user } = useRootContext();
+
+  return (
+    <li className={styles.li}>
+      {user ? (
+        <ActionButton
+          label='Sign Out'
+          style={BUTTON_STYLE.Primary}
+          className={styles.userOutlet}
+          onClick={() => {
+            signOut();
+          }}
+        />
+      ) : (
+        <ActionButton
+          label='Login'
+          style={BUTTON_STYLE.Primary}
+          className={styles.userOutlet}
+          // TODO
+          // https://trello.com/c/suoF46yg/131-infrastructure-key-constant-based-url-setup
+          to='/auth/login'
+        />
+      )}
+    </li>
+  );
+};
 
 export default function Navbar() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -111,6 +143,7 @@ export default function Navbar() {
                 </Typography>
               </Link>
             </li>
+            {<UserOutlet />}
           </ul>
           {/* <MyLogin className={styles.login} /> */}
         </div>
@@ -185,6 +218,7 @@ export default function Navbar() {
                   </Typography>
                 </Link>
               </li>
+              {<UserOutlet />}
             </ul>
           )}
         </div>
