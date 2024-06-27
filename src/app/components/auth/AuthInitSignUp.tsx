@@ -18,17 +18,13 @@ import Link from 'next/link';
 import ActionButton from '@/app/components/buttons/ActionButton';
 import AuthFormHeader from './AuthFormHeader';
 import AuthFormFooter from './AuthFormFooter';
-import {
-  SignUpOutput,
-  autoSignIn,
-  confirmSignUp,
-  signUp,
-} from 'aws-amplify/auth';
+import { SignUpOutput, signUp } from 'aws-amplify/auth';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useState } from 'react';
 import LoaderWrapper from '../loaderWrapper/LoaderWrapper';
 import toast from 'react-hot-toast';
 import { notifyError } from '@/app/utilities/common';
+import AuthVerifyForm from './AuthVerifyForm';
 
 interface SignUpFieldValues extends FieldValues {
   email: string;
@@ -36,19 +32,9 @@ interface SignUpFieldValues extends FieldValues {
   repeatPassword: string;
 }
 
-interface VerificationFieldValues extends FieldValues {
-  code: string;
-}
-
 const AuthInitSignUp: React.FC = () => {
   const { control, handleSubmit }: UseFormReturn<SignUpFieldValues> =
     useForm<SignUpFieldValues>({ mode: 'onBlur' });
-  const {
-    control: verificationControl,
-    handleSubmit: handleVerificationSubmit,
-  }: UseFormReturn<VerificationFieldValues> = useForm<VerificationFieldValues>({
-    mode: 'onBlur',
-  });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formState, setFormState] = useState<FORM_STATE>(
@@ -89,33 +75,6 @@ const AuthInitSignUp: React.FC = () => {
     }
   };
 
-  const onVerificationSubmit = async (data: VerificationFieldValues) => {
-    const { confirmationCode } = data;
-
-    setIsLoading(true);
-
-    try {
-      const { nextStep }: SignUpOutput = await confirmSignUp({
-        username,
-        confirmationCode,
-      });
-
-      const { signUpStep } = nextStep;
-      if (signUpStep === FORM_STATE.COMPLETE_AUTO_SIGN_IN) {
-        try {
-          await autoSignIn();
-        } catch (ex) {
-          notifyError(ex as object);
-        }
-      }
-    } catch (ex) {
-      notifyError(ex as object);
-    } finally {
-      autoSignIn;
-      setIsLoading(false);
-    }
-  };
-
   const isConfirming = formState === FORM_STATE.CONFIRM_SIGN_UP;
 
   return (
@@ -126,28 +85,7 @@ const AuthInitSignUp: React.FC = () => {
     >
       <AuthFormHeader />
       {isConfirming && (
-        <Form
-          control={verificationControl}
-          onSubmit={handleVerificationSubmit(onVerificationSubmit)}
-        >
-          <Typography variant={TypographyVariant.Body3MOB} className='pt-3'>
-            Please enter the verification code sent to <b>{username}</b>.
-          </Typography>
-          <TextBox
-            name='confirmationCode'
-            label='Verification Code'
-            required
-            placeholder='Verification Code'
-          />
-          <div>
-            <ActionButton
-              type='submit'
-              label='Verify'
-              className={classNames(styles.btn, styles.submitBtn, 'mt-0')}
-              style={BUTTON_STYLE.Secondary}
-            />
-          </div>
-        </Form>
+        <AuthVerifyForm username={username} setIsLoading={setIsLoading} />
       )}
       <Form
         control={control}
