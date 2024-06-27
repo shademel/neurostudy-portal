@@ -11,6 +11,8 @@ import { useRootContext } from '@/app/root-provider';
 import ActionButton from '../buttons/ActionButton';
 import { BUTTON_STYLE } from '@/app/utilities/constants';
 import { signOut } from 'aws-amplify/auth';
+import toast from 'react-hot-toast';
+import { notifyError } from '@/app/utilities/common';
 
 const UserOutlet: React.FC = () => {
   const { user } = useRootContext();
@@ -23,7 +25,14 @@ const UserOutlet: React.FC = () => {
           style={BUTTON_STYLE.Primary}
           className={styles.userOutlet}
           onClick={() => {
-            signOut();
+            (async () => {
+              try {
+                await signOut();
+                toast.success('Successfully logged out.');
+              } catch (ex) {
+                notifyError(ex as object);
+              }
+            })();
           }}
         />
       ) : (
