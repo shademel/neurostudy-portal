@@ -5,13 +5,13 @@ import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import { Toaster } from 'react-hot-toast';
 import ConfigureAmplifyClientSide from './utilities/amplify/configureClientSide';
 import { getCurrentUserServer } from './utilities/amplify/configureServerSide';
 import RootProvider from './root-provider';
 import { AuthUser } from 'aws-amplify/auth';
 import { HOST_URL } from './utilities/constants';
 import { Metadata } from 'next';
+import ToasterWrapper from './components/toaster/ToasterWrapper';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -48,7 +48,7 @@ export default async function RootLayout({
           <Footer />
           <SpeedInsights />
           <Analytics />
-          <Toaster />
+          <ToasterWrapper />
         </RootProvider>
       </body>
     </html>
