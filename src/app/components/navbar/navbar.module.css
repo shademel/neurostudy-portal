@@ -31,7 +31,7 @@
   background-color: lightgray;
 }
 
-.li>.userOutlet {
+.li .userOutlet {
   width: 124px;
 }
 

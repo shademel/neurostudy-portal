@@ -7,47 +7,7 @@ import Image from 'next/image';
 import Logo from '../../images/Logo-navbar.svg';
 import Hamburger from '../../images/hamburgerMenu.svg';
 import Typography, { TypographyVariant } from '../typography/Typography';
-import { useRootContext } from '@/app/root-provider';
-import ActionButton from '../buttons/ActionButton';
-import { BUTTON_STYLE } from '@/app/utilities/constants';
-import { signOut } from 'aws-amplify/auth';
-import toast from 'react-hot-toast';
-import { notifyError } from '@/app/utilities/common';
-
-const UserOutlet: React.FC = () => {
-  const { user } = useRootContext();
-
-  return (
-    <li className={styles.li}>
-      {user ? (
-        <ActionButton
-          label='Sign Out'
-          style={BUTTON_STYLE.Primary}
-          className={styles.userOutlet}
-          onClick={() => {
-            (async () => {
-              try {
-                await signOut();
-                toast.success('Successfully logged out.');
-              } catch (ex) {
-                notifyError(ex as object);
-              }
-            })();
-          }}
-        />
-      ) : (
-        <ActionButton
-          label='Login'
-          style={BUTTON_STYLE.Primary}
-          className={styles.userOutlet}
-          // TODO
-          // https://trello.com/c/suoF46yg/131-infrastructure-key-constant-based-url-setup
-          to='/auth/login'
-        />
-      )}
-    </li>
-  );
-};
+import UserOutlet from './UserOutlet';
 
 export default function Navbar() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);

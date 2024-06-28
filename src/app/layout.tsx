@@ -28,12 +28,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  let user: AuthUser | undefined;
-  try {
-    user = await getCurrentUserServer();
-  } catch (ex) {
-    user = undefined;
-  }
+  const user: AuthUser | undefined = await getCurrentUserServer();
 
   return (
     <html lang='en'>
