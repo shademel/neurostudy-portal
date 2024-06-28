@@ -7,7 +7,7 @@ import Link from 'next/link';
 import AuthLeftBanner from './AuthLeftBanner';
 import AuthFormFooter from './AuthFormFooter';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
-import TextBox from '@/app/components/formElements/TextBox';
+import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import {
   BUTTON_STYLE,
   EMAIL_REGEX,
@@ -32,8 +32,9 @@ interface LoginFieldValues extends FieldValues {
 
 const Login = () => {
   const router = useRouter();
-  const { control, handleSubmit }: UseFormReturn<LoginFieldValues> =
-    useForm<LoginFieldValues>({ mode: 'onBlur' });
+  const methods: UseFormReturn<LoginFieldValues> = useForm<LoginFieldValues>({
+    mode: 'onBlur',
+  });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [username, setUsername] = useState<string>('');
@@ -85,12 +86,12 @@ const Login = () => {
               <AuthVerifyForm
                 username={username}
                 setIsLoading={setIsLoading}
-                onSuccess={handleSubmit(onSubmit)}
+                onSuccess={methods.handleSubmit(onSubmit)}
               />
             )}
             <Form
-              control={control}
-              onSubmit={handleSubmit(onSubmit)}
+              methods={methods}
+              onSubmit={methods.handleSubmit(onSubmit)}
               className={classNames(isConfirming && commonStyles.hide)}
             >
               <TextBox

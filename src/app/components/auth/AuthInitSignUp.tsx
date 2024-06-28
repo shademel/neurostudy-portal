@@ -7,10 +7,11 @@ import styles from './auth.module.css';
 import commonStyles from '@/app/styles/common.module.css';
 import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
-import TextBox from '@/app/components/formElements/TextBox';
+import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import {
   BUTTON_STYLE,
   EMAIL_REGEX,
+  PASSWORD_REGEX,
   TOAST_DEV_IN_PROGRESS_MESSAGE,
 } from '@/app/utilities/constants';
 import classNames from 'classnames';
@@ -33,8 +34,9 @@ interface SignUpFieldValues extends FieldValues {
 }
 
 const AuthInitSignUp: React.FC = () => {
-  const { control, handleSubmit }: UseFormReturn<SignUpFieldValues> =
-    useForm<SignUpFieldValues>({ mode: 'onBlur' });
+  const methods: UseFormReturn<SignUpFieldValues> = useForm<SignUpFieldValues>({
+    mode: 'onBlur',
+  });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formState, setFormState] = useState<FORM_STATE>(
@@ -88,8 +90,8 @@ const AuthInitSignUp: React.FC = () => {
         <AuthVerifyForm username={username} setIsLoading={setIsLoading} />
       )}
       <Form
-        control={control}
-        onSubmit={handleSubmit(onSubmit)}
+        methods={methods}
+        onSubmit={methods.handleSubmit(onSubmit)}
         className={classNames(isConfirming && commonStyles.hide)}
       >
         <TextBox
@@ -107,6 +109,7 @@ const AuthInitSignUp: React.FC = () => {
           required
           placeholder='Password'
           autoComplete='new-password'
+          pattern={PASSWORD_REGEX}
         />
         <TextBox
           name='repeatPassword'
@@ -118,7 +121,7 @@ const AuthInitSignUp: React.FC = () => {
           rules={{
             validate: (value) => {
               return (
-                value == control._formValues.password ||
+                value == methods.control._formValues.password ||
                 'Should match the password field'
               );
             },
