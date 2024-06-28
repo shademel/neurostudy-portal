@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.loaderContainer>*:not(:last-child) {
+  opacity: .5;
+}
+
 .loader {
   display: flex;
   position: absolute;

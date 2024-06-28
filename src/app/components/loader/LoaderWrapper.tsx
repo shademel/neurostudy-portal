@@ -17,7 +17,13 @@ export default function LoaderWrapper({
   expandLoaderWidth = false,
 }: LoaderWrapperProps) {
   return (
-    <div className={classNames(styles.container, className)}>
+    <div
+      className={classNames(
+        styles.container,
+        className,
+        isLoading && styles.loaderContainer
+      )}
+    >
       {children}
       <Loader isLoading={isLoading} expand={expandLoaderWidth} />
     </div>
