@@ -1,5 +1,6 @@
 .container {
   margin: 2rem 0px;
+  padding: 0px 1.5rem;
 }
 
 .container>div:first-child {

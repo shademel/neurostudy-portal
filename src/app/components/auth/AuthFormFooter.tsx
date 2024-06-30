@@ -15,7 +15,7 @@ type AuthFormFooterProps = {
 const AuthFormFooter: React.FC<AuthFormFooterProps> = ({
   text = 'Already have an account? ',
   toText = 'Login',
-  to = '/auth/login',
+  to = '/login',
 }: AuthFormFooterProps) => {
   return (
     <>

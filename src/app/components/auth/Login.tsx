@@ -57,7 +57,7 @@ const Login = () => {
       if (signInStep === FORM_STATE.DONE) {
         // TODO
         // https://trello.com/c/suoF46yg/131-infrastructure-key-constant-based-url-setup
-        router.replace(isConfirming ? '/auth/signup' : '/');
+        router.replace(isConfirming ? '/signup' : '/');
       } else if (signInStep === FORM_STATE.CONFIRM_SIGN_UP) {
         setUsername(username);
         setFormState(signInStep as FORM_STATE);
@@ -123,7 +123,7 @@ const Login = () => {
             </Form>
             <AuthFormFooter
               text='New to Neurodiversity Academy? '
-              to='/auth/signup'
+              to='/signup'
               toText='Sign Up'
             />
           </LoaderWrapper>

@@ -125,14 +125,14 @@ export const metadata = {
     title: 'Sign up - Neurodiversity Academy',
     description: 'Sign up page for Neurodiversity Academy',
     keywords: KEYWORDS_SIGNUP,
-    canonical: `${HOST_URL}/auth/signup`,
+    canonical: `${HOST_URL}/signup`,
     type: META_TYPE.WEBSITE,
   },
   [META_KEY.LOGIN]: {
     title: 'Log in - Neurodiversity Academy',
     description: 'Log in page for Neurodiversity Academy',
     keywords: KEYWORDS_LOGIN,
-    canonical: `${HOST_URL}/auth/login`,
+    canonical: `${HOST_URL}/login`,
     type: META_TYPE.WEBSITE,
   },
 };
