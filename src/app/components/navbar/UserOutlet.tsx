@@ -47,7 +47,7 @@ const UserOutlet: React.FC = () => {
           className={styles.userOutlet}
           // TODO
           // https://trello.com/c/suoF46yg/131-infrastructure-key-constant-based-url-setup
-          to='/auth/login'
+          to='/login'
         />
       )}
     </li>
