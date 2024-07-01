@@ -2,7 +2,7 @@
 
 import { ChangeEvent } from 'react';
 import styles from './textBox.module.css';
-import commonStyles from '@/app/styles/common.module.css';
+import commonStyles from '../formElements.module.css';
 import classNames from 'classnames';
 import {
   Controller,
