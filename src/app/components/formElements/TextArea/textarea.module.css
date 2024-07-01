@@ -1,14 +1,8 @@
-.textAreaContainer {
-  display: flex;
-  flex-direction: column;
+.container {
   gap: 5px;
-  width: 100%;
 }
 
-.message{
-  border: 1px solid var(--grey-500);
-  color: var(--grey-500);
-  border-radius: 8px;
+.input {
   padding: 10px 15px;
   font-family: inherit;
   resize: none;

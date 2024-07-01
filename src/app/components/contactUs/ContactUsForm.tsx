@@ -74,7 +74,7 @@ const ContactUsForm: React.FC = () => {
             expandLoaderWidth
           >
             <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
-              <div className={styles.textboxBody}>
+              <div>
                 <div className={styles.nameArea}>
                   <div>
                     <TextBox

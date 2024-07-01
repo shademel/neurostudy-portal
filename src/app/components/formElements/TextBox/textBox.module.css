@@ -1,15 +1,9 @@
 .container {
-  display: flex;
-  flex-direction: column;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 100%;
 }
 
 .input {
   height: 37px;
   padding: 0px 15px;
-  border-radius: 8px;
-  border: 1px solid var(--grey-500);
-  color: var(--grey-500);
 }

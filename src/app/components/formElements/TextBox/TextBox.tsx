@@ -83,6 +83,7 @@ const TextBox = <TFieldValues extends FieldValues>({
 
         const inputClassName = classNames(
           styles.input,
+          commonStyles.input,
           className,
           error && commonStyles.error
         );
@@ -91,7 +92,8 @@ const TextBox = <TFieldValues extends FieldValues>({
           <div
             className={classNames(
               'border-box-parent col-md-' + colWidth,
-              styles.container
+              styles.container,
+              commonStyles.container
             )}
           >
             {showLabel && (

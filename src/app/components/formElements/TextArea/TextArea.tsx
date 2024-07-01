@@ -2,7 +2,7 @@
 
 import { ChangeEvent } from 'react';
 import styles from './textarea.module.css';
-import commonStyles from '@/app/styles/common.module.css';
+import commonStyles from '../formElements.module.css';
 import classNames from 'classnames';
 import {
   Controller,
@@ -70,7 +70,8 @@ const TextArea = <TFieldValues extends FieldValues>({
         const error = errors[name];
 
         const inputClassName = classNames(
-          styles.message,
+          styles.input,
+          commonStyles.input,
           className,
           error && commonStyles.error
         );
@@ -79,7 +80,8 @@ const TextArea = <TFieldValues extends FieldValues>({
           <div
             className={classNames(
               'border-box-parent col-md-' + cols,
-              styles.textAreaContainer
+              styles.container,
+              commonStyles.container
             )}
           >
             {showLabel && (

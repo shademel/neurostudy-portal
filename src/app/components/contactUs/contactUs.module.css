@@ -70,12 +70,10 @@
 
   .nameArea {
     flex-direction: column;
-    gap: 0;
   }
 
   .phoneArea {
     display: block;
-    gap: 0;
   }
 
   .secondPhone {
@@ -111,11 +109,4 @@
     width: 100%;
   }
 
-}
-
-@media (min-width: 1280px) {
-  .nameArea,
-  .phoneArea {
-    gap: 2rem;
-  }
 }
