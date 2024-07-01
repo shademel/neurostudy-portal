@@ -2,7 +2,8 @@
 
 import { ChangeEvent } from 'react';
 import styles from './textarea.module.css';
-import commonStyles from '../formElements.module.css';
+import formStyles from '../formElements.module.css';
+import commonStyles from '@/app/styles/common.module.css';
 import classNames from 'classnames';
 import {
   Controller,
@@ -12,9 +13,9 @@ import {
   RegisterOptions,
   useFormContext,
 } from 'react-hook-form';
-import { TEXTBOX_COL_WIDTH } from '../TextBox/TextBox';
 import Label from '../Label/Label';
 import ErrorBox from '../ErrorBox/ErrorBox';
+import { FORM_ELEMENT_COL_WIDTH } from '@/app/utilities/constants';
 
 interface TextAreaProps<TFieldValues extends FieldValues> {
   name: Path<TFieldValues>;
@@ -25,7 +26,7 @@ interface TextAreaProps<TFieldValues extends FieldValues> {
   placeholder?: string;
   className?: string;
   rows?: number;
-  cols?: TEXTBOX_COL_WIDTH;
+  cols?: FORM_ELEMENT_COL_WIDTH;
   onChange?: ((event: ChangeEvent<HTMLTextAreaElement>) => void) | undefined;
   onBlur?: () => void;
   rules?: Pick<
@@ -43,7 +44,7 @@ const TextArea = <TFieldValues extends FieldValues>({
   placeholder,
   className,
   rows = 5,
-  cols = TEXTBOX_COL_WIDTH.FULL,
+  cols = FORM_ELEMENT_COL_WIDTH.FULL,
   onChange,
   onBlur,
   rules: rootRules,
@@ -70,8 +71,8 @@ const TextArea = <TFieldValues extends FieldValues>({
         const error = errors[name];
 
         const inputClassName = classNames(
+          formStyles.input,
           styles.input,
-          commonStyles.input,
           className,
           error && commonStyles.error
         );
@@ -80,8 +81,7 @@ const TextArea = <TFieldValues extends FieldValues>({
           <div
             className={classNames(
               'border-box-parent col-md-' + cols,
-              styles.container,
-              commonStyles.container
+              formStyles.container
             )}
           >
             {showLabel && (

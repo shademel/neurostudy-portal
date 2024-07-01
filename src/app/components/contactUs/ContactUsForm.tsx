@@ -9,6 +9,7 @@ import { UserFormSubmissionType } from '@/app/interfaces/UserFormSubmissionType'
 import {
   BUTTON_STYLE,
   EMAIL_REGEX,
+  FORM_ELEMENT_COL_WIDTH,
   NAME_REGEX,
   PHONE_REGEX,
 } from '@/app/utilities/constants';
@@ -74,93 +75,73 @@ const ContactUsForm: React.FC = () => {
             expandLoaderWidth
           >
             <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
-              <div>
-                <div className={styles.nameArea}>
-                  <div>
-                    <TextBox
-                      name='firstname'
-                      label='First Name'
-                      required
-                      placeholder='Enter your first name'
-                      pattern={NAME_REGEX}
-                      showLabel
-                      className={'col-md-12'}
-                    />
-                  </div>
-                  <div>
-                    <TextBox
-                      name='lastname'
-                      label='Last Name'
-                      required
-                      placeholder='Enter your last name'
-                      pattern={NAME_REGEX}
-                      showLabel
-                      className={'col-md-12'}
-                    />
-                  </div>
-                </div>
-                <div className={styles.phoneArea}>
-                  <div>
-                    <TextBox
-                      name='phone'
-                      label='Phone number'
-                      placeholder='Enter your phone number'
-                      pattern={PHONE_REGEX}
-                      showLabel
-                      className={'col-md-12'}
-                    />
-                  </div>
-                  <div className={styles.secondPhone}>
-                    <TextBox
-                      name='secondphone'
-                      label='Phone number'
-                      placeholder='Enter your phone number'
-                      pattern={PHONE_REGEX}
-                      showLabel
-                      className={'col-md-12'}
-                    />
-                  </div>
-                </div>
-                <div className={styles.emailJobArea}>
-                  <div>
-                    <TextBox
-                      name='email'
-                      label='Email Address'
-                      required
-                      placeholder='Enter your email address'
-                      pattern={EMAIL_REGEX}
-                      showLabel
-                    />
-                  </div>
-                  <div>
-                    <TextBox
-                      name='jobtitle'
-                      label='Designation'
-                      required
-                      placeholder='Teacher, Student, Institute, Other'
-                      showLabel
-                    />
-                  </div>
-                </div>
-                <div className={styles.messageArea}>
-                  <TextArea
-                    name='message'
-                    label='Message'
-                    showLabel
-                    placeholder={'Enter your message'}
-                    rules={{
-                      maxLength: 300,
-                    }}
-                  ></TextArea>
-                </div>
-                <div className='border-box-parent col-md-12 my-3'>
-                  <ActionButton
-                    type='submit'
-                    label='Login'
-                    style={BUTTON_STYLE.Primary}
-                    fullWidth
-                  />
-                </div>
+              <TextBox
+                name='firstname'
+                label='First Name'
+                required
+                placeholder='Enter your first name'
+                pattern={NAME_REGEX}
+                showLabel
+                colWidth={FORM_ELEMENT_COL_WIDTH.HALF}
+              />
+              <TextBox
+                name='lastname'
+                label='Last Name'
+                required
+                placeholder='Enter your last name'
+                pattern={NAME_REGEX}
+                showLabel
+                colWidth={FORM_ELEMENT_COL_WIDTH.HALF}
+              />
+              <TextBox
+                name='phone'
+                label='Phone number'
+                placeholder='Enter your phone number'
+                pattern={PHONE_REGEX}
+                showLabel
+                colWidth={FORM_ELEMENT_COL_WIDTH.HALF}
+              />
+              <TextBox
+                name='secondphone'
+                label='Phone number (secondary)'
+                placeholder='Enter your secondary phone number'
+                pattern={PHONE_REGEX}
+                showLabel
+                colWidth={FORM_ELEMENT_COL_WIDTH.HALF}
+              />
+              <TextBox
+                name='email'
+                label='Email Address'
+                required
+                placeholder='Enter your email address'
+                pattern={EMAIL_REGEX}
+                showLabel
+                colWidth={FORM_ELEMENT_COL_WIDTH.BIG}
+              />
+              <TextBox
+                name='jobtitle'
+                label='Designation'
+                required
+                placeholder='Teacher, Student, Institute, Other'
+                showLabel
+                colWidth={FORM_ELEMENT_COL_WIDTH.BIG}
+              />
+              <TextArea
+                name='message'
+                label='Message'
+                showLabel
+                placeholder={'Enter your message'}
+                rules={{
+                  maxLength: 300,
+                }}
+              ></TextArea>
+              <div className='my-3'>
+                <ActionButton
+                  type='submit'
+                  label='Submit'
+                  style={BUTTON_STYLE.Primary}
+                  fullWidth
+                />
               </div>
             </Form>
           </LoaderWrapper>

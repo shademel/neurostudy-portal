@@ -2,6 +2,7 @@
 
 import { ChangeEvent } from 'react';
 import styles from './textBox.module.css';
+import formStyles from '../formElements.module.css';
 import commonStyles from '@/app/styles/common.module.css';
 import classNames from 'classnames';
 import {
@@ -15,13 +16,7 @@ import {
 } from 'react-hook-form';
 import Label from '../Label/Label';
 import ErrorBox from '../ErrorBox/ErrorBox';
-
-export enum TEXTBOX_COL_WIDTH {
-  SMALLER = 3,
-  SMALL = 4,
-  HALF = 6,
-  FULL = 12,
-}
+import { FORM_ELEMENT_COL_WIDTH } from '@/app/utilities/constants';
 
 interface TextBoxProps<TFieldValues extends FieldValues> {
   name: Path<TFieldValues>;
@@ -36,7 +31,7 @@ interface TextBoxProps<TFieldValues extends FieldValues> {
   onChange?: ((event: ChangeEvent<HTMLInputElement>) => void) | undefined;
   onBlur?: () => void;
   autoComplete?: string;
-  colWidth?: TEXTBOX_COL_WIDTH;
+  colWidth?: FORM_ELEMENT_COL_WIDTH;
   rules?: Pick<
     RegisterOptions<FieldValues>,
     'maxLength' | 'minLength' | 'validate' | 'required'
@@ -56,7 +51,7 @@ const TextBox = <TFieldValues extends FieldValues>({
   onChange,
   onBlur,
   autoComplete,
-  colWidth = TEXTBOX_COL_WIDTH.FULL,
+  colWidth = FORM_ELEMENT_COL_WIDTH.FULL,
   rules: rootRules,
 }: TextBoxProps<TFieldValues>) => {
   const { control } = useFormContext();
@@ -82,8 +77,8 @@ const TextBox = <TFieldValues extends FieldValues>({
         const error = errors[name];
 
         const inputClassName = classNames(
+          formStyles.input,
           styles.input,
-          commonStyles.input,
           className,
           error && commonStyles.error
         );
@@ -92,8 +87,7 @@ const TextBox = <TFieldValues extends FieldValues>({
           <div
             className={classNames(
               'border-box-parent col-md-' + colWidth,
-              styles.container,
-              commonStyles.container
+              formStyles.container
             )}
           >
             {showLabel && (

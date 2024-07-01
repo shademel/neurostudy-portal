@@ -14,7 +14,8 @@
   align-content: flex-start;
   flex-wrap: wrap;
   word-break: break-word;
-  border-right: 2px solid var(--grey-300);
+  border-right: 1px solid var(--grey-300);
+  border-radius: 0px 8px 8px 0px;
   box-shadow: -2px 2px 8px 0px #0000001F;
 }
 
@@ -30,83 +31,16 @@
   max-width: 100%;
 }
 
-.nameArea,
-.phoneArea {
-  display: flex;
-  justify-content: space-between;
-}
-
-.emailJobArea {
-  display: flex;
-  width: 70%;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 0.9rem;
-}
-
-.primaryBtn {
-  width: 100%;
-  margin-top: 1rem;
-  padding: 0 15px;
-}
-
-@media (max-width: 480px) {
-
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .bannerColumn {
-    text-align: center;
-    border-right: none;
-    border-bottom: 2px solid var(--grey-300);
-    padding-top: 10px;
-  }
-
-  .mobileTitle {
-    font-size: var(--heading2-font-size);
-  }
-
-  .nameArea {
-    flex-direction: column;
-  }
-
-  .phoneArea {
-    display: block;
-  }
-
-  .secondPhone {
-    display: none;
-  }
-
-  .emailJobArea {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-
-  .messageArea {
-    margin-bottom: 2rem;
-  }
-
-  .primaryBtn {
-    margin: 1.2rem auto;
-  }
-
-}
-
 @media (max-width: 767px) {
-
   .bannerColumn {
     flex-direction: column;
     align-items: center;
     border-right: none;
-    border-bottom: 2px solid var(--grey-300);
-    padding-top: 0px;
+    border-bottom: 1px solid var(--grey-300);
+    border-radius: 0;
   }
 
   .formColumnWrapper {
     width: 100%;
   }
-
 }
