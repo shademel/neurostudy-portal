@@ -85,3 +85,7 @@ export const notifyError = (ex: object) => {
 
   toast.error(message);
 };
+
+export const notifySuccess = (message: string) => {
+  toast.success(message);
+};

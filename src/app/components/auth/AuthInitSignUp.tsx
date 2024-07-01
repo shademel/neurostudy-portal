@@ -11,7 +11,6 @@ import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import {
   BUTTON_STYLE,
   EMAIL_REGEX,
-  PASSWORD_REGEX,
   TOAST_DEV_IN_PROGRESS_MESSAGE,
 } from '@/app/utilities/constants';
 import classNames from 'classnames';
@@ -109,7 +108,6 @@ const AuthInitSignUp: React.FC = () => {
           required
           placeholder='Password'
           autoComplete='new-password'
-          pattern={PASSWORD_REGEX}
         />
         <TextBox
           name='repeatPassword'
@@ -121,7 +119,7 @@ const AuthInitSignUp: React.FC = () => {
           rules={{
             validate: (value) => {
               return (
-                value == methods.control._formValues.password ||
+                value == methods.getValues('password') ||
                 'Should match the password field'
               );
             },

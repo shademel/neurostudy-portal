@@ -1,8 +1,8 @@
 'use client';
 
-import { ChangeEvent, ReactNode } from 'react';
+import { ChangeEvent } from 'react';
 import styles from './textarea.module.css';
-import Typography, { TypographyVariant } from '../../typography/Typography';
+import commonStyles from '@/app/styles/common.module.css';
 import classNames from 'classnames';
 import {
   Controller,
@@ -13,6 +13,8 @@ import {
   useFormContext,
 } from 'react-hook-form';
 import { TEXTBOX_COL_WIDTH } from '../TextBox/TextBox';
+import Label from '../Label/Label';
+import ErrorBox from '../ErrorBox/ErrorBox';
 
 interface TextAreaProps<TFieldValues extends FieldValues> {
   name: Path<TFieldValues>;
@@ -70,7 +72,7 @@ const TextArea = <TFieldValues extends FieldValues>({
         const inputClassName = classNames(
           styles.message,
           className,
-          error && styles.error
+          error && commonStyles.error
         );
 
         return (
@@ -81,23 +83,12 @@ const TextArea = <TFieldValues extends FieldValues>({
             )}
           >
             {showLabel && (
-              <label htmlFor={name} className={styles.label}>
-                <Typography
-                  variant={TypographyVariant.Body2}
-                  color={error && 'red'}
-                >
-                  {label}
-                  {required && '* '}
-                  {required && (
-                    <Typography
-                      variant={TypographyVariant.LABELtext}
-                      color='var(--grey)'
-                    >
-                      (required)
-                    </Typography>
-                  )}
-                </Typography>
-              </label>
+              <Label
+                name={name}
+                color={error && 'red'}
+                label={label}
+                required={required}
+              />
             )}
             <textarea
               placeholder={placeholder}
@@ -115,9 +106,7 @@ const TextArea = <TFieldValues extends FieldValues>({
               }}
             />
             {error && (
-              <small className={styles.errorMessage}>
-                {(error.message || `${label} is invalid.`) as ReactNode}
-              </small>
+              <ErrorBox message={error.message?.toString()} label={label} />
             )}
           </div>
         );

@@ -6,7 +6,6 @@ import ActionButton from '../buttons/ActionButton';
 import styles from './contactUs.module.css';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
 import { UserFormSubmissionType } from '@/app/interfaces/UserFormSubmissionType';
-import Typography, { TypographyVariant } from '../typography/Typography';
 import {
   BUTTON_STYLE,
   EMAIL_REGEX,
@@ -16,9 +15,10 @@ import {
 import { registerContactData } from '@/app/utilities/register/registerContactData';
 import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
-import { notifyError } from '@/app/utilities/common';
-import useWindowWidth from '@/app/hooks/useWindowWidth';
+import { notifyError, notifySuccess } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
+import ContactUsLeftBanner from './ContactUsLeftBanner';
+import classNames from 'classnames';
 
 interface ContactFieldValues extends FieldValues {
   firstname: string;
@@ -30,10 +30,7 @@ interface ContactFieldValues extends FieldValues {
 }
 
 const ContactUsForm: React.FC = () => {
-  const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  const windowWidth = useWindowWidth();
 
   const methods: UseFormReturn<ContactFieldValues> =
     useForm<ContactFieldValues>({ mode: 'onBlur' });
@@ -57,7 +54,7 @@ const ContactUsForm: React.FC = () => {
         userRegistrationData
       )) as CRMCreateResponseInterface;
       if (outcome.id) {
-        setSubmissionSuccess(true);
+        notifySuccess('Successfully sent');
       }
     } catch (error) {
       notifyError(error as object);
@@ -67,120 +64,109 @@ const ContactUsForm: React.FC = () => {
   };
 
   return (
-    <LoaderWrapper isLoading={isLoading} expandLoaderWidth>
-      <div className={styles.container}>
-        <div className={styles.title}>
-          <Typography
-            variant={TypographyVariant.H2}
-            className={styles.mobileTitle}
+    <div className={styles.container}>
+      <div className='row'>
+        <ContactUsLeftBanner />
+        <div className={classNames(styles.formColumn, 'col-md-8')}>
+          <LoaderWrapper
+            isLoading={isLoading}
+            className={styles.formColumnWrapper}
+            expandLoaderWidth
           >
-            Contact Us
-          </Typography>
-          {submissionSuccess ? (
-            <Typography variant={TypographyVariant.Body1}>
-              Thank you for contacting us. We will get back to you shortly.
-            </Typography>
-          ) : (
-            <Typography variant={TypographyVariant.Body1}>
-              We will try our best to get back to you as soon as possible
-            </Typography>
-          )}
+            <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
+              <div className={styles.textboxBody}>
+                <div className={styles.nameArea}>
+                  <div>
+                    <TextBox
+                      name='firstname'
+                      label='First Name'
+                      required
+                      placeholder='Enter your first name'
+                      pattern={NAME_REGEX}
+                      showLabel
+                      className={'col-md-12'}
+                    />
+                  </div>
+                  <div>
+                    <TextBox
+                      name='lastname'
+                      label='Last Name'
+                      required
+                      placeholder='Enter your last name'
+                      pattern={NAME_REGEX}
+                      showLabel
+                      className={'col-md-12'}
+                    />
+                  </div>
+                </div>
+                <div className={styles.phoneArea}>
+                  <div>
+                    <TextBox
+                      name='phone'
+                      label='Phone number'
+                      placeholder='Enter your phone number'
+                      pattern={PHONE_REGEX}
+                      showLabel
+                      className={'col-md-12'}
+                    />
+                  </div>
+                  <div className={styles.secondPhone}>
+                    <TextBox
+                      name='secondphone'
+                      label='Phone number'
+                      placeholder='Enter your phone number'
+                      pattern={PHONE_REGEX}
+                      showLabel
+                      className={'col-md-12'}
+                    />
+                  </div>
+                </div>
+                <div className={styles.emailJobArea}>
+                  <div>
+                    <TextBox
+                      name='email'
+                      label='Email Address'
+                      required
+                      placeholder='Enter your email address'
+                      pattern={EMAIL_REGEX}
+                      showLabel
+                    />
+                  </div>
+                  <div>
+                    <TextBox
+                      name='jobtitle'
+                      label='Designation'
+                      required
+                      placeholder='Teacher, Student, Institute, Other'
+                      showLabel
+                    />
+                  </div>
+                </div>
+                <div className={styles.messageArea}>
+                  <TextArea
+                    name='message'
+                    label='Message'
+                    showLabel
+                    placeholder={'Enter your message'}
+                    rules={{
+                      maxLength: 300,
+                    }}
+                  ></TextArea>
+                </div>
+                <div className='border-box-parent col-md-12 my-3'>
+                  <ActionButton
+                    type='submit'
+                    label='Login'
+                    style={BUTTON_STYLE.Primary}
+                    fullWidth
+                  />
+                </div>
+              </div>
+            </Form>
+          </LoaderWrapper>
         </div>
-        <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
-          <div className={styles.textboxBody}>
-            <div className={styles.nameArea}>
-              <div>
-                <TextBox
-                  name='firstname'
-                  label='First Name'
-                  required
-                  placeholder='Enter your first name'
-                  pattern={NAME_REGEX}
-                  showLabel
-                />
-              </div>
-              <div>
-                <TextBox
-                  name='lastname'
-                  label='Last Name'
-                  required
-                  placeholder='Enter your last name'
-                  pattern={NAME_REGEX}
-                  showLabel
-                />
-              </div>
-            </div>
-            <div className={styles.phoneArea}>
-              <div>
-                <TextBox
-                  name='phone'
-                  label='Phone number'
-                  placeholder='Enter your phone number'
-                  pattern={PHONE_REGEX}
-                  showLabel
-                />
-              </div>
-              <div className={styles.secondPhone}>
-                <TextBox
-                  name='phone'
-                  label='Phone number'
-                  placeholder='Enter your phone number'
-                  pattern={PHONE_REGEX}
-                  showLabel
-                />
-              </div>
-            </div>
-            <div className={styles.emailJobArea}>
-              <div>
-                <TextBox
-                  name='email'
-                  label='Email Address'
-                  required
-                  placeholder='Enter your email address'
-                  pattern={EMAIL_REGEX}
-                  showLabel
-                />
-              </div>
-              <div>
-                <TextBox
-                  name='jobtitle'
-                  label='Designation'
-                  required
-                  placeholder='Teacher, Student, Institute, Other'
-                  showLabel
-                />
-              </div>
-            </div>
-            <div className={styles.messageArea}>
-              <TextArea
-                name='message'
-                label='Message'
-                showLabel
-                placeholder={'Enter your message'}
-                rules={{
-                  maxLength: 300,
-                }}
-              ></TextArea>
-            </div>
-            <div
-              className={
-                windowWidth <= 480
-                  ? 'border-box-parent col-md-12'
-                  : styles.primaryBtn
-              }
-            >
-              <ActionButton
-                type='submit'
-                label='Submit'
-                style={BUTTON_STYLE.Primary}
-                fullWidth
-                className={windowWidth <= 480 ? 'mt-3 mb-3' : ''}
-              />
-            </div>
-          </div>
-        </Form>
       </div>
-    </LoaderWrapper>
+    </div>
   );
 };
 
