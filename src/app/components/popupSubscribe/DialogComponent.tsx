@@ -64,73 +64,68 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             </div>
           </button>
         </div>
-        <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
-          <div className={styles.container}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={MailboxLady}
-                alt='Subscribe to our Newsletter'
-                title='Subscribe to our Newsletter'
-                fill={true}
-                quality={100}
-              />
-            </div>
-            <div className={styles.contentWrapper}>
-              <LoaderWrapper
-                isLoading={isLoading}
-                className={styles.formColumnWrapper}
-                expandLoaderWidth
-              >
-                {!submissionSuccess ? (
-                  <>
-                    <div>
-                      <p className={styles.title}>
-                        Subscribe to our Newsletter!
-                      </p>
-                    </div>
-                    <p className={styles.description}>
-                      Be the first to get exclusive offers and latest news
-                    </p>
-                    <div className={styles.inputArea}>
-                      <TextBox
-                        name='email'
-                        type='email'
-                        label='Email Address'
-                        required
-                        placeholder='Email address'
-                        pattern={EMAIL_REGEX}
-                      />
-                      <div className={styles.primaryBtn}>
-                        <ActionButton
-                          type='submit'
-                          label='Subscribe Now'
-                          style={BUTTON_STYLE.Primary}
-                          fullWidth
-                        />
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <p className={styles.successTitle}>
-                      <Typography variant={TypographyVariant.H2}>
-                        <span className={styles.successSpan}>
-                          Thank you for subscribing to
-                        </span>
-                        <span className={styles.successH2}>
-                          Neurodiversity Academy!
-                        </span>
-                      </Typography>
-                    </p>
-                    <p className={styles.description}>
-                      Check your email for our exclusive offers and latest news
-                    </p>
-                  </>
-                )}
-              </LoaderWrapper>
-            </div>
+        <div className={styles.container}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src={MailboxLady}
+              alt='Subscribe to our Newsletter'
+              title='Subscribe to our Newsletter'
+              fill={true}
+              quality={100}
+            />
           </div>
-        </Form>
+          <LoaderWrapper
+            isLoading={isLoading}
+            className={styles.contentWrapper}
+            expandLoaderWidth
+          >
+            {!submissionSuccess ? (
+              <>
+                <p className={styles.title}>Subscribe to our Newsletter!</p>
+                <p className={styles.description}>
+                  Be the first to get exclusive offers and latest news
+                </p>
+                <Form
+                  methods={methods}
+                  onSubmit={methods.handleSubmit(onSubmit)}
+                >
+                  <TextBox
+                    name='email'
+                    type='email'
+                    label='Email Address'
+                    required
+                    placeholder='Email address'
+                    pattern={EMAIL_REGEX}
+                  />
+                  <div className='mt-2'>
+                    <ActionButton
+                      type='submit'
+                      label='Subscribe Now'
+                      style={BUTTON_STYLE.Primary}
+                      fullWidth
+                    />
+                  </div>
+                </Form>
+              </>
+            ) : (
+              <>
+                <p className={styles.successTitle}>
+                  <Typography variant={TypographyVariant.H2}>
+                    <span className={styles.successSpan}>
+                      Thank you for subscribing to
+                    </span>
+                    <span className={styles.successH2}>
+                      Neurodiversity Academy!
+                    </span>
+                  </Typography>
+                </p>
+                <p className={styles.description}>
+                  Check your email for our exclusive offers and latest news
+                </p>
+              </>
+            )}
+          </LoaderWrapper>
+        </div>
       </dialog>
     </div>
   );
