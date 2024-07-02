@@ -2,7 +2,6 @@
 
 import { ChangeEvent } from 'react';
 import styles from './textBox.module.css';
-import formStyles from '../formElements.module.css';
 import classNames from 'classnames';
 import {
   Controller,
@@ -76,7 +75,6 @@ const TextBox = <TFieldValues extends FieldValues>({
         const error = errors[name];
 
         const inputClassName = classNames(
-          formStyles.input,
           styles.input,
           className,
           error && 'error'
@@ -86,7 +84,7 @@ const TextBox = <TFieldValues extends FieldValues>({
           <div
             className={classNames(
               'border-box-parent col-md-' + colWidth,
-              formStyles.container
+              styles.container
             )}
           >
             {showLabel && (
