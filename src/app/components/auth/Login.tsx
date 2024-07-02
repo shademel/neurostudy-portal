@@ -1,7 +1,6 @@
 'use client';
 
 import styles from './auth.module.css';
-import commonStyles from '@/app/styles/common.module.css';
 import ActionButton from '../buttons/ActionButton';
 import Link from 'next/link';
 import AuthLeftBanner from './AuthLeftBanner';
@@ -92,7 +91,7 @@ const Login = () => {
             <Form
               methods={methods}
               onSubmit={methods.handleSubmit(onSubmit)}
-              className={classNames(isConfirming && commonStyles.hide)}
+              className={classNames(isConfirming && 'hide')}
             >
               <TextBox
                 name='username'

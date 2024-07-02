@@ -3,7 +3,6 @@
 import { ChangeEvent } from 'react';
 import styles from './textBox.module.css';
 import formStyles from '../formElements.module.css';
-import commonStyles from '@/app/styles/common.module.css';
 import classNames from 'classnames';
 import {
   Controller,
@@ -80,7 +79,7 @@ const TextBox = <TFieldValues extends FieldValues>({
           formStyles.input,
           styles.input,
           className,
-          error && commonStyles.error
+          error && 'error'
         );
 
         return (

@@ -4,7 +4,6 @@ import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
 import styles from './auth.module.css';
-import commonStyles from '@/app/styles/common.module.css';
 import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import TextBox from '@/app/components/formElements/TextBox/TextBox';
@@ -91,7 +90,7 @@ const AuthInitSignUp: React.FC = () => {
       <Form
         methods={methods}
         onSubmit={methods.handleSubmit(onSubmit)}
-        className={classNames(isConfirming && commonStyles.hide)}
+        className={classNames(isConfirming && '.hide')}
       >
         <TextBox
           name='email'
@@ -127,7 +126,7 @@ const AuthInitSignUp: React.FC = () => {
         />
         <Typography
           variant={TypographyVariant.Body2}
-          className={classNames('pt-3', commonStyles.textCenter)}
+          className='pt-3 text-center'
         >
           By signing up, you agree to our{' '}
           <Link href='#'>Terms and Conditions</Link>
