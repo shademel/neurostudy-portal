@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { ReactEventHandler } from 'react';
 import styles from './button.module.css';
 import Image from 'next/image';
 import { BUTTON_STYLE } from '@/app/utilities/constants';
@@ -11,7 +11,7 @@ interface ActionButtonProps {
   icon?: string;
   style?: BUTTON_STYLE;
   disabled?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void | undefined;
+  onClick?: ReactEventHandler<HTMLButtonElement>;
   iconPosition?: 'left' | 'right';
   className?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
