@@ -14,6 +14,7 @@ import { SignUpOutput, autoSignIn, confirmSignUp } from 'aws-amplify/auth';
 import { notifyError } from '@/app/utilities/common';
 import TextBox from '../formElements/TextBox/TextBox';
 import toast from 'react-hot-toast';
+import AuthResendOTPBtn from './AuthResendOTPBtn';
 
 interface PropType {
   username: string;
@@ -76,12 +77,13 @@ const AuthVerifyForm: React.FC<PropType> = ({
         required
         placeholder='Verification Code'
       />
-      <div className={styles.verifyBtnContainer}>
+      <div className={styles.verifyFormBtnContainer}>
         <ActionButton
           type='submit'
           label='Verify'
           style={BUTTON_STYLE.Primary}
         />
+        <AuthResendOTPBtn username={username} />
       </div>
     </Form>
   );
