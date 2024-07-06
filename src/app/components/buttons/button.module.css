@@ -1,6 +1,7 @@
 .common {
   padding-inline: 0px;
   padding-block: 0px;
+  cursor: pointer;
 }
 
 .common>a {
@@ -48,7 +49,6 @@
   font-size: var(--body2-strong-font-size);
   width: var(--secondary-button-width);
   height: var(--secondary-button-height);
-  padding: 12px, 24px, 12px, 24px;
 }
 
 .tertiary {
@@ -58,9 +58,6 @@
   color: var(--cherryPieVariant);
   background-color: var(--pure-white);
   border: var(--GhostWhite);
-  width: 173px;
-  height: 48px;
-  padding: 12px, 24px, 12px, 24px;
   border-radius: 8px;
   gap: 8px;
   font-family: var(--poppins-font);
@@ -68,7 +65,7 @@
   font-size: var(--body2-strong-font-size);
   width: var(--tertiary-button-width);
   height: var(--tertiary-button-height);
-  line-height: 24px;
+  line-height: calc(var(--tertiary-button-height) / 2);
 }
 
 .disabled {
