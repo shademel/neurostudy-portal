@@ -90,7 +90,7 @@ const AuthInitSignUp: React.FC = () => {
       <Form
         methods={methods}
         onSubmit={methods.handleSubmit(onSubmit)}
-        className={classNames(isConfirming && '.hide')}
+        className={classNames(isConfirming && 'hide')}
       >
         <TextBox
           name='email'
