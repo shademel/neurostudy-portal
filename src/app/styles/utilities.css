@@ -1,0 +1,11 @@
+.text-center {
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.error {
+  border: 1px solid var(--errorRed);
+}
