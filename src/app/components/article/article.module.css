@@ -36,6 +36,7 @@
   justify-content: space-between;
   align-items: stretch;
   height: auto;
+  flex-grow: 1;
 }
 
 .description {
@@ -69,7 +70,7 @@
 }
 
 @media (max-width: 1024px) and (min-width: 480px) {
-  
+
   .cardList {
     gap: 0px;
     flex-wrap: nowrap;
@@ -78,7 +79,7 @@
   .cardImage {
     height: 140px;
   }
-  
+
   .card {
     border: 1px solid var(--cherryPieSub);
     border-radius: 8px;
