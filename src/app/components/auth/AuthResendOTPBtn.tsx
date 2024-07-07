@@ -6,8 +6,7 @@ import { resendSignUpCode } from 'aws-amplify/auth';
 import { notifyError, notifySuccess } from '@/app/utilities/common';
 import { useEffect, useRef, useState } from 'react';
 import LoaderWrapper from '../loader/LoaderWrapper';
-
-const DEFAULT_RESEND_OTP_WAIT_TIME = 60 * 1000;
+import { DEFAULT_RESEND_OTP_WAIT_TIME } from '@/app/utilities/auth/constants';
 
 interface PropType {
   username: string;
