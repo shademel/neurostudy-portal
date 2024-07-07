@@ -1,5 +1,6 @@
 import './globals.css';
 import './foundation.css';
+import '@/app/styles/utilities.css';
 import { Poppins } from 'next/font/google';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
