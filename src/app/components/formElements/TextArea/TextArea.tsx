@@ -71,7 +71,7 @@ const TextArea = <TFieldValues extends FieldValues>({
         const inputClassName = classNames(
           styles.input,
           className,
-          error && 'error'
+          error && styles.error
         );
 
         return (
