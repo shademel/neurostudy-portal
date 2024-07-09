@@ -29,7 +29,13 @@ const getGoogleAnalyticsScript = () => {
   );
 };
 
-export const metadata: Metadata = createMetadata(META_KEY.HOME);
+export const metadata: Metadata = createMetadata(META_KEY.HOME, {
+  images: [
+    {
+      url: 'https://neurostudyportal.s3.ap-southeast-2.amazonaws.com/images/cover.jpg',
+    },
+  ],
+});
 
 export default function Home() {
   return (

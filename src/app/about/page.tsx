@@ -12,7 +12,16 @@ import { Metadata } from 'next';
 import { META_KEY } from '../utilities/constants';
 import { createMetadata } from '../utilities/common';
 
-export const metadata: Metadata = createMetadata(META_KEY.ABOUT);
+export const metadata: Metadata = createMetadata(META_KEY.ABOUT, {
+  images: [
+    {
+      url: 'https://neurostudyportal.s3.ap-southeast-2.amazonaws.com/images/Pratik.jpg',
+    },
+    {
+      url: 'https://neurostudyportal.s3.ap-southeast-2.amazonaws.com/images/Will.jpg',
+    },
+  ],
+});
 
 export default function Page() {
   return (
