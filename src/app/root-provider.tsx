@@ -19,6 +19,7 @@ import {
   addAuthEventListener,
   removeAuthEventListener,
 } from './utilities/amplify/authListener';
+import { notifyError } from './utilities/common';
 
 interface PropType {
   user: AuthUser | undefined;
@@ -55,8 +56,16 @@ export default function RootProvider({ user: rootUser, children }: PropType) {
       setUser(undefined);
     };
 
+    const onSignInWithRedirectFailure = () => {
+      notifyError('There was an error signing in.');
+    };
+
     addAuthEventListener(AUTH_EVENT_TYPE.SIGNED_IN, onSignedIn);
     addAuthEventListener(AUTH_EVENT_TYPE.SIGNED_OUT, onSignedOut);
+    addAuthEventListener(
+      AUTH_EVENT_TYPE.SIGN_IN_WITH_REDIRECT_FAILURE,
+      onSignInWithRedirectFailure
+    );
 
     return () => {
       removeAuthEventListener(AUTH_EVENT_TYPE.SIGNED_IN, onSignedIn);
