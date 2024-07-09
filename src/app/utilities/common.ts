@@ -79,9 +79,10 @@ export const createMetadata = (
   return metadataObj;
 };
 
-export const notifyError = (ex: object) => {
+export const notifyError = (ex: object | string) => {
   const message =
-    (ex instanceof Error && ex.message) || TOAST_UNKNOWN_ERROR_MESSAGE;
+    (typeof ex === 'string' ? ex : ex instanceof Error && ex.message) ||
+    TOAST_UNKNOWN_ERROR_MESSAGE;
 
   toast.error(message);
 };

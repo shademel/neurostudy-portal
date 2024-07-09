@@ -2,6 +2,9 @@
 
 import { Hub } from 'aws-amplify/utils';
 import { AUTH_EVENT_TYPE, PayloadType } from './constants';
+// NOTE
+// The following library listens to oauth events for multi-page applications
+import 'aws-amplify/auth/enable-oauth-listener';
 
 type EventFunctionType = ({ payload }: { payload: PayloadType }) => void;
 
