@@ -14,3 +14,7 @@
   font-family: inherit;
   height: 37px;
 }
+
+.error {
+  border: 1px solid var(--errorRed);
+}

@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { ReactEventHandler } from 'react';
 import styles from './button.module.css';
 import Image from 'next/image';
 import { BUTTON_STYLE } from '@/app/utilities/constants';
@@ -11,7 +11,7 @@ interface ActionButtonProps {
   icon?: string;
   style?: BUTTON_STYLE;
   disabled?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void | undefined;
+  onClick?: ReactEventHandler<HTMLButtonElement>;
   iconPosition?: 'left' | 'right';
   className?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
@@ -39,6 +39,14 @@ export default function ActionButton({
     [styles.fullWidth]: fullWidth,
   });
 
+  const children = (
+    <>
+      {iconPosition === 'left' && icon && <Image src={icon} alt='icon' />}
+      <span>{label}</span>
+      {iconPosition === 'right' && icon && <Image src={icon} alt='icon' />}
+    </>
+  );
+
   return (
     <button
       className={buttonStyles}
@@ -46,9 +54,13 @@ export default function ActionButton({
       onClick={onClick}
       type={type}
     >
-      {iconPosition === 'left' && icon && <Image src={icon} alt='icon' />}
-      {to ? <Link href={to}>{label}</Link> : <span>{label}</span>}
-      {iconPosition === 'right' && icon && <Image src={icon} alt='icon' />}
+      {to ? (
+        <Link href={to} className={styles.a}>
+          {children}
+        </Link>
+      ) : (
+        children
+      )}
     </button>
   );
 }

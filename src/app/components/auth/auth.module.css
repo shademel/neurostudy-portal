@@ -95,12 +95,19 @@
   .formColumnWrapper {
     width: 100%;
   }
-
 }
 
-.verifyBtnContainer {
+.verifyFormBtnContainer {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin-top: .5rem;
   margin-bottom: 1rem;
+  gap: 15px;
+}
+
+.verifyFormBtnContainer button {
+  padding-left: 8px;
+  padding-right: 8px;
+  min-width: 200px;
 }
