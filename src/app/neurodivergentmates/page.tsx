@@ -9,7 +9,16 @@ import { META_KEY } from '../utilities/constants';
 import { createMetadata } from '../utilities/common';
 import Subscribe from '../components/subscribe/subscribe';
 
-export const metadata: Metadata = createMetadata(META_KEY.NEURODIVERGENT_MATES);
+export const metadata: Metadata = createMetadata(
+  META_KEY.NEURODIVERGENT_MATES,
+  {
+    images: [
+      {
+        url: 'https://neurostudyportal.s3.ap-southeast-2.amazonaws.com/images/podcast-banner.jpg',
+      },
+    ],
+  }
+);
 
 export default function Home() {
   return (
