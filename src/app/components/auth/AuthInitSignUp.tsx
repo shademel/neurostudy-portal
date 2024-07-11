@@ -140,7 +140,11 @@ const AuthInitSignUp: React.FC = () => {
           />
         </div>
       </Form>
-      <AuthFormFooter />
+      <AuthFormFooter
+        text='Already have an account? '
+        toText='Login'
+        to='/login'
+      />
     </LoaderWrapper>
   );
 };
