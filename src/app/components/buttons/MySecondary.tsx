@@ -5,38 +5,56 @@ import { BUTTON_STYLE } from '@/app/utilities/constants';
 
 export default function mySecondary() {
   return (
-    <div className='row'>
-      <ActionButton
-        label='Search'
-        icon={Search}
-        onClick={() => console.log('clicked Secondary button')}
-        style={BUTTON_STYLE.Secondary}
-        className='mb-3'
-      />
-      <ActionButton
-        label='Search'
-        icon={Search}
-        onClick={() => console.log('clicked Secondary button')}
-        style={BUTTON_STYLE.Secondary}
-        fullWidth
-        className='mb-3'
-      />
-      <ActionButton
-        label='Search'
-        icon={Search}
-        onClick={() => console.log('clicked Secondary button')}
-        style={BUTTON_STYLE.Secondary}
-        className='mb-3'
-        disabled
-      />
-      <ActionButton
-        label='Search'
-        icon={Search}
-        onClick={() => console.log('clicked Secondary button')}
-        style={BUTTON_STYLE.Secondary}
-        fullWidth
-        disabled
-      />
-    </div>
+    <>
+      <h2>
+        <u>Secondary</u>
+      </h2>
+      <div className='row'>
+        <div>
+          <h3>Default</h3>
+          <ActionButton
+            label='Search'
+            icon={Search}
+            onClick={() => console.log('clicked Secondary button')}
+            style={BUTTON_STYLE.Secondary}
+            className='mb-3'
+          />
+        </div>
+        <div>
+          <h3>Full Width</h3>
+          <ActionButton
+            label='Search'
+            icon={Search}
+            onClick={() => console.log('clicked Secondary button')}
+            style={BUTTON_STYLE.Secondary}
+            className='mb-3'
+            fullWidth
+          />
+        </div>
+        <div>
+          <h3>Default (Disabled)</h3>
+          <ActionButton
+            label='Search'
+            icon={Search}
+            onClick={() => console.log('clicked Secondary button')}
+            style={BUTTON_STYLE.Secondary}
+            className='mb-3'
+            disabled
+          />
+        </div>
+        <div>
+          <h3>Full Width & Disabled</h3>
+          <ActionButton
+            label='Search'
+            icon={Search}
+            onClick={() => console.log('clicked Secondary button')}
+            style={BUTTON_STYLE.Secondary}
+            className='mb-3'
+            fullWidth
+            disabled
+          />
+        </div>
+      </div>
+    </>
   );
 }
