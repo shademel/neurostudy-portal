@@ -11,7 +11,7 @@ const COGNITO_ISSUER: string = process.env.COGNITO_ISSUER ?? '';
 
 if (
   process.env.NODE_ENV !== 'development' &&
-  (!!COGNITO_USER_POOL_ID ||
+  (!COGNITO_USER_POOL_ID ||
     !COGNITO_PUBLIC_CLIENT_ID ||
     !COGNITO_CONFIDENTIAL_CLIENT_ID ||
     !COGNITO_CONFIDENTIAL_CLIENT_SECRET ||
