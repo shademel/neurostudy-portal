@@ -110,6 +110,7 @@ const nextAuthOptions: AuthOptions = {
   ],
   pages: {
     signIn: '/login',
+    newUser: '/signup',
   },
   callbacks: {
     async session({ session, token }) {
