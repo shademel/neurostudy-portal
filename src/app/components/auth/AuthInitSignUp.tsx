@@ -17,13 +17,14 @@ import Link from 'next/link';
 import ActionButton from '@/app/components/buttons/ActionButton';
 import AuthFormHeader from './AuthFormHeader';
 import AuthFormFooter from './AuthFormFooter';
-import { SignUpOutput, signUp } from 'aws-amplify/auth';
+import { SignUpOutput } from 'aws-amplify/auth';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useState } from 'react';
 import LoaderWrapper from '../loader/LoaderWrapper';
 import toast from 'react-hot-toast';
-import { notifyError } from '@/app/utilities/common';
+import { getAxiosAuthErrorMessage, notifyError } from '@/app/utilities/common';
 import AuthVerifyForm from './AuthVerifyForm';
+import signUp from '@/app/utilities/auth/signUp';
 
 interface SignUpFieldValues extends FieldValues {
   email: string;
@@ -41,11 +42,13 @@ const AuthInitSignUp: React.FC = () => {
     FORM_STATE.INITIALIZED
   );
   const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const onSubmit = async (data: SignUpFieldValues) => {
     const { email, password } = data;
 
     setUsername('');
+    setPassword('');
     setIsLoading(true);
 
     try {
@@ -56,7 +59,6 @@ const AuthInitSignUp: React.FC = () => {
           userAttributes: {
             email,
           },
-          autoSignIn: true,
         },
       });
 
@@ -64,12 +66,13 @@ const AuthInitSignUp: React.FC = () => {
 
       if (signUpStep === FORM_STATE.CONFIRM_SIGN_UP) {
         setUsername(email);
+        setPassword(password);
         setFormState(signUpStep as FORM_STATE);
       } else {
         toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
       }
     } catch (ex) {
-      notifyError(ex as object);
+      notifyError(getAxiosAuthErrorMessage(ex as object));
     } finally {
       setIsLoading(false);
     }
@@ -85,7 +88,11 @@ const AuthInitSignUp: React.FC = () => {
     >
       <AuthFormHeader />
       {isConfirming && (
-        <AuthVerifyForm username={username} setIsLoading={setIsLoading} />
+        <AuthVerifyForm
+          username={username}
+          password={password}
+          setIsLoading={setIsLoading}
+        />
       )}
       <Form
         methods={methods}

@@ -55,6 +55,7 @@ const nextAuthOptions: AuthOptions = {
       clientId: COGNITO_CLIENT_ID,
       clientSecret: COGNITO_CLIENT_SECRET,
       issuer: COGNITO_ISSUER,
+      checks: 'nonce',
     }),
     CredentialsProvider({
       credentials: {

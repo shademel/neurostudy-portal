@@ -7,8 +7,8 @@ import Typography, {
 } from '@/app/components/typography/Typography';
 import GoogleLogo from '@/app/images/googleLogo.svg';
 import FacebookLogo from '@/app/images/facebookLogo.svg';
-import { signInWithRedirect } from 'aws-amplify/auth';
 import { notifyError } from '@/app/utilities/common';
+import { signIn } from 'next-auth/react';
 
 type AuthFormFooterProps = {
   text?: string;
@@ -23,7 +23,11 @@ const AuthFormFooter: React.FC<AuthFormFooterProps> = ({
 }: AuthFormFooterProps) => {
   const signInWithGoogle = async () => {
     try {
-      await signInWithRedirect({ provider: 'Google' });
+      await signIn(
+        'cognito',
+        { redirect: false },
+        { identity_provider: 'Google' }
+      );
     } catch (ex) {
       notifyError(ex as object);
     }

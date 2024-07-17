@@ -8,16 +8,17 @@ import ActionButton from '../buttons/ActionButton';
 import {
   BUTTON_STYLE,
   TOAST_DEV_IN_PROGRESS_MESSAGE,
+  TOAST_UNKNOWN_ERROR_MESSAGE,
 } from '@/app/utilities/constants';
-import { FORM_STATE } from '@/app/utilities/auth/constants';
-import { SignUpOutput, autoSignIn, confirmSignUp } from 'aws-amplify/auth';
 import { notifyError } from '@/app/utilities/common';
 import TextBox from '../formElements/TextBox/TextBox';
 import toast from 'react-hot-toast';
 import AuthResendOTPBtn from './AuthResendOTPBtn';
+import { signIn } from 'next-auth/react';
 
 interface PropType {
   username: string;
+  password: string;
   setIsLoading: (isLoading: boolean) => void;
   onSuccess?: () => void;
 }
@@ -28,6 +29,7 @@ interface VerificationFieldValues extends FieldValues {
 
 const AuthVerifyForm: React.FC<PropType> = ({
   username,
+  password,
   setIsLoading,
   onSuccess,
 }: PropType) => {
@@ -40,24 +42,40 @@ const AuthVerifyForm: React.FC<PropType> = ({
     setIsLoading(true);
 
     try {
-      const { nextStep }: SignUpOutput = await confirmSignUp({
-        username,
-        confirmationCode,
-      });
+      const res = await signIn(
+        'credentials',
+        {
+          username,
+          password,
+          confirmationCode,
+          redirect: false,
+        },
+        { method: 'confirmSignUp' }
+      );
 
-      const signUpStep = nextStep.signUpStep as FORM_STATE;
-
-      if (signUpStep === FORM_STATE.COMPLETE_AUTO_SIGN_IN) {
-        await autoSignIn();
-      } else if (signUpStep !== FORM_STATE.DONE) {
-        toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+      if (!res) {
+        return;
       }
 
-      if (
-        onSuccess &&
-        [FORM_STATE.COMPLETE_AUTO_SIGN_IN, FORM_STATE.DONE].includes(signUpStep)
-      ) {
-        onSuccess();
+      if (!res.ok && !res.error) {
+        throw new Error(TOAST_UNKNOWN_ERROR_MESSAGE);
+      }
+
+      if (res.ok) {
+        onSuccess?.();
+      } else if (res?.error) {
+        try {
+          // NOTE
+          // If it's JSON-parseable, it means aws-amplify API processed it
+          // properly, but we don't have means to handle those at this moment
+          if (JSON.parse(res.error)) {
+            toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+          } else {
+            throw new Error(TOAST_UNKNOWN_ERROR_MESSAGE);
+          }
+        } catch (ex) {
+          throw new Error(res.error);
+        }
       }
     } catch (ex) {
       notifyError(ex as object);
