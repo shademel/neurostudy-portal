@@ -25,6 +25,7 @@ import { useState } from 'react';
 import AuthVerifyForm from './AuthVerifyForm';
 import { signIn } from 'next-auth/react';
 import { SignInOutput } from 'aws-amplify/auth';
+import useAuthError from '@/app/hooks/useAuthError';
 
 interface LoginFieldValues extends FieldValues {
   username: string;
@@ -45,6 +46,8 @@ const Login = () => {
   );
 
   const isConfirming = formState === FORM_STATE.CONFIRM_SIGN_UP;
+
+  useAuthError();
 
   const onSubmit = async (data: LoginFieldValues) => {
     const { username, password } = data;
