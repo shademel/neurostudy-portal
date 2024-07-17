@@ -15,12 +15,14 @@ import TextBox from '../formElements/TextBox/TextBox';
 import toast from 'react-hot-toast';
 import AuthResendOTPBtn from './AuthResendOTPBtn';
 import { signIn } from 'next-auth/react';
+import { INVALID_CREDENTIALS_MESSAGE } from '@/app/utilities/auth/constants';
 
 interface PropType {
   username: string;
   password: string;
   setIsLoading: (isLoading: boolean) => void;
   onSuccess?: () => void;
+  onIncorrectCredentials?: () => void;
 }
 
 interface VerificationFieldValues extends FieldValues {
@@ -32,6 +34,7 @@ const AuthVerifyForm: React.FC<PropType> = ({
   password,
   setIsLoading,
   onSuccess,
+  onIncorrectCredentials,
 }: PropType) => {
   const methods: UseFormReturn<VerificationFieldValues> =
     useForm<VerificationFieldValues>({ mode: 'onBlur' });
@@ -74,6 +77,9 @@ const AuthVerifyForm: React.FC<PropType> = ({
             throw new Error(TOAST_UNKNOWN_ERROR_MESSAGE);
           }
         } catch (ex) {
+          res.error === INVALID_CREDENTIALS_MESSAGE &&
+            onIncorrectCredentials?.();
+
           throw new Error(res.error);
         }
       }

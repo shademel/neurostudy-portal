@@ -116,6 +116,9 @@ const Login = () => {
                 password={password}
                 setIsLoading={setIsLoading}
                 onSuccess={() => router.replace('/signup')}
+                onIncorrectCredentials={() =>
+                  setFormState(FORM_STATE.INITIALIZED)
+                }
               />
             )}
             <Form
