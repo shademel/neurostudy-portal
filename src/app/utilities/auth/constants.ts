@@ -11,3 +11,5 @@ export enum FORM_STATE {
 
 export const DEFAULT_RESEND_OTP_WAIT_TIME =
   process.env.NODE_ENV === 'development' ? 10 * 1000 : 60 * 1000;
+
+export const INVALID_CREDENTIALS_MESSAGE = 'Incorrect username or password.';

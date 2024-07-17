@@ -1,17 +1,19 @@
 import {
+  AuthError,
   confirmSignUp,
   getCurrentUser,
   resendSignUpCode,
   signIn,
+  SignInOutput,
   signOut,
 } from 'aws-amplify/auth';
 import CognitoProvider from 'next-auth/providers/cognito';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { FORM_STATE } from './constants';
+import { FORM_STATE, INVALID_CREDENTIALS_MESSAGE } from './constants';
 import { AuthOptions, getServerSession, User } from 'next-auth';
 import {
-  COGNITO_CLIENT_ID,
-  COGNITO_CLIENT_SECRET,
+  COGNITO_CONFIDENTIAL_CLIENT_ID,
+  COGNITO_CONFIDENTIAL_CLIENT_SECRET,
   COGNITO_ISSUER,
 } from '../amplify/constants';
 
@@ -30,7 +32,18 @@ const applySignIn = async ({
   username: string;
   password: string;
 }) => {
-  const signInOutput = await signIn({ username, password });
+  let signInOutput: SignInOutput;
+  try {
+    signInOutput = await signIn({ username, password });
+  } catch (ex) {
+    const error = ex as AuthError;
+
+    if (error.name === 'NotAuthorizedException') {
+      error.message = INVALID_CREDENTIALS_MESSAGE;
+    }
+
+    throw error;
+  }
 
   const { signInStep } = signInOutput.nextStep;
 
@@ -38,7 +51,6 @@ const applySignIn = async ({
 
   if (signInStep === FORM_STATE.DONE) {
     user = await getUser();
-    await signOut();
   } else {
     if (signInStep === FORM_STATE.CONFIRM_SIGN_UP) {
       await resendSignUpCode({ username });
@@ -52,8 +64,8 @@ const applySignIn = async ({
 const nextAuthOptions: AuthOptions = {
   providers: [
     CognitoProvider({
-      clientId: COGNITO_CLIENT_ID,
-      clientSecret: COGNITO_CLIENT_SECRET,
+      clientId: COGNITO_CONFIDENTIAL_CLIENT_ID,
+      clientSecret: COGNITO_CONFIDENTIAL_CLIENT_SECRET,
       issuer: COGNITO_ISSUER,
       checks: 'nonce',
     }),
@@ -114,6 +126,11 @@ const nextAuthOptions: AuthOptions = {
         token.email = user.email;
       }
       return token;
+    },
+  },
+  events: {
+    signIn: () => {
+      signOut().catch(() => void 0);
     },
   },
 };
