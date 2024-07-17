@@ -35,3 +35,6 @@ export const KEYWORDS_SIGNUP =
 
 export const KEYWORDS_LOGIN =
   'login, neurodiversity, neurodiversityacademy, neurodiversity academy, ';
+
+export const KEYWORDS_FORGOT_PASSWORD =
+  'forgot password, neurodiversity, neurodiversityacademy, neurodiversity academy, ';

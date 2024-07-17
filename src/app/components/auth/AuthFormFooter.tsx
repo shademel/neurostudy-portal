@@ -17,9 +17,9 @@ type AuthFormFooterProps = {
 };
 
 const AuthFormFooter: React.FC<AuthFormFooterProps> = ({
-  text = 'Already have an account? ',
-  toText = 'Login',
-  to = '/login',
+  text,
+  toText,
+  to,
 }: AuthFormFooterProps) => {
   const signInWithGoogle = async () => {
     try {
@@ -63,7 +63,7 @@ const AuthFormFooter: React.FC<AuthFormFooterProps> = ({
         className={styles.callToAction}
       >
         {text}
-        <Link href={to}>{toText}</Link>
+        <Link href={to ?? '#'}>{toText}</Link>
       </Typography>
     </>
   );

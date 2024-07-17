@@ -13,6 +13,7 @@ import {
   KEYWORDS_NEURODIVERSITY_TRAINING,
   KEYWORDS_PLACEMENTS,
   KEYWORDS_SIGNUP,
+  KEYWORDS_FORGOT_PASSWORD,
 } from './keywords';
 
 export const metadata = {
@@ -133,6 +134,13 @@ export const metadata = {
     description: 'Log in page for Neurodiversity Academy',
     keywords: KEYWORDS_LOGIN,
     canonical: `${HOST_URL}/login`,
+    type: META_TYPE.WEBSITE,
+  },
+  [META_KEY.FORGOT_PASSWORD]: {
+    title: 'Forgot password - Neurodiversity Academy',
+    description: 'Forgot password page for Neurodiversity Academy',
+    keywords: KEYWORDS_FORGOT_PASSWORD,
+    canonical: `${HOST_URL}/forgotpassword`,
     type: META_TYPE.WEBSITE,
   },
 };

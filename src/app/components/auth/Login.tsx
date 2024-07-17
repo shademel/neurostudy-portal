@@ -142,7 +142,7 @@ const Login = () => {
                 placeholder='Password'
               />
               <div className={classNames(styles.forgotPassword, 'pt-1')}>
-                <Link href='#'>Forgot Password?</Link>
+                <Link href='/forgotpassword'>Forgot Password?</Link>
               </div>
               <div className='my-3'>
                 <ActionButton
