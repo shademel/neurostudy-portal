@@ -34,12 +34,12 @@
 
 .li {
   margin-right: 32px;
+  padding: 6px;
+  border-radius: 5px;
 }
 
 .li:hover {
   background-color: lightgray;
-  padding: 6px;
-  border-radius: 5px;
 }
 
 .li .userOutlet {
