@@ -2,7 +2,7 @@
 
 import ActionButton from '../buttons/ActionButton';
 import { BUTTON_STYLE } from '@/app/utilities/constants';
-import { resendSignUpCode } from 'aws-amplify/auth';
+import { resetPassword, resendSignUpCode } from 'aws-amplify/auth';
 import { notifyError, notifySuccess } from '@/app/utilities/common';
 import { useEffect, useRef, useState } from 'react';
 import LoaderWrapper from '../loader/LoaderWrapper';
@@ -10,9 +10,13 @@ import { DEFAULT_RESEND_OTP_WAIT_TIME } from '@/app/utilities/auth/constants';
 
 interface PropType {
   username: string;
+  resetPasswordCode?: boolean;
 }
 
-const AuthResendOTPBtn: React.FC<PropType> = ({ username }: PropType) => {
+const AuthResendOTPBtn: React.FC<PropType> = ({
+  username,
+  resetPasswordCode,
+}: PropType) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [startTime, setStartTime] = useState<number>(() => Date.now());
   const [lastSentTime, setLastSentTime] = useState<number>(startTime);
@@ -35,7 +39,11 @@ const AuthResendOTPBtn: React.FC<PropType> = ({ username }: PropType) => {
   const onSubmit = async () => {
     setIsLoading(true);
     try {
-      await resendSignUpCode({ username });
+      if (!resetPasswordCode) {
+        await resendSignUpCode({ username });
+      } else {
+        await resetPassword({ username });
+      }
     } catch (ex) {
       notifyError(ex as object);
     } finally {
