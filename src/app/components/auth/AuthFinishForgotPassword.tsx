@@ -7,7 +7,7 @@ import Form from '@/app/components/formElements/Form';
 import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import AuthFormHeader from './AuthFormHeader';
 import { useForm, UseFormReturn } from 'react-hook-form';
-import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 import ActionButton from '../buttons/ActionButton';
 import AuthResendOTPBtn from './AuthResendOTPBtn';
 import {
