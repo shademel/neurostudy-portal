@@ -1,63 +1,43 @@
 'use client';
 
 import styles from './auth.module.css';
-import ActionButton from '../buttons/ActionButton';
 import AuthLeftBanner from './AuthLeftBanner';
-import AuthFormFooter from './AuthFormFooter';
-import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
-import TextBox from '@/app/components/formElements/TextBox/TextBox';
-import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import classNames from 'classnames';
-import Form from '@/app/components/formElements/Form';
-import AuthFormHeader from './AuthFormHeader';
-import LoaderWrapper from '../loader/LoaderWrapper';
 import { useState } from 'react';
-
-interface ForgotPasswordFieldValues extends FieldValues {
-  username: string;
-}
+import { FORM_STATE } from '@/app/utilities/auth/constants';
+import AuthInitForgotPassword from './AuthInitForgotPassword';
+import AuthFinishForgotPassword from './AuthFinishForgotPassword';
+import { useRouter } from 'next/navigation';
 
 const ForgotPassword = () => {
-  const methods: UseFormReturn<ForgotPasswordFieldValues> =
-    useForm<ForgotPasswordFieldValues>({
-      mode: 'onBlur',
-    });
+  const router = useRouter();
 
-  const [isLoading] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>('');
+  const [formState, setFormState] = useState<FORM_STATE>(
+    FORM_STATE.INITIALIZED
+  );
+  const isConfirming =
+    formState === FORM_STATE.CONFIRM_RESET_PASSWORD_WITH_CODE;
 
-  const onSubmit = async () => {};
+  const handleVerificationCode = (username: string) => {
+    setUsername(username);
+    setFormState(FORM_STATE.CONFIRM_RESET_PASSWORD_WITH_CODE);
+  };
+
+  const handleResetDone = () => {
+    router.push('/login');
+  };
 
   return (
     <main className={styles.container}>
       <div className='row'>
         <AuthLeftBanner />
         <div className={classNames(styles.formColumn, 'col-md-8')}>
-          <LoaderWrapper
-            isLoading={isLoading}
-            className={styles.formColumnWrapper}
-            expandLoaderWidth
-          >
-            <AuthFormHeader title='Forgot Password?' subText='lorem ipsum' />
-            <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
-              <TextBox
-                name='username'
-                type='email'
-                label='Email Address'
-                required
-                placeholder='Email address'
-                pattern={EMAIL_REGEX}
-              />
-              <div className='my-3'>
-                <ActionButton
-                  type='submit'
-                  label='Send Login Link'
-                  style={BUTTON_STYLE.Primary}
-                  fullWidth
-                />
-              </div>
-            </Form>
-            <AuthFormFooter />
-          </LoaderWrapper>
+          {!isConfirming ? (
+            <AuthInitForgotPassword {...{ handleVerificationCode }} />
+          ) : (
+            <AuthFinishForgotPassword {...{ username, handleResetDone }} />
+          )}
         </div>
       </div>
     </main>

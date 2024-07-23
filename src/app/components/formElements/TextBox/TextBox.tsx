@@ -34,6 +34,7 @@ interface TextBoxProps<TFieldValues extends FieldValues> {
     RegisterOptions<FieldValues>,
     'maxLength' | 'minLength' | 'validate' | 'required'
   >;
+  disabled?: boolean;
 }
 
 const TextBox = <TFieldValues extends FieldValues>({
@@ -45,6 +46,7 @@ const TextBox = <TFieldValues extends FieldValues>({
   defaultValue = '' as PathValue<TFieldValues, Path<TFieldValues>>,
   placeholder,
   required = false,
+  disabled = false,
   pattern,
   onChange,
   onBlur,
@@ -66,6 +68,7 @@ const TextBox = <TFieldValues extends FieldValues>({
       name={name}
       defaultValue={defaultValue}
       rules={rules}
+      disabled={disabled}
       render={(props) => {
         const {
           field,
