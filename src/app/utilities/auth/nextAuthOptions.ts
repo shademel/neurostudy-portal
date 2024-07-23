@@ -9,8 +9,12 @@ import {
 } from 'aws-amplify/auth';
 import CognitoProvider from 'next-auth/providers/cognito';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { FORM_STATE, INVALID_CREDENTIALS_MESSAGE } from './constants';
-import { AuthOptions, getServerSession, User } from 'next-auth';
+import {
+  DEFAULT_SESSION_AGE_IN_SECONDS,
+  FORM_STATE,
+  INVALID_CREDENTIALS_MESSAGE,
+} from './constants';
+import { AuthOptions, getServerSession } from 'next-auth';
 import {
   COGNITO_CONFIDENTIAL_CLIENT_ID,
   COGNITO_CONFIDENTIAL_CLIENT_SECRET,
@@ -112,14 +116,13 @@ const nextAuthOptions: AuthOptions = {
     signIn: '/login',
     newUser: '/signup',
   },
+  session: {
+    maxAge: DEFAULT_SESSION_AGE_IN_SECONDS,
+  },
+  jwt: {
+    maxAge: DEFAULT_SESSION_AGE_IN_SECONDS,
+  },
   callbacks: {
-    async session({ session, token }) {
-      if (session.user && token.sub) {
-        const user: User = session.user as User;
-        user.id = token.sub;
-      }
-      return session;
-    },
     async jwt(props) {
       const { token, user } = props;
       if (user) {

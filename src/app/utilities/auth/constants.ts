@@ -13,3 +13,5 @@ export const DEFAULT_RESEND_OTP_WAIT_TIME =
   process.env.NODE_ENV === 'development' ? 10 * 1000 : 60 * 1000;
 
 export const INVALID_CREDENTIALS_MESSAGE = 'Incorrect username or password.';
+
+export const DEFAULT_SESSION_AGE_IN_SECONDS = 2 * 24 * 60 * 60;
