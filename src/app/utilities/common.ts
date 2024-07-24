@@ -9,6 +9,7 @@ import {
   TOAST_UNKNOWN_ERROR_MESSAGE,
 } from './constants';
 import toast from 'react-hot-toast';
+import { AxiosError, AxiosRequestConfig } from 'axios';
 
 type RegulatorPropFn = (...args: unknown[]) => unknown;
 
@@ -89,4 +90,26 @@ export const notifyError = (ex: object | string) => {
 
 export const notifySuccess = (message: string) => {
   toast.success(message);
+};
+
+export const getAxiosAuthErrorMessage = (ex: object): string => {
+  return ex instanceof AxiosError
+    ? ex.response?.data?.message || ex.message
+    : TOAST_UNKNOWN_ERROR_MESSAGE;
+};
+
+export const createRequestConfig = <D = unknown>(
+  path: string,
+  data?: D,
+  rest?: Partial<AxiosRequestConfig<D>>
+): AxiosRequestConfig<D> => {
+  return {
+    method: rest?.method || 'POST',
+    url: '/api' + path,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data,
+    ...rest,
+  };
 };

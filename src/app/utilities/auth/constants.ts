@@ -10,4 +10,9 @@ export enum FORM_STATE {
   CONFIRM_RESET_PASSWORD_WITH_CODE = 'CONFIRM_RESET_PASSWORD_WITH_CODE',
 }
 
-export const DEFAULT_RESEND_OTP_WAIT_TIME = 60 * 1000;
+export const DEFAULT_RESEND_OTP_WAIT_TIME =
+  process.env.NODE_ENV === 'development' ? 10 * 1000 : 60 * 1000;
+
+export const INVALID_CREDENTIALS_MESSAGE = 'Incorrect username or password.';
+
+export const DEFAULT_SESSION_AGE_IN_SECONDS = 2 * 24 * 60 * 60;

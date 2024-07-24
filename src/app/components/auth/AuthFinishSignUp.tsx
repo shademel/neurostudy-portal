@@ -30,7 +30,7 @@ const AuthFinishSignUp: React.FC = () => {
 
   return (
     <div className={styles.formColumnWrapper}>
-      <AuthFormHeader title='Almost Done' subText='one last step' />
+      <AuthFormHeader title='Almost Done' subText='One last step' />
       <Form methods={methods}>
         <TextBox
           name='firstName'

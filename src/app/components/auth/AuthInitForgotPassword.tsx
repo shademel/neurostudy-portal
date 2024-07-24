@@ -3,7 +3,7 @@
 import styles from './auth.module.css';
 import { ForgotPasswordFieldValues } from '@/app/interfaces/ForgotPasswordInterface';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
-import { resetPassword, ResetPasswordOutput } from 'aws-amplify/auth';
+import { ResetPasswordOutput } from 'aws-amplify/auth';
 import { useState } from 'react';
 import { useForm, UseFormReturn } from 'react-hook-form';
 import Form from '@/app/components/formElements/Form';
@@ -17,9 +17,10 @@ import {
   EMAIL_REGEX,
   TOAST_DEV_IN_PROGRESS_MESSAGE,
 } from '@/app/utilities/constants';
-import { notifyError } from '@/app/utilities/common';
+import { getAxiosAuthErrorMessage, notifyError } from '@/app/utilities/common';
 import AuthFormFooter from './AuthFormFooter';
 import { InitForgotPasswordProps } from '@/app/interfaces/ForgotPasswordInterface';
+import resetPassword from '@/app/utilities/auth/resetPassword';
 
 const AuthInitForgotPassword: React.FC<InitForgotPasswordProps> = ({
   handleVerificationCode,
@@ -40,13 +41,10 @@ const AuthInitForgotPassword: React.FC<InitForgotPasswordProps> = ({
       const output: ResetPasswordOutput = await resetPassword({ username });
 
       const {
-        nextStep: { resetPasswordStep, codeDeliveryDetails },
+        nextStep: { resetPasswordStep },
       } = output;
       switch (resetPasswordStep) {
         case FORM_STATE.CONFIRM_RESET_PASSWORD_WITH_CODE:
-          toast(
-            `Confirmation code was sent to ${codeDeliveryDetails.deliveryMedium}`
-          );
           handleVerificationCode(username);
           break;
         default:
@@ -54,7 +52,7 @@ const AuthInitForgotPassword: React.FC<InitForgotPasswordProps> = ({
           break;
       }
     } catch (ex) {
-      notifyError(ex as object);
+      notifyError(getAxiosAuthErrorMessage(ex as object));
     } finally {
       setIsLoading(false);
     }
@@ -66,7 +64,7 @@ const AuthInitForgotPassword: React.FC<InitForgotPasswordProps> = ({
       className={styles.formColumnWrapper}
       expandLoaderWidth
     >
-      <AuthFormHeader title='Forgot Password?' subText='lorem ipsum' />
+      <AuthFormHeader title='Forgot Password?' subText='Reset your password' />
       <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
         <TextBox
           name='username'
@@ -79,7 +77,7 @@ const AuthInitForgotPassword: React.FC<InitForgotPasswordProps> = ({
         <div className='my-3'>
           <ActionButton
             type='submit'
-            label='Send Login Link'
+            label='Send Code'
             style={BUTTON_STYLE.Primary}
             fullWidth
           />

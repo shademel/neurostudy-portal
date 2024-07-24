@@ -11,11 +11,11 @@ import {
   BUTTON_STYLE,
   EMAIL_REGEX,
   TOAST_DEV_IN_PROGRESS_MESSAGE,
+  TOAST_UNKNOWN_ERROR_MESSAGE,
 } from '@/app/utilities/constants';
 import classNames from 'classnames';
 import Form from '@/app/components/formElements/Form';
 import AuthFormHeader from './AuthFormHeader';
-import { signIn } from 'aws-amplify/auth';
 import toast from 'react-hot-toast';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useRouter } from 'next/navigation';
@@ -23,6 +23,9 @@ import { notifyError } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
 import { useState } from 'react';
 import AuthVerifyForm from './AuthVerifyForm';
+import { signIn } from 'next-auth/react';
+import { SignInOutput } from 'aws-amplify/auth';
+import useAuthError from '@/app/hooks/useAuthError';
 
 interface LoginFieldValues extends FieldValues {
   username: string;
@@ -37,11 +40,14 @@ const Login = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const [formState, setFormState] = useState<FORM_STATE>(
     FORM_STATE.INITIALIZED
   );
 
   const isConfirming = formState === FORM_STATE.CONFIRM_SIGN_UP;
+
+  useAuthError();
 
   const onSubmit = async (data: LoginFieldValues) => {
     const { username, password } = data;
@@ -49,19 +55,42 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const {
-        nextStep: { signInStep },
-      } = await signIn({ username, password });
+      const res = await signIn(
+        'credentials',
+        {
+          username,
+          password,
+          redirect: false,
+        },
+        { method: 'signIn' }
+      );
 
-      if (signInStep === FORM_STATE.DONE) {
+      if (!res) {
+        return;
+      }
+
+      if (!res.ok && !res.error) {
+        throw new Error(TOAST_UNKNOWN_ERROR_MESSAGE);
+      }
+
+      if (res.ok) {
         // TODO
         // https://trello.com/c/suoF46yg/131-infrastructure-key-constant-based-url-setup
-        router.replace(isConfirming ? '/signup' : '/');
-      } else if (signInStep === FORM_STATE.CONFIRM_SIGN_UP) {
-        setUsername(username);
-        setFormState(signInStep as FORM_STATE);
-      } else {
-        toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+        router.replace('/');
+      } else if (res?.error) {
+        try {
+          const signInOutput: SignInOutput = JSON.parse(res.error);
+          const { signInStep } = signInOutput.nextStep;
+          if (signInStep === FORM_STATE.CONFIRM_SIGN_UP) {
+            setUsername(username);
+            setPassword(password);
+            setFormState(signInStep as FORM_STATE);
+          } else {
+            toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+          }
+        } catch (ex) {
+          throw new Error(res.error);
+        }
       }
     } catch (ex) {
       notifyError(ex as object);
@@ -84,8 +113,12 @@ const Login = () => {
             {isConfirming && (
               <AuthVerifyForm
                 username={username}
+                password={password}
                 setIsLoading={setIsLoading}
-                onSuccess={methods.handleSubmit(onSubmit)}
+                onSuccess={() => router.replace('/signup')}
+                onIncorrectCredentials={() =>
+                  setFormState(FORM_STATE.INITIALIZED)
+                }
               />
             )}
             <Form

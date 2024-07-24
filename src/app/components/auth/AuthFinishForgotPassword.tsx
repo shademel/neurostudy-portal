@@ -7,13 +7,18 @@ import Form from '@/app/components/formElements/Form';
 import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import AuthFormHeader from './AuthFormHeader';
 import { useForm, UseFormReturn } from 'react-hook-form';
-import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
-import { confirmResetPassword } from 'aws-amplify/auth';
+import { BUTTON_STYLE } from '@/app/utilities/constants';
 import ActionButton from '../buttons/ActionButton';
 import AuthResendOTPBtn from './AuthResendOTPBtn';
-import { notifyError, notifySuccess } from '@/app/utilities/common';
+import {
+  getAxiosAuthErrorMessage,
+  notifyError,
+  notifySuccess,
+} from '@/app/utilities/common';
 import { useState } from 'react';
 import { FinishForgotPasswordProps } from '@/app/interfaces/ForgotPasswordInterface';
+import confirmResetPassword from '@/app/utilities/auth/confirmResetPassword';
+import Typography, { TypographyVariant } from '../typography/Typography';
 
 const AuthFinishForgotPassword: React.FC<FinishForgotPasswordProps> = ({
   username,
@@ -42,7 +47,7 @@ const AuthFinishForgotPassword: React.FC<FinishForgotPasswordProps> = ({
 
       handleResetDone();
     } catch (ex) {
-      notifyError(ex as object);
+      notifyError(getAxiosAuthErrorMessage(ex as object));
     } finally {
       setIsLoading(false);
     }
@@ -56,16 +61,9 @@ const AuthFinishForgotPassword: React.FC<FinishForgotPasswordProps> = ({
     >
       <AuthFormHeader title='Almost Done' subText='one last step' />
       <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
-        <TextBox
-          name='username'
-          type='email'
-          label='Email Address'
-          required
-          placeholder='Email address'
-          pattern={EMAIL_REGEX}
-          defaultValue={username}
-          disabled
-        />
+        <Typography variant={TypographyVariant.Body3} className='pt-3'>
+          Please enter the verification code sent to <b>{username}</b>.
+        </Typography>
         <TextBox
           name='confirmationCode'
           label='Verification Code'

@@ -5,19 +5,23 @@ import AuthLeftBanner from './AuthLeftBanner';
 import classNames from 'classnames';
 import AuthInitSignUp from './AuthInitSignUp';
 import AuthFinishSignUp from './AuthFinishSignUp';
-import { useRootContext } from '@/app/root-provider';
+import LoaderWrapper from '../loader/LoaderWrapper';
+import { useSession } from 'next-auth/react';
+import useAuthError from '@/app/hooks/useAuthError';
 
-const SignUp = () => {
-  const { user } = useRootContext();
+const SignUp: React.FC = () => {
+  const { data: session, status } = useSession();
+
+  useAuthError();
 
   return (
     <main className={styles.container}>
-      <div className='row'>
+      <LoaderWrapper isLoading={status === 'loading'} className='row'>
         <AuthLeftBanner />
         <div className={classNames(styles.formColumn, 'col-md-8')}>
-          {user ? <AuthFinishSignUp /> : <AuthInitSignUp />}
+          {session ? <AuthFinishSignUp /> : <AuthInitSignUp />}
         </div>
-      </div>
+      </LoaderWrapper>
     </main>
   );
 };
