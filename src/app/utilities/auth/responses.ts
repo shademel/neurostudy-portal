@@ -1,6 +1,4 @@
-import { AmplifyError } from '@aws-amplify/core/internals/utils';
-
-export const returnAuthError = (ex: AmplifyError) => {
+export const returnAuthError = (ex: Error) => {
   const { name, message } = ex;
 
   return new Response(

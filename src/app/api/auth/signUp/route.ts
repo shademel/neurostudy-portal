@@ -1,5 +1,4 @@
 import { returnAuthError } from '@/app/utilities/auth/responses';
-import { AmplifyError } from '@aws-amplify/core/internals/utils';
 import { signUp, SignUpInput } from 'aws-amplify/auth';
 import '@/app/utilities/amplify/configure';
 import createUser from '@/app/utilities/auth/createUser';
@@ -22,6 +21,6 @@ export async function POST(request: Request) {
 
     return new Response(JSON.stringify(res));
   } catch (ex) {
-    return returnAuthError(ex as AmplifyError);
+    return returnAuthError(ex as Error);
   }
 }

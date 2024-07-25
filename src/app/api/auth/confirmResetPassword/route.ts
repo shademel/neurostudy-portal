@@ -1,5 +1,4 @@
 import { returnAuthError } from '@/app/utilities/auth/responses';
-import { AmplifyError } from '@aws-amplify/core/internals/utils';
 import {
   confirmResetPassword,
   ConfirmResetPasswordInput,
@@ -12,6 +11,6 @@ export async function POST(request: Request) {
   try {
     return new Response(JSON.stringify(await confirmResetPassword(data)));
   } catch (ex) {
-    return returnAuthError(ex as AmplifyError);
+    return returnAuthError(ex as Error);
   }
 }
