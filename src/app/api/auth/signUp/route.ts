@@ -2,9 +2,11 @@ import { returnAuthError } from '@/app/utilities/auth/responses';
 import { AmplifyError } from '@aws-amplify/core/internals/utils';
 import { signUp, SignUpInput } from 'aws-amplify/auth';
 import '@/app/utilities/amplify/configure';
+import createUser from '@/app/utilities/auth/createUser';
 
 export async function POST(request: Request) {
   const data: SignUpInput = await request.json();
+  const { username: email } = data;
 
   // NOTE
   // We will manually sign-in regardless of `autoSignIn`,
@@ -15,7 +17,10 @@ export async function POST(request: Request) {
   }
 
   try {
-    return new Response(JSON.stringify(await signUp(data)));
+    const res = await signUp(data);
+    await createUser(email);
+
+    return new Response(JSON.stringify(res));
   } catch (ex) {
     return returnAuthError(ex as AmplifyError);
   }

@@ -7,19 +7,16 @@ import isAuthenticated from '@/app/utilities/auth/isAuthenticated';
 import { processStatus, returnBadResponse } from '@/app/utilities/responses';
 import assertUserProps from '@/app/utilities/validation/assertUserData';
 import {
-  DynamoDBClient,
   GetItemCommand,
   GetItemCommandInput,
   GetItemCommandOutput,
-  UpdateItemCommand,
-  UpdateItemCommandInput,
+  UpdateItemCommandOutput,
 } from '@aws-sdk/client-dynamodb';
-import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 import { NextRequest } from 'next/server';
-
-const client = new DynamoDBClient({});
-const documentClient = DynamoDBDocumentClient.from(client);
+import { dbDocumentClient } from '../../utilities/db/configure';
+import updateUser from '@/app/utilities/auth/updateUser';
+import createUser from '@/app/utilities/auth/createUser';
 
 export async function GET(req: NextRequest) {
   const userResponse: UserToken | Response = await isAuthenticated({ req });
@@ -29,16 +26,17 @@ export async function GET(req: NextRequest) {
   }
 
   const user = userResponse as UserToken;
+  const { email } = user;
 
   const commandParams: GetItemCommandInput = {
     TableName: USER_TABLE_NAME,
     Key: marshall({
-      [USER_TABLE_PARTITION_ID]: user.email,
+      [USER_TABLE_PARTITION_ID]: email,
     }),
   };
 
   const command = new GetItemCommand(commandParams);
-  const res: GetItemCommandOutput = await documentClient.send(command);
+  const res: GetItemCommandOutput = await dbDocumentClient.send(command);
 
   const statusResponse: Response | undefined = processStatus(
     res.$metadata.httpStatusCode
@@ -47,15 +45,15 @@ export async function GET(req: NextRequest) {
     return statusResponse;
   }
 
-  const { Item } = res;
+  let { Item } = res;
 
   if (!Item) {
-    return new Response('No user found.', { status: 404 });
+    // NOTE
+    // This is possible when idP user signs up
+    Item = marshall(await createUser(email));
   }
 
   const dbUser = unmarshall(Item);
-
-  delete dbUser[USER_TABLE_PARTITION_ID];
 
   return new Response(JSON.stringify(dbUser), {
     status: 200,
@@ -78,36 +76,13 @@ export async function PUT(req: NextRequest) {
     const Item: UserProps = await req.json();
     assertUserProps(Item);
 
-    let updateExpression = 'set';
-    const expressionAttributeValues: Record<string, unknown> = {};
-    const expressionAttributeNames: Record<string, string> = {};
-
-    for (const [attribute, value] of Object.entries(Item)) {
-      updateExpression += ` #${attribute} = :${attribute},`;
-      expressionAttributeValues[':' + attribute] = value;
-      expressionAttributeNames['#' + attribute] = attribute;
-    }
-
-    updateExpression = updateExpression.slice(0, -1);
-
-    const commandParams: UpdateItemCommandInput = {
-      TableName: USER_TABLE_NAME,
-      Key: marshall({
-        [USER_TABLE_PARTITION_ID]: user.email,
-      }),
-      UpdateExpression: updateExpression,
-      ExpressionAttributeValues: marshall(expressionAttributeValues),
-      ExpressionAttributeNames: expressionAttributeNames,
-    };
-
-    const command = new UpdateItemCommand(commandParams);
-    const res = await documentClient.send(command);
-
-    const statusResponse: Response | undefined = processStatus(
-      res.$metadata.httpStatusCode
+    const updateResponse: UpdateItemCommandOutput | Response = await updateUser(
+      Item,
+      user
     );
-    if (statusResponse instanceof Response) {
-      return statusResponse;
+
+    if (updateResponse instanceof Response) {
+      return updateResponse;
     }
 
     return new Response(null, {
