@@ -21,10 +21,10 @@ export const DEFAULT_SESSION_AGE_IN_SECONDS = 2 * 24 * 60 * 60;
 // This will be here until we utilize `zod` or similar validation library
 // This helps us to generate a type based on the given attribute values
 // and validate/assert based on that as well
-export const SAMPLE_USER = {
-  FirstName: '1',
-  LastName: '1',
-  DOB: 1, // Milliseconds after 1970, in GMT
+export const DEFAULT_USER = {
+  FirstName: '',
+  LastName: '',
+  DOB: 0, // Milliseconds after 1970, in GMT
 };
 
 export const USER_TABLE_NAME = process.env.USER_TABLE_NAME || 'NDAUsers';

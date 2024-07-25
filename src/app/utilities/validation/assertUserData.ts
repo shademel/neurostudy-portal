@@ -1,5 +1,5 @@
 import { UserProps } from '@/app/interfaces/User';
-import { SAMPLE_USER } from '../auth/constants';
+import { DEFAULT_USER } from '../auth/constants';
 
 const RETURN_DEFAULT_ERROR_MESSAGE = process.env.NODE_ENV === 'production';
 const DEFAULT_ERROR_MESSAGE = `Provided user doesn't satisfy type-check.`;
@@ -17,9 +17,9 @@ export default function assertUserProps(
 
   let key: string;
   for (key in user) {
-    if (key in SAMPLE_USER) {
+    if (key in DEFAULT_USER) {
       /* @ts-expect-error: Server will check this at run-time (along with FE) */
-      const expectedType: unknown = typeof SAMPLE_USER[key];
+      const expectedType: keyof typeof DEFAULT_USER = typeof DEFAULT_USER[key];
       /* @ts-expect-error: Server will check this at run-time (along with FE) */
       const providedType: unknown = typeof user[key];
       if (expectedType !== providedType) {
