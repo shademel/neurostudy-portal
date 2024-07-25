@@ -1,6 +1,4 @@
-export const returnBadResponse = (
-  info: Record<string, unknown> | undefined
-) => {
+export const returnBadResponse = (info?: Record<string, unknown>) => {
   return new Response(JSON.stringify({ error: 'Bad Request', ...info }), {
     status: 400,
     statusText: 'Bad Request',

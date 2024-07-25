@@ -7,7 +7,7 @@ export default async function isAuthenticated({
 }: {
   req: NextRequest;
 }): Promise<UserToken | Response> {
-  const token: UserToken | null = await getToken({ req });
+  const token: UserToken | null = (await getToken({ req })) as UserToken;
 
   if (!token) {
     return new Response('User is not authorized.', { status: 401 });
