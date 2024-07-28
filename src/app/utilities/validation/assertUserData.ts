@@ -4,14 +4,18 @@ import { DEFAULT_USER } from '../auth/constants';
 const RETURN_DEFAULT_ERROR_MESSAGE = process.env.NODE_ENV === 'production';
 const DEFAULT_ERROR_MESSAGE = `Provided user doesn't satisfy type-check.`;
 
+const throwError = (message: string): void => {
+  throw new Error(
+    RETURN_DEFAULT_ERROR_MESSAGE ? DEFAULT_ERROR_MESSAGE : message
+  );
+};
+
 export default function assertUserProps(
   user: UserProps
 ): asserts user is UserProps {
   if (!user || typeof user !== 'object') {
-    throw new Error(
-      RETURN_DEFAULT_ERROR_MESSAGE
-        ? DEFAULT_ERROR_MESSAGE
-        : `Invalid prop 'user' supplied, expected an object with key-value pairs.`
+    throwError(
+      `Invalid prop 'user' supplied, expected an object with key-value pairs.`
     );
   }
 
@@ -23,18 +27,12 @@ export default function assertUserProps(
       /* @ts-expect-error: Server will check this at run-time (along with FE) */
       const providedType: unknown = typeof user[key];
       if (expectedType !== providedType) {
-        throw new Error(
-          RETURN_DEFAULT_ERROR_MESSAGE
-            ? DEFAULT_ERROR_MESSAGE
-            : `Invalid prop 'user["${key}"]' of type '${providedType}' supplied, expected '${expectedType}'.`
+        throwError(
+          `Invalid prop 'user["${key}"]' of type '${providedType}' supplied, expected '${expectedType}'.`
         );
       }
     } else {
-      throw new Error(
-        RETURN_DEFAULT_ERROR_MESSAGE
-          ? DEFAULT_ERROR_MESSAGE
-          : `Invalid prop key '${key}' found in 'user'.`
-      );
+      throwError(`Invalid prop key '${key}' found in 'user'.`);
     }
   }
 }

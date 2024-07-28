@@ -7,12 +7,11 @@ import { USER_TABLE_NAME, USER_TABLE_PARTITION_ID } from './constants';
 import { marshall } from '@aws-sdk/util-dynamodb';
 import { UserProps, UserToken } from '@/app/interfaces/User';
 import { dbDocumentClient } from '../db/configure';
-import { processStatus } from '../responses';
 
 const updateUser = async (
   Item: UserProps,
   user: UserToken
-): Promise<UpdateItemCommandOutput | Response> => {
+): Promise<UpdateItemCommandOutput> => {
   let updateExpression = 'set';
   const expressionAttributeValues: Record<string, unknown> = {};
   const expressionAttributeNames: Record<string, string> = {};
@@ -37,13 +36,6 @@ const updateUser = async (
 
   const command = new UpdateItemCommand(commandParams);
   const res = await dbDocumentClient.send(command);
-
-  const statusResponse: Response | undefined = processStatus(
-    res.$metadata.httpStatusCode
-  );
-  if (statusResponse instanceof Response) {
-    return statusResponse;
-  }
 
   return res;
 };

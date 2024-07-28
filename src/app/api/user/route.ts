@@ -4,7 +4,6 @@ import {
   USER_TABLE_PARTITION_ID,
 } from '@/app/utilities/auth/constants';
 import isAuthenticated from '@/app/utilities/auth/isAuthenticated';
-import { processStatus, returnBadResponse } from '@/app/utilities/responses';
 import assertUserProps from '@/app/utilities/validation/assertUserData';
 import {
   GetItemCommand,
@@ -17,50 +16,48 @@ import { NextRequest } from 'next/server';
 import { dbDocumentClient } from '../../utilities/db/configure';
 import updateUser from '@/app/utilities/auth/updateUser';
 import createUser from '@/app/utilities/auth/createUser';
+import { returnAuthError } from '@/app/utilities/auth/responses';
 
 export async function GET(req: NextRequest) {
-  const userResponse: UserToken | Response = await isAuthenticated({ req });
+  try {
+    const userResponse: UserToken | Response = await isAuthenticated({ req });
 
-  if (userResponse instanceof Response) {
-    return userResponse;
+    if (userResponse instanceof Response) {
+      return userResponse;
+    }
+
+    const user = userResponse as UserToken;
+    const { email } = user;
+
+    const commandParams: GetItemCommandInput = {
+      TableName: USER_TABLE_NAME,
+      Key: marshall({
+        [USER_TABLE_PARTITION_ID]: email,
+      }),
+    };
+
+    const command = new GetItemCommand(commandParams);
+    const res: GetItemCommandOutput = await dbDocumentClient.send(command);
+
+    let { Item } = res;
+
+    if (!Item) {
+      // NOTE
+      // This is possible when idP user signs up
+      Item = marshall(await createUser(email));
+    }
+
+    const dbUser = unmarshall(Item);
+
+    return new Response(JSON.stringify(dbUser), {
+      status: 200,
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      }),
+    });
+  } catch (ex) {
+    returnAuthError(ex);
   }
-
-  const user = userResponse as UserToken;
-  const { email } = user;
-
-  const commandParams: GetItemCommandInput = {
-    TableName: USER_TABLE_NAME,
-    Key: marshall({
-      [USER_TABLE_PARTITION_ID]: email,
-    }),
-  };
-
-  const command = new GetItemCommand(commandParams);
-  const res: GetItemCommandOutput = await dbDocumentClient.send(command);
-
-  const statusResponse: Response | undefined = processStatus(
-    res.$metadata.httpStatusCode
-  );
-  if (statusResponse instanceof Response) {
-    return statusResponse;
-  }
-
-  let { Item } = res;
-
-  if (!Item) {
-    // NOTE
-    // This is possible when idP user signs up
-    Item = marshall(await createUser(email));
-  }
-
-  const dbUser = unmarshall(Item);
-
-  return new Response(JSON.stringify(dbUser), {
-    status: 200,
-    headers: new Headers({
-      'Content-Type': 'application/json',
-    }),
-  });
 }
 
 export async function PUT(req: NextRequest) {
@@ -76,7 +73,7 @@ export async function PUT(req: NextRequest) {
     const Item: UserProps = await req.json();
     assertUserProps(Item);
 
-    const updateResponse: UpdateItemCommandOutput | Response = await updateUser(
+    const updateResponse: UpdateItemCommandOutput = await updateUser(
       Item,
       user
     );
@@ -92,8 +89,6 @@ export async function PUT(req: NextRequest) {
       }),
     });
   } catch (ex) {
-    const error = ex as Error;
-
-    return returnBadResponse({ message: error.message });
+    return returnAuthError(ex);
   }
 }
