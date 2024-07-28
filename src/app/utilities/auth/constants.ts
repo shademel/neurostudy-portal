@@ -24,7 +24,7 @@ export const DEFAULT_SESSION_AGE_IN_SECONDS = 2 * 24 * 60 * 60;
 export const DEFAULT_USER = {
   FirstName: '',
   LastName: '',
-  DOB: 0, // Milliseconds after 1970, in GMT
+  DOB: '', // ISO String - `2024-03-22T04:28:32.981Z`
 };
 
 export const USER_TABLE_NAME = process.env.USER_TABLE_NAME || 'NDAUsers';

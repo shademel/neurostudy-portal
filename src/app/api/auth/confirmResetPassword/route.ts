@@ -6,11 +6,11 @@ import {
 import '@/app/utilities/amplify/configure';
 
 export async function POST(request: Request) {
-  const data: ConfirmResetPasswordInput = await request.json();
-
   try {
+    const data: ConfirmResetPasswordInput = await request.json();
+
     return new Response(JSON.stringify(await confirmResetPassword(data)));
   } catch (ex) {
-    return returnAuthError(ex as Error);
+    return returnAuthError(ex);
   }
 }

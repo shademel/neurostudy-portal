@@ -3,11 +3,11 @@ import { resendSignUpCode, ResendSignUpCodeInput } from 'aws-amplify/auth';
 import '@/app/utilities/amplify/configure';
 
 export async function POST(request: Request) {
-  const data: ResendSignUpCodeInput = await request.json();
-
   try {
+    const data: ResendSignUpCodeInput = await request.json();
+
     return new Response(JSON.stringify(await resendSignUpCode(data)));
   } catch (ex) {
-    return returnAuthError(ex as Error);
+    return returnAuthError(ex);
   }
 }
