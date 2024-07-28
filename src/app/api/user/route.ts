@@ -56,7 +56,7 @@ export async function GET(req: NextRequest) {
       }),
     });
   } catch (ex) {
-    returnAuthError(ex);
+    return returnAuthError(ex);
   }
 }
 
