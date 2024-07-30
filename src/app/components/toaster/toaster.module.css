@@ -1,15 +1,122 @@
-.container .common {
+.container {
+  position: fixed;
+  z-index: 9999;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.containerItem {
+  display: flex;
+  position: relative;
+  transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1) 0s;
+  justify-content: center;
+  margin-bottom: 15px;
+  will-change: transform;
+  animation: 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) 0s 1 normal forwards running containerItemPopUp;
+}
+
+.containerBody {
+  display: flex;
+  align-items: center;
   color: var(--GhostWhiteVariant);
-}
-
-.container .default {
   background-color: var(--cherryPieVariantSub);
+  line-height: 1.3;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
+  max-width: 350px;
+  pointer-events: auto;
+  padding: 8px 10px;
+  border-radius: 8px;
+  gap: 8px;
 }
 
-.container .success {
+.errorBody {
+  background-color: var(--darkred)
+}
+
+.successBody {
   background-color: var(--cherryPie);
 }
 
-.container .error {
+.successIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--skyBlue);
+  position: relative;
+  transform: scale(1) rotate(45deg);
+  flex: 0 0 20px;
+}
+
+.successIcon::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-color: var(--navyBlue);
+  bottom: 6px;
+  left: 6px;
+  width: 6px;
+  height: 10px;
+}
+
+.errorIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #ff4b4b;
+  position: relative;
+  transform: rotate(45deg);
+  flex: 0 0 20px;
+}
+
+.errorIcon::after,
+.errorIcon::before {
+  content: '';
+  position: absolute;
+  border-radius: 3px;
+  background: #fff;
+  bottom: 9px;
+  left: 4px;
+  height: 2px;
+  width: 12px;
+}
+
+.errorIcon::after {
+  transform: rotate(90deg);
+}
+
+.oldContainer .common {
+  color: var(--GhostWhiteVariant);
+}
+
+.oldContainer .default {
+  background-color: var(--cherryPieVariantSub);
+}
+
+.oldContainer .success {
+  background-color: var(--cherryPie);
+}
+
+.oldContainer .error {
   background-color: var(--darkred);
+}
+
+@keyframes containerItemPopUp {
+  0% {
+    transform: translate3d(0, -200%, 0) scale(.6);
+    opacity: .5;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
 }
