@@ -10,6 +10,7 @@ const defaultFn = () => {
 const toast: ToastType = {
   error: defaultFn,
   success: defaultFn,
+  info: defaultFn,
 };
 
 const defaultToast: ToastType = { ...toast };

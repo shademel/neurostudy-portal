@@ -85,6 +85,9 @@ const ToasterWrapper: React.FC = () => {
       success: (...args: Parameters<ToastFunction>) => {
         addToast('success', ...args);
       },
+      info: (...args: Parameters<ToastFunction>) => {
+        addToast('info', ...args);
+      },
     });
 
     return () => {
@@ -114,6 +117,7 @@ const ToasterWrapper: React.FC = () => {
       <div className={styles.container}>
         {toastsRef.current.map((item: ToastItemProps) => {
           const { id, type, hide } = item;
+          const iconClassName = styles[ToastIconClass[type]];
 
           return (
             <div
@@ -130,7 +134,7 @@ const ToasterWrapper: React.FC = () => {
                   styles[ToastContainerItemClass[type]]
                 )}
               >
-                <div className={styles[ToastIconClass[type]]} />
+                {iconClassName && <div className={iconClassName} />}
                 <div>{item.message}</div>
               </div>
             </div>
