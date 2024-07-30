@@ -113,3 +113,7 @@ export const createRequestConfig = <D = unknown>(
     ...rest,
   };
 };
+
+export const getUniqueID = (): string => {
+  return 'u' + Math.random().toString(32).substring(2);
+};

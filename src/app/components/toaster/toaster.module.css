@@ -93,6 +93,13 @@
   transform: rotate(90deg);
 }
 
+.hide {
+  animation: 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards containerItemHide;
+}
+
+/* // TEMP */
+/* TODO */
+/* Delete the following .oldContainer styles */
 .oldContainer .common {
   color: var(--GhostWhiteVariant);
 }
@@ -118,5 +125,12 @@
   100% {
     transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes containerItemHide {
+  100% {
+    transform: translate3d(0, -200%, 0) scale(.6);
+    opacity: 0;
   }
 }

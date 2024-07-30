@@ -6,10 +6,14 @@ import styles from './toaster.module.css';
 import classNames from 'classnames';
 import {
   ToastContainerItemClass,
+  ToastDefaultDuration,
+  ToastFunction,
   ToastIconClass,
   ToastItemProps,
+  ToastOptions,
 } from '@/app/utilities/toaster/constants';
 import { constructToast, destructToast } from '.';
+import { getUniqueID } from '@/app/utilities/common';
 
 const ToasterWrapper: React.FC = () => {
   const toastsRef = useRef<ToastItemProps[]>([]);
@@ -17,24 +21,69 @@ const ToasterWrapper: React.FC = () => {
   // Utilized to trigger a `forceUpdate`
   const setToken = useState<number>(0)[1];
 
+  const addToastItem = (newToast: ToastItemProps) => {
+    toastsRef.current = [...toastsRef.current, newToast];
+    setToken(Math.random());
+  };
+
+  const hideToastItem = (id: ToastItemProps['id']) => {
+    let toastItemFound = false;
+    const newToasts: ToastItemProps[] = toastsRef.current.map(
+      (item: ToastItemProps) => {
+        if (item.id === id) {
+          toastItemFound = true;
+          return { ...item, hide: true };
+        }
+        return item;
+      }
+    );
+    if (toastItemFound) {
+      toastsRef.current = newToasts;
+      setToken(Math.random());
+    }
+  };
+
+  const removeToastItem = (id: ToastItemProps['id']) => {
+    const newToasts: ToastItemProps[] = toastsRef.current.filter(
+      ({ id: itemId }) => id !== itemId
+    );
+    if (newToasts.length !== toastsRef.current.length) {
+      toastsRef.current = newToasts;
+      setToken(Math.random());
+    }
+  };
+
   useEffect(() => {
     const addToast = (
       type: ToastItemProps['type'],
-      props: string | Omit<ToastItemProps, 'type'>
+      ...rest: Parameters<ToastFunction>
     ) => {
-      toastsRef.current = [
-        ...toastsRef.current,
-        { ...(typeof props === 'string' ? { message: props } : props), type },
-      ];
-      setToken(Math.random());
+      const id = getUniqueID();
+      const message: ToastItemProps['message'] = rest[0];
+      const options: ToastOptions = rest[1] || {};
+      const duration: ToastItemProps['duration'] =
+        options.duration || ToastDefaultDuration[type];
+      const newToast: ToastItemProps = {
+        ...options,
+        id,
+        type,
+        message,
+        duration,
+      };
+
+      addToastItem(newToast);
+
+      setTimeout(() => {
+        hideToastItem(id);
+      }, duration);
     };
 
     constructToast({
-      error: (props: string | Omit<ToastItemProps, 'type'>) => {
-        addToast('error', props);
+      error: (...args: Parameters<ToastFunction>) => {
+        addToast('error', ...args);
       },
-      success: (props: string | Omit<ToastItemProps, 'type'>) => {
-        addToast('success', props);
+      success: (...args: Parameters<ToastFunction>) => {
+        addToast('success', ...args);
       },
     });
 
@@ -63,11 +112,18 @@ const ToasterWrapper: React.FC = () => {
         }}
       />
       <div className={styles.container}>
-        {toastsRef.current.map((item: ToastItemProps, index) => {
-          const { type } = item;
+        {toastsRef.current.map((item: ToastItemProps) => {
+          const { id, type, hide } = item;
 
           return (
-            <div key={index} className={styles.containerItem}>
+            <div
+              key={id}
+              className={classNames(styles.containerItem, hide && styles.hide)}
+              onAnimationEnd={({ animationName }) => {
+                animationName === styles['containerItemHide'] &&
+                  removeToastItem(id);
+              }}
+            >
               <div
                 className={classNames(
                   styles.containerBody,

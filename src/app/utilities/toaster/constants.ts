@@ -1,11 +1,25 @@
+import { ReactElement } from 'react';
+
 export interface ToastItemProps {
+  id: string;
   type: 'error' | 'success';
-  message: string;
+  hide?: boolean;
+  message: ReactElement;
+  duration: number;
 }
 
+export type ToastOptions = Partial<
+  Omit<ToastItemProps, 'id' | 'type' | 'hide'>
+>;
+
+export type ToastFunction = (
+  message: ToastItemProps['message'],
+  options?: ToastOptions
+) => void;
+
 export interface ToastType {
-  error: (props: string | Omit<ToastItemProps, 'type'>) => void;
-  success: (props: string | Omit<ToastItemProps, 'type'>) => void;
+  error: ToastFunction;
+  success: ToastFunction;
 }
 
 export enum ToastContainerItemClass {
@@ -16,4 +30,9 @@ export enum ToastContainerItemClass {
 export enum ToastIconClass {
   'error' = 'errorIcon',
   'success' = 'successIcon',
+}
+
+export enum ToastDefaultDuration {
+  'error' = 10000,
+  'success' = 5000,
 }
