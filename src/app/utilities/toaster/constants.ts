@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 export interface ToastItemProps {
   id: string;
   type: 'error' | 'success' | 'info';
   hide?: boolean;
-  message: ReactElement;
+  message: ReactNode;
   duration: number;
 }
 
@@ -36,7 +36,7 @@ export enum ToastIconClass {
 }
 
 export enum ToastDefaultDuration {
-  'error' = 10000,
-  'info' = 8000,
-  'success' = 5000,
+  'error' = 5000,
+  'info' = 4000,
+  'success' = 2000,
 }

@@ -7,11 +7,7 @@ import styles from './auth.module.css';
 import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import TextBox from '@/app/components/formElements/TextBox/TextBox';
-import {
-  BUTTON_STYLE,
-  EMAIL_REGEX,
-  TOAST_DEV_IN_PROGRESS_MESSAGE,
-} from '@/app/utilities/constants';
+import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import classNames from 'classnames';
 import Link from 'next/link';
 import ActionButton from '@/app/components/buttons/ActionButton';
@@ -21,8 +17,11 @@ import { SignUpOutput } from 'aws-amplify/auth';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useState } from 'react';
 import LoaderWrapper from '../loader/LoaderWrapper';
-import toast from 'react-hot-toast';
-import { getAxiosAuthErrorMessage, notifyError } from '@/app/utilities/common';
+import {
+  getAxiosAuthErrorMessage,
+  notifyError,
+  notifyInProgress,
+} from '@/app/utilities/common';
 import AuthVerifyForm from './AuthVerifyForm';
 import signUp from '@/app/utilities/auth/signUp';
 
@@ -69,7 +68,7 @@ const AuthInitSignUp: React.FC = () => {
         setPassword(password);
         setFormState(signUpStep as FORM_STATE);
       } else {
-        toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+        notifyInProgress();
       }
     } catch (ex) {
       notifyError(getAxiosAuthErrorMessage(ex as object));

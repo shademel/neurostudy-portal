@@ -8,16 +8,15 @@ import { useState } from 'react';
 import { useForm, UseFormReturn } from 'react-hook-form';
 import Form from '@/app/components/formElements/Form';
 import TextBox from '@/app/components/formElements/TextBox/TextBox';
-import toast from 'react-hot-toast';
 import LoaderWrapper from '../loader/LoaderWrapper';
 import AuthFormHeader from './AuthFormHeader';
 import ActionButton from '../buttons/ActionButton';
+import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import {
-  BUTTON_STYLE,
-  EMAIL_REGEX,
-  TOAST_DEV_IN_PROGRESS_MESSAGE,
-} from '@/app/utilities/constants';
-import { getAxiosAuthErrorMessage, notifyError } from '@/app/utilities/common';
+  getAxiosAuthErrorMessage,
+  notifyError,
+  notifyInProgress,
+} from '@/app/utilities/common';
 import AuthFormFooter from './AuthFormFooter';
 import { InitForgotPasswordProps } from '@/app/interfaces/ForgotPasswordInterface';
 import resetPassword from '@/app/utilities/auth/resetPassword';
@@ -48,7 +47,7 @@ const AuthInitForgotPassword: React.FC<InitForgotPasswordProps> = ({
           handleVerificationCode(username);
           break;
         default:
-          toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+          notifyInProgress();
           break;
       }
     } catch (ex) {

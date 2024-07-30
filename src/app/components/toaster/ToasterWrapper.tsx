@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Toaster } from 'react-hot-toast';
 import styles from './toaster.module.css';
 import classNames from 'classnames';
 import {
@@ -97,51 +96,33 @@ const ToasterWrapper: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <Toaster
-        containerClassName={styles.oldContainer}
-        toastOptions={{
-          className: classNames(styles.common, styles.default),
-          success: {
-            className: classNames(styles.common, styles.success),
-            iconTheme: {
-              primary: 'var(--skyBlue)',
-              secondary: 'var(--navyBlue)',
-            },
-          },
-          error: {
-            className: classNames(styles.common, styles.error),
-          },
-        }}
-      />
-      <div className={styles.container}>
-        {toastsRef.current.map((item: ToastItemProps) => {
-          const { id, type, hide } = item;
-          const iconClassName = styles[ToastIconClass[type]];
+    <div className={styles.container}>
+      {toastsRef.current.map((item: ToastItemProps) => {
+        const { id, type, hide } = item;
+        const iconClassName = styles[ToastIconClass[type]];
 
-          return (
+        return (
+          <div
+            key={id}
+            className={classNames(styles.containerItem, hide && styles.hide)}
+            onAnimationEnd={({ animationName }) => {
+              animationName === styles['containerItemHide'] &&
+                removeToastItem(id);
+            }}
+          >
             <div
-              key={id}
-              className={classNames(styles.containerItem, hide && styles.hide)}
-              onAnimationEnd={({ animationName }) => {
-                animationName === styles['containerItemHide'] &&
-                  removeToastItem(id);
-              }}
+              className={classNames(
+                styles.containerBody,
+                styles[ToastContainerItemClass[type]]
+              )}
             >
-              <div
-                className={classNames(
-                  styles.containerBody,
-                  styles[ToastContainerItemClass[type]]
-                )}
-              >
-                {iconClassName && <div className={iconClassName} />}
-                <div>{item.message}</div>
-              </div>
+              {iconClassName && <div className={iconClassName} />}
+              <div>{item.message}</div>
             </div>
-          );
-        })}
-      </div>
-    </>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

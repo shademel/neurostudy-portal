@@ -7,12 +7,10 @@ import Typography, { TypographyVariant } from '../typography/Typography';
 import ActionButton from '../buttons/ActionButton';
 import {
   BUTTON_STYLE,
-  TOAST_DEV_IN_PROGRESS_MESSAGE,
   TOAST_UNKNOWN_ERROR_MESSAGE,
 } from '@/app/utilities/constants';
-import { notifyError } from '@/app/utilities/common';
+import { notifyError, notifyInProgress } from '@/app/utilities/common';
 import TextBox from '../formElements/TextBox/TextBox';
-import toast from 'react-hot-toast';
 import AuthResendOTPBtn from './AuthResendOTPBtn';
 import { signIn } from 'next-auth/react';
 import { INVALID_CREDENTIALS_MESSAGE } from '@/app/utilities/auth/constants';
@@ -72,7 +70,7 @@ const AuthVerifyForm: React.FC<PropType> = ({
           // If it's JSON-parseable, it means aws-amplify API processed it
           // properly, but we don't have means to handle those at this moment
           if (JSON.parse(res.error)) {
-            toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+            notifyInProgress();
           } else {
             throw new Error(TOAST_UNKNOWN_ERROR_MESSAGE);
           }

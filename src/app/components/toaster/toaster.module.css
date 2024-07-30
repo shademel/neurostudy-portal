@@ -97,25 +97,6 @@
   animation: 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards containerItemHide;
 }
 
-/* // TEMP */
-/* TODO */
-/* Delete the following .oldContainer styles */
-.oldContainer .common {
-  color: var(--GhostWhiteVariant);
-}
-
-.oldContainer .default {
-  background-color: var(--cherryPieVariantSub);
-}
-
-.oldContainer .success {
-  background-color: var(--cherryPie);
-}
-
-.oldContainer .error {
-  background-color: var(--darkred);
-}
-
 @keyframes containerItemPopUp {
   0% {
     transform: translate3d(0, -200%, 0) scale(.6);
