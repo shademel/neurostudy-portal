@@ -2,6 +2,7 @@ import {
   AuthError,
   confirmSignUp,
   getCurrentUser,
+  GetCurrentUserOutput,
   resendSignUpCode,
   signIn,
   SignInOutput,
@@ -22,10 +23,11 @@ import {
 } from '../amplify/constants';
 
 const getUser = async () => {
-  const user = await getCurrentUser();
+  const user: GetCurrentUserOutput = await getCurrentUser();
+
   return {
     id: user.userId,
-    email: user.username,
+    email: user.signInDetails?.loginId,
   };
 };
 
