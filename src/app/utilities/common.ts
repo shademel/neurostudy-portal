@@ -6,10 +6,11 @@ import {
   LOCALE,
   META_KEY,
   SITE_NAME,
+  TOAST_DEV_IN_PROGRESS_MESSAGE,
   TOAST_UNKNOWN_ERROR_MESSAGE,
 } from './constants';
-import toast from 'react-hot-toast';
 import { AxiosError, AxiosRequestConfig } from 'axios';
+import toast from '../components/toaster';
 
 type RegulatorPropFn = (...args: unknown[]) => unknown;
 
@@ -92,6 +93,10 @@ export const notifySuccess = (message: string) => {
   toast.success(message);
 };
 
+export const notifyInProgress = () => {
+  toast.info(TOAST_DEV_IN_PROGRESS_MESSAGE);
+};
+
 export const getAxiosAuthErrorMessage = (ex: object): string => {
   return ex instanceof AxiosError
     ? ex.response?.data?.message || ex.message
@@ -112,4 +117,8 @@ export const createRequestConfig = <D = unknown>(
     data,
     ...rest,
   };
+};
+
+export const getUniqueID = (): string => {
+  return 'u' + Math.random().toString(32).substring(2);
 };

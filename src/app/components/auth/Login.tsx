@@ -10,16 +10,14 @@ import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import {
   BUTTON_STYLE,
   EMAIL_REGEX,
-  TOAST_DEV_IN_PROGRESS_MESSAGE,
   TOAST_UNKNOWN_ERROR_MESSAGE,
 } from '@/app/utilities/constants';
 import classNames from 'classnames';
 import Form from '@/app/components/formElements/Form';
 import AuthFormHeader from './AuthFormHeader';
-import toast from 'react-hot-toast';
 import { FORM_STATE } from '@/app/utilities/auth/constants';
 import { useRouter } from 'next/navigation';
-import { notifyError } from '@/app/utilities/common';
+import { notifyError, notifyInProgress } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
 import { useState } from 'react';
 import AuthVerifyForm from './AuthVerifyForm';
@@ -86,7 +84,7 @@ const Login = () => {
             setPassword(password);
             setFormState(signInStep as FORM_STATE);
           } else {
-            toast(TOAST_DEV_IN_PROGRESS_MESSAGE);
+            notifyInProgress();
           }
         } catch (ex) {
           throw new Error(res.error);

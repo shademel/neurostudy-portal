@@ -3,8 +3,7 @@
 import { BUTTON_STYLE } from '@/app/utilities/constants';
 import ActionButton from '../buttons/ActionButton';
 import styles from './navbar.module.css';
-import toast from 'react-hot-toast';
-import { notifyError } from '@/app/utilities/common';
+import { notifyError, notifySuccess } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
 import { useState } from 'react';
 import { signOut, useSession } from 'next-auth/react';
@@ -18,7 +17,7 @@ const UserOutlet: React.FC = () => {
       setIsSigningOut(true);
       try {
         await signOut({ redirect: false });
-        toast.success('Successfully logged out.');
+        notifySuccess('Successfully logged out.');
       } catch (ex) {
         notifyError(ex as object);
       } finally {
