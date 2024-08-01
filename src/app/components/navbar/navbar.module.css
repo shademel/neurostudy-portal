@@ -70,7 +70,9 @@
 }
 
 .dropdown li {
-  padding-top: 5px;
+  padding-top: 1px;
+  margin-right: 5px;
+  
 }
 
 .dropdownContent {
@@ -81,19 +83,29 @@
   margin-right: 5px;
   min-width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 10px;
+  padding: 10px 20px;
   z-index: 1;
 }
 
 .dropdown:hover .dropdownContent {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+  padding: 5px;
+  
+  
 }
 
 .login {
   margin-right: 0;
   width: 124px;
+  box-shadow: none;
+  background-color: none;
+  outline: none;
+  cursor: none;
+  padding: none;
+  opacity: 1;
+  
 }
 
 .hamburger {
@@ -117,8 +129,9 @@
 }
 
 .dropdownMenu li {
-  margin-top: 10px;
-  padding: 20px;
+  margin-top: 20px;
+  padding: 5px;
+  box-shadow: none;
 }
 
 @media (320px <=width < 360px) {
@@ -129,7 +142,7 @@
 
   .dropdownMenu li {
     margin-top: 0rem;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .dropdownMenu li:nth-child(1) {
