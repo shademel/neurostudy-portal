@@ -92,9 +92,8 @@
   flex-direction: column;
   gap: 5px;
   padding: 5px;
-  
-  
 }
+
 
 .login {
   margin-right: 0;
@@ -106,6 +105,10 @@
   padding: none;
   opacity: 1;
   
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .hamburger {
