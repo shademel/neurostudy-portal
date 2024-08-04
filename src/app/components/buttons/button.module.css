@@ -34,13 +34,6 @@
   box-shadow: none;
 }
 
-.primary:hover {
-  outline: none;
-  cursor: none;
-  padding: 0;
-  margin: 0;
-}
-
 .secondary {
   display: flex;
   align-items: center;

@@ -34,13 +34,16 @@
 
 .li {
   margin-right: 20px;
-  padding: 5px;
+  border-radius: 5px;
 }
 
 .li:hover {
   background-color: lightgray;
-  padding: 5px;
-  border-radius: 5px;
+}
+
+.li>*:not(button) {
+  padding: 8px;
+  display: inline-block;
 }
 
 .li .userOutlet {
@@ -104,11 +107,6 @@
   cursor: none;
   padding: none;
   opacity: 1;
-  
-}
-.disabled {
-  pointer-events: none;
-  opacity: 0.3;
 }
 
 .hamburger {
