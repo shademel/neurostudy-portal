@@ -49,6 +49,14 @@ export default function Subscribe() {
     }
   };
 
+  const subscribe =({popup, submissionSuccess}) => {
+    const [showPopup, setShowPopup] = useState(popup);
+
+    const tooglePopup = () => {
+      setShowPopup(!showPopup);
+    }
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.container}>
@@ -68,6 +76,8 @@ export default function Subscribe() {
         >
           {!submissionSuccess ? (
             <>
+
+            <div className={showPopup ? 'popup' : 'in-place'}>
               <p className={styles.title}>Subscribe to our Newsletter!</p>
               <p className={styles.description}>
                 Be the first to get exclusive offers and latest news
@@ -90,6 +100,11 @@ export default function Subscribe() {
                   />
                 </div>
               </Form>
+              <button onClick={togglePopup}>
+                {showPopup ? 'close' : 'open'}
+              </button>
+            </div>
+            {showPopup && <div className='overlay' onClick={togglePopup}></div>}
             </>
           ) : (
             <>

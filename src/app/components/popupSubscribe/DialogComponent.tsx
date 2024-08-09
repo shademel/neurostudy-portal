@@ -119,6 +119,7 @@ const DialogPopUp: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     </span>
                   </Typography>
                 </p>
+
                 <p className={styles.description}>
                   Check your email for our exclusive offers and latest news
                 </p>
