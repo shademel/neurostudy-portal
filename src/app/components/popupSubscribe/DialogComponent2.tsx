@@ -65,6 +65,11 @@ const DialogPopUp: React.FC<{ onClose (): true, canClose (): true}> = ({ onClose
               <Image src={CloseButton} alt='Close' title='Close' fill />
             </div>
           </button>
+          <button onClick={canClose}>
+            <div className={styles.closeButton}>
+              <Image src={CloseButton} alt='Close' title='Close' fill />
+            </div>
+          </button>
         </div>
         <div className={styles.container}>
           <div className={styles.imageWrapper}>
