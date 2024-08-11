@@ -22,14 +22,14 @@ interface SubscribeFieldValues extends FieldValues {
   email: string;
 }
 
-const DialogPopUp: React.FC<{ onClose (): true, canClose (): true }> = ({ onClose, canClose }) => {
+const DialogPopUp: React.FC<{ onClose:() => void, canClose: boolean }> = ({ onClose, canClose }) => {
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const popupRef = useRef<HTMLDivElement | null>(null);
 
   useClickOutside(onClose);
-  useClickOutside(canClose);
+ 
 
   const methods: UseFormReturn<SubscribeFieldValues> =
     useForm<SubscribeFieldValues>({ mode: 'onBlur' });
@@ -60,13 +60,6 @@ const DialogPopUp: React.FC<{ onClose (): true, canClose (): true }> = ({ onClos
       <dialog open={true}>
         <div className={styles.closeButtonWrapper}>
           <button onClick={onClose}>
-            <div className={styles.closeButton}>
-              <Image src={CloseButton} alt='Close' title='Close' fill />
-            </div>
-          </button>
-        </div>
-        <div className={styles.closeButtonWrapper}>
-          <button onClick={canClose}>
             <div className={styles.closeButton}>
               <Image src={CloseButton} alt='Close' title='Close' fill />
             </div>
