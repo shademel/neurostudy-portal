@@ -59,6 +59,11 @@ const DialogPopUp: React.FC<{ onClose:() => void, canClose: boolean }> = ({ onCl
     <div ref={popupRef} className={styles.dialogBackground}>
       <dialog open={true}>
         <div className={styles.closeButtonWrapper}>
+            {canClose == Boolean({} as React.FC) && (
+                <div className={styles.closeButtonWrapper}>
+
+                </div>
+            )}
           <button onClick={onClose}>
             <div className={styles.closeButton}>
               <Image src={CloseButton} alt='Close' title='Close' fill />
