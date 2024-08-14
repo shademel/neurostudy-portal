@@ -67,7 +67,7 @@ const DialogPopUp: React.FC<{ onClose:() => void, canClose: boolean }> = ({ onCl
                         </div>
                     </button>
                   ):(
-                    return(null);
+                    return null;
                   )}
                 </div>
                 <div className={styles.container}>
