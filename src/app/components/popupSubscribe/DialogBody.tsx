@@ -78,7 +78,9 @@ const DialogPopUp: React.FC = () => {
                 </p>
                 <Form
                   methods={methods}
-                  onSubmit={methods.handleSubmit(onSubmit)}
+                  onSubmit={methods.handleSubmit(onSubmit => {
+                    console.log(onSubmit)
+                  })}
                 >
                   <TextBox
                     name='email'
