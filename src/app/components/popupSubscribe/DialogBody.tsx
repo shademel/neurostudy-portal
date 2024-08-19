@@ -18,31 +18,20 @@ import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import { notifyError } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
 import { render } from 'react-dom';
-import { FORM_STATE } from '@/app/utilities/auth/constants';
 
 interface SubscribeFieldValues extends FieldValues {
   email: string;
 }
 
-const DialogPopUp: React.FC<{ onClose: () => void; canClose: boolean }> = ({
-  onClose,
-  canClose,
-}) => {
+const DialogPopUp: React.FC = () => {
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const popupRef = useRef<HTMLDivElement | null>(null);
 
-  useClickOutside(onClose);
-
-  const methods: React.FC= ()=> {
-   handleSubmit,FORM_STATE;{errors}: UseFormReturn<SubscribeFieldValues> =
+  const methods: UseFormReturn<SubscribeFieldValues> =
     useForm<SubscribeFieldValues>({ mode: 'onBlur' });
-   }
-
 
   const onSubmit = async (data: SubscribeFieldValues) => {
-    console.log('Form Submitted with values:', data)
     const userSubscriptionData: UserSubscriptionType = {
       email: data.email,
     };
@@ -64,17 +53,8 @@ const DialogPopUp: React.FC<{ onClose: () => void; canClose: boolean }> = ({
   };
 
   return (
-    <div ref={popupRef} className={styles.dialogBackground}>
+    <div className={styles.dialogBackground}>
       <dialog open={true}>
-        <div className={styles.closeButtonWrapper}>
-          {canClose && (
-            <button onClick={() => alert(canClose)}>
-              <div className={styles.closeButton}>
-                <Image src={CloseButton} alt='Close' title='Close' fill />
-              </div>
-            </button>
-          )}
-        </div>
         <div className={styles.container}>
           <div className={styles.imageWrapper}>
             <Image
@@ -108,7 +88,6 @@ const DialogPopUp: React.FC<{ onClose: () => void; canClose: boolean }> = ({
                     placeholder='Email address'
                     pattern={EMAIL_REGEX}
                   />
-                  
                   <div className='mt-2'>
                     <ActionButton
                       type='submit'
