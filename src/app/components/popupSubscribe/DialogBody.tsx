@@ -18,6 +18,7 @@ import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import { notifyError } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
 import { render } from 'react-dom';
+import { error } from 'console';
 
 interface SubscribeFieldValues extends FieldValues {
   email: string;
@@ -91,6 +92,7 @@ const DialogPopUp: React.FC = () => {
                     pattern={EMAIL_REGEX}
                   />
                   <div className='mt-2'>
+                    {notifyError && <p>{notifyError}</p>}
                     <ActionButton
                       type='submit'
                       label='Subscribe Now'
