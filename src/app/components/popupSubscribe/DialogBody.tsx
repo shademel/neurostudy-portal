@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import ActionButton from '../buttons/ActionButton';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
@@ -7,18 +7,14 @@ import { registerSubscriptionData } from '@/app/utilities/register/registerSubsc
 import { BUTTON_STYLE, EMAIL_REGEX } from '@/app/utilities/constants';
 import styles from './dialog.module.css';
 import Image from 'next/image';
-import CloseButton from '../../images/close.png';
 import MailboxLady from '../../images/mailboxLady.png';
 import Typography, {
   TypographyVariant,
 } from '@/app/components/typography/Typography';
-import useClickOutside from '@/app/hooks/useClickOutside';
 import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import { notifyError } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
-import { render } from 'react-dom';
-import { error } from 'console';
 
 interface SubscribeFieldValues extends FieldValues {
   email: string;
@@ -27,7 +23,6 @@ interface SubscribeFieldValues extends FieldValues {
 const DialogPopUp: React.FC = () => {
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
 
   const methods: UseFormReturn<SubscribeFieldValues> =
     useForm<SubscribeFieldValues>({ mode: 'onBlur' });
@@ -79,9 +74,7 @@ const DialogPopUp: React.FC = () => {
                 </p>
                 <Form
                   methods={methods}
-                  onSubmit={methods.handleSubmit(onSubmit => {
-                    console.log(onSubmit)
-                  })}
+                  onSubmit={methods.handleSubmit(onSubmit)}
                 >
                   <TextBox
                     name='email'
@@ -92,7 +85,6 @@ const DialogPopUp: React.FC = () => {
                     pattern={EMAIL_REGEX}
                   />
                   <div className='mt-2'>
-                    {notifyError && <p>{notifyError}</p>}
                     <ActionButton
                       type='submit'
                       label='Subscribe Now'
