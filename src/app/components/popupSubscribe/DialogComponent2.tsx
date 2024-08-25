@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import TextBox from '@/app/components/formElements/TextBox/TextBox';
 import ActionButton from '../buttons/ActionButton';
 import CRMCreateResponseInterface from '@/app/interfaces/CRMCreateResponseInterface';
@@ -29,7 +29,6 @@ const DialogPopUp: React.FC<{ onClose: () => void; canClose: boolean }> = ({
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const popupRef = useRef<HTMLDivElement | null>(null);
 
   useClickOutside(onClose);
 
@@ -58,7 +57,7 @@ const DialogPopUp: React.FC<{ onClose: () => void; canClose: boolean }> = ({
   };
 
   return (
-    <div ref={popupRef} className={styles.dialogBackground}>
+    <div className={styles.dialogBackground}>
       <dialog open={true}>
         <div className={styles.closeButtonWrapper}>
           {canClose ? (
