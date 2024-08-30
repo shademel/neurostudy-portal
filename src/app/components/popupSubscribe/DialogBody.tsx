@@ -15,6 +15,7 @@ import Form from '@/app/components/formElements/Form';
 import { FieldValues, UseFormReturn, useForm } from 'react-hook-form';
 import { notifyError } from '@/app/utilities/common';
 import LoaderWrapper from '../loader/LoaderWrapper';
+import DialogPopUp from './DialogComponent2';
 
 interface SubscribeFieldValues extends FieldValues {
   email: string;
